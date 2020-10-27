@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+:root { 
+	--main-color: /* 색상 정하자 */
+	--text-color: /* 색상 정하자 */
+	--icon-color: /* 색상 정하자 */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 헤더 */
+header {
+	background-color: blue;
+}
+
+header .container {
+	padding-top: 40px;
+	padding-bottom : 40px;
+	padding-left: 80px;
+	padding-right: 80px;
+	
+}
+
+/* 컨텐츠 */
+.conA {
+	background-color: white;
+}
+
+.conA .container {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+.conB {
+	background-color: lightblue;
+}
+
+.conB .container {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+.conC {
+	background-color: lightgrey;
+}
+
+.conC .container {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+/* 컨텐츠에 따라 padding-top, bottom 은 설정, left, right 는 고정! */
+
+/* 푸터 */
+footer {
+	background-color: green;
+}
+
+footer .container {
+	padding-top: 40px;
+	padding-bottom : 40px;
+	padding-left: 200px;
+	padding-right: 200px;
+}
