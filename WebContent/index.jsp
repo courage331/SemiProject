@@ -14,6 +14,14 @@
 	<header>
 		<div class="container">
 			<h3>헤더</h3>
+			<nav class="headN">
+				<ul>
+					<li><a href="#">예약하기</a></li>
+					<li><a href="#">이용안내</a></li>
+					<li><a href="#">ABOUT</a></li>
+					<li><a href="#">문의</a></li>
+				</ul>
+			</nav>
 		</div>
 	</header>
 	<section class="conA">
