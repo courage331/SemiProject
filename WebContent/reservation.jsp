@@ -16,6 +16,7 @@
 	</header>
 	<section>
 		몸통
+		몸통2
 	</section>
 	<footer>
 		푸터
