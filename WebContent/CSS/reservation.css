@@ -15,28 +15,6 @@ table, th, td{
 	*/
 }
 
-/* 헤더 */
-header {
-	background-color: #FFC502;
-}
-
-/* 헤더 네비게이션 */
-.headN {
-	float: right;
-}
-/* 헤더 네비게이션 ul */
-.headN ul {
-	display: flex;
-	list-style: none;
-}
-
-/* 헤더 네비게이션 a */
-.headN a {
-	text-decoration: none;
-	display: block;
-	padding: 10px;
-	margin: 0;
-}
 
 /*안내 메세지 있는 콘텐츠*/
 .conA {
@@ -77,7 +55,7 @@ header {
 	width:50%;
 	height: 150%;
 	float:left;
-	background-color:blue;
+	background-color:lightblue;
 	margin : 3px;
 }
 
