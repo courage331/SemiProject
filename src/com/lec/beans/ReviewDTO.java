@@ -6,7 +6,7 @@ public class ReviewDTO {
 	private String content; // rev_content
 	private int star; // rev_star
 	private String regDate; //rev_regdate
-	private int u_num; // user_num
+	private int c_num; // cus_num
 	
 	// 기본 생성자
 	public ReviewDTO(){
@@ -16,14 +16,14 @@ public class ReviewDTO {
 	
 	
 	// 매개변수 받는 생성자 
-	public ReviewDTO(int num, String subject, String content, int star, int u_num) {
+	public ReviewDTO(int num, String subject, String content, int star, int c_num) {
 		super();
 		this.num = num;
 		this.subject = subject;
 		this.content = content;
 		this.star = star;
 //		this.regDate = regDate;
-		this.u_num = u_num;
+		this.c_num = c_num;
 	}
 
 
@@ -87,22 +87,22 @@ public class ReviewDTO {
 	}
 
 
-	public int getU_num() {
+	public int getC_num() {
 		System.out.println("getU_num() 호출");
-		return u_num;
+		return c_num;
 	}
 
 
-	public void setU_num(int u_num) {
-		System.out.println("setU_num(" + u_num + ") 호출");
-		this.u_num = u_num;
+	public void setC_num(int c_num) {
+		System.out.println("setC_num(" + c_num + ") 호출");
+		this.c_num = c_num;
 	}
 
 
 	@Override
 	public String toString() {
 		return "ReviewDTO [num=" + num + ", subject=" + subject + ", content=" + content + ", star=" + star
-				+ ", regDate=" + regDate + ", u_num=" + u_num + "]";
+				+ ", regDate=" + regDate + ", c_num=" + c_num + "]";
 	}
 	
 		
