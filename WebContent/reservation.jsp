@@ -94,10 +94,25 @@
 			</div>
         
         	<div class="menu2">
-        		<h>2</h>
-        		<h>2</h>
-        		<h>2</h>
-        		<h>2</h>
+        		<form name="frm" action="reserveOk.do" method="post" onsubmit="return chkSubmit()">
+					보호자명:<br>
+					<input type="text" name="name"/><br><br><br>
+					연락처:<br>
+					<input type="text" name="tel"/><br><br><br>
+					희망서비스:<br>
+					<input type="text" name="tel"/><br><br><br>
+					체크인:<br>
+					<input type="text" name="tel"/><br><br><br>
+					체크아웃:<br>
+					<input type="text" name="tel"/><br><br><br>
+					반려견 선택하기:<br>
+					<input type="text" name="tel"/><br><br><br>
+					기타(요청사항):<br>
+					<textarea name="content"></textarea>
+					<br><br>
+					<input type="submit" value="예약하기"/>
+				</form>
+				<br>
         	</div>
         
         </div>   
