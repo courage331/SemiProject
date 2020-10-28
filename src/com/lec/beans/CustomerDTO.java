@@ -10,7 +10,22 @@ public class CustomerDTO {
 	String cus_phone;
 	int cus_money;
 	
+	public CustomerDTO() {
+		super();
+		System.out.println("CustomerDTO() 객체 생성");
+	}
 	
+	public CustomerDTO(int cus_num, String cus_name, String cus_pw, String cus_id, String cus_email, String cus_phone,
+			int cus_money) {
+		super();
+		this.cus_num = cus_num;
+		this.cus_name = cus_name;
+		this.cus_pw = cus_pw;
+		this.cus_id = cus_id;
+		this.cus_email = cus_email;
+		this.cus_phone = cus_phone;
+		this.cus_money = cus_money;
+	}
 	
 	public int getCus_num() {
 		return cus_num;

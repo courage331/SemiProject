@@ -18,7 +18,7 @@ table, th, td{
 
 /*안내 메세지 있는 콘텐츠*/
 .conA {
-	background-color: lightblue;
+	background-color: white;
 }
 
 /*안내문과 폼*/
@@ -55,7 +55,7 @@ table, th, td{
 	width:50%;
 	height: 150%;
 	float:left;
-	background-color:lightblue;
+	background-color:white;
 	margin : 3px;
 }
 
@@ -112,6 +112,25 @@ table, th, td{
     border-right: 1px solid #ccc;
 	
 }
+
+/*-------------------------------------------------------------------------------------- */
+      textarea {
+        width: 80%;
+        height: 24.5%;
+      }
+      
+      input, select{
+      	width:80%;
+      	height: 30px;
+      }
+      
+      .s_button{
+        width: 80%;
+        height: 30px;
+      	background-color:#FFC502;
+      }
+
+
 
 
 

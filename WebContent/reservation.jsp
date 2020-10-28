@@ -7,13 +7,18 @@
 <link rel="stylesheet" href="CSS/reservation.css">
 <script src="https://kit.fontawesome.com/a8ec0ce8a1.js"></script>
 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>예약 페이지</title>
+
 </head>
+
+
 <body>
+
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
@@ -93,24 +98,34 @@
 				</table>
 			</div>
         
+
         	<div class="menu2">
-        		<form name="frm" action="reserveOk.do" method="post" onsubmit="return chkSubmit()">
-					보호자명:<br>
-					<input type="text" name="name"/><br><br><br>
-					연락처:<br>
-					<input type="text" name="tel"/><br><br><br>
-					희망서비스:<br>
-					<input type="text" name="tel"/><br><br><br>
-					체크인:<br>
-					<input type="text" name="tel"/><br><br><br>
-					체크아웃:<br>
-					<input type="text" name="tel"/><br><br><br>
+        		<form name="rform" action="reserveOk.jsp" method="post" onsubmit="return chkSubmit()">
 					반려견 선택하기:<br>
-					<input type="text" name="tel"/><br><br><br>
+					<select name="select_pet">
+					    <option value="academy">아카데미</option>
+					</select>
+					<br><br><br>
+					희망서비스:<br>
+					<select name="service">
+					    <option value="academy">아카데미</option>
+					    <option value="dogpark">독파크</option>
+					    <option value="medicalcenter" >메디컬센터</option>
+					    <option value="kindergarten" >유치원</option>
+					    <option value="grooming" >그루밍</option>
+					    <option value="specialcare" >스페셜케어</option>
+					    <option value="hotel" selected>호텔 &데이케어</option>
+					    <!-- 기본적으로 보여주고 싶은것은 selected를 넣어준다. -->
+					</select> 
+					<br><br><br>
+					체크인:<br>
+					<input type="date" name="startdate" value="" min="" max="";><br><br><br>
+					체크아웃:<br>
+					<input type="date" name="enddate" value="" min="" max="";><br><br><br>
 					기타(요청사항):<br>
-					<textarea name="content"></textarea>
-					<br><br>
-					<input type="submit" value="예약하기"/>
+					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="content" ></textarea>
+					<br><br>					
+					<input type="submit" value="예약하기" class="s_button"/>
 				</form>
 				<br>
         	</div>
@@ -125,5 +140,6 @@
 			<h3>푸터</h3>
 		</div>
 	</footer>
+	<script src="JS/reservation.js"></script>
 </body>
 </html>
