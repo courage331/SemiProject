@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.command.write.Command;
 
+
 @WebServlet("*.do")
 public class DoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -49,8 +50,7 @@ public class DoController extends HttpServlet {
 		Command command = null; // 1. 어떠한 로직을 수행할지 결정
 		String viewPage = null; // 2. 어떠한 페이지를(뷰) 보여줄지 결정
 
-		// 컨트롤러는 커맨드에 따라, 로직을 수행 하고
-		// 결과를 내보낼 view 를 결정한다
+		//예시니깐 보구 하세요
 
 //			switch(com) {  // Java7 부터 switch 에 String 가능
 //			case "/list.do":
@@ -60,14 +60,11 @@ public class DoController extends HttpServlet {
 //				break;
 //			} // end switch
 
-		// response 를 위해, 위에서 결정된 페이지(view)에 forward 해줌
-		// url 이 바뀌는 방식 - > redirecting
-		// url 이 안바뀌는 방식 -> forwarding
+
 
 		if (viewPage != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-//				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/"+viewPage);
-			// 여기서 slash의 의미는 context-path 뒤이다...
+
 			dispatcher.forward(request, response);
 		}
 
