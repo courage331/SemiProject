@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/use.css">
+<script src="https://kit.fontawesome.com/b95da9d126.js" crossorigin="anonymous"></script>
 <title>이용 안내</title>
 </head>
 <body>
@@ -28,13 +29,13 @@
 	<!-- 컨텐츠A -->
 	<section class="conA">
 		<div class="container">
-			<h3>컨텐츠 A</h3>
+			<h3>이용 안내</h3>
 		</div>
 	</section>
 	<!-- 컨텐츠B -->
 	<section class="conB">
 		<div class="container">
-			<h3>컨텐츠 B</h3>
+			<i class="fas fa-headset"></i>
 		</div>
 	</section>
 	<!-- 컨텐츠C -->
@@ -53,24 +54,5 @@
 </body>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc2df8359ac0dd02633bb7bf5a6a5456"></script>
-<script>
-	var container = document.getElementById('map');
-	var options = {
-		center : new kakao.maps.LatLng(37.499440, 127.035905),
-		level : 3
-	};
-
-	var map = new kakao.maps.Map(container, options);
-
-	// 마커가 표시될 위치입니다 
-	var markerPosition = new kakao.maps.LatLng(37.499440, 127.035905);
-
-	// 마커를 생성합니다
-	var marker = new kakao.maps.Marker({
-		position : markerPosition
-	});
-
-	// 마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);
-</script>
+<script type="text/javascript" src="JS/use.js"></script>
 </html>

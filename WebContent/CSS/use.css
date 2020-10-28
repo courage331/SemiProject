@@ -1,11 +1,6 @@
 /* 이용안내 페이지 css */
 @charset "UTF-8";
 
-/* 헤더 */
-header {
-	background-color: yellow;
-}
-
 /* 헤더 네비게이션 */
 .headN {
 	float: right;

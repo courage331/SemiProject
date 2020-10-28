@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 :root { 
-	--main-color: /* 색상 정하자 */
-	--text-color: /* 색상 정하자 */
-	--icon-color: /* 색상 정하자 */
+	--main-color: #FEC034;
 }
 
 * {
@@ -13,7 +11,7 @@
 
 /* 헤더 */
 header {
-	background-color: white;
+	background-color: #FEC034;
 }
 
 header .container {
@@ -21,14 +19,12 @@ header .container {
 	padding-bottom : 40px;
 	padding-left: 80px;
 	padding-right: 80px;
-	
 }
 
 /* 컨텐츠 */
 .conA {
 	background-color: blue;
 }
-
 .conA .container {
 	padding-top: 80px;
 	padding-bottom: 80px;
