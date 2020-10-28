@@ -46,14 +46,14 @@ public class ReviewDAO {
 		String subject = dto.getSubject();
 		String content = dto.getContent();
 		int star = dto.getStar();
-//		int u_num = dto.getU_num();
+//		int c_num = dto.getC_num();
 		cnt = this.insert(subject, content, star);
-//		cnt = this.insert(subject, content, star, u_num);
+//		cnt = this.insert(subject, content, star, c_num);
 		
 		return cnt;
 	} // end insert(DTO)
 	// 위 cnt랑 밑의 insert 주석처리 이유 -> 음 u_num입력받는게 아니라 ? 근데 혹시몰라 적었습니다.
-//	public int insert(String subject, String content, int star, int u_num) throws SQLException {
+//	public int insert(String subject, String content, int star, int c_num) throws SQLException {
 	public int insert(String subject, String content, int star) throws SQLException {
 		int cnt = 0;
 		
@@ -62,7 +62,7 @@ public class ReviewDAO {
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
 			pstmt.setInt(3, star);
-//			pstmt.setInt(5, u_num);4번인가 5번인가... 살짝 5번 같습니다
+//			pstmt.setInt(5, c_num);4번인가 5번인가... 살짝 5번 같습니다
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -92,11 +92,11 @@ public class ReviewDAO {
 					regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
 							+ new SimpleDateFormat("hh:mm:ss").format(t);
 				}
-				int u_num = rs.getInt("user_num");
+				int c_num = rs.getInt("cus_num");
 				
 				
 				
-				ReviewDTO dto = new ReviewDTO(num, subject, content, star, u_num);
+				ReviewDTO dto = new ReviewDTO(num, subject, content, star, c_num);
 //				ReviewDTO dto = new ReviewDTO(num, subject, content, star);
 				dto.setRegDate(regDate);
 				
@@ -168,9 +168,9 @@ public class ReviewDAO {
 		
 		
 		return arr;
-	} // end readByUid()
+	} // end readByNum()
 	
-	// 특정 num 글 수정 (제목, 내용) 수정삭제는 user_num을 받아와야함 어떻게 받아올까요?
+	// 특정 num 글 수정 (제목, 내용) 수정삭제는 cus_num을 받아와야함 어떻게 받아올까요?
 	public int update(int num, String subject, String content, int star) throws SQLException {
 		int cnt = 0;
 		
@@ -189,7 +189,7 @@ public class ReviewDAO {
 	} // end update()
 	
 	// 특정 num 글 삭제 얘도 마찬가지 
-	public int deleteByUid(int num) throws SQLException {
+	public int deleteByNum(int num) throws SQLException {
 		int cnt = 0;
 		
 		try {

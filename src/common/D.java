@@ -10,7 +10,7 @@ public class D {
 	// (글번호, 글제목, 글내용, 별점주기, 등록일자, 사용자 고유 번호)
 		public static final String SQL_WRITE_INSERT = 
 				"INSERT INTO review"
-				+ "(rev_num, rev_subject, rev_content, rev_star, rev_regdate, user_num) "
+				+ "(rev_num, rev_subject, rev_content, rev_star, rev_regdate, cus_num) "
 				+ "VALUES"
 				+ "(review_seq.nextval, ?, ?, ?, SYSDATE, ?)";
 		// 여기서 user_num도 '?'로 받아오는지 모르겠습니다.
