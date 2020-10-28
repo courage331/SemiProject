@@ -123,6 +123,7 @@ CREATE TABLE selldata
 ALTER TABLE pet
 	ADD FOREIGN KEY (cus_num)
 	REFERENCES customer (cus_num)
+	ON DELETE CASCADE --부모가 삭제되면 자식도 삭제된다.
 ;
 
 
@@ -155,7 +156,13 @@ ALTER TABLE selldata
 	REFERENCES product (pro_num)
 ;
 
+/*가상의 테스트용 customer 생성*/
+INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100)
 
+/*테이블에 있는지 확인용*/
+SELECT * FROM CUSTOMER
+
+select * from user_tables
 
 /* Comments */
 
