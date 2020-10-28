@@ -12,14 +12,13 @@
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
-			<h3>헤더</h3>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp">예약하기</a></li>
-					<li><a href="use.jsp">이용안내</a></li>
-					<li><a href="shop.jsp">쇼핑</a></li>
-					<li><a href="review.jsp">후기</a></li>
-					<li><a href="login.jsp">로그인</a></li>
+					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
+					<li><a href="use.jsp"><div>이용안내</div></a></li>
+					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
+					<li><a href="review.jsp"><div>후기</div></a></li>
+					<li><a href="login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
