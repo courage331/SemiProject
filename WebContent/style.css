@@ -47,16 +47,12 @@ header .container {
 	padding-right: 200px;
 }
 
-.conC {
-	background-color: lightgrey;
+#tel{
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    border-right: 1px solid #ccc;
 }
 
-.conC .container {
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 200px;
-	padding-right: 200px;
-}
 
 /* 컨텐츠에 따라 padding-top, bottom 은 설정, left, right 는 고정! */
 

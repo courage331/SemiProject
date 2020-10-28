@@ -1,0 +1,142 @@
+/*reservation.jsp에 적용할 css*/
+
+@charset "UTF-8";
+
+
+table, th, td{
+	border : 1px solid black; 
+	border-collapse : collapse; /*border의 간격 붙이기*/
+	margin : 10px;
+	padding : 10px;
+	
+	/*두께, 선종류, 선색상을 table, th, td에 적용하겠다.
+	가장 바깥에 있는것은 table
+	내부에 있는 테두리는 td
+	*/
+}
+
+/* 헤더 */
+header {
+	background-color: yellow;
+}
+
+/* 헤더 네비게이션 */
+.headN {
+	float: right;
+}
+/* 헤더 네비게이션 ul */
+.headN ul {
+	display: flex;
+	list-style: none;
+}
+
+/* 헤더 네비게이션 a */
+.headN a {
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+	margin: 0;
+}
+
+/*안내 메세지 있는 콘텐츠*/
+.conA {
+	background-color: lightblue;
+}
+
+/*안내문과 폼*/
+.conB {
+	background-color: white;
+}
+
+.conB .container2 {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+
+/*담고 있는 자식이 overflow가 날경우 같이 커지기 위해서 사용*/
+.container2{
+	overflow:auto;
+}
+
+/*왼쪽 정보를 제공하는 부분*/
+.menu1{
+	width:45%;
+	height: 160%;
+	float:left;
+	background-color:white;
+	margin :3px;
+}
+
+
+
+/*오른쪽 예약 정보를 입력하는 부분*/
+.menu2{
+	width:50%;
+	height: 150%;
+	float:left;
+	background-color:blue;
+	margin : 3px;
+}
+
+#tel, #time, #friend, #announce{
+    width: 100%;
+    float: left;
+    padding: 30px;
+}
+
+#tel h3, #time h3, #friend h3, #announce h3{
+    font-family:"seo";
+    font-size: 14px;
+    font-weight:600;
+    color: #333;
+    margin: 0 0 10px 80px;
+
+}
+
+#tel p, #time p, #friend p, #announce p{
+    font-family:"seo";
+    font-size: 12px;
+    color: #333;
+    margin : 0 0 0 80px;
+}
+
+#tel{
+	background-image:url(../img/phone.jpg);
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    border-right: 1px solid #ccc;
+	
+}
+
+#time{
+	background-image:url(../img/time.jpg);
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    border-right: 1px solid #ccc;
+	
+}
+
+#friend{
+	background-image:url(../img/friend.jpg);
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    border-right: 1px solid #ccc;
+	
+}
+
+#announce{
+	background-image:url(../img/announce.jpg);
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    border-right: 1px solid #ccc;
+	
+}
+
+
+
+footer{
+	background-color : yellow;
+}
