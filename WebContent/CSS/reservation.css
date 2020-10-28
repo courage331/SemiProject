@@ -17,7 +17,7 @@ table, th, td{
 
 /* 헤더 */
 header {
-	background-color: yellow;
+	background-color: #FFC502;
 }
 
 /* 헤더 네비게이션 */
@@ -138,5 +138,5 @@ header {
 
 
 footer{
-	background-color : yellow;
+	background-color : #FFC502;
 }
