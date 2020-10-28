@@ -22,7 +22,7 @@ CREATE TABLE customer
 	-- 사용자 이름
 	cus_name varchar2(10) NOT NULL,
 	-- 사용자 전화번호
-	cus_phone number NOT NULL,
+	cus_phone varchar2(20) NOT NULL,
 	-- 사용자 이메일
 	cus_email varchar2(30) NOT NULL,
 	-- 사용자 아이디
