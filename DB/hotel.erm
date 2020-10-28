@@ -139,11 +139,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2020-10-27 14:13:26</creation_date>
-<<<<<<< HEAD
-			<updated_date>2020-10-28 15:53:57</updated_date>
-=======
-			<updated_date>2020-10-28 15:46:32</updated_date>
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
+
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
