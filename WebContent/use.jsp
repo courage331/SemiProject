@@ -16,6 +16,7 @@
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
+			<a href="index.jsp" class="headA">로고</a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
@@ -94,22 +95,16 @@
 			</div>
 			<table>
 				<tr>
-					<td> 역삼~~~~~~~~~~~~ 호텔
-					<br> * 주차안내 ~~~
+					<td>역삼~~~~~~~~~~~~ 호텔 <br> * 주차안내 ~~~
 					</td>
 				</tr>
 				<tr>
-					<td>지하철 이용 시
-					<br>
-					<br>
-					어쩌구저쩌구
+					<td>지하철 이용 시 <br> <br> 어쩌구저쩌구
 					</td>
 				</tr>
 				<tr>
-					<td>버스 이용시
-					<br>
-					<br>
-					어쩌구저쩌구</td>
+					<td>버스 이용시 <br> <br> 어쩌구저쩌구
+					</td>
 				</tr>
 			</table>
 		</div>

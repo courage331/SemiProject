@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-:root { 
-	--main-color: #FEC034;
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -12,6 +8,14 @@
 /* 헤더 */
 header {
 	background-color: #FEC034;
+	height: 100px;
+}
+/* 헤더 로고 */
+.headA  {
+	text-decoration: none;
+	display: block;
+	color: black;
+	padding: 40px 10px 10px 10px;
 }
 
 /* 헤더 네비게이션 */
@@ -28,15 +32,13 @@ header {
 .headN a {
 	text-decoration: none;
 	display: block;
-	padding: 10px;
-	margin: 0;
+	padding: 40px 10px 10px 10px;
+	color: black;
 }
 
 header .container {
-	padding-top: 40px;
-	padding-bottom : 40px;
 	padding-left: 80px;
-	padding-right: 80px;
+	padding-right: 160px;
 }
 
 /* 컨텐츠 */
