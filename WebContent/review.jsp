@@ -11,6 +11,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
 <title>왈왈 호텔</title>
 <style>
 table {width: 80%;}
@@ -26,6 +29,8 @@ table, th, td {
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
+			<!-- 정호 : 로고 추가 (10/29) -->
+			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>

@@ -5,7 +5,9 @@
     
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/reservation.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +22,8 @@
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
+		<!-- 정호 : 로고 추가 (10/29) -->
+		<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>

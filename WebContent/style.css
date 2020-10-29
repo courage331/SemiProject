@@ -5,17 +5,27 @@
 	padding: 0;
 }
 
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+
 /* 헤더 */
 header {
-	background-color: #FEC034;
+	background-color: var(--main-color);
 	height: 100px;
 }
 /* 헤더 로고 */
-.headA  {
+.headA {
+	float: left;
 	text-decoration: none;
 	display: block;
-	color: black;
-	padding: 40px 10px 10px 10px;
+	color: white;
+	margin: 10px 10px 10px 200px;
+	font-size: 60px;
 }
 
 /* 헤더 네비게이션 */
@@ -30,10 +40,16 @@ header {
 
 /* 헤더 네비게이션 a */
 .headN a {
+	font-family: 'Jua', sans-serif;
 	text-decoration: none;
 	display: block;
-	padding: 40px 10px 10px 10px;
-	color: black;
+	margin: 40px 10px 10px 10px;
+	color: white;
+	font-size: 30px;
+}
+
+.headN a:hover {
+	color: var(--text-color);
 }
 
 header .container {
@@ -45,6 +61,7 @@ header .container {
 .conA {
 	background-color: white;
 }
+
 .conA .container {
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -83,7 +100,7 @@ footer {
 
 footer .container {
 	padding-top: 40px;
-	padding-bottom : 40px;
+	padding-bottom: 40px;
 	padding-left: 200px;
 	padding-right: 200px;
 }

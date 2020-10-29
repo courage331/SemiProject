@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/use.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
 <title>이용 안내</title>
@@ -16,14 +17,14 @@
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
-			<a href="index.jsp" class="headA">로고</a>
+			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.jsp"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<li><a href="test_login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -64,10 +65,7 @@
 					<td>왈왈 호텔 서울 지점 1111-2222</td>
 				</tr>
 				<tr>
-					<td>왈왈 호텔 서울 지점 1111-2222</td>
-				</tr>
-				<tr>
-					<td>왈왈 호텔 서울 지점 1111-2222</td>
+					<td>플러스친구 [왈왈호텔] 로 검색</td>
 				</tr>
 			</table>
 			<div id="announce">
@@ -95,16 +93,18 @@
 			</div>
 			<table>
 				<tr>
-					<td>역삼~~~~~~~~~~~~ 호텔 <br> * 주차안내 ~~~
-					</td>
+					<td><img alt="오시는 길" src="img/route.jpg"
+						style="width: 15px; height: 15px;"> 서울 강남구 테헤란로 146 왈왈 호텔 <br>
+						※ 주차안내 : 평일주차 무료, 주말주차 30분 무료 (이후 10분 당 500원)</td>
 				</tr>
 				<tr>
-					<td>지하철 이용 시 <br> <br> 어쩌구저쩌구
-					</td>
+					<td><i class="fas fa-subway" style="color: #FEC034"></i> 지하철 이용 시 <br> 
+					역삼역3번 출구에서 20m</td>
 				</tr>
 				<tr>
-					<td>버스 이용시 <br> <br> 어쩌구저쩌구
-					</td>
+					<td><i class="fas fa-bus" style="color: #FEC034"></i> 버스 이용시 <br>
+						역삼역 3번출구 바로 앞 신한은행건물 버스 B:146, 341, 360, 740, N13, N61, 147, 463<br>
+						 G:4211 / R:1100, 1700, 2000, 2000-1, 7007, 8001, 3600, </td>
 				</tr>
 			</table>
 		</div>
