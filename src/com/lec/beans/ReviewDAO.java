@@ -46,15 +46,15 @@ public class ReviewDAO {
 		String subject = dto.getSubject();
 		String content = dto.getContent();
 		int star = dto.getStar();
-//		int c_num = dto.getC_num();
-		cnt = this.insert(subject, content, star);
-//		cnt = this.insert(subject, content, star, c_num);
+		int c_num = dto.getC_num();
+//		cnt = this.insert(subject, content, star);
+		cnt = this.insert(subject, content, star, c_num);
 		
 		return cnt;
 	} // end insert(DTO)
 	// 위 cnt랑 밑의 insert 주석처리 이유 -> 음 u_num입력받는게 아니라 ? 근데 혹시몰라 적었습니다.
-//	public int insert(String subject, String content, int star, int c_num) throws SQLException {
-	public int insert(String subject, String content, int star) throws SQLException {
+	public int insert(String subject, String content, int star, int c_num) throws SQLException {
+//	public int insert(String subject, String content, int star) throws SQLException {
 		int cnt = 0;
 		
 		try {
@@ -62,7 +62,7 @@ public class ReviewDAO {
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
 			pstmt.setInt(3, star);
-//			pstmt.setInt(5, c_num);4번인가 5번인가... 살짝 5번 같습니다
+			pstmt.setInt(4, 15);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

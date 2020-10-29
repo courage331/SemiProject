@@ -31,6 +31,7 @@ INSERT INTO customer VALUES (101, '1234', '키호인', '010-6327-2629', 'hoin22@
 INSERT INTO customer VALUES (102, '1234', '일키인', '010-6327-3629', 'hoin33@naver.com', 'hoin3', '10');
 INSERT INTO customer VALUES (103, '1234', '일호키', '010-6327-4629', 'hoin44@naver.com', 'hoin4', '10');
 INSERT INTO customer VALUES (104, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'hoin5', '10');
+INSERT INTO customer VALUES (15, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'test', '10');
 */
 
 
@@ -134,5 +135,6 @@ ALTER TABLE selldata
 	REFERENCES product (pro_num)
 ;
 
+CREATE SEQUENCE REVIEW_SEQ;
 
 

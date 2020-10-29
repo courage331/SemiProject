@@ -20,12 +20,15 @@ public class WriteCommand implements Command{
 		int star = Integer.parseInt(request.getParameter("star"));
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
+		int cus_num = Integer.parseInt(request.getParameter("c_num"));
+		
+		
 		
 		// 유효성 체크 : null 이거나, 빈 문자열이면 
 		if(star != 0 && subject != null && subject.trim().length() > 0 && star > 0) {
-			
 			try {
-				cnt = dao.insert(subject, content, star);
+				System.out.println("cus_num: ---" + cus_num);
+				cnt = dao.insert(subject, content, star, cus_num);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
