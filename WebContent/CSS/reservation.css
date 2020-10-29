@@ -2,13 +2,17 @@
 
 @charset "UTF-8";
 
+header {
+	background-color: #FEC034;
+	height: 100px;
+}
+
 
 table, th, td{
 	border : 1px solid black; 
 	border-collapse : collapse; /*border의 간격 붙이기*/
 	margin : 10px;
 	padding : 10px;
-	
 	/*두께, 선종류, 선색상을 table, th, td에 적용하겠다.
 	가장 바깥에 있는것은 table
 	내부에 있는 테두리는 td
@@ -131,9 +135,3 @@ table, th, td{
       }
 
 
-
-
-
-footer{
-	background-color : #FFC502;
-}

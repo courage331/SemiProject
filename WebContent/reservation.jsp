@@ -2,28 +2,23 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> 
-    
+
+<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/reservation.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
 <title>예약 페이지</title>
-
 </head>
-
-
-
 <body>
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
-		<!-- 정호 : 로고 추가 (10/29) -->
-		<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
+			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
@@ -49,6 +44,9 @@
 	%>
 		<h2>로그인 상태입니다 </h2>
 	<%
+		String userid = (String)session.getAttribute("userid"); //userid;
+		//userid를 바탕으로 cus_num을 찾아야한다.
+		
 		} else {
 		// 로그인 상태가 아니라면 ... 
 	%>
@@ -149,8 +147,7 @@
         
         </div>   
 	</section>
-	
-	
+	<!-- 푸터 -->	
 	<footer>
 		<div class="container">
 			<h3>푸터</h3>

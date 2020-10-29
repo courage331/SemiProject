@@ -1,0 +1,73 @@
+/* 메인 페이지 css */
+@charset "UTF-8";
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+
+/* 컨텐츠 A */
+.conA .container {
+	padding-top: 60px;
+	text-align: center;
+}
+#main_pethotel {
+	width: 50%;
+}
+
+/* 컨텐츠 B */
+.conB .container {
+	padding-top: 60px;
+}
+.guide_announce {
+	font-size: 30px;
+	text-align: center;
+	color: var(--text-color);
+}
+.guide {
+	padding-top: 60px;
+	display: flex;
+}
+
+#main_dog {
+	width: 100%;
+}
+
+.guide_main {
+	box-sizing: border-box;
+}
+
+.guide_main p {
+	color: var(--sub-text-color);
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+.guide_top_time {
+	float: left;
+	padding-bottom: 50px;
+	padding-left: 100px;
+	width: 30%;
+}
+
+.guide_top_friend {
+	float: right;
+	padding-bottom: 50px;
+	width: 30%;
+}
+
+.guide_bottom_phone {
+	float: left;
+	padding-top: 50px;
+	padding-left: 100px;
+	width: 30%;
+}
+
+.guide_bottom_route {
+	float: right;
+	padding-top: 50px;
+	width: 30%;
+}

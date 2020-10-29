@@ -34,7 +34,6 @@ INSERT INTO customer VALUES (6, '1234', '호키인', '010-6327-5629', 'hoin55@na
 INSERT INTO customer VALUES (7, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'test', '10');
 */
 
-
 CREATE TABLE pet
 (
 	pet_num number NOT NULL,
