@@ -25,6 +25,7 @@ public class ReserveCommand implements Command {
 		if(true) {
 			
 			try {
+				//insert
 				cnt = dao.insert(res_startdate, res_lastdate, message,cus_num,pet_num);
 			} catch (SQLException e) {
 				e.printStackTrace();
