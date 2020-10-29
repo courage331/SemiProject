@@ -15,8 +15,10 @@
 <style>
 table {width: 80%;}
 table, th, td {
-	border : 1px slid black;
+	border : 1px solid black;
 	border-collapse: collapse;
+	text-align: center;
+	margin-left: 10%;
 }
 </style>
 </head>
@@ -36,13 +38,17 @@ table, th, td {
 		</div>
 	</header>
 		<hr>
-		<h2>리스트</h2>
+		<br>
+		<br>
+		<h2 style="text-align: center;">후기 리스트</h2>
+		<br>
+		<br>
 		<table>
 			<tr>
-				<th>번호</th>
+				<th>글 번호</th>
 				<th>제목</th>
 				<!-- <th>작성자</th>-->
-				<th>조회수</th>
+				<th>별점</th>
 				<th>등록일</th>
 			</tr>
 <%
@@ -50,11 +56,11 @@ table, th, td {
 		for(int i = 0; i < arr.length; i++){
 %>
 			<tr>
-				<td><%= arr[i].getNum() %></td>
+				<td><a href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getNum() %></a></td>
 				<td><a href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getSubject() %></a></td>
 				<!--<td><%= arr[i].getSubject() %></td>-->
-				<td><%= arr[i].getStar() %></td>
-				<td><%= arr[i].getRegDate() %></td>
+				<td><a href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getStar() %></a></td>
+				<td><a href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getRegDate() %></a></td>
 			</tr>
 <%			
 		} // end for
@@ -62,7 +68,7 @@ table, th, td {
 %>
 		</table>
 		<br>
-<button onclick="location.href = 'write.do'">글 작성</button>
+<button onclick="location.href = 'write.do'" style="font-size: 20px;  padding:10px 10px; float: right;">글 작성</button>
 	<!-- 컨텐츠B -->
 	<section class="conB">
 		<div class="container">
