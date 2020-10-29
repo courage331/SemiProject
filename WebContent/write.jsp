@@ -66,7 +66,18 @@
 	<input type="radio" name="star" value="5">5점<br>
 	내용:<br>
 	<textarea name="content"></textarea>
-	<input type="hidden" name="c_num" value="15"><br>
+	<%
+		String name;
+		int a;
+		if(session.getAttribute("c_num") != null){
+			name = (String)session.getAttribute("c_num");
+			a = Integer.parseInt(name);
+		}else{
+			name = null;
+			a = 0;
+		}
+	%>
+	<input type="hidden" name="c_num" value="<%= a %>"><br>
 	<br><br>
 	<input type="submit" value="등록"/>
 	</form>

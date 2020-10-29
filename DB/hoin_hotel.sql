@@ -25,13 +25,13 @@ CREATE TABLE customer
 	PRIMARY KEY (cus_num) --기본키 
 );
 /* customer 쿼리문
-INSERT INTO customer VALUES (100, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
-INSERT INTO customer VALUES (110, '1234', '일호인', '010-6327-8629', 'hoin11@naver.com', 'hoin1', '10');
-INSERT INTO customer VALUES (101, '1234', '키호인', '010-6327-2629', 'hoin22@naver.com', 'hoin2', '10');
-INSERT INTO customer VALUES (102, '1234', '일키인', '010-6327-3629', 'hoin33@naver.com', 'hoin3', '10');
-INSERT INTO customer VALUES (103, '1234', '일호키', '010-6327-4629', 'hoin44@naver.com', 'hoin4', '10');
-INSERT INTO customer VALUES (104, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'hoin5', '10');
-INSERT INTO customer VALUES (15, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'test', '10');
+INSERT INTO customer VALUES (1, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'test', '10');
+INSERT INTO customer VALUES (2, '1234', '일호인', '010-6327-8629', 'hoin11@naver.com', 'hoin1', '10');
+INSERT INTO customer VALUES (3, '1234', '키호인', '010-6327-2629', 'hoin22@naver.com', 'hoin2', '10');
+INSERT INTO customer VALUES (4, '1234', '일키인', '010-6327-3629', 'hoin33@naver.com', 'hoin3', '10');
+INSERT INTO customer VALUES (5, '1234', '일호키', '010-6327-4629', 'hoin44@naver.com', 'hoin4', '10');
+INSERT INTO customer VALUES (6, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'hoin5', '10');
+INSERT INTO customer VALUES (7, '1234', '호키인', '010-6327-5629', 'hoin55@naver.com', 'test', '10');
 */
 
 
@@ -80,11 +80,11 @@ CREATE TABLE review
 	PRIMARY KEY (rev_num) -- 기본키 
 );
 /*
-INSERT INTO review VALUES (1, '1글2글', '이이이이이', 3, '2020-10-5', 100);
-INSERT INTO review VALUES (2, '2글2글', '1이이이이', 3, '2020-10-15', 110);
-INSERT INTO review VALUES (3, '3글2글', '2이이이이', 3, '2020-10-16', 101);
-INSERT INTO review VALUES (4, '4글2글', '3이이이이', 3, '2020-10-17', 102);
-INSERT INTO review VALUES (5, '5글2글', '4이이이이', 3, '2020-10-18', 103);
+INSERT INTO review VALUES (1, '1글2글', '이이이이이', 3, '2020-10-5', 2);
+INSERT INTO review VALUES (2, '2글2글', '1이이이이', 3, '2020-10-15', 3);
+INSERT INTO review VALUES (3, '3글2글', '2이이이이', 3, '2020-10-16', 4);
+INSERT INTO review VALUES (4, '4글2글', '3이이이이', 3, '2020-10-17', 5);
+INSERT INTO review VALUES (5, '5글2글', '4이이이이', 3, '2020-10-18', 6);
 */
 
 CREATE TABLE selldata

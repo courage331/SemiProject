@@ -73,7 +73,17 @@ table, th, td {
 %>
 		</table>
 		<br>
-<button onclick="location.href = 'write.do'" style="font-size: 20px;  padding:10px 10px; float: right;">글 작성</button>
+	<%
+		if(session.getAttribute("c_num") != null){
+	%>
+		<button onclick="location.href = 'write.do'" style="font-size: 20px;  padding:10px 10px; float: right;">글 작성</button>
+	<%
+		} else {
+	%>
+		<button onclick="location.href = 'test_login.jsp'" style="font-size: 20px;  padding:10px 10px; float: right;">글 작성</button>
+	<%
+		}
+	%>
 	<!-- 컨텐츠B -->
 	<section class="conB">
 		<div class="container">

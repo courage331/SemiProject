@@ -5,7 +5,7 @@
 	// 예제용 로그인 아이디 , 비번 세팅
 	public static final String ADMIN_ID = "test";
 	public static final String ADMIN_PW = "1234";
-	public static final String ADMIN_CNUM = "15";
+	public static final String ADMIN_CNUM = "17";
 %>    
 <% 
 	String id = request.getParameter("id");
