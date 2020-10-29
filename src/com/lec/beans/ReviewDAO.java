@@ -62,7 +62,7 @@ public class ReviewDAO {
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
 			pstmt.setInt(3, star);
-			pstmt.setInt(4, 15);
+			pstmt.setInt(4, c_num);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

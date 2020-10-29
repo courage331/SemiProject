@@ -22,8 +22,6 @@ public class WriteCommand implements Command{
 		String content = request.getParameter("content");
 		int cus_num = Integer.parseInt(request.getParameter("c_num"));
 		
-		
-		
 		// 유효성 체크 : null 이거나, 빈 문자열이면 
 		if(star != 0 && subject != null && subject.trim().length() > 0 && star > 0) {
 			try {
