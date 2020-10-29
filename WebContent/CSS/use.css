@@ -15,20 +15,10 @@
 }
 
 .conA .container {
-	padding-top: 80px;
-	padding-bottom: 10px;
-	padding-left: 200px;
-	padding-right: 200px;
+	margin: 80px 200px 10px 200px;
 }
 
 /* 컨텐츠 B */
-
-.conB .container {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 200px;
-	padding-right: 200px;
-}
 
 table, th, td{
 	border : 1px solid var(--sub-text-color);
@@ -86,8 +76,6 @@ table, th, td{
 .conC .container {
 	padding-top: 10px;
 	padding-bottom: 80px;
-	padding-left: 200px;
-	padding-right: 200px;
 }
 /* 컨텐츠 C 카카오맵 API */
 #map {
