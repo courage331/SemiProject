@@ -10,7 +10,9 @@
 <body>
 	<%
 		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
-		if(session.getAttribute("userid") != null){					
+		if(session.getAttribute("userid") != null){
+			System.out.println("c_num: " + session.getAttribute("c_num"));
+			System.out.println("userid: " + session.getAttribute("userid"));
 	%>
 		<h2>로그인 상태입니다 </h2>
 		<form action="test_logout.jsp">
@@ -27,5 +29,7 @@
 			<input type="submit" value="로그인"><br>
 		</form>		
 	<%}%>
+	
+	
 </body>
 </html>
