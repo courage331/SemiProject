@@ -42,7 +42,7 @@
 %>
 
 <script>
-location.href = "review.jsp";
+location.href = "review.do";
 </script>
 <!--  <script>
 location.href = "reservation.jsp";

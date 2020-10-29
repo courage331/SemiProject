@@ -92,7 +92,7 @@ function chkSubmit(){
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a href="review.jsp"><div>후기</div></a></li>
+					<li><a href="review.do"><div>후기</div></a></li>
 					<li><a href="login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
