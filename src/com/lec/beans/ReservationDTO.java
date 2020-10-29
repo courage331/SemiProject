@@ -2,12 +2,12 @@ package com.lec.beans;
 
 public class ReservationDTO {
 
-	int res_num;
-	String res_startdate;
-	String res_lastdate;
-	String message;
-	int cus_num;
-	int pet_num;
+	private int res_num;
+	private String res_startdate;
+	private String res_lastdate;
+	private String message;
+	private int cus_num;
+	private int pet_num;
 	
 	public ReservationDTO() {
 		super();

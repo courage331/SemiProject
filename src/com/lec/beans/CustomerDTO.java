@@ -2,13 +2,13 @@ package com.lec.beans;
 
 public class CustomerDTO {
 
-	int cus_num;
-	String cus_name;
-	String cus_pw;
-	String cus_id;
-	String cus_email;
-	String cus_phone;
-	int cus_money;
+	private int cus_num;
+	private String cus_name;
+	private String cus_pw;
+	private String cus_id;
+	private String cus_email;
+	private String cus_phone;
+	private int cus_money;
 	
 	public CustomerDTO() {
 		super();

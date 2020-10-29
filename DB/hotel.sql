@@ -159,10 +159,16 @@ ALTER TABLE selldata
 /*가상의 테스트용 customer 생성*/
 INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100)
 
+/*가상의 테스트용 펫 생성*/
+INSERT INTO PET VALUES(1,'강아지1',5,10,1);
+INSERT INTO PET VALUES(2,'강아지2',6,12,1);
+
 /*테이블에 있는지 확인용*/
-SELECT * FROM CUSTOMER
+SELECT * FROM CUSTOMER;
+SELECT * FROM PET;
 
 select * from user_tables
+
 
 /* Comments */
 

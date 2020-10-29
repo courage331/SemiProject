@@ -28,4 +28,11 @@ public class D {
 		public static final String SQL_WRITE_UPDATE =
 				"UPDATE review SET rev_subject = ?, rev_content = ?, rev_star = ?, WHERE rev_num = ?";
 		
+		//지민 1029 reservation 관련(예약 성공시에 상입)
+		public static final String SQL_RESERVATION_INSERT=
+				"INSERT INTO reservation"
+			+"(res_num,res_startdate,res_lastdate,message,cus_num,pet_num)"
+			+"VALUES"
+			+"(reservation_seq.nextval,?,?,?,?,?)"
+		;
 }

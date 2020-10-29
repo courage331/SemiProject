@@ -5,8 +5,6 @@
     
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/reservation.css">
-<script src="https://kit.fontawesome.com/a8ec0ce8a1.js"></script>
-
 
 <!DOCTYPE html>
 <html>
@@ -17,8 +15,8 @@
 </head>
 
 
-<body>
 
+<body>
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
@@ -40,10 +38,11 @@
 			<h3>상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
 		</div>
 	</section>
-	
-	<!-- fa-fw붙이자 -->
+
+	<!-- 컨텐츠B -->
 	<section class="conB">
 		<div class="container2">
+			<!-- 좌측 -->
 			<div class="menu1">
 				<div id="tel">
 	                <h3>호텔 왈왈 역삼역 캠퍼스</h3>
@@ -97,10 +96,10 @@
 					
 				</table>
 			</div>
-        
 
+			<!-- 우측 -->        
         	<div class="menu2">
-        		<form name="rform" action="reserveOk.jsp" method="post" onsubmit="return chkSubmit()">
+        		<form name="rform" action="reserveOk.jsp" method="post" onsubmit="return chkDate()">
 					반려견 선택하기:<br>
 					<select name="select_pet">
 					    <option value="academy">아카데미</option>
@@ -125,7 +124,9 @@
 					기타(요청사항):<br>
 					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="content" ></textarea>
 					<br><br>					
-					<input type="submit" value="예약하기" class="s_button"/>
+					<!--<input type="submit" class="s_button" value="예약하기"/>-->
+					<input type="submit" value="예약하기"/>
+					<!--  <input type="button" value="제출"  onclick="chkSubmit()">-->
 				</form>
 				<br>
         	</div>
@@ -133,13 +134,12 @@
         </div>   
 	</section>
 	
-
 	
 	<footer>
 		<div class="container">
 			<h3>푸터</h3>
 		</div>
 	</footer>
-	<script src="JS/reservation.js"></script>
+	<script type="text/javascript" src="JS/reservation.js"></script>
 </body>
 </html>

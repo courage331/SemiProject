@@ -1,5 +1,7 @@
 package com.lec.beans;
 
+//예약 관련 DAO
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -40,6 +42,37 @@ public class ReservationDAO {
 	} // end close()
 	
 	
+	// 예약 작성 <-- DTO
+	public int insert(ReservationDTO dto) throws SQLException {
+		int cnt = 0;
+		
+		String res_startdate = dto.getRes_startdate();
+		String res_lastdate = dto.getRes_lastdate();
+		String mesaage = dto.getMessage();
+		int cus_num= dto.getCus_num();
+		int pet_num = dto.getPet_num();
+				
+		cnt = this.insert(res_startdate, res_lastdate, mesaage,cus_num,pet_num);
+		
+		return cnt;
+	} // end insert(DTO)
 	
+	public int insert(String res_startdate, String res_lastdate,String message, int cus_num, int pet_num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_INSERT);
+			pstmt.setString(1, res_startdate);
+			pstmt.setString(2, res_lastdate);
+			pstmt.setString(3, message);
+			pstmt.setInt(4, cus_num);
+			pstmt.setInt(5, pet_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	} // end insert()
 	
 }

@@ -2,11 +2,11 @@ package com.lec.beans;
 
 public class SellDataDTO {
 
-	int cus_num;
-	int pro_num;
-	String sell_date;
-	int sell_cnt;
-	int sell_sum;
+	private int cus_num;
+	private int pro_num;
+	private String sell_date;
+	private int sell_cnt;
+	private int sell_sum;
 	
 	public SellDataDTO() {
 		super();

@@ -23,13 +23,27 @@ document.rform.enddate.min=rdate;
 document.rform.enddate.max=maxdate;
 
 
-function chkSubmit(){
-	var frm=document.forms['rform'];
-	
+function chkDate(){
+	frm = document.forms["rform"];
 	if(frm['startdate'].value > frm['enddate'].value){
 		alert("예약 날짜가 예약 종료 날짜보다 빠를수 없습니다.");
 		frm["stardate"].focus();
 		return false;
+	}else{
+		alert("예약 성공");
+		return true;	
 	}
-	return true;
 }
+
+
+
+//function chkSubmit(){
+//	frm=document.forms['rform'];
+//	
+//	if(frm['startdate'].value > frm['enddate'].value){
+//		//alert("예약 날짜가 예약 종료 날짜보다 빠를수 없습니다.");
+//		frm["stardate"].focus();
+//		return false;
+//	}
+//	return true;
+//}

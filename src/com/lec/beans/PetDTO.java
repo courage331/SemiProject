@@ -1,11 +1,11 @@
 package com.lec.beans;
 
 public class PetDTO {
-	int pet_num;
-	String pet_name;
-	int pet_age;
-	int pet_weight;
-	int cus_num;
+	private int pet_num;
+	private String pet_name;
+	private int pet_age;
+	private int pet_weight;
+	private int cus_num;
 	
 	public PetDTO() {
 		super();

@@ -1,11 +1,11 @@
 package com.lec.beans;
 
 public class ProductDTO {
-	int pro_num;
-	String pro_kind;
-	int pro_price;
-	int pro_cnt;
-	String pro_name;
+	private int pro_num;
+	private String pro_kind;
+	private int pro_price;
+	private int pro_cnt;
+	private String pro_name;
 	
 	public ProductDTO() {
 		super();
