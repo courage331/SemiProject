@@ -88,7 +88,7 @@ public class ReviewDTO {
 
 
 	public int getC_num() {
-		System.out.println("getU_num() 호출");
+		System.out.println("getC_num() 호출 : " + c_num);
 		return c_num;
 	}
 

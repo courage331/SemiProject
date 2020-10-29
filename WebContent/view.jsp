@@ -21,6 +21,17 @@
 	String content = arr[0].getContent();
 	String regdate = arr[0].getRegDate();
 	int star = arr[0].getStar();
+	int c_num = arr[0].getC_num();  // 게시글의 cus_num
+	
+	String ca;
+	int cus_num; // 로그인 한 사람의 cus_num
+	if(session.getAttribute("c_num") != null){
+		ca = (String)session.getAttribute("c_num");
+		cus_num = Integer.parseInt(ca);
+	}else {
+		ca = null;
+		cus_num = 0;
+	}
 %>
 
 <!DOCTYPE html>
@@ -50,10 +61,13 @@
 	function chkDelete(num){
 		// 삭제 여부, 다시 확인하고 진행하기
 		var r = confirm("삭제하시겠습니까?");
-		
+			
 		if(r){
 			location.href = 'deleteOk.do?num=' + num;
 		}
+	}
+	function deleteChk(){
+		alert('권한이 없습니다.');
 	}
 	</script>
 	<h2>읽기 <%= subject %></h2>
@@ -69,9 +83,22 @@
 	</div>
 	<hr>
 	<br>
-	<button onclick="location.href='update.do?num=<%= num%>'">수정하기</button>
+	<script>
+	function userChk(){
+		alert("권한이 없습니다.");
+	}
+	</script>
+	<% if(cus_num == c_num) {%>
+		<button onclick="location.href='update.do?num=<%= num%>'">수정하기</button>
+	<%} else {%> 
+		<button onclick="userChk()">수정하기</button>
+	<% } %>
 	<button onclick="location.href='review.do'">목록보기</button>
-	<button onclick="chkDelete(<%= num%>)">삭제하기</button>
+	<% if(cus_num == c_num) {%>
+		<button onclick="chkDelete(<%= num%>)">삭제하기</button>
+	<%} else {%> 
+		<button onclick="deleteChk()">삭제하기</button>
+	<%} %>
 	<button onclick="location.href='write.do'">새글작성</button>
 	<!-- 컨텐츠B -->
 	<section class="conB">

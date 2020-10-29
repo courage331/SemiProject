@@ -22,6 +22,7 @@
 	String content = arr[0].getContent();
 	String regdate = arr[0].getRegDate();
 	int star = arr[0].getStar();
+	int c_num = arr[0].getC_num();
 	String astar = "";
 	String bstar = "";
 	String cstar = "";
@@ -78,7 +79,6 @@ function chkSubmit(){
 		frm["subject"].focus();
 		return false;
 	}
-	alert(star);
 	
 	return true;
 }
@@ -111,6 +111,7 @@ function chkSubmit(){
 	<input type="radio" name="star" value="5" <%= estar%>>5점<br>
 	내용:<br>
 	<textarea name="content"><%= content %></textarea>
+	<input type="hidden" name="c_num" value="<%= c_num%>">
 	<br><br>
 	<input type="submit" value="수정"/>
 	</form>

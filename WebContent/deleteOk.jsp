@@ -8,7 +8,7 @@
 		alert("삭제 실패");
 		history.back();
 	</script>
-<% } else { %>
+<% } else {%>
 	<script>
 		alert("삭제 성공");
 		location.href = "review.do";

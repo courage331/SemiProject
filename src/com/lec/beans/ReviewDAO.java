@@ -62,7 +62,7 @@ public class ReviewDAO {
 			pstmt.setString(1, subject);
 			pstmt.setString(2, content);
 			pstmt.setInt(3, star);
-			pstmt.setInt(4, 15);
+			pstmt.setInt(4, c_num);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -171,15 +171,16 @@ public class ReviewDAO {
 	} // end readByNum()
 	
 	// 특정 num 글 수정 (제목, 내용) 수정삭제는 cus_num을 받아와야함 어떻게 받아올까요?
-	public int update(int num, String subject, String content, int star) throws SQLException {
+	public int update(int num, int c_num, String subject, String content, int star) throws SQLException {
 		int cnt = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_WRITE_UPDATE);
-			pstmt.setString(1, subject);
-			pstmt.setString(2, content);
-			pstmt.setInt(3, star);
-			pstmt.setInt(4, num);
+			pstmt.setInt(1, num);
+			pstmt.setInt(2, c_num);
+			pstmt.setString(3, subject);
+			pstmt.setString(4, content);
+			pstmt.setInt(5, star);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

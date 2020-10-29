@@ -26,7 +26,7 @@ public class D {
 
 		// rev_star 별점도 변경 
 		public static final String SQL_WRITE_UPDATE =
-				"UPDATE review SET rev_subject = ?, rev_content = ?, rev_star = ?, WHERE rev_num = ?";
+				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
 		
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=
