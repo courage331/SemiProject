@@ -26,7 +26,7 @@
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.jsp"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<li><a href="test_login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -38,6 +38,18 @@
 			<h3>상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
 		</div>
 	</section>
+	
+	<%
+		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
+		if(session.getAttribute("userid") != null){					
+	%>
+		<h2>로그인 상태입니다 </h2>
+	<%
+		} else {
+		// 로그인 상태가 아니라면 ... 
+	%>
+		<h2>로그인 상태가 아닙니다</h2>
+	<%}%>
 
 	<!-- 컨텐츠B -->
 	<section class="conB">

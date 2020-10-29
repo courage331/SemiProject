@@ -25,9 +25,15 @@ document.rform.enddate.max=maxdate;
 
 function chkDate(){
 	frm = document.forms["rform"];
+
+	//timestamp로 바꾸든 날짜로 바꾸든 하는것이 안전할것이다.
+	//alert(typeof(frm['startdate'].value)); -> string이다.
+	
+	
+
 	if(frm['startdate'].value > frm['enddate'].value){
 		alert("예약 날짜가 예약 종료 날짜보다 빠를수 없습니다.");
-		frm["stardate"].focus();
+		frm["startdate"].focus();
 		return false;
 	}else{
 		alert("예약 성공");
@@ -35,15 +41,3 @@ function chkDate(){
 	}
 }
 
-
-
-//function chkSubmit(){
-//	frm=document.forms['rform'];
-//	
-//	if(frm['startdate'].value > frm['enddate'].value){
-//		//alert("예약 날짜가 예약 종료 날짜보다 빠를수 없습니다.");
-//		frm["stardate"].focus();
-//		return false;
-//	}
-//	return true;
-//}
