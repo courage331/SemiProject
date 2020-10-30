@@ -17,6 +17,12 @@ header {
 	background-color: var(--main-color);
 	height: 100px;
 }
+
+header .container {
+	padding-left: 80px;
+	padding-right: 160px;
+}
+
 /* 헤더 로고 */
 .headA {
 	float: left;
@@ -50,11 +56,6 @@ header {
 
 .headN a:hover {
 	color: var(--text-color);
-}
-
-header .container {
-	padding-left: 80px;
-	padding-right: 160px;
 }
 
 /* 컨텐츠 */

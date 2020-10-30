@@ -127,6 +127,8 @@ INSERT INTO customer VALUES (100, '1234', '일호인', '010-6327-8629', 'hoin1@n
 /* pet 테스트 쿼리문 */
 INSERT INTO pet VALUES (1,1,'개', 5,10);
 
+/* select 테스트 쿼리 */
+SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = 1;
 /*테이블에 있는지 확인용*/
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
