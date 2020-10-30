@@ -74,5 +74,10 @@ public class ReservationDAO {
 		
 		return cnt;
 	} // end insert()
+
+	public int searchByUID(int cus_num) {
+		
+		return 0;
+	}
 	
 }

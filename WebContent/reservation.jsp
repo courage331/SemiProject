@@ -2,6 +2,12 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> 
+<%@ page import="com.lec.beans.*" %>
+
+<% // Controller 로부터 결과 데이터 받음
+	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+%>
+
 
 <!DOCTYPE html>
 <html>
@@ -40,11 +46,14 @@
 	
 	<%
 		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
-		if(session.getAttribute("userid") != null){					
-	%>
+		if(session.getAttribute("userid") != null){	
+			System.out.println(arr);
+	%>		
+		
 		<h2>로그인 상태입니다 </h2>
 	<%
 		String userid = (String)session.getAttribute("userid"); //userid;
+		//int cus_num = 
 		//userid를 바탕으로 cus_num을 찾아야한다.
 		
 		} else {

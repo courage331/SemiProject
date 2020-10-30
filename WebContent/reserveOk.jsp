@@ -1,16 +1,39 @@
-<!-- 임시로 reserve에서 예약하기를 누르면 넘어가는 페이지 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	예약 성공
-	<br>
-	<a href="reservation.jsp">돌아가기
-</body>
-</html>
+
+<%  // Controller 로부터 결과 데이터 받음
+	int cnt = (Integer)request.getAttribute("result");
+%>
+
+<% if(cnt == 0){ %>
+	<script>
+		alert("예약 실패!!!!!");
+		history.back();  // 브라우저가 직전에 기억하는 이전 페이지로..
+	</script>
+<% } else { %>
+	<script>
+		alert("예약 성공~!");
+		location.href = "reservation.do";
+	</script>
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

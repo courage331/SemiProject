@@ -13,6 +13,7 @@ import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.ListCommand;
 import com.command.write.ReserveCommand;
+import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
@@ -111,6 +112,8 @@ public class DoController extends HttpServlet {
 		
 		//지민 1029 예약하기	
 		case "/reservation.do":
+			command = new ReserveSearchCommand();
+			command.execute(request, response);
 			viewPage = "reservation.jsp";   // 2. 페이지(뷰) 결정
 			break;	
 			
@@ -119,6 +122,7 @@ public class DoController extends HttpServlet {
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
 			break;
+			
 			
 		} // end switch
 
