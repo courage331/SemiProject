@@ -10,6 +10,7 @@
 	--main-color:#FEC034;
 	--text-color: #555555;
 	--sub-text-color: #999999;
+	--footer-color:#333333;
 }
 
 /* 헤더 */
@@ -116,11 +117,31 @@ header .container {
 
 /* 푸터 */
 footer {
-	background-color: green;
+	background-color: var(--footer-color);
 	height: 150px;
 }
 
 footer .container {
+	padding-top: 20px;
 	padding-left: 200px;
 	padding-right: 200px;
 }
+
+.footer_logo i {
+	float: left;
+	text-decoration: none;
+	display: block;
+	color: white;
+	margin: 10px 100px 10px 40px;
+	font-size: 80px;
+}
+
+.footer_main h4 {
+	color: var(--main-color);
+	font-size: 20px;
+}
+
+.footer_text {
+	color: white;
+}
+
