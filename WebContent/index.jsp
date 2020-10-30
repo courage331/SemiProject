@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- 메인 페이지  -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -26,10 +25,8 @@
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-<<<<<<< HEAD
 					<!-- <li><a href="login.jsp"><div>로그인</div></a></li>-->
 					<li><a href="test_login.jsp"><div>로그인</div></a></li>
-=======
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
 							<li><a href="mypage.jsp"><div>내정보</div></a></li>
@@ -38,7 +35,6 @@
 							<li><a href="test_login.jsp"><div>로그인</div></a></li>
 						</c:otherwise>
 					</c:choose>
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject
 				</ul>
 			</nav>
 		</div>
