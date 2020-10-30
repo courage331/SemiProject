@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 이호인 리뷰 화면   -->
 <%@ page import="com.lec.beans.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% // Controller 로부터 결과 데이터 받음
 	ReviewDTO [] arr = (ReviewDTO [])request.getAttribute("list");
 %>
@@ -40,19 +41,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <title>왈왈 호텔</title>
 </head>
 <body>
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
+			<!-- 정호 : 로고 추가 (10/29) -->
+			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
 					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<li><a href="test_login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -70,13 +80,20 @@
 		alert('권한이 없습니다.');
 	}
 	</script>
-	<h2>읽기 <%= subject %></h2>
 	<br>
-	NUM : <%= num %><br>
-	제목: <%= subject %><br>
-	평점: <%= star %>점<br>
-	등록일: <%= regdate %><br>
-	내용: <br>
+	<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
+	<br>
+	<h2 style="text-algin: center;"><span style="color: #3f3f3f;">제목: <%= subject %></span></h2>
+	<br>
+	<br>
+	<div class="row" style="font-size: 20px"> 
+		<div  class="col-6 col-sm-3 col-lg-2" style="background-color:#F8F8FF;">글 번호 : <%= num%><br></div>
+		<div class="col-6 col-sm-4 col-lg-6" style="background-color:#F8F8FF;">제목: <%= subject %><br></div>
+		<div class="col-12 col-sm-12 col-lg-1" style="background-color:#F8F8FF;">평점: <%= star %>점<br></div>
+		<div class="col-12 col-sm-5 col-lg-3" style="background-color:#F8F8FF;">등록일: <%= regdate %><br></div>
+	</div>
+	<br>
+	내용:
 	<hr>
 	<div>
 	<%= content %>
@@ -89,20 +106,20 @@
 	}
 	</script>
 	<% if(cus_num == c_num) {%>
-		<button onclick="location.href='update.do?num=<%= num%>'">수정하기</button>
+		<button class="btn btn-warning" onclick="location.href='update.do?num=<%= num%>'">수정하기</button>
 	<%} else {%> 
-		<button onclick="userChk()">수정하기</button>
+		<button class="btn btn-warning" onclick="userChk()">수정하기</button>
 	<% } %>
-	<button onclick="location.href='review.do'">목록보기</button>
+	<button class="btn btn-warning" onclick="location.href='review.do'">목록보기</button>
 	<% if(cus_num == c_num) {%>
-		<button onclick="chkDelete(<%= num%>)">삭제하기</button>
+		<button class="btn btn-warning" onclick="chkDelete(<%= num%>)">삭제하기</button>
 	<%} else {%> 
-		<button onclick="deleteChk()">삭제하기</button>
+		<button class="btn btn-warning" onclick="deleteChk()">삭제하기</button>
 	<%} %>
 	<%if(cus_num != 0){ %>
-	<button onclick="location.href='write.do'">새글작성</button>
+	<button class="btn btn-warning" onclick="location.href='write.do'">새글작성</button>
 	<%} else {%> 
-	<button onclick="location.href='test_login.jsp'">새글작성</button>
+	<button class="btn btn-warning" onclick="location.href='test_login.jsp'">새글작성</button>
 	<%} %>
 	<!-- 컨텐츠B -->
 	<section class="conB">

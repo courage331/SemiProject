@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!-- 이용 안내 페이지 -->
 <!DOCTYPE html>
 <html>
@@ -8,7 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/use.css">
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
 <title>이용 안내</title>
@@ -20,11 +23,31 @@
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
-					<li><a href="use.jsp"><div>이용안내</div></a></li>
-					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="test_login.jsp"><div>로그인</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
+						</c:when>
+					</c:choose>
+					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
+					<li><a class="mainmenu" href="shop.jsp"><div>쇼핑</div></a></li>
+					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
+								<ul class="submenulist" style="display: none;">
+									<li><a href="#"><div>마이 페이지</div></a></li>
+									<li><a href="#"><div>내 정보관리</div></a></li>
+									<li><a href="#"><div>애완견 정보관리</div></a></li>
+									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
+								</ul></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
+						</c:when>
+					</c:choose>
 				</ul>
 			</nav>
 		</div>
@@ -98,13 +121,13 @@
 						※ 주차안내 : 평일주차 무료, 주말주차 30분 무료 (이후 10분 당 500원)</td>
 				</tr>
 				<tr>
-					<td><i class="fas fa-subway" style="color: #FEC034"></i> 지하철 이용 시 <br> 
-					역삼역3번 출구에서 20m</td>
+					<td><i class="fas fa-subway" style="color: #FEC034"></i> 지하철
+						이용 시 <br> 역삼역3번 출구에서 20m</td>
 				</tr>
 				<tr>
 					<td><i class="fas fa-bus" style="color: #FEC034"></i> 버스 이용시 <br>
 						역삼역 3번출구 바로 앞 신한은행건물 버스 B:146, 341, 360, 740, N13, N61, 147, 463<br>
-						 G:4211 / R:1100, 1700, 2000, 2000-1, 7007, 8001, 3600</td>
+						G:4211 / R:1100, 1700, 2000, 2000-1, 7007, 8001, 3600</td>
 				</tr>
 			</table>
 		</div>
@@ -127,4 +150,6 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc2df8359ac0dd02633bb7bf5a6a5456"></script>
 <script type="text/javascript" src="JS/use.js"></script>
+<script src="JS/index.js" type="text/javascript"></script>
 </html>
+
