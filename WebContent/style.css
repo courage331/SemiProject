@@ -62,8 +62,6 @@ header .container {
 }
 
 .conA .container {
-	padding-top: 80px;
-	padding-bottom: 80px;
 	padding-left: 200px;
 	padding-right: 200px;
 }
@@ -73,8 +71,6 @@ header .container {
 }
 
 .conB .container {
-	padding-top: 80px;
-	padding-bottom: 80px;
 	padding-left: 200px;
 	padding-right: 200px;
 }
@@ -84,8 +80,6 @@ header .container {
 }
 
 .conC .container {
-	padding-top: 80px;
-	padding-bottom: 80px;
 	padding-left: 200px;
 	padding-right: 200px;
 }
@@ -95,11 +89,10 @@ header .container {
 /* 푸터 */
 footer {
 	background-color: green;
+	height: 150px;
 }
 
 footer .container {
-	padding-top: 40px;
-	padding-bottom: 40px;
 	padding-left: 200px;
 	padding-right: 200px;
 }

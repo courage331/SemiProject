@@ -18,7 +18,7 @@ public class ViewCommand implements Command {
 		int num = Integer.parseInt(request.getParameter("num"));
 		
 		try {
-			arr = dao.readByNum(num);  // 읽기 + 조회수 증가
+			arr = dao.readByNum(num);  // 읽기 
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();

@@ -19,10 +19,11 @@ public class UpdateCommand implements Command {
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
 		int star = Integer.parseInt(request.getParameter("star"));
+		int c_num = Integer.parseInt(request.getParameter("c_num"));
 		// num으로 가져온 후 제목 내용 별점 등을 수정
 		if(subject != null && subject.trim().length() > 0) {
 			try {
-				cnt = dao.update(num, subject, content, star);
+				cnt = dao.update(num, c_num, subject, content, star);
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}
