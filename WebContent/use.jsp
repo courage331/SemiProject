@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- 이용 안내 페이지 -->
 <!DOCTYPE html>
 <html>
@@ -30,9 +31,9 @@
 						<c:when test="${not empty sessionScope.userid }">
 							<li><a href="mypage.jsp"><div>내정보</div></a></li>
 						</c:when>
-						<c:otherwise>
+						<c:when test="${empty sessionScope.userid }">
 							<li><a href="test_login.jsp"><div>로그인</div></a></li>
-						</c:otherwise>
+						</c:when>
 					</c:choose>
 				</ul>
 			</nav>

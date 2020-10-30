@@ -1,0 +1,22 @@
+/* mypage css */
+@charset "UTF-8";
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+
+/* 컨텐츠 A */
+.conA .container {
+	padding-top: 60px;
+	
+}
+
+.announce {
+	font-size: 30px;
+	text-align: center;
+	color: var(--text-color);
+}

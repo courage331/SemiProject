@@ -58,6 +58,10 @@ header .container {
 	color: var(--text-color);
 }
 
+.submenu :hover {
+	display: block;
+}
+
 /* 컨텐츠 */
 .conA {
 	background-color: white;
