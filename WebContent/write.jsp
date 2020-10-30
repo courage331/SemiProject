@@ -27,29 +27,6 @@
 				<ul>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-<<<<<<< HEAD
-							<li><a href="reservation.do"><div>예약하기</div></a></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a href="test_login.jsp"><div>예약하기</div></a></li>
-						</c:when>
-					</c:choose>
-					<li><a href="use.jsp"><div>이용안내</div></a></li>
-					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a href="review.do"><div>후기</div></a></li>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li class="submenu"><a href="mypage.jsp"><div>내정보</div></a>
-								<ul style="display: none;">
-									<li><div>마이 페이지</div></li>
-									<li><div>내 정보관리</div></li>
-									<li><div>애완견 정보관리</div></li>
-									<li><div>로그아웃</div></li>
-								</ul></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a href="test_login.jsp"><div>로그인</div></a></li>
-=======
 							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
@@ -71,7 +48,6 @@
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
 							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject
 						</c:when>
 					</c:choose>
 				</ul>

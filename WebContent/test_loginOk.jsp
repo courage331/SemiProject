@@ -6,9 +6,9 @@
 	public static final String ADMIN_ID = "test";
 	public static final String ADMIN_PW = "1234";
 	//호인아 너꺼 주석처리해둠
-	//public static final String ADMIN_CNUM = "17";
+	public static final String ADMIN_CNUM = "17";
 	//김지민 test
-	public static final String ADMIN_CNUM = "1";
+	//public static final String ADMIN_CNUM = "1";
 %>    
 <% 
 	String id = request.getParameter("id");
@@ -50,8 +50,9 @@
 %>
 
 <script>
-location.href = <%=url%>+"?c_num="+<%=c_num%>;
+location.href = "index.jsp?c_num="+<%=c_num%>;
 </script>
-<!--  <script>
+<!--<script>
+location.href = <%=url%>+"?c_num="+<%=c_num%>;
 location.href = "review.do";
-</script>-->
+</script>  -->
