@@ -25,7 +25,8 @@
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<!-- <li><a href="login.jsp"><div>로그인</div></a></li>-->
+					<li><a href="test_login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>

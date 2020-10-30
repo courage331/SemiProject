@@ -22,6 +22,7 @@
 	System.out.println("id: " + id); 
 	System.out.println("pw: " + pw); 
 	System.out.println("c_num: " + c_num); 
+	
 	// 전송된 id / pw 값이 일치하면  로그인 성공 + 세션 생성
 	if(ADMIN_ID.equalsIgnoreCase(id) && ADMIN_PW.equals(pw)){
 		out.println("<script>");

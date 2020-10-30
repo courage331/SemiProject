@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.lec.beans.*" %>
+
 <% // Controller 로부터 결과 데이터 받음
 	ReviewDTO [] arr = (ReviewDTO []) request.getAttribute("list");
 	int num = Integer.parseInt(request.getParameter("num"));
@@ -68,6 +69,10 @@
 <link rel="stylesheet" href="style.css">
 <title>왈왈 호텔</title>
 <script src="ckeditor/ckeditor.js"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <script>
 function chkSubmit(){
