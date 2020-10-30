@@ -78,8 +78,27 @@ public class PetDAO {
 		} // end try
 		
 		return arr;
-		
 	}
 	
+	public int FindPetNum (int cus_num,String pet_name) throws SQLException {
+		
+		PetDTO [] arr = null;
+		int pet_num=0;
+		
+		try {
+//			pstmt.close();여기서 안닫아줘도 되는거죠 ?
+			pstmt = conn.prepareStatement(D.SQL_PET_NUM_SEARCH);
+			pstmt.setInt(1, cus_num);
+			pstmt.setString(2,pet_name);
+			rs = pstmt.executeQuery();
+			System.out.println("rs"+ rs);
+//			pet_num=Integer.parseInt(String.valueOf(rs));
+			
+		} finally {
+			close();
+		} // end try
+		
+		return pet_num;
+	}
 	
 }

@@ -27,7 +27,7 @@ public class ReservationDAO {
 		try {
 			Class.forName(D.DRIVER);
 			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("WriteDAO 생성, 데이터베이스 연결. . ");
+			System.out.println("ReservationDAO 생성, 데이터베이스 연결. . ");
 			// 연결확인
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,13 +51,14 @@ public class ReservationDAO {
 		String mesaage = dto.getMessage();
 		int cus_num= dto.getCus_num();
 		int pet_num = dto.getPet_num();
+		String res_sinfo = dto.getRes_sinfo();
 				
-		cnt = this.insert(res_startdate, res_lastdate, mesaage,cus_num,pet_num);
+		cnt = this.insert(res_startdate, res_lastdate, mesaage, res_sinfo, cus_num,pet_num);
 		
 		return cnt;
 	} // end insert(DTO)
 	
-	public int insert(String res_startdate, String res_lastdate,String message, int cus_num, int pet_num) throws SQLException {
+	public int insert(String res_startdate, String res_lastdate,String message,String res_sinfo, int cus_num, int pet_num) throws SQLException {
 		int cnt = 0;
 		
 		try {
@@ -65,8 +66,9 @@ public class ReservationDAO {
 			pstmt.setString(1, res_startdate);
 			pstmt.setString(2, res_lastdate);
 			pstmt.setString(3, message);
-			pstmt.setInt(4, cus_num);
-			pstmt.setInt(5, pet_num);
+			pstmt.setString(4, res_sinfo);
+			pstmt.setInt(5, cus_num);
+			pstmt.setInt(6, pet_num);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

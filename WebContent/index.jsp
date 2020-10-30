@@ -21,7 +21,7 @@
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
+					<li><a href="reservation.do"><div>예약하기</div></a></li>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>

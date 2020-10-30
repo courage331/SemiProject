@@ -13,7 +13,7 @@
 <% } else { %>
 	<script>
 		alert("예약 성공~!");
-		location.href = "reservation.do";
+		location.href = "reservation.do?c_num=1";
 	</script>
 <% } %>
 

@@ -16,9 +16,11 @@ public class ReserveSearchCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
 		PetDAO pdao = new PetDAO();
+		//세션을 여기서 체크하기...
+		
 		
 		PetDTO [] pdto =null;
-		System.out.println("cus_num++"+request.getParameter("c_num"));
+		//System.out.println("cus_num++"+request.getParameter("c_num"));
 		int cus_num = Integer.parseInt(request.getParameter("c_num"));
 		
 		try {

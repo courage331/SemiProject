@@ -4,10 +4,36 @@
     pageEncoding="UTF-8"%> 
 <%@ page import="com.lec.beans.*" %>
 
+<%
+		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
+		if(session.getAttribute("userid") != null){	
+			System.out.println(session.getAttribute("c_num"));
+	%>		
+		<h2>로그인 상태입니다 </h2>
+	<%
+		String userid = (String)session.getAttribute("userid"); //userid;
+		
+		} else {
+		// 로그인 상태가 아니라면 ... 
+	%>
+	<script>
+		location.href="test_login.jsp";		
+	</script>
+<%}%>
+
 <% // Controller 로부터 결과 데이터 받음
+
 	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
 	
-	System.out.println("pet : " + arr[0].getPet_name());
+	if(arr == null){
+		
+	}else{
+		System.out.println("pet : " + arr[0].getPet_name());
+	}
+	
+	
+	String url ="reservation.do";
+	String c_num = request.getParameter("c_num");
 %>
 
 
@@ -33,7 +59,7 @@
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="test_login.jsp"><div>로그인</div></a></li>
+					<li><a href="test_login.jsp?url=<%=url %>" ><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -45,22 +71,6 @@
 			<h3>상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
 		</div>
 	</section>
-	
-	
-	<%
-		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
-		if(session.getAttribute("userid") != null){	
-			System.out.println(session.getAttribute("c_num"));
-	%>		
-		<h2>로그인 상태입니다 </h2>
-	<%
-		String userid = (String)session.getAttribute("userid"); //userid;
-		
-		} else {
-		// 로그인 상태가 아니라면 ... 
-	%>
-		<h2>로그인 상태가 아닙니다</h2>
-	<%}%>
 
 	<!-- 컨텐츠B -->
 	<section class="conB">
@@ -122,14 +132,15 @@
 
 			<!-- 우측 -->        
         	<div class="menu2">
-        		<form name="rform" action="reserveOk.jsp" method="post" onsubmit="return chkDate()">
+        		<form name="rform" action="reserveOk.do?cus_num=<%=c_num %>" method="post" onsubmit="return chkDate()">
 					반려견 선택하기:<br>
-					<select name="select_pet">
+					<select name="select_pet"> 
+					<!-- select_pet에 value값이 담겨서 간다. -->
 						<%
 							for(int i=0; i<arr.length; i++){
 								
 						%>
-							<option value="pet_name"><%= arr[i].getPet_name() %></option>
+							<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
 						<%
 						}
 						%>
@@ -137,7 +148,7 @@
 					</select>
 					<br><br><br>
 					희망서비스:<br>
-					<select name="service">
+					<select name=res_sinfo>
 					    <option value="academy">아카데미</option>
 					    <option value="dogpark">독파크</option>
 					    <option value="medicalcenter" >메디컬센터</option>
@@ -149,11 +160,11 @@
 					</select> 
 					<br><br><br>
 					체크인:<br>
-					<input type="date" name="startdate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_startdate" value="" min="" max="";><br><br><br>
 					체크아웃:<br>
-					<input type="date" name="enddate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_lastdate" value="" min="" max="";><br><br><br>
 					기타(요청사항):<br>
-					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="content" ></textarea>
+					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="message" ></textarea>
 					<br><br>					
 					<!--<input type="submit" class="s_button" value="예약하기"/>-->
 					<input type="submit" value="예약하기"/>

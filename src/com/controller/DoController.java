@@ -8,11 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
 import com.command.write.ListCommand;
+import com.command.write.LoginCheckCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
@@ -118,9 +120,18 @@ public class DoController extends HttpServlet {
 		
 		//지민 1029 예약하기	
 		case "/reservation.do":
-			command = new ReserveSearchCommand();
+			//이쪽에서 로그인 여부 체크하기...
+			HttpSession session = request.getSession(); 
+			command = new LoginCheckCommand();
 			command.execute(request, response);
-			viewPage = "reservation.jsp";   // 2. 페이지(뷰) 결정
+			if(request.getAttribute("loginchk")==null) {
+				//로그인 안함
+			}else {
+				//로그인 함
+				command = new ReserveSearchCommand();
+				command.execute(request, response);
+				viewPage = "reservation.jsp";   // 2. 페이지(뷰) 결정
+			}
 			break;	
 			
 		case "/reserveOk.do":
@@ -128,6 +139,7 @@ public class DoController extends HttpServlet {
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
 			break;
+			
 			
 			
 		} // end switch

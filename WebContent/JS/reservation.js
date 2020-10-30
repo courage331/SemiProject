@@ -13,14 +13,14 @@ var rdate =today.getFullYear()+"-"+(today.getMonth()+1)+"-"+(today.getDate()+1);
 var maxdate = today.getFullYear()+"-12-31";
 
 /*js에 있는 값들을 html의 form에다가 넣어주는 방법*/
-document.rform.startdate.value=rdate;
-document.rform.startdate.min=rdate;
-document.rform.startdate.max=maxdate;
+document.rform.res_startdate.value=rdate;
+document.rform.res_startdate.min=rdate;
+document.rform.res_startdate.max=maxdate;
 
 
-document.rform.enddate.value=rdate;
-document.rform.enddate.min=rdate;
-document.rform.enddate.max=maxdate;
+document.rform.res_lastdate.value=rdate;
+document.rform.res_lastdate.min=rdate;
+document.rform.res_lastdate.max=maxdate;
 
 
 function chkDate(){
@@ -31,9 +31,9 @@ function chkDate(){
 	
 	
 
-	if(frm['startdate'].value > frm['enddate'].value){
+	if(frm['res_startdate'].value > frm['res_lastdate'].value){
 		alert("예약 날짜가 예약 종료 날짜보다 빠를수 없습니다.");
-		frm["startdate"].focus();
+		frm["res_startdate"].focus();
 		return false;
 	}else{
 		alert("예약 성공");
