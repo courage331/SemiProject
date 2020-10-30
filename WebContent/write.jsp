@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <title>왈왈 호텔</title>
+<script src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<!-- 헤더 -->
@@ -65,7 +66,15 @@
 	<input type="radio" name="star" value="4">4점<br>
 	<input type="radio" name="star" value="5">5점<br>
 	내용:<br>
-	<textarea name="content"></textarea>
+	<textarea name="content" id="editor1"></textarea>
+	<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,    // HTML 태그 자동 삭제 방지 설정
+		width: '800px',       //  최초 너비, 높이 지정 가능
+		height: '400px',
+		filebrowserUploadUrl: '${pageContext.request.contextPath}/fileUpload.do'
+	});
+	</script>	
 	<%
 		String name;
 		int a;

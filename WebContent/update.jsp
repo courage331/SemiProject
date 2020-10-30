@@ -67,6 +67,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <title>왈왈 호텔</title>
+<script src="ckeditor/ckeditor.js"/>
 </head>
 <script>
 function chkSubmit(){
@@ -110,7 +111,14 @@ function chkSubmit(){
 	<input type="radio" name="star" value="4" <%= dstar%>>4점<br>
 	<input type="radio" name="star" value="5" <%= estar%>>5점<br>
 	내용:<br>
-	<textarea name="content"><%= content %></textarea>
+	<textarea name="content" id="editor1"><%= content %></textarea>
+	<script>
+		CKEDITOR.replace('editor1',{
+			allowedContent: true,    // HTML 태그 자동 삭제 방지 설정
+			width: '800px',       //  최초 너비, 높이 지정 가능
+			height: '400px'
+		});
+	</script>
 	<input type="hidden" name="c_num" value="<%= c_num%>">
 	<br><br>
 	<input type="submit" value="수정"/>
