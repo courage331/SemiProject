@@ -10,6 +10,7 @@
 	--main-color:#FEC034;
 	--text-color: #555555;
 	--sub-text-color: #999999;
+	--footer-color:#333333;
 }
 
 /* 헤더 */
@@ -44,7 +45,7 @@ header .container {
 }
 
 /* 헤더 네비게이션 a */
-.headN a {
+.mainmenu {
 	font-family: 'Jua', sans-serif;
 	text-decoration: none;
 	display: block;
@@ -57,9 +58,31 @@ header .container {
 .headN a:hover {
 	color: var(--text-color);
 }
+.submenulist {
+	border-top:12px solid var(--main-color);
+	position: absolute;
+	flex-direction: column;
+	box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
+	
+}
+.submenulist a {
+	width: 200px;
+	font-size: 20px;
+	color: var(--text-color);
+	text-decoration: none;
+}
 
-.submenu :hover {
-	display: block;
+.submenulist div {
+	height: 50px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+.submenulist :hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+    cursor: pointer;
 }
 
 /* 컨텐츠 */
@@ -94,11 +117,31 @@ header .container {
 
 /* 푸터 */
 footer {
-	background-color: green;
+	background-color: var(--footer-color);
 	height: 150px;
 }
 
 footer .container {
+	padding-top: 20px;
 	padding-left: 200px;
 	padding-right: 200px;
 }
+
+.footer_logo i {
+	float: left;
+	text-decoration: none;
+	display: block;
+	color: white;
+	margin: 10px 100px 10px 40px;
+	font-size: 80px;
+}
+
+.footer_main h4 {
+	color: var(--main-color);
+	font-size: 20px;
+}
+
+.footer_text {
+	color: white;
+}
+

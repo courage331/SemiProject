@@ -31,11 +31,16 @@ public class D {
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=
 				"INSERT INTO reservation"
-			+"(res_num,res_startdate,res_lastdate,message,cus_num,pet_num)"
+			+"(res_num,res_startdate,res_lastdate,res_message,res_sinfo,cus_num,pet_num)"
 			+"VALUES"
-			+"(reservation_seq.nextval,?,?,?,?,?)"
+			+"(reservation_seq.nextval,?,?,?,?,?,?)"
 		;
 		
+		public static final String SQL_PET_SEARCH =
+				"SELECT * FROM pet WHERE cus_num = ?";
+		
+		public static final String SQL_PET_NUM_SEARCH =
+				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
 		//정호 1030 mypage 관련(뼈다귀)
 		public static final String SQL_MYPAGE_SELECT = 
 				"SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?";

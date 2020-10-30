@@ -73,6 +73,7 @@ CREATE TABLE reservation
 	res_startdate date NOT NULL,
 	-- 예약 마지막날짜
 	res_lastdate date NOT NULL,
+	--서비스 항목
 	res_sinfo varchar2(30) NOT NULL,
 	-- 건의사항
 	res_message clob,
@@ -168,6 +169,12 @@ SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
 
 select * from user_tables
+
+
+/*SQL문 테스트*/
+SELECT * FROM PET WHERE cus_num=1;
+
+SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
 CREATE SEQUENCE RESERVATION_SEQ;
 

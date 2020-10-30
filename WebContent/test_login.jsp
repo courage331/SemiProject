@@ -9,8 +9,13 @@
 </head>
 <body>
 	<%
+		String url = request.getParameter("url");
+	%>
+
+	<%
 		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
 		if(session.getAttribute("userid") != null){
+			System.out.println("url: " + session.getAttribute("url"));
 			System.out.println("c_num: " + session.getAttribute("c_num"));
 			System.out.println("userid: " + session.getAttribute("userid"));
 	%>
@@ -23,7 +28,7 @@
 		// 로그인 상태가 아니라면 ... 
 	%>
 		<h2>로그인 상태가 아닙니다</h2>
-		<form action="test_loginOk.jsp">
+		<form action="test_loginOk.jsp?url=<%=url %>">
 			id: <input type="text" name="id"><br>
 			pw: <input type="password" name="pw"><br>
 			<input type="submit" value="로그인"><br>
