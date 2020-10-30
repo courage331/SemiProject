@@ -31,7 +31,7 @@
 
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-							<li><a href="my_page.jsp"><div>내정보</div></a></li>
+							<li><a href="mypage.jsp"><div>내정보</div></a></li>
 						</c:when>
 						<c:otherwise>
 							<li><a href="test_login.jsp"><div>로그인</div></a></li>
@@ -53,7 +53,6 @@
 		<div class="container">
 			<h3>${sessionScope.c_num }</h3>
 			<h3>뼈다귀현황</h3>
-			<h3><% arr[0].getCus_money(); %></h3>
 		</div>
 	</section>
 	<form action="test_logout.jsp">

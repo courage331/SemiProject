@@ -16,10 +16,10 @@ public class MypageCommand implements Command {
 		CustomerDAO dao = new CustomerDAO();
 		CustomerDTO [] arr = null;
 		
-		int cus_num = Integer.parseInt(request.getParameter("cus_num"));
+		int cus_num = Integer.parseInt(request.getParameter("c_num"));
 		
 		try {
-			arr = dao.selectByUid(cus_num);
+			arr = dao.selectByUid(17);
 			
 			request.setAttribute("list", arr);
 		} catch (SQLException e) {
