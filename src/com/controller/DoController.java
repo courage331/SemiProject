@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
+import com.command.write.FileUploadCommand;
 import com.command.write.ListCommand;
 import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
@@ -109,6 +110,11 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;
+			
+		case "/fileUpload.do":
+			command = new FileUploadCommand();
+			command.execute(request, response);
+			break;	
 		
 		//지민 1029 예약하기	
 		case "/reservation.do":
