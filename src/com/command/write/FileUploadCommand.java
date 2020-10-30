@@ -65,7 +65,7 @@ public class FileUploadCommand implements Command {
 			System.out.println("파일타입: " + fileType);
 			
 			// 파일 url, 나중에  link url 로 response 해줘야 한다.
-			fileUrl = request.getContextPath() + "/ckupload/" + fileSystemName;
+			fileUrl = request.getContextPath() + "/chkupload/" + fileSystemName;
 			System.out.println("fileUrl: " + fileUrl);
 		
 		} // end while
