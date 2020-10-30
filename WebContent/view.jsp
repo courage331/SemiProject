@@ -99,7 +99,11 @@
 	<%} else {%> 
 		<button onclick="deleteChk()">삭제하기</button>
 	<%} %>
+	<%if(cus_num != 0){ %>
 	<button onclick="location.href='write.do'">새글작성</button>
+	<%} else {%> 
+	<button onclick="location.href='test_login.jsp'">새글작성</button>
+	<%} %>
 	<!-- 컨텐츠B -->
 	<section class="conB">
 		<div class="container">
