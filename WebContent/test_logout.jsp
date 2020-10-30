@@ -11,7 +11,7 @@
 
 <script>
 alert("로그아웃 되었습니다");
-location.href = "reservation.jsp";
+location.href = "index.jsp";
 </script>
 <!-- <script>
 alert("로그아웃 되었습니다");

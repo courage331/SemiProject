@@ -4,36 +4,18 @@
     pageEncoding="UTF-8"%> 
 <%@ page import="com.lec.beans.*" %>
 
-<%
-		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
-		if(session.getAttribute("userid") != null){	
-			System.out.println(session.getAttribute("c_num"));
-	%>		
-		<h2>로그인 상태입니다 </h2>
-	<%
-		String userid = (String)session.getAttribute("userid"); //userid;
-		
-		} else {
-		// 로그인 상태가 아니라면 ... 
-	%>
-	<script>
-		location.href="test_login.jsp";		
-	</script>
-<%}%>
+
 
 <% // Controller 로부터 결과 데이터 받음
-
-	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+	String c_num = (String)session.getAttribute("c_num");
 	
+	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
 	if(arr == null){
-		
 	}else{
-		System.out.println("pet : " + arr[0].getPet_name());
 	}
 	
 	
-	String url ="reservation.do";
-	String c_num = request.getParameter("c_num");
+	
 %>
 
 
@@ -57,11 +39,6 @@
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
-					<li><a href="use.jsp"><div>이용안내</div></a></li>
-					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="test_login.jsp?url=<%=url %>" ><div>로그인</div></a></li>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
 							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
@@ -193,9 +170,7 @@
 					기타(요청사항):<br>
 					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="message" ></textarea>
 					<br><br>					
-					<!--<input type="submit" class="s_button" value="예약하기"/>-->
 					<input type="submit" value="예약하기"/>
-					<!--  <input type="button" value="제출"  onclick="chkSubmit()">-->
 				</form>
 				<br>
         	</div>
@@ -208,8 +183,8 @@
 			<h3>푸터</h3>
 		</div>
 	</footer>
-	<script type="text/javascript" src="JS/reservation.js"></script>
 </body>
 <!-- 정호 : 10/30 -->
 <script src="JS/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="JS/reservation.js"></script>
 </html>

@@ -14,8 +14,6 @@
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String c_num = ADMIN_CNUM;
-	String url = request.getParameter("url");
-	
 
 	// 세션 name-value 지정
 	String sessionName = "userid";
@@ -24,8 +22,6 @@
 	String sessionNumName = "c_num";
 	String sessionNumValue = c_num;
 	
-	
-	System.out.println("url "+ url);
 	System.out.println("id: " + id); 
 	System.out.println("pw: " + pw); 
 	System.out.println("c_num: " + c_num); 
@@ -50,7 +46,7 @@
 %>
 
 <script>
-location.href = <%=url%>+"?c_num="+<%=c_num%>;
+location.href = "index.jsp?c_num="+<%=c_num%>;
 </script>
 <!--  <script>
 location.href = "review.do";

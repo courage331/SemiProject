@@ -18,10 +18,9 @@ public class ReserveSearchCommand implements Command {
 		PetDAO pdao = new PetDAO();
 		//세션을 여기서 체크하기...
 		
-		
 		PetDTO [] pdto =null;
-		//System.out.println("cus_num++"+request.getParameter("c_num"));
 		int cus_num = Integer.parseInt(request.getParameter("c_num"));
+		System.out.println("c_num 의 값은요? "+cus_num);
 		
 		try {
 			pdto = pdao.FindByOwner(cus_num);
