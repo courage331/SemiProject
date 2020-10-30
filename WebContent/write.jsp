@@ -6,6 +6,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <title>왈왈 호텔</title>
 <script src="ckeditor/ckeditor.js"></script>
 </head>
@@ -19,7 +23,7 @@
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<li><a href="test_login.jsp"><div>로그인</div></a></li>
 				</ul>
 			</nav>
 		</div>
@@ -70,7 +74,7 @@
 	<script>
 	CKEDITOR.replace('editor1', {
 		allowedContent: true,    // HTML 태그 자동 삭제 방지 설정
-		width: '800px',       //  최초 너비, 높이 지정 가능
+		width: '100%px',       //  최초 너비, 높이 지정 가능
 		height: '400px',
 		filebrowserUploadUrl: '${pageContext.request.contextPath}/fileUpload.do'
 	});
