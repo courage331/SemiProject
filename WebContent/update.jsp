@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.lec.beans.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <% // Controller 로부터 결과 데이터 받음
 	ReviewDTO [] arr = (ReviewDTO []) request.getAttribute("list");
@@ -69,6 +70,9 @@
 <link rel="stylesheet" href="style.css">
 <title>왈왈 호텔</title>
 <script src="ckeditor/ckeditor.js"/>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -93,28 +97,57 @@ function chkSubmit(){
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
+			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li><a href="reservation.do"><div>예약하기</div></a></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a href="test_login.jsp"><div>예약하기</div></a></li>
+						</c:when>
+					</c:choose>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="login.jsp"><div>로그인</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li class="submenu"><a href="mypage.jsp"><div>내정보</div></a>
+								<ul style="display: none;">
+									<li><div>마이 페이지</div></li>
+									<li><div>내 정보관리</div></li>
+									<li><div>애완견 정보관리</div></li>
+									<li><div>로그아웃</div></li>
+								</ul></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a href="test_login.jsp"><div>로그인</div></a></li>
+						</c:when>
+					</c:choose>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<h2>수정</h2>
+	<section class="conA">
+		<div class="container">
+			<h2 style="text-align: center">리뷰 수정</h2>
+		</div>
+	</section>
+		<section class="conB">
+		<div class="container">
 	<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
 	<input type="hidden" name="num" value="<%= num %>">
 	제목:
 	<input type="text" name="subject" value="<%= subject%>"><br>
 	평점:<br>
-	<input type="radio" name="star" value="1" <%= astar%>>1점<br>
-	<input type="radio" name="star" value="2" <%= bstar%>>2점<br>
-	<input type="radio" name="star" value="3" <%= cstar%>>3점<br>
-	<input type="radio" name="star" value="4" <%= dstar%>>4점<br>
-	<input type="radio" name="star" value="5" <%= estar%>>5점<br>
+	<input type="radio" name="star" value="1" <%= astar%>>★☆☆☆☆<br>
+	<input type="radio" name="star" value="2" <%= bstar%>>★★☆☆☆<br>
+	<input type="radio" name="star" value="3" <%= cstar%>>★★★☆☆<br>
+	<input type="radio" name="star" value="4" <%= dstar%>>★★★★☆<br>
+	<input type="radio" name="star" value="5" <%= estar%>>★★★★★<br>
+	<br>
+	<br>
 	내용:<br>
 	<textarea name="content" id="editor1"><%= content %></textarea>
 	<script>
@@ -126,19 +159,17 @@ function chkSubmit(){
 	</script>
 	<input type="hidden" name="c_num" value="<%= c_num%>">
 	<br><br>
-	<input type="submit" value="수정"/>
+	<input type="submit" value="수정하기"/>
 	</form>
+			</div>
+
+	</section>
 	
-	<button onclick="history.back()">이전으로</button>
-	<button onclick="location.href='review.do'">목록보기</button>
-	<!-- 컨텐츠B -->
+	
 	<section class="conB">
 		<div class="container">
-		</div>
-	</section>
-	<!-- 컨텐츠C -->
-	<section class="conC">
-		<div class="container">
+		<button onclick="history.back()">◀◀이전으로</button>
+		<button onclick="location.href='review.do'">목록보기</button>
 		</div>
 	</section>
 	<!-- 푸터 -->

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 이호인 리뷰 화면   -->
 <%@ page import="com.lec.beans.*" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% // Controller 로부터 결과 데이터 받음
 	ReviewDTO [] arr = (ReviewDTO [])request.getAttribute("list");
 %>
@@ -64,26 +64,46 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 	<!-- 헤더 -->
 	<header>
 		<div class="container">
-			<!-- 정호 : 로고 추가 (10/29) -->
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li><a href="reservation.do"><div>예약하기</div></a></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a href="test_login.jsp"><div>예약하기</div></a></li>
+						</c:when>
+					</c:choose>
 					<li><a href="use.jsp"><div>이용안내</div></a></li>
 					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
 					<li><a href="review.do"><div>후기</div></a></li>
-					<li><a href="test_login.jsp"><div>로그인</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li class="submenu"><a href="mypage.jsp"><div>내정보</div></a>
+								<ul style="display: none;">
+									<li><div>마이 페이지</div></li>
+									<li><div>내 정보관리</div></li>
+									<li><div>애완견 정보관리</div></li>
+									<li><div>로그아웃</div></li>
+								</ul></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a href="test_login.jsp"><div>로그인</div></a></li>
+						</c:when>
+					</c:choose>
 				</ul>
 			</nav>
 		</div>
 	</header>
 		<hr>
-		<br>
-		<br>
-		<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
-		<br>
-		<br>
-		<div>
+		<section class="conA">
+			<div class="container">
+				<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
+			</div>
+		</section>
+		<section class="conB">
+		<div class="container">
 		<table>
 		<thead>
 			<tr class="table-warning">
@@ -125,7 +145,10 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 %>
 		</table>
 		</div>
+		</section>
 		<br>
+	<section class="conC">
+		<div class="container">
 	<%
 		if(session.getAttribute("c_num") != null){
 	%>
@@ -137,17 +160,8 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 	<%
 		}
 	%>
-	<!-- 컨텐츠B -->
-	<section class="conB">
-		<div class="container">
 		</div>
 	</section>
-	<!-- 컨텐츠C -->
-	<section class="conC">
-		<div class="container">
-		</div>
-	</section>
-	<!-- 푸터 -->
 	<footer>
 		<div class="container">
 			<h3>푸터</h3>
