@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.ListCommand;
+import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.SelectCommand;
 import com.command.write.UpdateCommand;
@@ -120,9 +121,16 @@ public class DoController extends HttpServlet {
 			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
 			break;
 			
+		//정호 1030 뼈다귀
+		case "/mypage.do":
+			command = new MypageCommand();  // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
+			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
+			break;
+			
+			
+			
 		} // end switch
-
-
 
 		if (viewPage != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

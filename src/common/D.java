@@ -35,4 +35,8 @@ public class D {
 			+"VALUES"
 			+"(reservation_seq.nextval,?,?,?,?,?)"
 		;
+		
+		//정호 1030 mypage 관련(뼈다귀)
+		public static final String SQL_MYPAGE_SELECT = 
+				"SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?";
 }

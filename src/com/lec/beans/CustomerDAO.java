@@ -39,6 +39,51 @@ public class CustomerDAO {
 		if(conn != null) conn.close(); 
 	} // end close()
 	
+	// 정호 1030 uid 로 뼈다귀검색
+	// ResultSet => DTO배열로 리턴
+	public CustomerDTO[] createArray(ResultSet rs) throws SQLException {
+		CustomerDTO[] arr = null;
+		ArrayList<CustomerDTO> list = new ArrayList<CustomerDTO>();
+
+		while (rs.next()) {
+			int cus_num = rs.getInt("cus_num");
+			String cus_name = rs.getString("cus_name");
+			String cus_pw = rs.getString("cus_pw");
+			String cus_id = rs.getString("cus_id");
+			String cus_email = rs.getString("cus_email");
+			String cus_phone = rs.getString("cus_phone");
+			int cus_money = rs.getInt("cus_money");
+
+			CustomerDTO dto = new CustomerDTO(cus_num, cus_name, cus_pw, cus_id, cus_email,cus_phone,cus_money);
+
+			list.add(dto);
+		} // end while
+
+		int size = list.size();
+
+		if (size == 0)
+			return null;
+		arr = new CustomerDTO[size];
+		list.toArray(arr); // 리스트 -> 배열 변환
+
+		return arr;
+	} // end createArray()
+	
+	public CustomerDTO [] selectByUid(int cus_num) throws SQLException{
+		CustomerDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
+			pstmt.setInt(1, cus_num);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+		
+		return arr;
+	} // end selectByUid()
+	
 	
 	
 	
