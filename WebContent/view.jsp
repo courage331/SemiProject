@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 이호인 리뷰 화면   -->
 <%@ page import="com.lec.beans.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% // Controller 로부터 결과 데이터 받음
 	ReviewDTO [] arr = (ReviewDTO [])request.getAttribute("list");
 %>

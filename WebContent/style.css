@@ -44,7 +44,7 @@ header .container {
 }
 
 /* 헤더 네비게이션 a */
-.headN a {
+.mainmenu {
 	font-family: 'Jua', sans-serif;
 	text-decoration: none;
 	display: block;
@@ -57,9 +57,31 @@ header .container {
 .headN a:hover {
 	color: var(--text-color);
 }
+.submenulist {
+	border-top:12px solid var(--main-color);
+	position: absolute;
+	flex-direction: column;
+	box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
+	
+}
+.submenulist a {
+	width: 200px;
+	font-size: 20px;
+	color: var(--text-color);
+	text-decoration: none;
+}
 
-.submenu :hover {
-	display: block;
+.submenulist div {
+	height: 50px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+.submenulist :hover {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+    cursor: pointer;
 }
 
 /* 컨텐츠 */

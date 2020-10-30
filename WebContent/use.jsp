@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!-- 이용 안내 페이지 -->
 <!DOCTYPE html>
 <html>
@@ -22,17 +23,29 @@
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
 			<nav class="headN">
 				<ul>
-					<li><a href="reservation.jsp"><div>예약하기</div></a></li>
-					<li><a href="use.jsp"><div>이용안내</div></a></li>
-					<li><a href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a href="review.do"><div>후기</div></a></li>
-
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-							<li><a href="mypage.jsp"><div>내정보</div></a></li>
+							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
-							<li><a href="test_login.jsp"><div>로그인</div></a></li>
+							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
+						</c:when>
+					</c:choose>
+					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
+					<li><a class="mainmenu" href="shop.jsp"><div>쇼핑</div></a></li>
+					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
+					<c:choose>
+						<c:when test="${not empty sessionScope.userid }">
+							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
+								<ul class="submenulist" style="display: none;">
+									<li><a href="#"><div>마이 페이지</div></a></li>
+									<li><a href="#"><div>내 정보관리</div></a></li>
+									<li><a href="#"><div>애완견 정보관리</div></a></li>
+									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
+								</ul></li>
+						</c:when>
+						<c:when test="${empty sessionScope.userid }">
+							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
 						</c:when>
 					</c:choose>
 				</ul>
@@ -137,5 +150,6 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc2df8359ac0dd02633bb7bf5a6a5456"></script>
 <script type="text/javascript" src="JS/use.js"></script>
+<script src="JS/index.js" type="text/javascript"></script>
 </html>
 
