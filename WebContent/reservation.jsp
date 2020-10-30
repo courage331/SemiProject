@@ -6,6 +6,8 @@
 
 <% // Controller 로부터 결과 데이터 받음
 	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+	
+	System.out.println("pet : " + arr[0].getPet_name());
 %>
 
 
@@ -44,17 +46,15 @@
 		</div>
 	</section>
 	
+	
 	<%
 		// 현재 로그인 상태인지, 즉 로그인 세션 (name이 'userid'인 세션값)이 있는지 확인
 		if(session.getAttribute("userid") != null){	
-			System.out.println(arr);
+			System.out.println(session.getAttribute("c_num"));
 	%>		
-		
 		<h2>로그인 상태입니다 </h2>
 	<%
 		String userid = (String)session.getAttribute("userid"); //userid;
-		//int cus_num = 
-		//userid를 바탕으로 cus_num을 찾아야한다.
 		
 		} else {
 		// 로그인 상태가 아니라면 ... 
@@ -125,7 +125,15 @@
         		<form name="rform" action="reserveOk.jsp" method="post" onsubmit="return chkDate()">
 					반려견 선택하기:<br>
 					<select name="select_pet">
-					    <option value="academy">아카데미</option>
+						<%
+							for(int i=0; i<arr.length; i++){
+								
+						%>
+							<option value="pet_name"><%= arr[i].getPet_name() %></option>
+						<%
+						}
+						%>
+					    
 					</select>
 					<br><br><br>
 					희망서비스:<br>

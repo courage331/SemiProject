@@ -36,6 +36,6 @@ public class D {
 			+"(reservation_seq.nextval,?,?,?,?,?)"
 		;
 		
-		public static final String SQL_PET_SEARCH=
-				"SELECT PET_NAME FROM PET WHERE cus_num=?";
+		public static final String SQL_PET_SEARCH =
+				"SELECT * FROM pet WHERE cus_num = ?";
 }

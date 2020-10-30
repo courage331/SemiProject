@@ -127,7 +127,6 @@ public class DoController extends HttpServlet {
 		} // end switch
 
 
-
 		if (viewPage != null) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 

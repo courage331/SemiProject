@@ -22,6 +22,8 @@
 	String sessionNumName = "c_num";
 	String sessionNumValue = c_num;
 	
+	
+	
 	System.out.println("id: " + id); 
 	System.out.println("pw: " + pw); 
 	System.out.println("c_num: " + c_num); 
@@ -45,8 +47,8 @@
 %>
 
 <script>
-location.href = "review.do";
+location.href = "reservation.jsp?c_num=1";
 </script>
 <!--  <script>
-location.href = "reservation.jsp";
+location.href = "review.do";
 </script>-->

@@ -171,7 +171,7 @@ select * from user_tables
 
 
 /*SQL문 테스트*/
-SELECT PET_NAME FROM PET WHERE cus_num=1;
+SELECT * FROM PET WHERE cus_num=1;
 
 CREATE SEQUENCE RESERVATION_SEQ;
 

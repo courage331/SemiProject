@@ -11,9 +11,9 @@
 
 <script>
 alert("로그아웃 되었습니다");
-location.href = "review.do";
+location.href = "reservation.jsp";
 </script>
 <!-- <script>
 alert("로그아웃 되었습니다");
-location.href = "reservation.jsp";
+location.href = "review.do";
 </script> -->
