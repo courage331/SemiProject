@@ -84,7 +84,23 @@ public class CustomerDAO {
 		return arr;
 	} // end selectByUid()
 	
-	
+	// 주혁 1031 로그인시 회원인지 아닌지 확인하기위한 조회
+		public int find_account(String c_id, String c_pw) throws SQLException{
+			int cnt = 0;
+			
+			try {
+				pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
+				pstmt.setString(1, c_id);
+				pstmt.setString(2, c_pw);
+				cnt = pstmt.executeUpdate();
+//				rs = pstmt.executeQuery();
+//				cnt = createArray(rs);
+			} finally {
+				close();
+			} // end try
+			
+			return cnt;
+		} // end selectByUid()
 	
 	
 }

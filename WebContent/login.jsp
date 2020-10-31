@@ -8,7 +8,7 @@
 <title>LOGIN</title>
 </head>
 <script>
-function chkSubmit(){
+function chkSubmit(){	//공백안돼요
 	frm = document.forms["frm"];
 	
 	var c_id = frm["c_id"].value.trim();
@@ -26,8 +26,29 @@ function chkSubmit(){
 		return false;
 	}
 	
-	return true;	
+	return chkDB(c_id, c_pw);	
 } // end chkSubmit()
+
+function chkDB(c_id, c_pw){ //가입된 아이디니??
+	//db에 c_id, c_pw 가진 회원이 있니??
+	//alert(c_id+" : "+c_pw);
+	String id =
+	String pw = 
+	
+	if(c_id.equalsIgnoreCase(id) && c_pw.equals(pw)){
+		
+		alert(c_id+" : "+c_pw + " 로그인 성공");
+		
+		// 세션 (이름) 생성
+		//session.setAttribute(sessionName, sessionValue);		
+	}else{
+		alert(c_id+" : "+c_pw + " 가입된 아이디가 아닙니다.");
+		// 혹시 있으면(?) 세션 삭제
+		//session.removeAttribute(sessionName);
+	}
+	return true;
+}
+
 </script>
 <body>
 
