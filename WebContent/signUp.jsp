@@ -58,7 +58,7 @@ SIGN UP
 <input type="text" name="c_name" ><br>
 <input type="text" name="c_phone" ><br>
 <input type="text" name="c_email" ><br>
-<input type="submit" value="SIGNUP"/> <!-- index.jsp로 가는게 아니라 바로 전 화면으로 가게하면 더 좋을듯// 가는게 아니라 submit이 되어야함// -->
+<input type="submit" value="SIGNUP"/> <!--  바로 전 화면으로 가게하면 더 좋을듯// 가는게 아니라 submit이 되어야함// -->
 </form>
 </body>
 </html>
