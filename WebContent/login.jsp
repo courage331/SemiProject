@@ -26,9 +26,10 @@ function chkSubmit(){	//공백안돼요
 		return false;
 	}
 	
-	return chkDB(c_id, c_pw);	
+	return true;
+	//return chkDB(c_id, c_pw);	
 } // end chkSubmit()
-
+/*
 function chkDB(c_id, c_pw){ //가입된 아이디니??
 	//db에 c_id, c_pw 가진 회원이 있니??
 	//alert(c_id+" : "+c_pw);
@@ -48,6 +49,7 @@ function chkDB(c_id, c_pw){ //가입된 아이디니??
 	}
 	return true;
 }
+*/
 
 </script>
 <body>
