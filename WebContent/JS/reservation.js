@@ -7,7 +7,10 @@ date.setDate(date.getDate() + 1);
 
 /*당일 예약은 안되니깐 기본값과 최소 예약 날짜는 오늘 다음 날짜*/
 var rdate =date.getFullYear()+"-"+(date.getMonth()+1)+"-"
-if(Integer.parseInt(date.getDate())<10){
+
+console.log(date.getDate());
+
+if(parseInt(date.getDate())<10){
 	rdate+=("0"+(date.getDate()));
 }else{
 	rdate+=date.getDate();
