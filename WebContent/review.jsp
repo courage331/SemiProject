@@ -98,12 +98,13 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 		</div>
 	</header>
 		<hr>
-		<br>
-		<br>
-		<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
-		<br>
-		<br>
-		<div>
+		<section class="conA">
+			<div class="container">
+				<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
+			</div>
+		</section>
+		<section class="conB">
+		<div class="container">
 		<table>
 		<thead>
 			<tr class="table-warning">
@@ -145,7 +146,10 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 %>
 		</table>
 		</div>
+		</section>
 		<br>
+	<section class="conC">
+		<div class="container">
 	<%
 		if(session.getAttribute("c_num") != null){
 	%>
@@ -157,9 +161,6 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 	<%
 		}
 	%>
-	<!-- 컨텐츠B -->
-	<section class="conB">
-		<div class="container">
 		</div>
 	</section>
 	<!-- 컨텐츠C -->

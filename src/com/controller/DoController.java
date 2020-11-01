@@ -15,6 +15,7 @@ import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCheckCommand;
+import com.command.write.LoginCommand;
 import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveSearchCommand;
@@ -147,6 +148,16 @@ public class DoController extends HttpServlet {
 			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
 			break;
 			
+		case "/login.jsp":
+			viewPage = "login.jsp";
+			break;
+			
+		case "/loginOk.jsp":
+			command = new LoginCommand();
+			command.execute(request, response);
+			viewPage = "loginOk.jsp";
+			break;
+		
 		} // end switch
 
 		if (viewPage != null) {
