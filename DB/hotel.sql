@@ -158,15 +158,18 @@ ALTER TABLE selldata
 ;
 
 /*가상의 테스트용 customer 생성*/
-INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100)
+INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100);
+INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
 
 /*가상의 테스트용 펫 생성*/
 INSERT INTO PET VALUES(1,'강아지1',5,10,1);
 INSERT INTO PET VALUES(2,'강아지2',6,12,1);
-
+INSERT INTO PET VALUES(3,'강아지3',5,10,2);
+INSERT INTO PET VALUES(4,'강아지4',6,12,2);
 /*테이블에 있는지 확인용*/
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
+SELECT * FROM RESERVATION;
 
 select * from user_tables
 

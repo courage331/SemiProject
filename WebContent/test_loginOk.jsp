@@ -6,16 +6,14 @@
 	public static final String ADMIN_ID = "test";
 	public static final String ADMIN_PW = "1234";
 	//호인아 너꺼 주석처리해둠
-	public static final String ADMIN_CNUM = "17";
+	//public static final String ADMIN_CNUM = "17";
 	//김지민 test
-	//public static final String ADMIN_CNUM = "1";
+	public static final String ADMIN_CNUM = "1";
 %>    
 <% 
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String c_num = ADMIN_CNUM;
-	String url = request.getParameter("url");
-	
 
 	// 세션 name-value 지정
 	String sessionName = "userid";
@@ -24,8 +22,6 @@
 	String sessionNumName = "c_num";
 	String sessionNumValue = c_num;
 	
-	
-	System.out.println("url "+ url);
 	System.out.println("id: " + id); 
 	System.out.println("pw: " + pw); 
 	System.out.println("c_num: " + c_num); 
@@ -48,11 +44,8 @@
 	}
 	
 %>
-
 <script>
-location.href = "index.jsp?c_num="+<%=c_num%>;
+location.href = "index.jsp";
 </script>
-<!--<script>
-location.href = <%=url%>+"?c_num="+<%=c_num%>;
-location.href = "review.do";
-</script>  -->
+
+
