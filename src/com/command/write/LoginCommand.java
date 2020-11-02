@@ -20,17 +20,19 @@ public class LoginCommand implements Command {
 		String c_id = request.getParameter("c_id");
 		String c_pw = request.getParameter("c_pw");
 
-		// 유효성 체크 : null 이거나, 빈 문자열이면
-		if (c_id != null && c_id.trim().length() > 0 && c_pw != null && c_pw.trim().length() > 0) {
-			try {
-				System.out.println("cus_id: ---" + c_id);
-				System.out.println("cus_pw: ---" + c_pw);
-				arr = dao.find_accountinfo(c_id, c_pw);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		request.setAttribute("list", arr); // 세션에 result-cnt 쌍으로 속성 설정
+		
+		// 유효성 체크 : null 이거나, 빈 문자열이면 
+				if(c_id != null && c_id.trim().length() > 0 && c_pw != null && c_pw.trim().length() > 0) {
+					try {
+						System.out.println("cus_id: ---" + c_id);
+						System.out.println("cus_pw: ---" + c_pw);
+						arr = dao.find_accountinfo(c_id, c_pw);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+				
+		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 
 }

@@ -9,10 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/index.css">
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
-	rel="stylesheet">
-<script src="https://kit.fontawesome.com/b95da9d126.js"
-	crossorigin="anonymous"></script>
 <title>왈왈 호텔</title>
 </head>
 <body>

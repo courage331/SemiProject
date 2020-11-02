@@ -1,0 +1,170 @@
+/* charge css */
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+/* 헤더 */
+header {
+	background-color: var(--main-color);
+	height: 80px;
+}
+
+header .container {
+	padding: 10px;
+}
+
+header i {
+	float:left;
+	color: white;
+	font-size: 50px;
+	margin-left:10px;
+}
+
+header h2 {
+	float:left;
+	color: white;
+	margin-left: 140px;
+	font-size: 40px;
+}
+
+header input {
+	margin-top: 7px;
+	margin-left: 138px;
+	background-color:var(--main-color);
+	color: white;
+	border: none;
+	font-size: 40px;
+}
+
+header input:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+/* 컨텐츠 A */
+
+.conA {
+	margin-top:40px;
+	margin-left:15px;
+	margin-right:15px;
+	height: 150px;
+	background-color: white;	
+}
+
+#area {
+	width: 100%;
+	height: 50px;
+	border: none;
+	font-size: 30px;
+}
+
+.input_cash {
+	margin-bottom: 2px;
+}
+
+.select_cash {
+	display: table;
+	table-layout: fixed;
+	margin-top: 15px;
+	border: 1px solid var(--sub-text-color);
+	border-radius: 4px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.sel_box {
+	display: table-cell;
+	border: 1px solid var(--sub-text-color);
+	width: 120px;
+	height: 50px;
+}
+.price_btn {
+	border : none;
+	background-color: white;
+	height: 100%;
+	font-size: 20px;
+	color: var(--text-color)
+}
+.select_cash button:hover {
+	cursor: pointer;
+	color: var(--main-color)
+}
+
+.bone {
+	margin-top: 10px;
+}
+
+.bone p {
+	float: right;
+	color: var(--text-color);
+	font-size: 25px;
+}
+
+.bone i {
+	float: right;
+	color: var(--main-color);
+	font-size: 25px;
+	margin-top: 5px;
+}
+
+/* 컨텐츠 B */
+.conB {
+	margin-top: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 150px;
+	background-color: white;
+}
+
+.select_radio {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+/* 컨텐츠 C */
+.conC {
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 100px;
+	background-color: #f5f7fa;
+	margin-bottom: 20px;
+}
+.conC h2 {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.conC p {
+	margin-left:20px;
+	color: var(--text-color);
+}
+
+/* 푸터 */
+footer{
+	height: 64px;
+	background-color: var(--main-color);
+}
+
+footer button {
+	width: 100%;
+	height: 60px;
+	background-color: var(--main-color);
+	border: none;
+	color: white;
+	font-size: 24px;
+}
+
+footer button:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}

@@ -55,7 +55,7 @@ public class D {
 				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
 		//정호 1030 mypage 관련(뼈다귀)
 		public static final String SQL_MYPAGE_SELECT = 
-				"SELECT * FROM CUSTOMER WHERE cus_num= ?";
+				"SELECT * FROM CUSTOMER WHERE CUS_NUM = ?";
 		//주혁 1031 로그인시 회원인지 확인
 		public static final String SQL_LOGIN_SELECT = 
 				"SELECT * FROM CUSTOMER WHERE cus_id = ? AND cus_pw = ?";
