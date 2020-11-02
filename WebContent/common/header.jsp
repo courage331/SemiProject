@@ -34,7 +34,7 @@
 					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
+							<li class="submenu"><a class="mainmenu" href="mypage.do"><div>내정보</div></a>
 								<ul class="submenulist" style="display: none;">
 									<li><a href="#"><div>마이 페이지</div></a></li>
 									<li><a href="#"><div>내 정보관리</div></a></li>

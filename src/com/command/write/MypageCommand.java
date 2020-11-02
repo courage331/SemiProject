@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.command.write.Command;
 import com.lec.beans.CustomerDAO;
@@ -15,9 +16,10 @@ public class MypageCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		CustomerDAO dao = new CustomerDAO();
 		CustomerDTO [] arr = null;
+		HttpSession session = request.getSession(); 
 		
-		int cus_num = Integer.parseInt(request.getParameter("cus_num"));
-		
+		int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
+		System.out.println(cus_num);
 		try {
 			arr = dao.selectByUid(cus_num);
 			
