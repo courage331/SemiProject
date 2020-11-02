@@ -24,7 +24,6 @@
 				<ul>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-							<!--<li><a class="mainmenu" href="reservation.do?c_num=<%=session.getAttribute("c_num") %>"><div>예약하기</div></a></li>-->
 							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
