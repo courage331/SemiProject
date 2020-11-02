@@ -185,7 +185,10 @@ SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
 UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
 
+SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
+
 CREATE SEQUENCE RESERVATION_SEQ;
+
 
 /* Comments */
 
