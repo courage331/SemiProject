@@ -15,7 +15,10 @@ public class LoginCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
+<<<<<<< HEAD
 		//int cnt = 0;	// 아이디가 없으면 계속 0이고  아이디가 있으면 값이 들어감. // 상태변화 확인하는 cnt
+=======
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		CustomerDTO [] arr = null;
 		CustomerDAO dao = new CustomerDAO();
 		
@@ -28,13 +31,16 @@ public class LoginCommand implements Command{
 					try {
 						System.out.println("cus_id: ---" + c_id);
 						System.out.println("cus_pw: ---" + c_pw);
-						//cnt = dao.find_account(c_id, c_pw);
 						arr = dao.find_accountinfo(c_id, c_pw);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
 				}
+<<<<<<< HEAD
 
+=======
+				
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 

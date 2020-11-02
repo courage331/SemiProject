@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import common.D;
 
@@ -81,42 +82,22 @@ public class CustomerDAO {
 		return arr;
 	} // end selectByUid()
 	
-//	// 주혁 1031 로그인시 회원인지 아닌지 확인하기위한 조회
-//		public int find_account(String c_id, String c_pw) throws SQLException{
-//			int cnt = 0;
-//			
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
-//				pstmt.setString(1, c_id);
-//				pstmt.setString(2, c_pw);
-//				cnt = pstmt.executeUpdate();
-////				rs = pstmt.executeQuery();
-////				cnt = createArray(rs);
-//				System.out.println("dao cnt"+cnt);
-//			} finally {
-//				close();
-//			} // end try
-//			
-//			return cnt;
-//		} // end selectByUid()
-	
 // 주혁 1102 로그인시 회원인지 아닌지 확인하기위한 조회
-public CustomerDTO [] find_accountinfo(String c_id, String c_pw) throws SQLException{
+public CustomerDTO [] find_accountinfo(String cus_id, String cus_pw) throws SQLException{
 	CustomerDTO [] arr = null;
 	try {
 		pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
-		pstmt.setString(1, c_id);
-		pstmt.setString(2, c_pw);
+		pstmt.setString(1, cus_id);
+		pstmt.setString(2, cus_pw);
 		rs = pstmt.executeQuery();
 		System.out.println();
 		arr = createArray(rs);
-		System.out.println("dao"+arr);
 	} finally {
 		close();
 	} // end try
 	
 	return arr;
-} // end selectByUid()ff
+} // end selectByUid()
 
 //리뷰 작성 <-- DTO
 public int insert(CustomerDTO dto) throws SQLException {
