@@ -102,5 +102,23 @@ public class CustomerDAO {
 			return cnt;
 		} // end selectByUid()
 	
+// 주혁 1102 로그인시 회원인지 아닌지 확인하기위한 조회
+public CustomerDTO [] find_accountinfo(String c_id, String c_pw) throws SQLException{
+	CustomerDTO [] arr = null;
 	
+	try {
+		pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
+		pstmt.setString(1, c_id);
+		pstmt.setString(2, c_pw);
+		rs = pstmt.executeQuery();
+		arr = createArray(rs);
+	} finally {
+		close();
+	} // end try
+	
+	return arr;
+} // end selectByUid()
+
+
 }
+
