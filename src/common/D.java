@@ -39,12 +39,26 @@ public class D {
 		public static final String SQL_PET_SEARCH =
 				"SELECT * FROM pet WHERE cus_num = ?";
 		
+		public static final String SQL_RESERVATION_SELECT = 
+				"SELECT * FROM reservation ORDER BY res_num DESC";
+		
+		public static final String SQL_RESERVATION_SELECT_BY_NUM =
+				"SELECT * FROM reservation WHERE res_num = ?";
+
+		public static final String SQL_PET_RESERVE_UPDATE=
+				" UPDATE pet SET pet_reserve = 1 WHERE pet_num = ?";
+		
+		public static final String SQL_PET_UNRESERVE_UPDATE=
+				" UPDATE pet SET pet_reserve = 0 WHERE pet_num = ?";
+		
 		public static final String SQL_PET_NUM_SEARCH =
 				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
 		//정호 1030 mypage 관련(뼈다귀)
 		public static final String SQL_MYPAGE_SELECT = 
-				"SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?";
+				"SELECT * FROM CUSTOMER WHERE cus_num= ?";
 		//주혁 1031 로그인시 회원인지 확인
 		public static final String SQL_LOGIN_SELECT = 
 				"SELECT cus_id,cus_pw FROM CUSTOMER WHERE cus_id = ? AND cus_pw = ?";
+		
+		
 }

@@ -10,14 +10,12 @@
 	String c_num = (String)session.getAttribute("c_num");
 	
 	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+	
 	if(arr == null){
 	}else{
 	}
 	
-	
-	
 %>
-
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -30,7 +28,13 @@
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>예약 페이지</title>
+
+
 </head>
+<script>
+
+</script>
+
 <body>
 	<!-- 정호 10/30 수정 -->
 	<!-- 헤더 -->
@@ -109,13 +113,17 @@
 					<!-- select_pet에 value값이 담겨서 간다. -->
 						<%
 							for(int i=0; i<arr.length; i++){
-								
+								if(arr[i].getPet_reserve()==1){
+						%>		
+								<option value="<%= arr[i].getPet_num() %>" disabled><%= arr[i].getPet_name() %></option>
+						<% 		
+								}else{
+						%>			
+								<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
+						<% 		
+								}
+							}
 						%>
-							<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
-						<%
-						}
-						%>
-					    
 					</select>
 					<br><br><br>
 					희망서비스:<br>
@@ -135,7 +143,7 @@
 					체크아웃:<br>
 					<input type="date" name="res_lastdate" value="" min="" max="";><br><br><br>
 					기타(요청사항):<br>
-					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="message" ></textarea>
+					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" ></textarea>
 					<br><br>					
 					<input type="submit" value="예약하기"/>
 				</form>
@@ -145,33 +153,7 @@
         </div>   
 	</section>
 	<!-- 푸터 -->
-	<!-- 10/31 정호 -->
-	<footer>
-		<div class="container">
-			<div class="footer_">
-				<div class="footer_logo">
-					<i class="fas fa-dog"></i>
-				</div>
-				<div class="footer_main">
-					<div class="footer_leader">
-						<h4>(주) 왈왈호텔 역삼 지점</h4>
-						<span class="footer_text">대표이사 : 성연철좌</span>
-						<span class="footer_text">사업자번호 : 321-123-77777</span>
-						<span class="footer_text">주소 : 서울 강남구 테헤란로 146 왈왈 호텔</span>
-						<span class="footer_text">전화 : 1111-2222</span>
-					</div>
-					<div class="footer_cosat">
-						<h4>(주) COSAT </h4>
-						<span class="footer_text">팀장 : 김지민</span>
-						<span class="footer_text">팀원 : 이호인</span>
-						<span class="footer_text">팀원 : 이주혁</span>
-						<span class="footer_text">팀원 : 장정호</span>
-						<span class="footer_text">팀원 : 김영재</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
 <!-- 정호 : 10/30 -->
 <script src="JS/index.js" type="text/javascript"></script>

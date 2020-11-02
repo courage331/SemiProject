@@ -3,6 +3,7 @@
 
 <%  // Controller 로부터 결과 데이터 받음
 	int cnt = (Integer)request.getAttribute("result");
+	int cnt2 = (Integer)request.getAttribute("result2");
 %>
 
 <% if(cnt == 0){ %>
@@ -13,7 +14,7 @@
 <% } else { %>
 	<script>
 		alert("예약 성공~!");
-		location.href = "reservation.do?c_num=1";
+		location.href = "reservation.do";
 	</script>
 <% } %>
 

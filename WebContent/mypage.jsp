@@ -4,7 +4,8 @@
 <%@ page import="com.lec.beans.*"%>
 <%
 	// Controller 로부터 결과 데이터 받음
-CustomerDTO[] arr = (CustomerDTO[]) request.getAttribute("list");
+CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,7 @@ CustomerDTO[] arr = (CustomerDTO[]) request.getAttribute("list");
 		<div class="container">
 			<h3>${sessionScope.c_num }</h3>
 			<h3>뼈다귀현황</h3>
+			<h3><%=arr[0].getCus_money() %></h3>
 		</div>
 	</section>
 

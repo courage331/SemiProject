@@ -55,26 +55,23 @@ public class CustomerDAO {
 			int cus_money = rs.getInt("cus_money");
 
 			CustomerDTO dto = new CustomerDTO(cus_num, cus_name, cus_pw, cus_id, cus_email,cus_phone,cus_money);
-
 			list.add(dto);
 		} // end while
 
 		int size = list.size();
-
 		if (size == 0)
 			return null;
 		arr = new CustomerDTO[size];
 		list.toArray(arr); // 리스트 -> 배열 변환
-
 		return arr;
 	} // end createArray()
 	
-	public CustomerDTO [] selectByUid(int cus_num) throws SQLException{
+	public CustomerDTO [] selectByUid(int c_num) throws SQLException{
 		CustomerDTO [] arr = null;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
-			pstmt.setInt(1, cus_num);
+			pstmt.setInt(1, c_num);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
