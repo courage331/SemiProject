@@ -11,6 +11,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS/review.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
@@ -61,42 +62,9 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 </style>
 </head>
 <body>
+	<!-- 호인 11/02 수정 -->
 	<!-- 헤더 -->
-	<!-- 정호 10/30 수정 -->
-	<header>
-		<div class="container">
-			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
-			<nav class="headN">
-				<ul>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
-						</c:when>
-					</c:choose>
-					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
-					<li><a class="mainmenu" href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
-								<ul class="submenulist" style="display: none;">
-									<li><a href="#"><div>마이 페이지</div></a></li>
-									<li><a href="#"><div>내 정보관리</div></a></li>
-									<li><a href="#"><div>애완견 정보관리</div></a></li>
-									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
-								</ul></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
-						</c:when>
-					</c:choose>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<jsp:include page="common/header.jsp"></jsp:include>
 		<hr>
 		<section class="conA">
 			<div class="container">
@@ -104,6 +72,15 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 			</div>
 		</section>
 		<section class="conB">
+<%
+	int number = 0; // 총 글 갯수
+	int ak = 0; // 글 갯수 파악 
+		if(arr != null){
+			for(ak = 0; ak < arr.length; ak++){
+				number++;
+			}
+		}
+%>
 		<div class="container">
 		<table>
 		<thead>
@@ -121,7 +98,7 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 %>
 		<tbody>
 			<tr>
-				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getNum() %></a></td>
+				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= number %></a></td>
 				<td style="text-align: left;"><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getSubject() %></a></td>
 				<!--<td><%= arr[i].getSubject() %></td>-->
 				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%
@@ -141,6 +118,7 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 			</tr>
 		</tbody>
 <%			
+		number--;
 		} // end for
 	} // end if
 %>
