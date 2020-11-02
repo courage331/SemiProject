@@ -148,11 +148,11 @@ public class DoController extends HttpServlet {
 			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
 			break;
 			
-		case "/login.jsp":
+		case "/login.do":
 			viewPage = "login.jsp";
 			break;
 			
-		case "/loginOk.jsp":
+		case "/loginOk.do":
 			command = new LoginCommand();
 			command.execute(request, response);
 			viewPage = "loginOk.jsp";

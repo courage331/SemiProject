@@ -13,6 +13,6 @@
 <% } else { %>			
 	<script>				//로그인 성공할라면 DB에 해당 아이디 있는지 확인
 		alert("로그인 성공");
-		location.href = "index.jsp";  //history.back 두번 하는건 어떨까
+		location.href = "index.do";  //history.back 두번 하는건 어떨까
 	</script>
 <% } %>

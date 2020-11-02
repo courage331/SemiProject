@@ -56,7 +56,7 @@ function chkDB(c_id, c_pw){ //가입된 아이디니??
 
 LOGIN
 <br>
-<form name="frm" action="loginOk.jsp" method="post" onsubmit="return chkSubmit()">
+<form name="frm" action="loginOk.do" method="post" onsubmit="return chkSubmit()">
 <input type="text" name="c_id" ><br>
 <input type="text" name="c_pw" ><br>
 <input type="submit" value="LOGIN"/> <!-- index.jsp로 가는게 아니라 바로 전 화면으로 가게하면 더 좋을듯// 가는게 아니라 submit이 되어야함// -->
