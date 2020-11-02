@@ -5,6 +5,7 @@ public class PetDTO {
 	private String pet_name;
 	private int pet_age;
 	private int pet_weight;
+	private int pet_reserve;
 	private int cus_num;
 	
 	public PetDTO() {
@@ -14,16 +15,27 @@ public class PetDTO {
 	
 	
 	
-	public PetDTO(int pet_num, String pet_name, int pet_age, int pet_weight, int cus_num) {
+	public PetDTO(int pet_num, String pet_name, int pet_age, int pet_weight, int pet_reserve, int cus_num) {
 		super();
 		this.pet_num = pet_num;
 		this.pet_name = pet_name;
 		this.pet_age = pet_age;
 		this.pet_weight = pet_weight;
+		this.pet_reserve = pet_reserve;
 		this.cus_num = cus_num;
 	}
 
 
+
+	public int getPet_reserve() {
+		return pet_reserve;
+	}
+
+
+
+	public void setPet_reserve(int pet_reserve) {
+		this.pet_reserve = pet_reserve;
+	}
 
 	public int getPet_num() {
 		return pet_num;

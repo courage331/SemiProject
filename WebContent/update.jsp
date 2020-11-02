@@ -97,40 +97,7 @@ function chkSubmit(){
 </script>
 <body>
 	<!-- 헤더 -->
-	<header>
-		<div class="container">
-			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
-			<nav class="headN">
-				<ul>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
-						</c:when>
-					</c:choose>
-					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
-					<li><a class="mainmenu" href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
-								<ul class="submenulist" style="display: none;">
-									<li><a href="#"><div>마이 페이지</div></a></li>
-									<li><a href="#"><div>내 정보관리</div></a></li>
-									<li><a href="#"><div>애완견 정보관리</div></a></li>
-									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
-								</ul></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
-						</c:when>
-					</c:choose>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<jsp:include page="common/header.jsp"></jsp:include>
 	<section class="conA">
 		<div class="container">
 			<h2 style="text-align: center">리뷰 수정</h2>

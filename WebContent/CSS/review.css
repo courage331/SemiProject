@@ -1,0 +1,71 @@
+/* 이용안내 페이지 css */
+@charset "UTF-8";
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+/* 컨텐츠 A */
+.conA h3 {
+	font-size: 40px;
+	text-align: center;
+}
+
+.conA .container {
+	margin: 80px 200px 10px 200px;
+}
+
+/* 컨텐츠 B */
+
+#tel, #time, #route, #announce {
+	width: 100%;
+	float: left;
+	padding: 30px;
+}
+
+#tel h3, #time h3, #route h3, #announce h3 {
+	font-family: "seo";
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--text-color);
+	margin: 0 0 10px 80px;
+}
+
+#tel p, #time p, #route p, #announce p {
+	font-family: "seo";
+	font-size: 16px;
+	color: var(--sub-text-color);
+	margin: 0 0 0 80px;
+}
+
+#tel {
+	background-image: url(../img/phone.jpg);
+	background-repeat: no-repeat;
+	background-position: left 15px;
+}
+
+#time {
+	background-image: url(../img/time.jpg);
+	background-repeat: no-repeat;
+	background-position: left 15px;
+}
+
+#route {
+	background-image: url(../img/route.jpg);
+	background-repeat: no-repeat;
+	background-position: left 15px;
+}
+
+#announce {
+	background-image: url(../img/announce.jpg);
+	background-repeat: no-repeat;
+	background-position: left 15px;
+}
+
+.conC .container {
+	padding-top: 10px;
+	padding-bottom: 80px;
+}

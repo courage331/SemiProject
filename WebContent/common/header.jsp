@@ -22,11 +22,10 @@
 				<ul>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
-						<!--<li><a class="mainmenu" href="reservation.do?c_num=<%=session.getAttribute("c_num") %>"><div>예약하기</div></a></li>-->
 							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
+							<li><a class="mainmenu" href="login.do"><div>예약하기</div></a></li>
 						</c:when>
 					</c:choose>
 					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
@@ -43,7 +42,7 @@
 								</ul></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
+							<li><a class="mainmenu" href="login.do"><div>로그인</div></a></li>
 						</c:when>
 					</c:choose>
 				</ul>

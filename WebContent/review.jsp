@@ -15,6 +15,8 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
+<link rel="stylesheet" href="CSS/review.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
 <style>
@@ -64,6 +66,7 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 
 </head>
 <body>
+	<!-- 호인 11/02 수정 -->
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
 
@@ -75,6 +78,22 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 		</div>
 	</section>
 	<section class="conB">
+		<hr>
+		<section class="conA">
+			<div class="container">
+				<h1 style="text-align: center;"><span style="color: #3f3f3f;">리뷰&amp후기</span></h1>
+			</div>
+		</section>
+		<section class="conB">
+<%
+	int number = 0; // 총 글 갯수
+	int ak = 0; // 글 갯수 파악 
+		if(arr != null){
+			for(ak = 0; ak < arr.length; ak++){
+				number++;
+			}
+		}
+%>
 		<div class="container">
 			<table>
 				<thead>
@@ -119,6 +138,47 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 				} // end if
 				%>
 			</table>
+		<table>
+		<thead>
+			<tr class="table-warning">
+				<th>글 번호</th>
+				<th>제목</th>
+				<!-- <th>작성자</th>-->
+				<th>별점</th>
+				<th>등록일</th>
+			</tr>
+		</thead>
+<%
+	if(arr != null){
+		for(int i = 0; i < arr.length; i++){
+%>
+		<tbody>
+			<tr>
+				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= number %></a></td>
+				<td style="text-align: left;"><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getSubject() %></a></td>
+				<!--<td><%= arr[i].getSubject() %></td>-->
+				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%
+						if(arr[i].getStar() == 1){%>
+						★☆☆☆☆
+						<% } else if(arr[i].getStar() == 2) {%>
+						★★☆☆☆
+						<% } else if(arr[i].getStar() == 3) {%>
+						★★★☆☆
+						<% } else if(arr[i].getStar() == 4) {%>
+						★★★★☆
+						<% } else if(arr[i].getStar() == 5) {%>
+						★★★★★
+						<% } %>
+				</a></td>
+				<td><a id="akak" href="view.do?num=<%= arr[i].getNum()%>"><%= arr[i].getRegDate() %></a></td>
+			</tr>
+		</tbody>
+<%			
+		number--;
+		} // end for
+	} // end if
+%>
+		</table>
 		</div>
 	</section>
 	<br>

@@ -10,14 +10,12 @@
 	String c_num = (String)session.getAttribute("c_num");
 	
 	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+	
 	if(arr == null){
 	}else{
 	}
 	
-	
-	
 %>
-
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -30,44 +28,17 @@
 	crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>예약 페이지</title>
+
+
 </head>
+<script>
+
+</script>
+
 <body>
-	<!-- 헤더 -->
 	<!-- 정호 10/30 수정 -->
-	<header>
-		<div class="container">
-			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
-			<nav class="headN">
-				<ul>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li><a class="mainmenu" href="reservation.do"><div>예약하기</div></a></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>예약하기</div></a></li>
-						</c:when>
-					</c:choose>
-					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
-					<li><a class="mainmenu" href="shop.jsp"><div>쇼핑</div></a></li>
-					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
-					<c:choose>
-						<c:when test="${not empty sessionScope.userid }">
-							<li class="submenu"><a class="mainmenu" href="mypage.jsp"><div>내정보</div></a>
-								<ul class="submenulist" style="display: none;">
-									<li><a href="#"><div>마이 페이지</div></a></li>
-									<li><a href="#"><div>내 정보관리</div></a></li>
-									<li><a href="#"><div>애완견 정보관리</div></a></li>
-									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
-								</ul></li>
-						</c:when>
-						<c:when test="${empty sessionScope.userid }">
-							<li><a class="mainmenu" href="test_login.jsp"><div>로그인</div></a></li>
-						</c:when>
-					</c:choose>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<!-- 헤더 -->
+	<jsp:include page="common/header.jsp"></jsp:include>
 	<!-- 컨텐츠A -->
 	<section class="conA">
 		<div class="container">
@@ -142,13 +113,17 @@
 					<!-- select_pet에 value값이 담겨서 간다. -->
 						<%
 							for(int i=0; i<arr.length; i++){
-								
+								if(arr[i].getPet_reserve()==1){
+						%>		
+								<option value="<%= arr[i].getPet_num() %>" disabled><%= arr[i].getPet_name() %></option>
+						<% 		
+								}else{
+						%>			
+								<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
+						<% 		
+								}
+							}
 						%>
-							<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
-						<%
-						}
-						%>
-					    
 					</select>
 					<br><br><br>
 					희망서비스:<br>
@@ -168,7 +143,7 @@
 					체크아웃:<br>
 					<input type="date" name="res_lastdate" value="" min="" max="";><br><br><br>
 					기타(요청사항):<br>
-					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="message" ></textarea>
+					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" ></textarea>
 					<br><br>					
 					<input type="submit" value="예약하기"/>
 				</form>
@@ -178,33 +153,7 @@
         </div>   
 	</section>
 	<!-- 푸터 -->
-	<!-- 10/31 정호 -->
-	<footer>
-		<div class="container">
-			<div class="footer_">
-				<div class="footer_logo">
-					<i class="fas fa-dog"></i>
-				</div>
-				<div class="footer_main">
-					<div class="footer_leader">
-						<h4>(주) 왈왈호텔 역삼 지점</h4>
-						<span class="footer_text">대표이사 : 성연철좌</span>
-						<span class="footer_text">사업자번호 : 321-123-77777</span>
-						<span class="footer_text">주소 : 서울 강남구 테헤란로 146 왈왈 호텔</span>
-						<span class="footer_text">전화 : 1111-2222</span>
-					</div>
-					<div class="footer_cosat">
-						<h4>(주) COSAT </h4>
-						<span class="footer_text">팀장 : 김지민</span>
-						<span class="footer_text">팀원 : 이호인</span>
-						<span class="footer_text">팀원 : 이주혁</span>
-						<span class="footer_text">팀원 : 장정호</span>
-						<span class="footer_text">팀원 : 김영재</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
 <!-- 정호 : 10/30 -->
 <script src="JS/index.js" type="text/javascript"></script>

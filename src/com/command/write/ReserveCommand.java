@@ -1,3 +1,5 @@
+/*예약이 완성되었을때  reserveOk.jsp에서 사용*/
+
 package com.command.write;
 
 import java.sql.SQLException;
@@ -12,15 +14,15 @@ public class ReserveCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int cnt = 0;
+		int cnt = 0; //예약테이블에 삽입성공여부 판단할때
+		int cnt2 = 0; //강아지 예약여부 바꿀때 사용
 		ReservationDAO dao = new ReservationDAO();
-		
 		PetDAO pdao = new PetDAO();
 		
 		// 입력받는 곳
 		String res_startdate = request.getParameter("res_startdate");
 		String res_lastdate = request.getParameter("res_lastdate");
-		String message = request.getParameter("message");
+		String res_message = request.getParameter("res_message");
 		String res_sinfo = request.getParameter("res_sinfo");
 		int cus_num = Integer.parseInt(request.getParameter("cus_num"));
 		
@@ -33,13 +35,21 @@ public class ReserveCommand implements Command {
 		if(true) {
 			
 			try {
-				cnt = dao.insert(res_startdate, res_lastdate, message,res_sinfo,cus_num,pet_num);
+				cnt = dao.insert(res_startdate, res_lastdate, res_message,res_sinfo,cus_num,pet_num);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		
+		// 예약 체크
+		try {
+			cnt2=pdao.update(pet_num);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		
 		request.setAttribute("result", cnt);
+		request.setAttribute("result2", cnt2);
 
 	}
 

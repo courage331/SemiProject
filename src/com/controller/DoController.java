@@ -20,6 +20,7 @@ import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
+import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
 import com.command.write.WriteCommand;
@@ -148,16 +149,26 @@ public class DoController extends HttpServlet {
 			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
 			break;
 			
-		case "/login.jsp":
+		case "/login.do":
 			viewPage = "login.jsp";
 			break;
 			
-		case "/loginOk.jsp":
+		case "/loginOk.do":
 			command = new LoginCommand();
 			command.execute(request, response);
 			viewPage = "loginOk.jsp";
 			break;
 		
+		case "/signUp.do":
+			viewPage = "signUp.jsp";
+			break;
+			
+		case "/signupOk.do":
+			command = new SignupCommand();
+			command.execute(request, response);
+			viewPage = "signupOk.jsp";
+			break;
+			
 		} // end switch
 
 		if (viewPage != null) {

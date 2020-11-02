@@ -7,6 +7,7 @@ public class ReservationDTO {
 	private String res_lastdate;
 	private String res_message;
 	private String res_sinfo;
+	private int res_state;
 	private int cus_num;
 	private int pet_num;
 	
@@ -16,16 +17,27 @@ public class ReservationDTO {
 	}
 	
 	
-	public ReservationDTO(int res_num, String res_startdate, String res_lastdate, String message, int cus_num,
-			int pet_num) {
+	public ReservationDTO(int res_num,String res_sinfo, String res_message,int res_state, int cus_num, int pet_num) {
 		super();
 		this.res_num = res_num;
-		this.res_startdate = res_startdate;
-		this.res_lastdate = res_lastdate;
-		this.res_message = message;
+//		this.res_startdate = res_startdate;
+//		this.res_lastdate = res_lastdate;
+		this.res_sinfo= res_sinfo;
+		this.res_message = res_message;
+		this.res_state = res_state;
 		this.cus_num = cus_num;
 		this.pet_num = pet_num;
 	}
+
+	public int getRes_state() {
+		return res_state;
+	}
+
+
+	public void setRes_state(int res_state) {
+		this.res_state = res_state;
+	}
+
 
 	public String getRes_sinfo() {
 		return res_sinfo;
@@ -54,12 +66,16 @@ public class ReservationDTO {
 	public void setRes_lastdate(String res_lastdate) {
 		this.res_lastdate = res_lastdate;
 	}
-	public String getMessage() {
+
+	public String getRes_message() {
 		return res_message;
 	}
-	public void setMessage(String message) {
+
+	public void setRes_message(String res_message) {
 		this.res_message = res_message;
 	}
+
+
 	public int getCus_num() {
 		return cus_num;
 	}
