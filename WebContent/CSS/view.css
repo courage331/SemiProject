@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.h1h1{
+	text-align: center;
+	font-size: 40px;
+}
+.h3h3{
+	text-align: center;
+}
+.conB div.col-12{
+	font-size:20px;
+	background-color:#F8F8FF;
+}
+
+button{
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	border:none;
+	border-radius: 12px;
+}
+button:hover{
+	    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+    );
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+
+
+.conC{
+	text-align: center;
+	margin-bottom: 80px;
+}
