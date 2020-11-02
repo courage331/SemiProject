@@ -127,3 +127,7 @@ VALUES (1,'1234','bruno','010-2353-1836','tkwk@naver.com','test', 0);
 
 INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
 
+DELETE FROM customer WHERE cus_num=2;
+
+CREATE SEQUENCE CUSTOMER_SEQ;
+DROP SEQUENCE customer_SEQ;

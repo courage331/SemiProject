@@ -59,6 +59,11 @@ public class D {
 		//주혁 1031 로그인시 회원인지 확인
 		public static final String SQL_LOGIN_SELECT = 
 				"SELECT * FROM CUSTOMER WHERE cus_id = ? AND cus_pw = ?";
-		
+		//주혁 1102 회원가입시 인설트
+		public static final String SQL_SIGNUP_INSERT = 
+				"INSERT INTO customer"
+				+ "(CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY) "
+				+ "VALUES"
+				+ "(customer_seq.nextval,?,?,?,?,?,0)";
 		
 }

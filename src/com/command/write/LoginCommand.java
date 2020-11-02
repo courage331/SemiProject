@@ -15,9 +15,8 @@ public class LoginCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		int cnt = 0;	// 아이디가 없으면 계속 0이고  아이디가 있으면 값이 들어감. // 상태변화 확인하는 cnt
+		//int cnt = 0;	// 아이디가 없으면 계속 0이고  아이디가 있으면 값이 들어감. // 상태변화 확인하는 cnt
 		CustomerDTO [] arr = null;
-		String data = "";
 		CustomerDAO dao = new CustomerDAO();
 		
 		
@@ -36,8 +35,6 @@ public class LoginCommand implements Command{
 					}
 				}
 
-		//request.setAttribute("result", cnt);  //세션에 result-cnt 쌍으로 속성 설정
-		//request.setAttribute("sessionId", data);  //세션에 result-cnt 쌍으로 속성 설정
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 
