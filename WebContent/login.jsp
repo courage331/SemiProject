@@ -17,7 +17,6 @@
 <title>LOGIN</title>
 </head>
 
-
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>

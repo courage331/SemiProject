@@ -15,7 +15,6 @@ public class LoginCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		int cnt = 0;	// 아이디가 없으면 계속 0이고  아이디가 있으면 값이 들어감. // 상태변화 확인하는 cnt
 		CustomerDTO [] arr = null;
 		CustomerDAO dao = new CustomerDAO();
 		
@@ -28,21 +27,12 @@ public class LoginCommand implements Command{
 					try {
 						System.out.println("cus_id: ---" + c_id);
 						System.out.println("cus_pw: ---" + c_pw);
-						cnt = dao.find_account(c_id, c_pw);
+						arr = dao.find_accountinfo(c_id, c_pw);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
 				}
 				
-				if(cnt!=0) {
-					try {
-						arr = dao.find_accountinfo(c_id, c_pw);
-					}catch(SQLException e) {
-						e.printStackTrace();
-					}
-				}
-				
-		request.setAttribute("result", cnt);  //세션에 result-cnt 쌍으로 속성 설정
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 

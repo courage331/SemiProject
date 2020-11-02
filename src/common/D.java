@@ -59,7 +59,5 @@ public class D {
 		//주혁 1031 로그인시 회원인지 확인
 		public static final String SQL_LOGIN_SELECT = 
 				"SELECT * FROM CUSTOMER WHERE cus_id = ? AND cus_pw = ?";
-
-		
 		
 }

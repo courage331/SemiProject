@@ -82,35 +82,16 @@ public class CustomerDAO {
 		return arr;
 	} // end selectByUid()
 	
-	// 주혁 1031 로그인시 회원인지 아닌지 확인하기위한 조회
-		public int find_account(String c_id, String c_pw) throws SQLException{
-			int cnt = 0;
-			
-			try {
-				pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
-				pstmt.setString(1, c_id);
-				pstmt.setString(2, c_pw);
-				cnt = pstmt.executeUpdate();
-//				rs = pstmt.executeQuery();
-//				cnt = createArray(rs);
-			} finally {
-				close();
-			} // end try
-			
-			return cnt;
-		} // end selectByUid()
-	
 // 주혁 1102 로그인시 회원인지 아닌지 확인하기위한 조회
 public CustomerDTO [] find_accountinfo(String cus_id, String cus_pw) throws SQLException{
 	CustomerDTO [] arr = null;
-	System.out.println("여기는 잘오나");
 	try {
 		pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
 		pstmt.setString(1, cus_id);
 		pstmt.setString(2, cus_pw);
 		rs = pstmt.executeQuery();
+		System.out.println();
 		arr = createArray(rs);
-		System.out.println("db테스트"+Arrays.toString(arr));
 	} finally {
 		close();
 	} // end try
