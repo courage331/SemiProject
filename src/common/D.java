@@ -31,9 +31,9 @@ public class D {
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=
 				"INSERT INTO reservation"
-			+"(res_num,res_startdate,res_lastdate,res_message,res_sinfo,cus_num,pet_num)"
+			+"(res_num,res_startdate,res_lastdate,res_message,res_sinfo,res_state,cus_num,pet_num)"
 			+"VALUES"
-			+"(reservation_seq.nextval,?,?,?,?,?,?)"
+			+"(reservation_seq.nextval,?,?,?,?,1,?,?)"
 		;
 		
 		public static final String SQL_PET_SEARCH =
