@@ -114,7 +114,7 @@ public CustomerDTO [] find_accountinfo(String c_id, String c_pw) throws SQLExcep
 	} // end try
 	
 	return arr;
-} // end selectByUid()
+} // end selectByUid()ff
 
 
 }
