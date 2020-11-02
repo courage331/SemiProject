@@ -80,6 +80,8 @@ CREATE TABLE reservation
 	-- 건의사항
 	res_message clob,
 	-- 사용자 고유 번호
+	res_state number NOT NULL,
+	--예약 상태
 	cus_num number NOT NULL,
 	-- 애완견고유번호
 	pet_num number NOT NULL,

@@ -69,10 +69,11 @@ public class ReservationDAO {
 			if (res_message == null)
 				res_message = "";
 			String res_sinfo = rs.getString("res_sinfo");
+			int res_state=rs.getInt("res_state");
 			int cus_num = rs.getInt("cus_num");
 			int pet_num = rs.getInt("pet_num");
 
-			ReservationDTO dto = new ReservationDTO(res_num, res_message, res_sinfo, cus_num, pet_num);
+			ReservationDTO dto = new ReservationDTO(res_num, res_message, res_sinfo,res_state, cus_num, pet_num);
 			dto.setRes_startdate(regDate);
 			dto.setRes_lastdate(regDate2);
 			
@@ -104,7 +105,7 @@ public class ReservationDAO {
 		return cnt;
 	} // end insert(DTO)
 
-	public int insert(String res_startdate, String res_lastdate, String res_message, String res_sinfo, int cus_num,
+	public int insert(String res_startdate, String res_lastdate, String res_message, String res_sinfo,int cus_num,
 			int pet_num) throws SQLException {
 		int cnt = 0;
 

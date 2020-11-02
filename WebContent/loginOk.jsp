@@ -21,6 +21,6 @@
 		location.href = "index.jsp";  //history.back 두번 하는건 어떨까
 		//세션만들어서 회원번호랑 id만  -  세션아이디 - 아이디?비밀번호?번호?이메일?이름
 		<% System.out.println(Arrays.toString(arr)); %>
-		session.setAttribute(sessionId, arr);	
+		session.setAttribute(sessionId, arr);
 	</script>
 <% } %>
