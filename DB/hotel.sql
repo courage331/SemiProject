@@ -44,6 +44,8 @@ CREATE TABLE pet
 	-- 애완견 무게
 	pet_weight number NOT NULL,
 	-- 사용자 고유 번호
+	pet_reserve number NOT NULL,
+	-- 애완견 예약 여부
 	cus_num number NOT NULL,
 	PRIMARY KEY (pet_num)
 );
@@ -78,6 +80,8 @@ CREATE TABLE reservation
 	-- 건의사항
 	res_message clob,
 	-- 사용자 고유 번호
+	res_state number NOT NULL,
+	--예약 상태
 	cus_num number NOT NULL,
 	-- 애완견고유번호
 	pet_num number NOT NULL,
@@ -162,10 +166,10 @@ INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com
 INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
 
 /*가상의 테스트용 펫 생성*/
-INSERT INTO PET VALUES(1,'강아지1',5,10,1);
-INSERT INTO PET VALUES(2,'강아지2',6,12,1);
-INSERT INTO PET VALUES(3,'강아지3',5,10,2);
-INSERT INTO PET VALUES(4,'강아지4',6,12,2);
+INSERT INTO PET VALUES(1,'강아지1',5,10,0,1);
+INSERT INTO PET VALUES(2,'강아지2',6,12,0,1);
+INSERT INTO PET VALUES(3,'강아지3',5,10,0,2);
+INSERT INTO PET VALUES(4,'강아지4',6,12,0,2);
 /*테이블에 있는지 확인용*/
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
@@ -179,7 +183,12 @@ SELECT * FROM PET WHERE cus_num=1;
 
 SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
+UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
+
+SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
+
 CREATE SEQUENCE RESERVATION_SEQ;
+
 
 /* Comments */
 

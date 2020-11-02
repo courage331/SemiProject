@@ -52,7 +52,7 @@ function chkSubmit(){	//공백안돼요
 </script>
 <body>
 SIGN UP
-<form name="frm" action="signupOk.jsp" method="post" onsubmit="return chkSubmit()">
+<form name="frm" action="signupOk.do" method="post" onsubmit="return chkSubmit()">
 <input type="text" name="c_id" ><br>
 <input type="text" name="c_pw" ><br>
 <input type="text" name="c_name" ><br>

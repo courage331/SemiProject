@@ -47,9 +47,10 @@ public class PetDAO {
 					String pet_name = rs.getString("pet_name");
 					int pet_age = rs.getInt("pet_age");
 					int pet_weight = rs.getInt("pet_weight");
+					int pet_reserve = rs.getInt("pet_reserve");
 					int cus_num = rs.getInt("cus_num");
 					
-					PetDTO dto =  new PetDTO(pet_num, pet_name, pet_age,  pet_weight, cus_num);
+					PetDTO dto =  new PetDTO(pet_num, pet_name, pet_age,  pet_weight, pet_reserve, cus_num);
 					
 					list.add(dto);
 				} // end while
@@ -100,5 +101,19 @@ public class PetDAO {
 		
 		return pet_num;
 	}
+	
+	//예약 상태로 만든다.
+	public int update(int pet_num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_RESERVE_UPDATE);
+			pstmt.setInt(1, pet_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		return cnt;
+	} // end update()
 	
 }

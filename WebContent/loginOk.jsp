@@ -1,18 +1,38 @@
 <!-- 로그인확인페이지, 이주혁 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "com.lec.beans.*" %>
+<%@ page import = "java.util.*" %>
 <%  // Controller 로부터 결과 데이터 받음
-	int cnt = (Integer)request.getAttribute("result");
+	CustomerDTO [] arr = (CustomerDTO [])request.getAttribute("list");
 %>
 
-<% if(cnt == 0){ %>			
-	<script>				//DB에 해당아이디가 없으면 로그인 실패  아이디찾기, 비밀번호찾기, 회원가입 유도...
+<% if(arr==null || arr.length==0){ %>			
+	<script>	
 		alert("가입된 아이디가 아닙니다.");
 		history.back();  // 다시 로그인페이지로
 	</script>
-<% } else { %>			
-	<script>				//로그인 성공할라면 DB에 해당 아이디 있는지 확인
-		alert("로그인 성공");
-		location.href = "index.jsp";  //history.back 두번 하는건 어떨까
-	</script>
-<% } %>
+<%
+		return;
+	} 
+%>
+
+<% 
+	// 세션 name-value 지정
+	String sessionName = "userid";
+	String sessionValue = arr[0].getCus_id();
+	
+	String sessionNumName = "c_num";
+	String sessionNumValue = Integer.toString(arr[0].getCus_num());
+	
+	// 전송된 id / pw 값이 일치하면  로그인 성공 + 세션 생성
+		out.println("<script>");
+		out.println("alert('로그인 성공');");
+		out.println("</script>");
+		// 세션 (이름) 생성
+		session.setAttribute(sessionName, sessionValue);
+		session.setAttribute(sessionNumName, sessionNumValue);
+%>
+<script>
+location.href = "index.jsp";
+</script>

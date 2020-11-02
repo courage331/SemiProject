@@ -120,17 +120,14 @@ ALTER TABLE selldata
 	REFERENCES product (pro_num)
 ;
 
-/* customer 테스트 쿼리문 */
-INSERT INTO customer VALUES (1, '1234', '장정호', '010-6481-5124', 'jjh5324@kakao.com', 'jjh', '999');
-INSERT INTO customer VALUES (100, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
-INSERT INTO customer VALUES (1, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
-/* pet 테스트 쿼리문 */
-INSERT INTO pet VALUES (1,1,'개', 5,10);
+SELECT * FROM customer;
 
-/* select 테스트 쿼리 */
-SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = 1;
-/*테이블에 있는지 확인용*/
-SELECT * FROM CUSTOMER;
-SELECT * FROM PET;
+INSERT  INTO customer (CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY)
+VALUES (1,'1234','bruno','010-2353-1836','tkwk@naver.com','test', 0);
 
-select * from user_tables
+INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
+
+DELETE FROM customer WHERE cus_num=2;
+
+CREATE SEQUENCE CUSTOMER_SEQ;
+DROP SEQUENCE customer_SEQ;
