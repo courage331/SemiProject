@@ -29,20 +29,14 @@ public class LoginCommand implements Command{
 					try {
 						System.out.println("cus_id: ---" + c_id);
 						System.out.println("cus_pw: ---" + c_pw);
-						cnt = dao.find_account(c_id, c_pw);
+						//cnt = dao.find_account(c_id, c_pw);
 						arr = dao.find_accountinfo(c_id, c_pw);
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
 				}
-//		for (CustomerDTO dto : arr) {
-//			data+="?";
-//			data+= dto;
-//		}
-//		data=data.substring(1);
-		System.out.println(Arrays.toString(arr));
-		System.out.println(data);
-		request.setAttribute("result", cnt);  //세션에 result-cnt 쌍으로 속성 설정
+
+		//request.setAttribute("result", cnt);  //세션에 result-cnt 쌍으로 속성 설정
 		//request.setAttribute("sessionId", data);  //세션에 result-cnt 쌍으로 속성 설정
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
