@@ -70,7 +70,6 @@ public class CustomerDTO {
       this.cus_money = cus_money;
    }
    
-   
    @Override
    public String toString() {
       return "CustomerDTO [cus_num=" + cus_num + ", cus_name=" + cus_name + ", cus_pw=" + cus_pw + ", cus_id="

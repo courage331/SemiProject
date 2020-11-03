@@ -33,6 +33,9 @@ CREATE TABLE pet
 	pet_name varchar2(10) NOT NULL,
 	pet_age number NOT NULL,
 	pet_weight number,
+	-- 1이면 예약 불가 상태
+	-- 0이면 예약 가능 상태
+	pet_reserve number NOT NULL,
 	PRIMARY KEY (pet_num)
 );
 
@@ -56,6 +59,8 @@ CREATE TABLE reservation
 	message clob,
 	cus_num number NOT NULL,
 	pet_num number NOT NULL,
+	-- 미정...
+	res_state number NOT NULL,
 	PRIMARY KEY (res_num)
 );
 
@@ -119,18 +124,30 @@ ALTER TABLE selldata
 	ADD FOREIGN KEY (pro_num)
 	REFERENCES product (pro_num)
 ;
-
 /* customer 테스트 쿼리문 */
 INSERT INTO customer VALUES (1, '1234', '장정호', '010-6481-5124', 'jjh5324@kakao.com', 'jjh', '999');
-INSERT INTO customer VALUES (100, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
-INSERT INTO customer VALUES (1, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
+INSERT INTO customer VALUES (2, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
+INSERT INTO customer VALUES (3, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
 /* pet 테스트 쿼리문 */
-INSERT INTO pet VALUES (1,1,'개', 5,10);
+INSERT INTO PET VALUES(1,1,'강아지1',5,10,0);
+INSERT INTO PET VALUES(2,1,'강아지2',6,12,1);
+INSERT INTO PET VALUES(3,2,'강아지1',5,10,1);
+INSERT INTO PET VALUES(4,3,'강아지1',5,10,1);
+
+INSERT INTO PET VALUES(PET_SEQ.nextval,1,'강아지3',6,10,0);
 
 /* select 테스트 쿼리 */
 SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = 1;
 /*테이블에 있는지 확인용*/
 SELECT * FROM CUSTOMER;
-SELECT * FROM PET;
+/*뼈다귀 충전*/
+UPDATE CUSTOMER SET CUS_MONEY = CUS_MONEY + 20 WHERE CUS_NUM = 1;
+
+
+SELECT * FROM PET WHERE CUS_NUM = 1;
 
 select * from user_tables
+
+CREATE SEQUENCE PET_SEQ;
+DROP SEQUENCE PET_SEQ;
+

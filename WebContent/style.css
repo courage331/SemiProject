@@ -57,6 +57,7 @@ header .container {
 
 .headN a:hover {
 	color: var(--text-color);
+	cursor: pointer;
 }
 .submenulist {
 	border-top:12px solid var(--main-color);
