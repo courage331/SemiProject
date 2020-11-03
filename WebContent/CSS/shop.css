@@ -9,26 +9,38 @@
 	
 }
 
-/* 컨텐츠 A */
-.conA .container {
-	padding-top: 60px;
+
+table{
+	border : 1px solid black;
+	width: 80%;
 	text-align: center;
+	margin-left:10%;
+	margin-bottom:5%;
 }
 
-table {width: 100%;}
-table, th, tr {
+
+img{
+	width: 220px;
+	height: 220px;
+	margin: 0px;
+}
+
+tr{
 	border : 1px solid black;
+	margin:0px;
+	padding:0px;
 	border-collapse: collapse;
 }
 
-button.editBt{
-    background-image: url("img/edit.png");
-    background-image: no-repeat;
-    background-size: 500px 500px;
-    background-position: -256px -701px;
-    text-align: cneter;
-    width: 100px;
-    height: 30px;
-    display: inline-block;
+td{
+	border : 1px solid black;
+	margin:0px;
+	padding:0px;
+	border-collapse: collapse;
+}
 
+h1 {
+	font-size: 40px;
+	text-align: center;
+	margin-top: 30px;
 }
