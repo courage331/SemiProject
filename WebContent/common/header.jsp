@@ -36,7 +36,7 @@
 							<li class="submenu"><a class="mainmenu" href="mypage.do"><div>내정보</div></a>
 								<ul class="submenulist" style="display: none;">
 									<li><a href="#"><div>마이 페이지</div></a></li>
-									<li><a href="#"><div>내 정보관리</div></a></li>
+									<li><a href="myinfo.do"><div>내 정보관리</div></a></li>
 									<li><a href="#"><div>애완견 정보관리</div></a></li>
 									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
 								</ul></li>
