@@ -102,7 +102,7 @@
 		<%} else {%> 
 			<button onclick="userChk()">수정하기</button>
 		<% } %>
-		<button onclick="location.href='review.do'">목록보기</button>
+		<button onclick="location.href='review.do?page=1'">목록보기</button>
 		<% if(cus_num == c_num) {%>
 			<button onclick="chkDelete(<%= num%>)">삭제하기</button>
 		<%} else {%> 

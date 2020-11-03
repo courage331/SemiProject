@@ -127,7 +127,7 @@
 	</section>
 	<section class="btnB">
 		<div>
-			<button onclick="location.href='review.do'">목록보기</button>
+			<button onclick="location.href='review.do?page=1'">목록보기</button>
 		</div>
 	</section>
 	<!-- 푸터 -->
