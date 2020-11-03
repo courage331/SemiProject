@@ -10,9 +10,7 @@ public class PetDTO {
 	
 	public PetDTO() {
 		super();
-		System.out.println("PetDTO() 객체 생성");
 	}
-	
 	
 	
 	public PetDTO(int pet_num, String pet_name, int pet_age, int pet_weight, int pet_reserve, int cus_num) {
@@ -24,8 +22,6 @@ public class PetDTO {
 		this.pet_reserve = pet_reserve;
 		this.cus_num = cus_num;
 	}
-
-
 
 	public int getPet_reserve() {
 		return pet_reserve;

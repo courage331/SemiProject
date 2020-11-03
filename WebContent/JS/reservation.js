@@ -22,6 +22,16 @@ document.rform.res_startdate.min=rdate;
 document.rform.res_startdate.max=maxdate;
 
 
+
+$(function(){
+	$("#startdate").on("change keyup paste",function(){
+		if($("#startdate").val()>$("#lastdate").val()){
+			$("#lastdate").val($("#startdate").val());
+		}
+	});
+})
+
+
 document.rform.res_lastdate.value=rdate;
 document.rform.res_lastdate.min=rdate;
 document.rform.res_lastdate.max=maxdate;

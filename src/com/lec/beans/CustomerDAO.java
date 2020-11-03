@@ -155,6 +155,7 @@ public class CustomerDAO {
 		}
 
 		return cnt;
+
 	} // end insert()
 
 }

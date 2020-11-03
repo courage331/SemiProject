@@ -31,7 +31,6 @@ public class LoginCommand implements Command {
 						e.printStackTrace();
 					}
 				}
-				
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 

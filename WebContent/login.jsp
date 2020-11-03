@@ -21,15 +21,6 @@
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
-<!-- 
-LOGIN
-<br>
-<form name="frm" action="loginOk.do" method="post" onsubmit="return chkSubmit()">
-ID :  <input type="text" name="c_id" ><br>
-PW : <input type="text" name="c_pw" ><br>
-<input type="submit" value="LOGIN"/> <!-- index.jsp로 가는게 아니라 바로 전 화면으로 가게하면 더 좋을듯// 가는게 아니라 submit이 되어야함// 
-</form> 
--->
  
 <section class="conA">
 <div class="container">
@@ -40,17 +31,18 @@ PW : <input type="text" name="c_pw" ><br>
 	</div>
 	<div>
 		<label>ID :</label>
-		 <input type="text" name="c_id" >
+		 <input type="text" name="c_id" placeholder="아이디를 입력해 주세요."/>
 	</div>
 	<div>
 		<label>PW :</label>
-		<input type="text" name="c_pw" >
+		<input type="text" name="c_pw" placeholder="비밀번호를 입력해 주세요."/>
 	</div>
 	<div class="clearfix"></div>
-	<div class="content-footer">
-	        <p>우리는 가입자의 정보를 무단으로 사용하지 않습니다.</p>
-	</div>
+
 	<input type="submit" id="logbtn" class="hc vc" value="LOGIN"/>
+	<input type="button" class="navyBtn" value="회원가입" onClick="location.href='signUp.jsp'">
+	<input type="button" class="navyBtn" value="아이디 찾기" onClick="location.href='find_id.jsp'">
+	<input type="button" class="navyBtn" value="비밀번호 찾기" onClick="location.href='find_pw.jsp'">
 </form>
 
 </div>

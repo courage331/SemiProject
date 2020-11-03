@@ -9,7 +9,7 @@ public class CustomerDTO {
    private String cus_email;
    private String cus_phone;
    private int cus_money;
-   	
+   
    public CustomerDTO() {
       super();
       System.out.println("CustomerDTO() 객체 생성");
@@ -69,7 +69,6 @@ public class CustomerDTO {
    public void setCus_money(int cus_money) {
       this.cus_money = cus_money;
    }
-   
    
    @Override
    public String toString() {
