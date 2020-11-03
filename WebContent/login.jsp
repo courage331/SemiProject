@@ -41,8 +41,8 @@
 
 	<input type="submit" id="logbtn" class="hc vc" value="LOGIN"/>
 	<input type="button" class="navyBtn" value="회원가입" onClick="location.href='signUp.jsp'">
-	<input type="button" class="navyBtn" value="아이디 찾기" onClick="location.href='id찾기.jsp'">
-	<input type="button" class="navyBtn" value="비밀번호 찾기" onClick="location.href='pw찾기.jsp'">
+	<input type="button" class="navyBtn" value="아이디 찾기" onClick="location.href='find_id.jsp'">
+	<input type="button" class="navyBtn" value="비밀번호 찾기" onClick="location.href='find_pw.jsp'">
 </form>
 
 </div>

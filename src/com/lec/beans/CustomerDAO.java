@@ -137,18 +137,17 @@ public int insert(CustomerDTO dto) throws SQLException {
 	return cnt;
 } // end insert(DTO)
 // 회원가입 
-public int c_insert(String c_id, String c_pw, String c_name, String c_phone, String c_email) throws SQLException {
+public int c_insert(String c_pw, String c_name, String c_phone, String c_email,String c_id) throws SQLException {
 	int cnt = 0;
-	//int c_num = 0; 
 	
 	try {
 		pstmt = conn.prepareStatement(D.SQL_SIGNUP_INSERT);
 		//pstmt.setInt(1, c_num);
-		pstmt.setString(1, c_id);
-		pstmt.setString(2, c_pw);
-		pstmt.setString(3, c_name);
-		pstmt.setString(4, c_phone);
-		pstmt.setString(5, c_email);
+		pstmt.setString(1, c_pw);
+		pstmt.setString(2, c_name);
+		pstmt.setString(3, c_phone);
+		pstmt.setString(4, c_email);
+		pstmt.setString(5, c_id);
 		cnt = pstmt.executeUpdate();
 	} finally {
 		close();

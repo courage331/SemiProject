@@ -15,7 +15,7 @@ public class CustomerDTO {
 		System.out.println("CustomerDTO() 객체 생성");
 	}
 	
-	public CustomerDTO(int cus_num, String cus_name, String cus_pw, String cus_id, String cus_email, String cus_phone,
+	public CustomerDTO(int cus_num, String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id,
 			int cus_money) {
 		super();
 		this.cus_num = cus_num;

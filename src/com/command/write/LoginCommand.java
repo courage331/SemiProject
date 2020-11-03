@@ -14,11 +14,7 @@ public class LoginCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-<<<<<<< HEAD
 		CustomerDTO [] arr = null;
-=======
-		CustomerDTO[] arr = null;
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		CustomerDAO dao = new CustomerDAO();
 
 		String c_id = request.getParameter("c_id");
@@ -35,10 +31,6 @@ public class LoginCommand implements Command {
 						e.printStackTrace();
 					}
 				}
-<<<<<<< HEAD
-=======
-				
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		request.setAttribute("list", arr);  //세션에 result-cnt 쌍으로 속성 설정
 	}
 

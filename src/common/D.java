@@ -36,6 +36,12 @@ public class D {
 			+"(reservation_seq.nextval,?,?,?,?,1,?,?)"
 		;
 		
+		public static final String SQL_RESERVATION_DELETE_BY_NUM =
+				"DELETE FROM reservation WHERE res_num = ?";
+		
+		public static final String SQL_NAME_SEARCH =
+				"SELECT * FROM pet";
+		
 		public static final String SQL_PET_SEARCH =
 				"SELECT * FROM pet WHERE cus_num = ?";
 		
@@ -43,7 +49,7 @@ public class D {
 				"SELECT * FROM reservation ORDER BY res_num DESC";
 		
 		public static final String SQL_RESERVATION_SELECT_BY_NUM =
-				"SELECT * FROM reservation WHERE res_num = ?";
+				"SELECT * FROM reservation WHERE cus_num = ?";
 
 		public static final String SQL_PET_RESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 1 WHERE pet_num = ?";
@@ -65,8 +71,6 @@ public class D {
 				+ "(CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY) "
 				+ "VALUES"
 				+ "(customer_seq.nextval,?,?,?,?,?,0)";
-<<<<<<< HEAD
-=======
 		//영재 1103 쇼핑몰 게시판 작성
 		public static final String SQL_PRODUCT_INSERT = 
 				"INSERT INTO PRODUCT"
@@ -82,6 +86,5 @@ public class D {
 		// 가격, 재고수량 제품 이름 수정
 		public static final String SQL_PRODUCT_UPDATE =
 				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		
 }

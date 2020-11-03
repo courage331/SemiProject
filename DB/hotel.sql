@@ -176,7 +176,8 @@ SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
 
 SELECT * FROM RESERVATION;
-DELETE FROM RESERVATION WHERE RES_NUM=81;
+
+DELETE FROM RESERVATION WHERE RES_NUM=102;
 
 /*pet의 상태 바꾸기*/
 UPDATE PET SET PET_RESERVE =0 WHERE PET_NUM=2;
@@ -187,11 +188,14 @@ select * from user_tables
 /*SQL문 테스트*/
 SELECT * FROM PET WHERE cus_num=1;
 
+SELECT pet_name FROM pet;
+
 SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
-UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
+UPDATE pet SET pet_reserve = 0 WHERE pet_num = 2;
 
 SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
+
 
 
 CREATE SEQUENCE RESERVATION_SEQ;

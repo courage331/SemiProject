@@ -156,5 +156,21 @@ public class ReservationDAO {
 
 		return arr;
 	} // end selectByNum()
+	
+	
+	// 특정 num 글 삭제 얘도 마찬가지 
+	public int deleteByNum(int num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_DELETE_BY_NUM);
+			pstmt.setInt(1, num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	}
 
 }
