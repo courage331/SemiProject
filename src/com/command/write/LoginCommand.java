@@ -14,7 +14,7 @@ public class LoginCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		CustomerDTO [] arr = null;
+		CustomerDTO[] arr = null;
 		CustomerDAO dao = new CustomerDAO();
 
 		String c_id = request.getParameter("c_id");
