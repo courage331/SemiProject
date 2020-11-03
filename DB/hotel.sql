@@ -164,6 +164,7 @@ ALTER TABLE selldata
 /*가상의 테스트용 customer 생성*/
 INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100);
 INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
+INSERT INTO CUSTOMER VALUES(3,'1234','테스트','010-1234-5678','abcd@naver.com','test3',100);
 
 /*가상의 테스트용 펫 생성*/
 INSERT INTO PET VALUES(1,'강아지1',5,10,0,1);
@@ -173,7 +174,12 @@ INSERT INTO PET VALUES(4,'강아지4',6,12,0,2);
 /*테이블에 있는지 확인용*/
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
+
 SELECT * FROM RESERVATION;
+DELETE FROM RESERVATION WHERE RES_NUM=81;
+
+/*pet의 상태 바꾸기*/
+UPDATE PET SET PET_RESERVE =0 WHERE PET_NUM=2;
 
 select * from user_tables
 
@@ -187,8 +193,9 @@ UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
 
 SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
 
-CREATE SEQUENCE RESERVATION_SEQ;
 
+CREATE SEQUENCE RESERVATION_SEQ;
+ALTER SEQUENCE RESERVATION_SEQ INCREMENT BY 1;
 
 /* Comments */
 

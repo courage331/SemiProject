@@ -1,64 +1,66 @@
+<!-- 로그인페이지, 이주혁 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- 메인 페이지  -->
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>SIGN UP</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS/index.css">
+<link rel="stylesheet" href="CSS/signup.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
+<title>LOGIN</title>
 </head>
-<script>
-function chkSubmit(){	//공백안돼요
-	frm = document.forms["frm"];
-	
-	var c_id = frm["c_id"].value.trim();
-	var c_pw = frm["c_pw"].value.trim();
-	var c_name = frm["c_name"].value.trim();
-	var c_phone = frm["c_phone"].value.trim();
-	var c_email = frm["c_email"].value.trim();
-	
-	if(c_id == ""){
-		alert("아이디를 입력해주세요");
-		frm["c_id"].focus();
-		return false;
-	}
-	
-	if(c_pw == ""){
-		alert("비밀번호를 입력해주세요");
-		frm["c_pw"].focus();
-		return false;
-	}
-	
-	if(c_name == ""){
-		alert("이름을 입력해주세요");
-		frm["c_name"].focus();
-		return false;
-	}
-	
-	if(c_phone == ""){
-		alert("전화번호를 입력해주세요");
-		frm["c_phone"].focus();
-		return false;
-	}
-	
-	if(c_email == ""){
-		alert("이메일을 입력해주세요");
-		frm["c_email"].focus();
-		return false;
-	}
-	
-	return true;
-} // end chkSubmit()
-
-</script>
 <body>
-SIGN UP
-<form name="frm" action="signupOk.do" method="post" onsubmit="return chkSubmit()">
-<input type="text" name="c_id" ><br>
-<input type="text" name="c_pw" ><br>
-<input type="text" name="c_name" ><br>
-<input type="text" name="c_phone" ><br>
-<input type="text" name="c_email" ><br>
-<input type="submit" value="SIGNUP"/> <!--  바로 전 화면으로 가게하면 더 좋을듯// 가는게 아니라 submit이 되어야함// -->
-</form>
+	<!-- 헤더 -->
+	<jsp:include page="common/header.jsp"></jsp:include>
+
+	<section class="conA">
+		<div class="container">
+			<form name="frm" id="contact-form" action="signupOk.do" method="post"
+				onsubmit="return chkSubmit()">
+				<div id="content-header">
+					<h3>회원가입</h3>
+				</div>
+				<div>
+					<label>ID :</label> <input type="text" name="c_id"
+						placeholder="아이디를 입력해 주세요." />
+				</div>
+				<div>
+					<label>PW :</label> <input type="text" name="c_pw"
+						placeholder="비밀번호를 입력해 주세요." />
+				</div>
+				<div>
+					<label>이름 :</label> <input type="text" name="c_name"
+						placeholder="이름를 입력해 주세요." />
+				</div>
+				<div>
+					<label>전화번호 :</label> <input type="text" name="c_phone"
+						placeholder="전화번호를 입력해 주세요." />
+				</div>
+				<div>
+					<label>이메일 :</label> <input type="text" name="c_email"
+						placeholder="이메일을 입력해 주세요." />
+				</div>
+				<div class="clearfix"></div>
+				<div class="content-footer">
+					<p>우리는 가입자의 정보를 무단으로 사용하지 않습니다.</p>
+				</div>
+				<input type="submit" id="logbtn" class="hc vc" value="회원가입하기" /> <input
+					type="button" class="navyBtn" value="돌아가기"
+					onClick="location.href='index.jsp'">
+			</form>
+		</div>
+	</section>
+	<!-- 푸터 -->
+	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
+<script src="JS/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="JS/signup.js"></script>
 </html>

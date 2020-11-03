@@ -9,18 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.lec.beans.CustomerDAO;
 import com.lec.beans.CustomerDTO;
 
-
-public class LoginCommand implements Command{
+public class LoginCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 
-		CustomerDTO [] arr = null;
+		CustomerDTO[] arr = null;
 		CustomerDAO dao = new CustomerDAO();
-		
-		
+
 		String c_id = request.getParameter("c_id");
 		String c_pw = request.getParameter("c_pw");
+
 		
 		// 유효성 체크 : null 이거나, 빈 문자열이면 
 				if(c_id != null && c_id.trim().length() > 0 && c_pw != null && c_pw.trim().length() > 0) {

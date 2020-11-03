@@ -65,5 +65,20 @@ public class D {
 				+ "(CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY) "
 				+ "VALUES"
 				+ "(customer_seq.nextval,?,?,?,?,?,0)";
+		//영재 1103 쇼핑몰 게시판 작성
+		public static final String SQL_PRODUCT_INSERT = 
+				"INSERT INTO PRODUCT"
+				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name) "
+				+ "VALUES"
+				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
+		//상품 번호 순서 정렬
+		public static final String SQL_PRODUCT_SELECT = 
+				"SELECT * FROM product ORDER BY pro_num DESC";
+		//상품 삭제
+		public static final String SQL_PRODUCT_DELETE_BY_NUM =
+				"DELETE FROM product WHERE pro_num = ?";
+		// 가격, 재고수량 제품 이름 수정
+		public static final String SQL_PRODUCT_UPDATE =
+				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
 		
 }
