@@ -18,6 +18,7 @@ import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
 import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
+import com.command.write.ReserveDeleteCommand;
 import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
 import com.command.write.ShopCommand;
@@ -144,6 +145,12 @@ public class DoController extends HttpServlet {
 			command = new ReserveCommand();  // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
+			break;
+			
+		case "/reserve_deleteOk.do":
+			command = new ReserveDeleteCommand();
+			command.execute(request, response);
+			viewPage = "reserve_deleteOk.jsp";
 			break;
 			
 		//정호 1030 뼈다귀
