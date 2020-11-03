@@ -65,8 +65,6 @@ public class D {
 				+ "(CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY) "
 				+ "VALUES"
 				+ "(customer_seq.nextval,?,?,?,?,?,0)";
-<<<<<<< HEAD
-=======
 		//영재 1103 쇼핑몰 게시판 작성
 		public static final String SQL_PRODUCT_INSERT = 
 				"INSERT INTO PRODUCT"
@@ -82,6 +80,5 @@ public class D {
 		// 가격, 재고수량 제품 이름 수정
 		public static final String SQL_PRODUCT_UPDATE =
 				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		
 }
