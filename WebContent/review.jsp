@@ -93,7 +93,7 @@
 	<%
 		} else {
 	%>
-		<button onclick="location.href = 'test_login.jsp'">글 작성</button>
+		<button onclick="location.href = 'login.jsp'">글 작성</button>
 	<%
 		}
 	%>

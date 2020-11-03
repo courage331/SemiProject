@@ -111,7 +111,7 @@
 		<%if(cus_num != 0){ %>
 		<button onclick="location.href='write.do'">새글작성</button>
 		<%} else {%> 
-		<button onclick="location.href='test_login.jsp'">새글작성</button>
+		<button onclick="location.href='login.jsp'">새글작성</button>
 		<%} %>
 		</div>
 	</section>
