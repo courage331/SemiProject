@@ -19,7 +19,7 @@ public class ProductDAO {
 	PreparedStatement pstmt;
 	Statement stmt;
 	ResultSet rs;
-	
+
 	// DAO 객체생성 Connection 도 생성
 	public ProductDAO() {
 		try {
@@ -31,180 +31,161 @@ public class ProductDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void close() throws SQLException {
-		if(rs != null) rs.close();
-		if(pstmt != null) pstmt.close();
-		if(stmt != null) stmt.close();
-		if(conn != null) conn.close(); 
+		if (rs != null)
+			rs.close();
+		if (pstmt != null)
+			pstmt.close();
+		if (stmt != null)
+			stmt.close();
+		if (conn != null)
+			conn.close();
 	} // end close()
-	
-	public int insert(ProductDTO dto) throws SQLException{
+
+	public int insert(ProductDTO dto) throws SQLException {
 		int cnt = 0;
-		
+
 		int pNum = dto.getPro_num();
 		String pKind = dto.getPro_kind();
 		int price = dto.getPro_price();
 		int pCnt = dto.getPro_cnt();
 		String pName = dto.getPro_name();
-		
-		cnt= this.insert(pNum, pKind, price, pCnt, pName);
+
+		cnt = this.insert(pNum, pKind, price, pCnt, pName);
 		return cnt;
 	}
-	//상품 등록
-	private int insert(int pNum, String pKind, int price, int pCnt, String pName) throws SQLException {
-//		public int insert(String subject, String content, int star) throws SQLException {
-			int cnt = 0;
-			
-			try {
-				pstmt = conn.prepareStatement(D.SQL_PRODUCT_INSERT);
-				pstmt.setInt(1, pNum);
-				pstmt.setString(2, pKind);
-				pstmt.setInt(3, price);
-				pstmt.setInt(4, pCnt);
-				pstmt.setString(4, pName);
-				cnt = pstmt.executeUpdate();
-			} finally {
-				close();
-			}
-			
-			return cnt;
-		} // end insert()
-	
-	//수정해야함
-//	// ResultSet => DTO배열로 리턴
-//		public ReviewDTO [] createArray(ResultSet rs) throws SQLException {
-//				ReviewDTO [] arr = null;
-//				ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>();
-//				
-//				while(rs.next()) {
-//					int num = rs.getInt("rev_num");
-//					String subject = rs.getString("rev_subject");
-//					String content = rs.getString("rev_content");
-//					if(content == null) content = "";
-//					
-//					int star = rs.getInt("rev_star");
-//					if(star == 0) star = 5;
-//					
-//					Date d = rs.getDate("rev_regdate");  // 년, 월, 일
-//					Time t = rs.getTime("rev_regdate");  // 시, 분, 초
-//					String regDate = "";
-//					if(d != null) {
-//						regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
-//								+ new SimpleDateFormat("hh:mm:ss").format(t);
-//					}
-//					int c_num = rs.getInt("cus_num");
-//					
-//					
-//					
-//					ReviewDTO dto = new ReviewDTO(num, subject, content, star, c_num);
-////					ReviewDTO dto = new ReviewDTO(num, subject, content, star);
-//					dto.setRegDate(regDate);
-//					
-//					list.add(dto);
-//				} // end while
-//				
-//				int size = list.size();
-//				
-//				if(size == 0) return null;
-//				arr = new ReviewDTO[size];
-//				list.toArray(arr);  // 리스트 -> 배열 변환
-//				
-//				return arr;
-//			} // end createArray()
-//		
-//		// 전체 글 SELECT
-//		public ReviewDTO [] select() throws SQLException {
-//			ReviewDTO [] arr = null;
-//			
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT);
-//				rs = pstmt.executeQuery();
-//				arr = createArray(rs);
-//			} finally {
-//				close();
-//			}
-//			
-//			return arr;
-//			
-//		} // end select()
-//		
-//		// 특정 num 의 글 만 SELECT
-//		public ReviewDTO [] selectByNum(int num) throws SQLException{
-//			ReviewDTO [] arr = null;
-//			
-//			try {
-////				pstmt.close();여기서 안닫아줘도 되는거죠 ?
-//				pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_NUM);
-//				pstmt.setInt(1, num);
-//				rs = pstmt.executeQuery();
-//				arr = createArray(rs);
-//			} finally {
-//				close();
-//			} // end try
-//			
-//			return arr;
-//		} // end selectByNum()
-//		
-//		// 특정 num 의 글 내용 읽기
-//		public ReviewDTO [] readByNum(int num) throws SQLException{
-//			
-//			int cnt = 0;
-//			ReviewDTO [] arr = null;
-//			
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_BY_NUM);
-//				pstmt.setInt(1, num);
-//				rs = pstmt.executeQuery();
-//				
-//				arr = createArray(rs);
-//				
-//				conn.commit();  // 트랜잭션 성공!
-//			} catch (SQLException e) {
-//				conn.rollback();  // 트랜잭션 실패하면 rollback()
-//				throw e;
-//			} finally {
-//				close();
-//			} // end try		
-//			
-//			
-//			return arr;
-//		} // end readByNum()
-//		
-//		// 특정 num 글 수정 (제목, 내용) 수정삭제는 cus_num을 받아와야함 어떻게 받아올까요?
-//		public int update(int num, int c_num, String subject, String content, int star) throws SQLException {
-//			int cnt = 0;
-//			
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_WRITE_UPDATE);
-//				pstmt.setInt(1, num);
-//				pstmt.setInt(2, c_num);
-//				pstmt.setString(3, subject);
-//				pstmt.setString(4, content);
-//				pstmt.setInt(5, star);
-//				cnt = pstmt.executeUpdate();
-//			} finally {
-//				close();
-//			} // end try
-//			
-//			return cnt;
-//		} // end update()
-//		
-//		// 특정 num 글 삭제 얘도 마찬가지 
-//		public int deleteByNum(int num) throws SQLException {
-//			int cnt = 0;
-//			
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_WRITE_DELETE_BY_NUM);
-//				pstmt.setInt(1, num);
-//				cnt = pstmt.executeUpdate();
-//			} finally {
-//				close();
-//			} // end try
-//			
-//			return cnt;
-//		}
-//		
-	
-	
+
+	// 상품 등록
+	public int insert(int pNum, String pKind, int price, int pCnt, String pName) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_INSERT);
+			pstmt.setInt(1, pNum);
+			pstmt.setString(2, pKind);
+			pstmt.setInt(3, price);
+			pstmt.setInt(4, pCnt);
+			pstmt.setString(4, pName);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	} // end insert()
+
+	// ResultSet => DTO배열로 리턴 shop.jsp로
+	public ProductDTO[] createArray(ResultSet rs) throws SQLException {
+		ProductDTO[] arr = null;
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+
+		while (rs.next()) {
+			int pNum = rs.getInt("pro_num");
+			String pKind = rs.getString("pro_kind");
+			int price = rs.getInt("pro_price");
+			int pCnt = rs.getInt("pro_cnt");
+			String pName = rs.getString("pro_name");
+			ProductDTO dto = new ProductDTO(pNum, pKind, price, pCnt, pName);
+			list.add(dto);
+		} // end while
+		int size = list.size();
+		if (size == 0)
+			return null;
+		arr = new ProductDTO[size];
+		list.toArray(arr); // 리스트 -> 배열 변환
+		return arr;
+	} // end createArray()
+
+	// 전체 글 SELECT
+	public ProductDTO[] select() throws SQLException {
+		ProductDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_SELECT);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+			System.out.println(arr);
+		} finally {
+			close();
+		}
+
+		return arr;
+
+	} // end select()
+
+	// 특정 num 의 글 만 SELECT
+	public ProductDTO[] selectBypName(String pName) throws SQLException {
+		ProductDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_SELECT_BY_NAME);
+			pstmt.setString(1, pName);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByNum()
+
+	// 특정 num 의 글 내용 읽기
+	public ProductDTO[] readBypNum(int pNum) throws SQLException {
+
+		int cnt = 0;
+		ProductDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_SELECT_BY_NUM);
+			pstmt.setInt(1, pNum);
+			rs = pstmt.executeQuery();
+
+			arr = createArray(rs);
+
+			conn.commit(); // 트랜잭션 성공!
+		} catch (SQLException e) {
+			conn.rollback(); // 트랜잭션 실패하면 rollback()
+			throw e;
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end readByNum()
+
+	// 특정 글 수정
+	public int update(int pNum, String pKind, int price, int pCnt, String pName) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_UPDATE);
+			pstmt.setInt(1, pNum);
+			pstmt.setString(2, pKind);
+			pstmt.setInt(3, price);
+			pstmt.setInt(4, pCnt);
+			pstmt.setString(5, pName);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	} // end update()
+
+	// 특정 pNum 글 삭제 얘도 마찬가지
+	public int deleteByNum(int pNum) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_DELETE_BY_NUM);
+			pstmt.setInt(1, pNum);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	}
+
 }

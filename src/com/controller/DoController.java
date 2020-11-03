@@ -26,8 +26,10 @@ import com.command.write.ReserveCommand;
 import com.command.write.ReserveDeleteCommand;
 import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
+import com.command.write.ShopCommand;
 import com.command.write.ShopDeleteCommand;
 import com.command.write.ShopFileUploadCommand;
+import com.command.write.ShopWriteCommand;
 import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
@@ -203,33 +205,33 @@ public class DoController extends HttpServlet {
 			break;
 			
 	//1103 김영재 현재 작성진행중
-//		case "/shop.do":
-//			command = new ShopCommand();
-//			command.execute(request, response);
-//			viewPage = "shop.do";
-//			break;
-//			
-//		 case "/shopWrite.do":
-//	         viewPage = "shopWrite.jsp";
-//	         break;
-//	         
-//	      case "/shopWriteOk.do":
-//	         command = new ShopWriteCommand();
-//	         command.execute(request, response);
-//	         viewPage = "shopWriteOk.jsp";
-//	         break;
-//	         
-//	      case "/shopWpdate.do":
+		case "/shop.do":
+			command = new ShopCommand();
+			command.execute(request, response);
+			viewPage = "shop.jsp";
+			break;
+			
+		 case "/shopWrite.do":
+	         viewPage = "shopWrite.jsp";
+	         break;
+	         
+	      case "/shopWriteOk.do":
+	         command = new ShopWriteCommand();
+	         command.execute(request, response);
+	         viewPage = "shopWriteOk.jsp";
+	         break;
+	         //업데이트는 잠시 보류
+//	      case "/shopUpdate.do":
 //	         command = new ShopSelectCommand();
 //	         command.execute(request, response);
 //	         viewPage = "shopUpdate.jsp";
 //	         break;
 	         
-	      case "/shopUpdateOk.do":
-	         command = new UpdateCommand();
-	         command.execute(request, response);
-	         viewPage = "shopUpdateOk.jsp";
-	         break;
+//	      case "/shopUpdateOk.do":
+//	         command = new ShopUpdateCommand();
+//	         command.execute(request, response);
+//	         viewPage = "shopUpdateOk.jsp";
+//	         break;
 	      
 	      case "/shopDeleteOk.do":
 	         command = new ShopDeleteCommand();
