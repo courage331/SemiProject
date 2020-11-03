@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.lec.beans.*"%>
+
 <%
 	// Controller 로부터 결과 데이터 받음
 CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
@@ -23,7 +24,7 @@ CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
 	<section class="conA">
 		<div class="container">
 			<div class="announce">
-				<h3>${sessionScope.userid }님의정보</h3>
+				<h3><%=arr[0].getCus_name() %>님의정보</h3>
 			</div>
 			<table>
 
@@ -63,11 +64,7 @@ CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
 		</div>
 	</section>
 
-
-
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
-
-<script type="text/javascript" src="JS/mypage.js"></script>
 </html>

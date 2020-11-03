@@ -116,4 +116,37 @@ public class PetDAO {
 		return cnt;
 	} // end update()
 	
+	// 반려견 정보 추가
+	public int insert(int cus_num, String pet_name, int pet_age, int pet_weight) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_INSERT);
+			pstmt.setInt(1, cus_num);
+			pstmt.setString(2, pet_name);
+			pstmt.setInt(3, pet_age);
+			pstmt.setInt(4, pet_weight);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		return cnt;
+	} // end insert()
+	
+	//반려건 정보 조회
+	public PetDTO[] selectByUid(int c_num) throws SQLException {
+		PetDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_SELECT);
+			pstmt.setInt(1, c_num);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByUid()
+	
 }
