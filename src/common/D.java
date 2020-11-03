@@ -86,6 +86,15 @@ public class D {
 		// 가격, 재고수량 제품 이름 수정
 		public static final String SQL_PRODUCT_UPDATE =
 				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
+<<<<<<< HEAD
+		//주혁 1103 내정보관리에서 데이터 읽어오기
+		//public static final String SQL_READ_SELECT_BY_NUM =
+		//		"SELECT * FROM customer WHERE CUS_NUM = ?";
+		//TODO 1104
+		public static final String SQL_MYINFO_UPDATE =
+				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
+		
+=======
 		// 정호 1103 반려견 정보 추가 인설트 
 		public static final String SQL_PET_INSERT =
 				"INSERT INTO pet"
@@ -95,5 +104,6 @@ public class D {
 		//정호 1103 반려건 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		
 }

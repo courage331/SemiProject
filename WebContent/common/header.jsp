@@ -35,10 +35,17 @@
 						<c:when test="${not empty sessionScope.userid }">
 							<li class="submenu"><a class="mainmenu" href="#"><div>내정보</div></a>
 								<ul class="submenulist" style="display: none;">
+<<<<<<< HEAD
+									<li><a href="#"><div>마이 페이지</div></a></li>
+									<li><a href="myinfo.do"><div>내 정보관리</div></a></li>
+									<li><a href="#"><div>애완견 정보관리</div></a></li>
+									<li><a href="test_logout.jsp"><div>로그아웃</div></a></li>
+=======
 									<li><a href="mypage.do"><div>마이 페이지</div></a></li>
 									<li><a href="#"><div>내 정보관리</div></a></li>
 									<li><a href="pet.do"><div>애완견 정보관리</div></a></li>
 									<li><a href="logOut.jsp"><div>로그아웃</div></a></li>
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 								</ul></li>
 						</c:when>
 						<c:when test="${empty sessionScope.userid }">

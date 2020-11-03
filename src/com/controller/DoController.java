@@ -17,6 +17,8 @@ import com.command.write.FileUploadCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
+
+import com.command.write.MyinfoUpdateCommand;
 import com.command.write.MypageCommand;
 import com.command.write.PetCommand;
 import com.command.write.PetListCommand;
@@ -238,7 +240,20 @@ public class DoController extends HttpServlet {
 	      case "/shopFileUpload.do":
 	         command = new ShopFileUploadCommand();
 	         command.execute(request, response);
-	         break;   
+	         break;  
+	      // 주혁 1103 내정보 업데이트  
+	      case "/myinfo.do":
+//	    	  	command = new MyinfoCommand();
+//				command.execute(request, response);
+				viewPage = "myinfo.jsp";
+				break;
+				
+			case "/myinfo_update.do":
+				command = new MyinfoUpdateCommand();
+				command.execute(request, response);
+				viewPage = "myinfo_update.jsp";
+				break;
+			
 		} // end switch
 
 		if (viewPage != null) {

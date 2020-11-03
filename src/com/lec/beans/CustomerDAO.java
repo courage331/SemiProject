@@ -158,4 +158,45 @@ public class CustomerDAO {
 
 	} // end insert()
 
+//주혁1103 내정보관리에서 내 데이터 읽어올때
+//	public CustomerDTO [] readByNum(int num) throws SQLException{
+//		
+//		int cnt = 0;
+//		CustomerDTO [] arr = null;
+//		
+//		try {
+//			pstmt = conn.prepareStatement(D.SQL_READ_SELECT_BY_NUM);
+//			pstmt.setInt(1, num);
+//			rs = pstmt.executeQuery();
+//			
+//			arr = createArray(rs);
+//			
+//			conn.commit();  // 트랜잭션 성공!
+//		} catch (SQLException e) {
+//			conn.rollback();  // 트랜잭션 실패하면 rollback()
+//			throw e;
+//		} finally {
+//			close();
+//		} // end try		
+//		
+//		
+//		return arr;
+//	} // end readByNum()
+public int update(String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id) throws SQLException {
+	int cnt = 0;
+	
+	try {
+		pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE);  //TODO 1104
+		pstmt.setString(1, cus_pw);
+		pstmt.setString(2, cus_name);
+		pstmt.setString(3, cus_phone);
+		pstmt.setString(4, cus_email);
+		pstmt.setString(5, cus_id);
+		cnt = pstmt.executeUpdate();
+	} finally {
+		close();
+	} // end try
+	
+	return cnt;
+} // end update()
 }

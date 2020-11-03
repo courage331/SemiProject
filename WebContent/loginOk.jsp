@@ -24,6 +24,9 @@
 	
 	String sessionNumName = "c_num";
 	String sessionNumValue = Integer.toString(arr[0].getCus_num());
+	//주혁 추가 (sessionId, arr) 1103/ 실패
+	String sessionId = session.getId();
+	
 	
 	// 전송된 id / pw 값이 일치하면  로그인 성공 + 세션 생성
 		out.println("<script>");
@@ -32,6 +35,7 @@
 		// 세션 (이름) 생성
 		session.setAttribute(sessionName, sessionValue);
 		session.setAttribute(sessionNumName, sessionNumValue);
+		session.setAttribute(sessionId, arr);
 %>
 <script>
 location.href = "index.jsp";
