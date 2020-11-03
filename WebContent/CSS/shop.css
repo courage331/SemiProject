@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 김영재 shop css 작성*/
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+
+/* 컨텐츠 A */
+.conA .container {
+	padding-top: 60px;
+	text-align: center;
+}
+
+table {width: 100%;}
+table, th, tr {
+	border : 1px solid black;
+	border-collapse: collapse;
+}
+
+button.editBt{
+    background-image: url("img/edit.png");
+    background-image: no-repeat;
+    background-size: 500px 500px;
+    background-position: -256px -701px;
+    text-align: cneter;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+
+}

@@ -8,64 +8,91 @@
 	--sub-text-color: #999999;
 	
 }
-/* 컨텐츠 A */
-.conA h3 {
-	font-size: 40px;
+
+
+table {width: 80%;}
+table, td {
+	border : 0.5px solid black;
+	border-collapse: collapse;
 	text-align: center;
+	margin-left: 10%;
+	border-left-style: none;
+	border-right-style: none;
+	padding: 10px;
+}
+th {
+	border : 0.5px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	margin-left: 10%;
+	border-left-style: none;
+	border-right-style: none;
+	padding: 10px;
+	background-color: #FEC034;
 }
 
-.conA .container {
-	margin: 80px 200px 10px 200px;
+
+/* 이호인-----------------------*/
+a#akak {
+	text-decoration: none;
 }
 
-/* 컨텐츠 B */
-
-#tel, #time, #route, #announce {
-	width: 100%;
-	float: left;
-	padding: 30px;
+a#akak:link { /* 기본상태 스타일 */
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
 }
 
-#tel h3, #time h3, #route h3, #announce h3 {
-	font-family: "seo";
-	font-size: 20px;
-	font-weight: 600;
-	color: var(--text-color);
-	margin: 0 0 10px 80px;
+a#akak:visited { /* 방문한 상태 스타일 */
+	color: green;
+	background-color: transparent;
+	text-decoration: none;
 }
 
-#tel p, #time p, #route p, #announce p {
-	font-family: "seo";
-	font-size: 16px;
-	color: var(--sub-text-color);
-	margin: 0 0 0 80px;
+a#akak:hover { /* 마우스가 올라간 상태 스타일 */
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
 }
 
-#tel {
-	background-image: url(../img/phone.jpg);
-	background-repeat: no-repeat;
-	background-position: left 15px;
+a#akak:active { /* 마우스가 눌린 상태 스타일 */
+	color: blue;
+	background-color: transparent;
+	text-decoration: underline;
+}
+/* 이호인-----------------------*/
+.btnA {
+	background-color: white;
+}
+.conA h1{
+	text-align: center;
+	font-size: 40px;
 }
 
-#time {
-	background-image: url(../img/time.jpg);
-	background-repeat: no-repeat;
-	background-position: left 15px;
+.btnA .container {
+	padding-left: 200px;
+	padding-right: 200px;
+	margin-bottom: 80px;
 }
 
-#route {
-	background-image: url(../img/route.jpg);
-	background-repeat: no-repeat;
-	background-position: left 15px;
+.btnA button{
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	border:none;
+	border-radius: 12px;
+	margin-left: 78%;
+}
+button:hover{
+	    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.4)
+    );
+    cursor: pointer;
 }
 
-#announce {
-	background-image: url(../img/announce.jpg);
-	background-repeat: no-repeat;
-	background-position: left 15px;
-}
 
-.conC .container {
-	padding-top: 10px;
-	padding-bottom: 80px;
-}
+ /*style="font-size: 20px;  padding:10px 10px; float: right;"*/

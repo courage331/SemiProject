@@ -123,7 +123,7 @@ ALTER TABLE selldata
 /* customer 테스트 쿼리문 */
 INSERT INTO customer VALUES (1, '1234', '장정호', '010-6481-5124', 'jjh5324@kakao.com', 'jjh', '999');
 INSERT INTO customer VALUES (100, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
-INSERT INTO customer VALUES (17, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
+INSERT INTO customer VALUES (1, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
 /* pet 테스트 쿼리문 */
 INSERT INTO pet VALUES (1,1,'개', 5,10);
 

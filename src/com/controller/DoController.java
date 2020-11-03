@@ -20,6 +20,8 @@ import com.command.write.MypageCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveSearchCommand;
 import com.command.write.SelectCommand;
+import com.command.write.ShopDeleteCommand;
+import com.command.write.ShopFileUploadCommand;
 import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
@@ -169,6 +171,45 @@ public class DoController extends HttpServlet {
 			viewPage = "signupOk.jsp";
 			break;
 			
+	//1103 김영재 현재 작성진행중
+//		case "/shop.do":
+//			command = new ShopCommand();
+//			command.execute(request, response);
+//			viewPage = "shop.do";
+//			break;
+//			
+//		 case "/shopWrite.do":
+//	         viewPage = "shopWrite.jsp";
+//	         break;
+//	         
+//	      case "/shopWriteOk.do":
+//	         command = new ShopWriteCommand();
+//	         command.execute(request, response);
+//	         viewPage = "shopWriteOk.jsp";
+//	         break;
+//	         
+//	      case "/shopWpdate.do":
+//	         command = new ShopSelectCommand();
+//	         command.execute(request, response);
+//	         viewPage = "shopUpdate.jsp";
+//	         break;
+	         
+	      case "/shopUpdateOk.do":
+	         command = new UpdateCommand();
+	         command.execute(request, response);
+	         viewPage = "shopUpdateOk.jsp";
+	         break;
+	      
+	      case "/shopDeleteOk.do":
+	         command = new ShopDeleteCommand();
+	         command.execute(request, response);
+	         viewPage = "shopDeleteOk.jsp";
+	         break;
+	         
+	      case "/shopFileUpload.do":
+	         command = new ShopFileUploadCommand();
+	         command.execute(request, response);
+	         break;   
 		} // end switch
 
 		if (viewPage != null) {

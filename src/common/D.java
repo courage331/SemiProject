@@ -55,7 +55,7 @@ public class D {
 				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
 		//정호 1030 mypage 관련(뼈다귀)
 		public static final String SQL_MYPAGE_SELECT = 
-				"SELECT * FROM CUSTOMER WHERE cus_num= ?";
+				"SELECT * FROM CUSTOMER WHERE CUS_NUM = ?";
 		//주혁 1031 로그인시 회원인지 확인
 		public static final String SQL_LOGIN_SELECT = 
 				"SELECT * FROM CUSTOMER WHERE cus_id = ? AND cus_pw = ?";
@@ -65,5 +65,23 @@ public class D {
 				+ "(CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY) "
 				+ "VALUES"
 				+ "(customer_seq.nextval,?,?,?,?,?,0)";
+<<<<<<< HEAD
+=======
+		//영재 1103 쇼핑몰 게시판 작성
+		public static final String SQL_PRODUCT_INSERT = 
+				"INSERT INTO PRODUCT"
+				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name) "
+				+ "VALUES"
+				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
+		//상품 번호 순서 정렬
+		public static final String SQL_PRODUCT_SELECT = 
+				"SELECT * FROM product ORDER BY pro_num DESC";
+		//상품 삭제
+		public static final String SQL_PRODUCT_DELETE_BY_NUM =
+				"DELETE FROM product WHERE pro_num = ?";
+		// 가격, 재고수량 제품 이름 수정
+		public static final String SQL_PRODUCT_UPDATE =
+				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 		
 }
