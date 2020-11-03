@@ -72,9 +72,9 @@ public class CustomerDAO {
 		return arr;
 	} // end createArray()
 
-	public CustomerDTO [] selectByUid(int c_num) throws SQLException{
-		CustomerDTO [] arr = null;
-		
+	public CustomerDTO[] selectByUid(int c_num) throws SQLException {
+		CustomerDTO[] arr = null;
+
 		try {
 			pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
 			pstmt.setInt(1, c_num);
@@ -96,66 +96,66 @@ public class CustomerDAO {
 			pstmt.setString(1, c_id);
 			pstmt.setString(2, c_pw);
 			cnt = pstmt.executeUpdate();
-//				rs = pstmt.executeQuery();
-//				cnt = createArray(rs);
+//            rs = pstmt.executeQuery();
+//            cnt = createArray(rs);
 		} finally {
 			close();
 		} // end try
 
 		return cnt;
 	} // end selectByUid()
-	
+
 // 주혁 1102 로그인시 회원인지 아닌지 확인하기위한 조회
-public CustomerDTO [] find_accountinfo(String cus_id, String cus_pw) throws SQLException{
-	CustomerDTO [] arr = null;
-	try {
-		pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
-		pstmt.setString(1, cus_id);
-		pstmt.setString(2, cus_pw);
-		rs = pstmt.executeQuery();
-		System.out.println();
-		arr = createArray(rs);
-	} finally {
-		close();
-	} // end try
-	
-	return arr;
-} // end selectByUid()
+	public CustomerDTO[] find_accountinfo(String cus_id, String cus_pw) throws SQLException {
+		CustomerDTO[] arr = null;
+		try {
+			pstmt = conn.prepareStatement(D.SQL_LOGIN_SELECT);
+			pstmt.setString(1, cus_id);
+			pstmt.setString(2, cus_pw);
+			rs = pstmt.executeQuery();
+			System.out.println();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByUid()
 
 //리뷰 작성 <-- DTO
-public int insert(CustomerDTO dto) throws SQLException {
-	int cnt = 0;
-	
-	String c_id = dto.getCus_id();
-	String c_pw = dto.getCus_pw();
-	String c_name = dto.getCus_name();
-	String c_phone = dto.getCus_phone();
-	String c_email = dto.getCus_email();
-	
-	cnt = this.c_insert(c_id,c_pw,c_name,c_phone,c_email);
-	
-	return cnt;
-} // end insert(DTO)
+	public int insert(CustomerDTO dto) throws SQLException {
+		int cnt = 0;
+
+		String c_id = dto.getCus_id();
+		String c_pw = dto.getCus_pw();
+		String c_name = dto.getCus_name();
+		String c_phone = dto.getCus_phone();
+		String c_email = dto.getCus_email();
+
+		cnt = this.c_insert(c_id, c_pw, c_name, c_phone, c_email);
+
+		return cnt;
+	} // end insert(DTO)
 // 회원가입 
-public int c_insert(String c_id, String c_pw, String c_name, String c_phone, String c_email) throws SQLException {
-	int cnt = 0;
-	//int c_num = 0; 
-	
-	try {
-		pstmt = conn.prepareStatement(D.SQL_SIGNUP_INSERT);
-		//pstmt.setInt(1, c_num);
-		pstmt.setString(1, c_id);
-		pstmt.setString(2, c_pw);
-		pstmt.setString(3, c_name);
-		pstmt.setString(4, c_phone);
-		pstmt.setString(5, c_email);
-		cnt = pstmt.executeUpdate();
-	} finally {
-		close();
-	}
-	
-	return cnt;
-} // end insert()
+
+	public int c_insert(String c_pw, String c_name, String c_phone, String c_email, String c_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_SIGNUP_INSERT);
+			// pstmt.setInt(1, c_num);
+			pstmt.setString(1, c_pw);
+			pstmt.setString(2, c_name);
+			pstmt.setString(3, c_phone);
+			pstmt.setString(4, c_email);
+			pstmt.setString(5, c_id);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} // end insert()
 
 }
-

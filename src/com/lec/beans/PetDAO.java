@@ -64,6 +64,24 @@ public class PetDAO {
 				return arr;
 			} // end createArray()
 	
+	public PetDTO[] PetNameList() throws SQLException{
+		
+		PetDTO [] arr =null;
+		try {
+//			pstmt.close();여기서 안닫아줘도 되는거죠 ?
+			pstmt = conn.prepareStatement(D.SQL_NAME_SEARCH);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+		
+		return arr;
+		
+	}
+		
+		
+		
 	public PetDTO[] FindByOwner(int cus_num) throws SQLException {
 		
 		PetDTO [] arr = null;
@@ -108,6 +126,52 @@ public class PetDAO {
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PET_RESERVE_UPDATE);
+			pstmt.setInt(1, pet_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		return cnt;
+	} // end update()
+	
+	// 반려견 정보 추가
+	public int insert(int cus_num, String pet_name, int pet_age, int pet_weight) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_INSERT);
+			pstmt.setInt(1, cus_num);
+			pstmt.setString(2, pet_name);
+			pstmt.setInt(3, pet_age);
+			pstmt.setInt(4, pet_weight);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		return cnt;
+	} // end insert()
+	
+	//반려건 정보 조회
+	public PetDTO[] selectByUid(int c_num) throws SQLException {
+		PetDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_SELECT);
+			pstmt.setInt(1, c_num);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByUid()
+	//예약 상태로 만든다.
+	public int update2(int pet_num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_UNRESERVE_UPDATE);
 			pstmt.setInt(1, pet_num);
 			cnt = pstmt.executeUpdate();
 		} finally {

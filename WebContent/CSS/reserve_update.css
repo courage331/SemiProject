@@ -33,7 +33,7 @@ header i {
 header h2 {
 	float:left;
 	color: white;
-	margin-left: 140px;
+	margin-left: 60px;
 	font-size: 40px;
 }
 
@@ -62,27 +62,13 @@ header input:hover {
 }
 
 #area {
-	display:table-cell;
 	width: 100%;
 	height: 50px;
 	border: none;
 	font-size: 30px;
 }
 
-#close_cash {
-	display:table-cell;
-	background-color:white;
-	color: black;
-	border: none;
-	font-size: 20px;	
-}
-
-#close_cash:hover {
-	cursor: pointer;
-}
-
 .input_cash {
-	display:inline-table;
 	margin-bottom: 2px;
 }
 
@@ -165,7 +151,6 @@ header input:hover {
 
 /* 푸터 */
 footer{
-	height: 64px;
 	background-color: var(--main-color);
 }
 
@@ -182,3 +167,106 @@ footer button:hover {
 	color: var(--text-color);
 	cursor: pointer;
 }
+
+
+#content-header h3 {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 50px
+}
+
+#contact-form {
+	padding: 10px 15px 15px 15px;
+	
+	border:4px solid #4ea0d8;
+	
+	border-radius:10px;
+}
+
+#contact-form div {
+	margin-bottom: 20px;
+}
+
+#contact-form label {
+	display: inline-block;
+	width : 100%;
+	font-weight: bold;
+}
+
+#contact-form input[type='text'], #contact-form input[type='email'] { 
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	height: 25px;
+	width: 65%;
+}
+
+#contact-form input[type='submit'] { 
+	padding:12px18px;
+	color: #fff;
+	background: #FEC034;
+	border: 0;
+	border-radius: 0;
+	float: middle;
+	display: block;
+}
+
+#contact-form input[type='submit']:hover {
+	background: #fa6e3e;
+	cursor: pointer;
+}
+
+#contact-form .content-footer p { 
+	font-style:italic;
+	text-align: center;
+	color: #666;
+	font-size: 80%;
+}
+
+.hc { 
+	width:200px; left:0; right:0; margin-left:auto; margin-right:auto; 
+} 
+
+.vc { 
+ 
+ height:40px; top: 0; bottom:0; margin-top:auto; margin-bottom:auto; 
+ 
+ } /* 세로 중앙 정렬 */
+
+#contact-form input[type='button'] {
+	border : 4px solid #FFFFFF;
+	background :  #FFFFFF;
+	margin-left : 5px;
+	margin-top: 10px;
+	margin-bottom : 10px;	
+}
+
+
+#contact-form input[type='button']:hover {
+	text-decoration:underline
+}
+
+#contact-form input[type='button']:active {
+	border : 1px solid #FFFFFF;
+	outline-color: #FFFFFF;
+}
+
+#contact-form input[type='button']:focus {
+	outline-color: #FFFFFF;
+	border : 1px solid #FFFFFF;
+}
+
+
+footer{
+	 position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+    
+    width: 100%;
+
+	padding: 15px 0;
+
+	text-align: center;
+}
+

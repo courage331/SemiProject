@@ -32,6 +32,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>예약 페이지</title>
 
@@ -145,9 +146,9 @@
 					</select> 
 					<br><br><br>
 					체크인:<br>
-					<input type="date" name="res_startdate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_startdate" id="startdate" value="" min="" max="";><br><br><br>
 					체크아웃:<br>
-					<input type="date" name="res_lastdate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_lastdate" id="lastdate" value="" min="" max="";><br><br><br>
 					기타(요청사항):<br>
 					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" cols="30" rows="10" ></textarea>
 					<br><br>					
