@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="com.lec.beans.*"%>
+
 <%
 	// Controller 로부터 결과 데이터 받음
 CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
@@ -102,11 +103,7 @@ state[2]="투숙중";
 		</div>
 	</section>
 
-
-
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
-
-<script type="text/javascript" src="JS/mypage.js"></script>
 </html>

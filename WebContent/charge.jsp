@@ -16,7 +16,7 @@
 		<div class="container">
 			<i class="fas fa-dog"></i>
 			<h2>충전</h2>
-			<input type="button" value="X" onClick="self.close();">
+			<input type="button" value="X" onClick="window.close();">
 		</div>
 	</header>
 
@@ -24,7 +24,10 @@
 	<section class="conA">
 		<div class="container">
 			<div class="input_cash">
-				<div id="area"></div>
+				<div id="area">0원</div>
+				<div>
+					<button type="button" id="close_cash">X</button>
+				</div>
 			</div>
 			<hr>
 			<div class="select_cash">
@@ -42,7 +45,8 @@
 				</div>
 			</div>
 			<div class="bone">
-				<i class="fas fa-bone"></i><p id="bone_rs"></p>
+				<i class="fas fa-bone"></i>
+				<p id="bone_rs">0</p>
 			</div>
 		</div>
 	</section>
@@ -79,5 +83,4 @@
 
 </body>
 <script type="text/javascript" src="JS/charge.js"></script>
-
 </html>

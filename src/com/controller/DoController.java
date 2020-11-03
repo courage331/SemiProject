@@ -10,13 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.command.write.ChargeCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
+
+import com.command.write.MyinfoUpdateCommand;
 import com.command.write.MypageCommand;
+import com.command.write.PetCommand;
+import com.command.write.PetListCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveDeleteCommand;
 import com.command.write.ReserveSearchCommand;
@@ -159,6 +164,25 @@ public class DoController extends HttpServlet {
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
 			break;
+		// 정호 1103 펫
+			
+		case "/pet.do":
+			command = new PetListCommand();
+			command.execute(request, response);
+			viewPage = "pet.jsp";
+			break;
+			
+		case "/petOk.do":
+			command = new PetCommand(); // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
+			viewPage = "petOk.jsp"; // 2. 페이지(뷰) 결정
+			break;
+			
+		case "/charge.do":
+			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
+			viewPage = "charge.jsp"; // 2. 페이지(뷰) 결정
+			break;
 			
 		case "/login.do":
 			viewPage = "login.jsp";
@@ -218,7 +242,20 @@ public class DoController extends HttpServlet {
 	      case "/shopFileUpload.do":
 	         command = new ShopFileUploadCommand();
 	         command.execute(request, response);
-	         break;   
+	         break;  
+	      // 주혁 1103 내정보 업데이트  
+	      case "/myinfo.do":
+//	    	  	command = new MyinfoCommand();
+//				command.execute(request, response);
+				viewPage = "myinfo.jsp";
+				break;
+				
+			case "/myinfo_update.do":
+				command = new MyinfoUpdateCommand();
+				command.execute(request, response);
+				viewPage = "myinfo_update.jsp";
+				break;
+			
 		} // end switch
 
 		if (viewPage != null) {
