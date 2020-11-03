@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 #content-header h3 {
 	font-size: 24px;
 	font-weight: bold;
@@ -77,6 +75,8 @@
 #contact-form input[type='button']:hover {
 	text-decoration:underline
 }
+
+
 
 #contact-form input[type='button']:active {
 	border : 1px solid #FFFFFF;
