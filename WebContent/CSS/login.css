@@ -75,7 +75,8 @@
 
 
 #contact-form input[type='button']:hover {
-	text-decoration:underline
+	text-decoration:underline;
+	cursor: pointer;
 }
 
 #contact-form input[type='button']:active {
