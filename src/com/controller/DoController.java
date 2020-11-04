@@ -204,9 +204,13 @@ public class DoController extends HttpServlet {
 			break;
 			
 		case "/charge.do":
+			viewPage = "charge.jsp";
+			break;
+			
+		case "/chargeOk.do":
 			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
-			viewPage = "charge.jsp"; // 2. 페이지(뷰) 결정
+			viewPage = "chargeOk.jsp"; // 2. 페이지(뷰) 결정
 			break;
 			
 		case "/login.do":
