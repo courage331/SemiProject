@@ -1,0 +1,81 @@
+/* charge css */
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+/* 헤더 */
+header {
+	background-color: var(--main-color);
+	height: 80px;
+}
+
+header .container {
+	padding: 10px;
+}
+
+header i {
+	float:left;
+	color: white;
+	font-size: 50px;
+	margin-left:10px;
+}
+
+header h2 {
+	float:left;
+	color: white;
+	margin-left: 80px;
+	font-size: 40px;
+}
+
+header input {
+	margin-top: 7px;
+	margin-left: 118px;
+	background-color:var(--main-color);
+	color: white;
+	border: none;
+	font-size: 40px;
+}
+
+header input:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+
+/* 푸터 */
+footer{
+	background-color: var(--main-color);
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	padding: 15px 0;
+	text-align: center;
+}
+
+footer button {
+	width: 100%;
+	height: 60px;
+	background-color: var(--main-color);
+	border: none;
+	color: white;
+	font-size: 24px;
+}
+
+footer button:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+
+

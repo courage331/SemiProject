@@ -25,3 +25,7 @@ table,th,td{
 .conC .container {
 	padding-top: 60px;
 }
+
+th,td:hover{
+	cursor: pointer;
+}
