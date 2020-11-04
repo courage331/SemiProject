@@ -55,7 +55,6 @@ String color = "#c0c0c0";
 	}
 
 %>	
-
 	
 <%
 	if(chk){
