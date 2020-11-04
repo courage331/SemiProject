@@ -182,23 +182,41 @@ public class CustomerDAO {
 //		
 //		return arr;
 //	} // end readByNum()
-public int update(String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id) throws SQLException {
-	int cnt = 0;
-	
-	try {
-		pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE);  //TODO 1104
-		pstmt.setString(1, cus_pw);
-		pstmt.setString(2, cus_name);
-		pstmt.setString(3, cus_phone);
-		pstmt.setString(4, cus_email);
-		pstmt.setString(5, cus_id);
-		cnt = pstmt.executeUpdate();
-	} finally {
-		close();
-	} // end try
-	
-	return cnt;
+	public int update(String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id)
+			throws SQLException {
+		int cnt = 0;
 
-} // end insert()
+		try {
+			pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE); // TODO 1104
+			pstmt.setString(1, cus_pw);
+			pstmt.setString(2, cus_name);
+			pstmt.setString(3, cus_phone);
+			pstmt.setString(4, cus_email);
+			pstmt.setString(5, cus_id);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+
+	} // end insert()
+	// 캐쉬 충전 업데이트
+	public int update(int cus_num, int cus_money) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_CASH_UPDATE);
+			pstmt.setInt(1, cus_num);
+			pstmt.setInt(2, cus_money);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+
+	} // end insert()
+	
 
 }

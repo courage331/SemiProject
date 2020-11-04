@@ -106,8 +106,12 @@ public class D {
 				+ "(pet_num, cus_num, pet_name, pet_age, pet_weight, pet_reserve)"
 				+ "VALUES"
 				+ "(PET_SEQ.nextval,?,?,?,?,0)";
-		//정호 1103 반려건 정보 조회
+		//정호 1103 반려견 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
+		
+		//정호 1104 뼈다귀 충전
+		public static final String SQL_CASH_UPDATE =
+				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY + ?";
 		
 }

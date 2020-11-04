@@ -16,7 +16,7 @@
 		<div class="container">
 			<i class="fas fa-dog"></i>
 			<h2>충전</h2>
-			<input type="button" value="X" onClick="window.close();">
+			<input type="button" value="X" onClick="self.close()">
 		</div>
 	</header>
 
@@ -45,8 +45,10 @@
 				</div>
 			</div>
 			<div class="bone">
-				<i class="fas fa-bone"></i>
-				<p id="bone_rs">0</p>
+				<form name="frm" action="chargeOk.do" method="post">
+					<i class="fas fa-bone"></i> <input type="text" name="bone_rs"
+						id="bone_rs" value="0" readonly>
+				</form>
 			</div>
 		</div>
 	</section>
@@ -56,9 +58,8 @@
 		<div class="container">
 			<h2>충전수단</h2>
 			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao" checked="checked">
-				카카오 페이 <input type="radio" name="chk_cash" value="cash"> 무통장
-				입금
+				<input type="radio" name="chk_cash" value="kakao"> 카카오 페이 
+				<input type="radio" name="chk_cash" value="cash" checked="checked"> 무통장 입금
 			</div>
 		</div>
 	</section>
