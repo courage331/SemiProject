@@ -15,6 +15,8 @@ import com.command.write.ChargeCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
+import com.command.write.FindidCommand;
+import com.command.write.FindpwCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
@@ -203,9 +205,13 @@ public class DoController extends HttpServlet {
 			break;
 
 		case "/charge.do":
+			viewPage = "charge.jsp";
+			break;
+			
+		case "/chargeOk.do":
 			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
-			viewPage = "charge.jsp"; // 2. 페이지(뷰) 결정
+			viewPage = "chargeOk.jsp"; // 2. 페이지(뷰) 결정
 			break;
 
 		case "/login.do":
@@ -271,6 +277,7 @@ public class DoController extends HttpServlet {
 		case "/myinfo.do":
 //	    	  	command = new MyinfoCommand();
 //				command.execute(request, response);
+<<<<<<< HEAD
 			viewPage = "myinfo.jsp";
 			break;
 
@@ -286,6 +293,43 @@ public class DoController extends HttpServlet {
 			viewPage = "account_delete.jsp";
 			break;
 
+=======
+				viewPage = "myinfo.jsp";
+				break;
+				
+		  case "/myinfo_update.do":
+				command = new MyinfoUpdateCommand();
+				command.execute(request, response);
+				viewPage = "myinfo_update.jsp";
+				break;
+			
+		  case "/account_delete.do":
+			  command = new AccountDeleteCommand();
+			  command.execute(request, response);
+			  viewPage = "account_delete.jsp";
+			  break;
+			  
+		  case "/find_id.do":
+			  viewPage = "find_id.jsp";
+			  break;
+			  
+		  case "/findidOk.do":
+			  command = new FindidCommand();
+			  command.execute(request, response);
+			  viewPage = "findidOk.jsp";
+			  break;
+			  
+		  case "/find_pw.do":
+			  viewPage = "find_pw.jsp";
+			  break;
+			  
+		  case "/findpwOk.do":
+			  command = new FindpwCommand();
+			  command.execute(request, response);
+			  viewPage = "findpwOk.jsp";
+			  break;
+			  
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject
 		} // end switch
 
 		if (viewPage != null) {

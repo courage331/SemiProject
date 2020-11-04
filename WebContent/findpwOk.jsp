@@ -1,11 +1,11 @@
-<!-- 아이디찾기, 이주혁 -->
+<!-- 비밀번호찾기, 이주혁 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "com.lec.beans.*" %>
 <%@ page import = "java.util.*" %>
 <%  // Controller 로부터 결과 데이터 받음
 	CustomerDTO [] arr = (CustomerDTO [])request.getAttribute("list");
-	String c_id = "";
+	String c_pw = "";
 %>
 
 <% if(arr==null || arr.length==0){ %>			
@@ -16,10 +16,10 @@
 <%
 		return;
 	}
-	c_id = arr[0].getCus_id();
+	c_pw = arr[0].getCus_pw();
 %>
 
 <script>
-alert("<%=c_id%>");
+alert("<%=c_pw%>");
 location.href = "login.jsp";
 </script>

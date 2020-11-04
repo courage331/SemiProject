@@ -200,8 +200,42 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 	} // end try
 	
 	return cnt;
+}
+	public int update(String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id)
+			throws SQLException {
+		int cnt = 0;
+		try {
+			pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE); // TODO 1104
+			pstmt.setString(1, cus_pw);
+			pstmt.setString(2, cus_name);
+			pstmt.setString(3, cus_phone);
+			pstmt.setString(4, cus_email);
+			pstmt.setString(5, cus_id);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
 
-} // end insert()
+		return cnt;
+
+	} // end insert()
+	// 캐쉬 충전 업데이트
+	public int update(int cus_num, int cus_money) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_CASH_UPDATE);
+			pstmt.setInt(1, cus_num);
+			pstmt.setInt(2, cus_money);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+
+	} // end insert()
+	
 
 //1104 주혁 회원탈퇴
 	public int deleteByNum(int num) throws SQLException {
@@ -217,5 +251,39 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 		
 		return cnt;
 	}
+
+	// 주혁 1104 아이디찾기
+		public CustomerDTO[] find_id(String cus_name, String cus_email) throws SQLException {
+			CustomerDTO[] arr = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_FINDID_SELECT);
+				pstmt.setString(1, cus_name);
+				pstmt.setString(2, cus_email);
+				rs = pstmt.executeQuery();
+				System.out.println();
+				arr = createArray(rs);
+			} finally {
+				close();
+			} // end try
+
+			return arr;
+		} // end selectByUid()
+		// 주혁 1104 비밀번호찾기
+		public CustomerDTO[] find_pw(String cus_name, String cus_email, String cus_id) throws SQLException {
+			CustomerDTO[] arr = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_FINDPW_SELECT);
+				pstmt.setString(1, cus_name);
+				pstmt.setString(2, cus_email);
+				pstmt.setString(3, cus_id);
+				rs = pstmt.executeQuery();
+				System.out.println();
+				arr = createArray(rs);
+			} finally {
+				close();
+			} // end try
+			
+			return arr;
+		} // end selectByUid()
 
 }
