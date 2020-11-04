@@ -29,3 +29,11 @@ function chkSubmit(){
 	
 	return true;
 } // end chkSubmit()
+
+function petchk(url){
+	newPage = window.open(url,'petinfo','width=500,height=800,left=650,location=no,status=no,scrollbars=no');
+}
+
+function petopen() {
+	myWindow = window.open("pet_update.jsp", "팝업창", "width = 500, height = 615, left = 650, top = 10")
+}

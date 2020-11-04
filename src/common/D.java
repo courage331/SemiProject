@@ -128,4 +128,7 @@ public class D {
 		public static final String SQL_CASH_UPDATE =
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY + ?";
 		
+		//정호 1104 반려견 정보 수정
+//		public static final String SQL_PET_UPDATE =
+		
 }

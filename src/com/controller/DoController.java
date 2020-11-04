@@ -23,6 +23,7 @@ import com.command.write.MyinfoUpdateCommand;
 import com.command.write.MypageCommand;
 import com.command.write.PetCommand;
 import com.command.write.PetListCommand;
+import com.command.write.PetUpdateCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveDeleteCommand;
 import com.command.write.ReserveModifyCommand;
@@ -201,6 +202,12 @@ public class DoController extends HttpServlet {
 			command = new PetCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "petOk.jsp"; // 2. 페이지(뷰) 결정
+			break;
+			
+		case "/pet_update.do":
+			command = new PetUpdateCommand();
+			command.execute(request, response);
+			viewPage = "pet_update.jsp";
 			break;
 			
 		case "/charge.do":
