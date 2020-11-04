@@ -16,11 +16,12 @@ button.editBt{
 }
 
 table{
-	border : 1px solid black;
+	border : 1px solid white;
 	width: 80%;
 	text-align: center;
 	margin-left:10%;
 	margin-bottom:5%;
+	table-layout: void;
 }
 
 
@@ -31,14 +32,14 @@ img{
 }
 
 tr{
-	border : 1px solid black;
+	border : 1px solid white;
 	margin:0px;
 	padding:0px;
 	border-collapse: collapse;
 }
 
 td{
-	border : 1px solid black;
+	border : 1px solid white;
 	margin:0px;
 	padding:0px;
 	border-collapse: collapse;

@@ -12,6 +12,7 @@ function openC(){
 		
 }
 /* 1102 js 파일 생성*/
-function shoppingOpen() {
-   shopping = window.open("shopping.jsp", "팝업창", "width = 500, height = 615, left = 650, top = 10")
+function shoppingOpen(nn,kind, cnt) {
+	
+   shopping = window.open("shopping.jsp?nn="+nn+"&kind=" +kind+"&cnt="+cnt, "팝업창", "width = 500, height = 615, left = 650, top = 10")
 }

@@ -72,6 +72,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					종류 : <%=arr[cnt].getPro_kind()%><br> 가격 : <%=arr[cnt].getPro_price()%><br>
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
+					int aba = arr[cnt].getPro_price();
 					if(arr[cnt].getPro_cnt() == 0){
 					%>
 					<button disabled>재고소진</button></th>
@@ -112,9 +113,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					%>
 					<button disabled>재고소진</button></th>
 					<%
-					}else {
+					}else {	
 					%>
-					<button onclick="shoppingOpen()">구매하기</button></th>
+					<button onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>)">구매하기</button></th>
 					<%
 					}
 					%>

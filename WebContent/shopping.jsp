@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 <%
 	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
+	String a = request.getParameter("nn");
+	String b = request.getParameter("kind");
+	String c = request.getParameter("cnt");
 %>
 <html>
 <head>
@@ -11,7 +14,10 @@
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="CSS/shopping.css">
-<title>뼈다귀 충전하기</title>
+<title>물품 구매</title>
+<script>
+	alert(<%=a%>);
+</script>
 
 </head>
 <body>
@@ -19,7 +25,7 @@
 	<header>
 		<div class="container">
 			<i class="fas fa-dog"></i>
-			<h2>결제화면</h2>
+			<h2> 구 매</h2>
 			<!--  <input type="button" value="X" onClick="">-->
 		</div>
 	</header>
@@ -27,52 +33,17 @@
 	<!-- 컨텐츠 A  -->
 	<section class="conA">
 		<div class="container">
-			<div class="input_cash">
-				<div id="area">0원</div>
-				<div>
-					<button type="button" id="close_cash">X</button>
-				</div>
-			</div>
-			<hr>
-			<div class="select_cash">
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="1000">+1천원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="5000">+5천원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="10000">+1만원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="1000000">+100만원</button>
-				</div>
-			</div>
-			<div class="bone">
-				<i class="fas fa-bone"></i>
-				<p id="bone_rs">0</p>
-			</div>
+			 	  <img src="img/<%=a%>.jpg"><br>
+			종류 : <%=b %> <br>
+			가격 : <%=c %><br>
 		</div>
 	</section>
 
-	<!-- 컨텐츠 B  -->
-	<section class="conB">
-		<div class="container">
-			<h2>충전수단</h2>
-			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao" checked="checked">
-				카카오 페이 <input type="radio" name="chk_cash" value="cash"> 무통장
-				입금
-			</div>
-		</div>
-	</section>
 
 	<!-- 컨텐츠 C  -->
 	<section class="conC">
 		<div class="container">
-			<h2>충전 후 결제시 혜택</h2>
-			<p>- 충전 금액의 10% 적립
-			<p>- 소득공제 혜택 적용 (현금 영수증 발행)
+			
 		</div>
 	</section>
 
@@ -80,7 +51,7 @@
 	<footer>
 		<div class="container">
 			<button class="cashok">
-				<h2>충전하기</h2>
+				<h2>구매하기</h2>
 			</button>
 		</div>
 	</footer>
