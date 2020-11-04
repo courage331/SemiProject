@@ -10,6 +10,7 @@
 	PetDTO[] parr = (PetDTO [])request.getAttribute("plist");
 	ReservationDTO [] rarr = (ReservationDTO [])request.getAttribute("rlist");
 
+	String [] res_info ={"아카데미","독파크","메디컬센터","유치원","그루밍","스페셜케어","호텔 ,데이케어"};
 %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -110,14 +111,19 @@
 					<br><br><br>
 					희망서비스:<br>
 					<select name=res_sinfo>
-					    <option value="아카데미">아카데미</option>
-					    <option value="독파크">독파크</option>
-					    <option value="메디컬센터" >메디컬센터</option>
-					    <option value="유치원" >유치원</option>
-					    <option value="그루밍" >그루밍</option>
-					    <option value="스페셜케어" >스페셜케어</option>
-					    <option value="호텔 ,데이케어" selected>호텔 &데이케어</option>
-					    <!-- 기본적으로 보여주고 싶은것은 selected를 넣어준다. -->
+					<%
+						for(int i=0; i<res_info.length;i++){
+							if(res_info[i].equals(rarr[0].getRes_sinfo())){
+					%>
+								<option value="<%=res_info[i] %>" selected><%=res_info[i] %></option>
+					<%
+							}else{
+					%>
+								<option value="<%=res_info[i] %>"><%=res_info[i] %></option>
+					<% 			
+							}
+						}
+					%>
 					</select> 
 					<br><br><br>
 					체크인:<br>

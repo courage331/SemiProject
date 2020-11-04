@@ -9,12 +9,8 @@ CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
 ReservationDTO [] rarr  = (ReservationDTO[])request.getAttribute("rlist");
 PetDTO [] parr= (PetDTO[])request.getAttribute("plist");
 Boolean chk = true;
-String [] state = new String[3];
-state[0]="예약 종료";
-state[1]="예약변경가능";
-state[2]="투숙중";
-
-String [] color = {"#ff9e81","#e6e6fa","#96DBB4"};
+String [] state = {"예약 종료","예약 변경 가능", "투숙중"};
+String color = "#c0c0c0";
 %>
 <!DOCTYPE html>
 <html>
@@ -68,11 +64,7 @@ String [] color = {"#ff9e81","#e6e6fa","#96DBB4"};
 <%
 	if(rarr[i].getRes_state()==0){
 %>
-			<tr id="reserve_list" bgcolor=<%=color[0] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
-<%}else if(rarr[i].getRes_state()==1){ %>				
-			<tr id="reserve_list" bgcolor=<%=color[1] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
-<%} else{%>				
-			<tr id="reserve_list" bgcolor=<%=color[2] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
 <%} %>				
 				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
 				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
