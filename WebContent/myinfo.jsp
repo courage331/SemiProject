@@ -5,21 +5,34 @@
     <%
     	String sessionId = session.getId();
     	CustomerDTO [] arr = (CustomerDTO [])session.getAttribute(sessionId);
-  //    CustomerDTO [] arr2 = (CustomerDTO [])request.getAttribute("data");
     	int c_num = Integer.parseInt((String)session.getAttribute("c_num"));  //세션에서 회원번호 받아옴
-  //  	String c_id = (String)session.getAttribute("userid");
     	String c_id = arr[0].getCus_id();
     	String c_pw = arr[0].getCus_pw();
     	String c_name = arr[0].getCus_name();
     	String c_phone = arr[0].getCus_phone();
     	String c_email = arr[0].getCus_email();
+  //    CustomerDTO [] arr2 = (CustomerDTO [])request.getAttribute("data");
+  //  	String c_id = (String)session.getAttribute("userid");
     %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="CSS/index.css">
+<link rel="stylesheet" href="CSS/login.css">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
 <title>내 정보관리</title>
 </head>
+<!-- 헤더 -->
+<jsp:include page="common/header.jsp"></jsp:include>
+ 
+<section class="conA">
+<div class="container">
 <body>
 	<section class="conA">
 		<div class="container">
@@ -28,8 +41,9 @@
 				<div id="content-header">
 					<h3>내 정보관리</h3>
 				</div>
+				
 				<div>
-					<label>ID : <%=c_id%></label>
+					<label>ID : </label><label><%=c_id%></label>
 				</div>
 				<div>
 					<label>PW :</label> <input type="password" name="c_pw"
@@ -38,24 +52,28 @@
 				<div>
 					<label>PW 확인 :</label> <input type="password" name="c_pwchk"
 						placeholder="비밀번호 확인" />
-					<input type="button" id="logbtn" class="hc vc" value="PW바꾸기" onClick="return chkPw()"/>
 				</div>
 				<div>
 					<label>이름 :</label> <input type="text" name="c_name"
-						placeholder=<%=c_name%> />
+						value=<%=c_name%> placeholder=<%=c_name%> />
 				</div>
 				<div>
 					<label>전화번호 :</label> <input type="text" name="c_phone"
-						placeholder=<%=c_phone%> />
+						value=<%=c_phone%> placeholder=<%=c_phone%> />
 				</div>
 				<div>
 					<label>이메일 :</label> <input type="text" name="c_email"
-						placeholder=<%=c_email%> />
+						value=<%=c_email%> placeholder=<%=c_email%> />
 				</div>
 				<input type="submit" id="logbtn" class="hc vc" value="수정하기"/>
 				<input type="button" class="hc vc" value="회원탈퇴" onClick="location.href='account_delete.do'">
 			</form>
 		</div>
-	</section>
+</section>	
+	<!-- 푸터 -->
+	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
+
+<script src="JS/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="JS/myinfo_update.js"></script>
 </html>
