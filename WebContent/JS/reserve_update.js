@@ -14,10 +14,14 @@ function chkDelete(num,pet_num) {
 		location.href = 'reserve_deleteOk.do?num=' + num+'&pet_num='+pet_num;
 	}
 }
-function deleteChk() {
-	alert('권한이 없습니다.');
+
+function goModify(num,pet_num){
+	window.open("reserve_modify.do?num="+num+"&pet_num="+pet_num);
+	self.close();
 }
 
-function userChk(){
-	alert("권한이 없습니다.");
+function goReview(){
+	window.open("review.do?page=1");
+	self.close();
 }
+

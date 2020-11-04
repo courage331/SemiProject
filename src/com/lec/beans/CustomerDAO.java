@@ -182,10 +182,28 @@ public class CustomerDAO {
 //		
 //		return arr;
 //	} // end readByNum()
+	//주혁 1104 내정보수정시 사용
+public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_phone, String cus_email) throws SQLException {
+	int cnt = 0;
+	System.out.println("myinfo_update에서 cnt : " + cnt);
+	try {
+		pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE);
+		pstmt.setInt(1, c_num);
+		pstmt.setString(2, cus_pw);
+		pstmt.setString(3, cus_name);
+		pstmt.setString(4, cus_phone);
+		pstmt.setString(5, cus_email);
+		cnt = pstmt.executeUpdate();
+		System.out.println(" cnt 들어왔니? : " + cnt);
+	} finally {
+		close();
+	} // end try
+	
+	return cnt;
+}
 	public int update(String cus_pw, String cus_name, String cus_phone, String cus_email, String cus_id)
 			throws SQLException {
 		int cnt = 0;
-
 		try {
 			pstmt = conn.prepareStatement(D.SQL_MYINFO_UPDATE); // TODO 1104
 			pstmt.setString(1, cus_pw);
@@ -218,5 +236,20 @@ public class CustomerDAO {
 
 	} // end insert()
 	
+
+//1104 주혁 회원탈퇴
+	public int deleteByNum(int num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_ACCOUNT_DELETE_BY_NUM);
+			pstmt.setInt(1, num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	}
 
 }

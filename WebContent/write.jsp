@@ -73,7 +73,7 @@
 	<br>
 	<section class="btnA">
 		<div class="container">
-			<button type="button" onclick="location.href='review.do'">목록으로</button>
+			<button type="button" onclick="location.href='review.do?page=1'">목록으로</button>
 		</div>
 	</section>
 	<!-- 푸터 -->

@@ -13,7 +13,7 @@
 <% } else { %>
 	<script>
 		alert("등록성공~!");
-		location.href = "review.do";
+		location.href = "review.do?page=1";
 	</script>
 <% } %>
 

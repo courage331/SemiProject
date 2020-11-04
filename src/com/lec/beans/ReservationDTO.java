@@ -17,7 +17,7 @@ public class ReservationDTO {
 	}
 	
 	
-	public ReservationDTO(int res_num,String res_sinfo, String res_message,int res_state, int cus_num, int pet_num) {
+	public ReservationDTO(int res_num,String res_message ,String res_sinfo, int res_state, int cus_num, int pet_num) {
 		super();
 		this.res_num = res_num;
 //		this.res_startdate = res_startdate;

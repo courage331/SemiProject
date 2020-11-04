@@ -96,9 +96,9 @@ public class ReservationDAO {
 		String res_startdate = dto.getRes_startdate();
 		String res_lastdate = dto.getRes_lastdate();
 		String res_message = dto.getRes_message();
+		String res_sinfo = dto.getRes_sinfo();
 		int cus_num = dto.getCus_num();
 		int pet_num = dto.getPet_num();
-		String res_sinfo = dto.getRes_sinfo();
 
 		cnt = this.insert(res_startdate, res_lastdate, res_message, res_sinfo, cus_num, pet_num);
 
@@ -141,12 +141,29 @@ public class ReservationDAO {
 
 	} // end select()
 
-	// 특정 num 의 글 만 SELECT
+	// 특정 사용자의 num의 글 만 SELECT
 	public ReservationDTO[] selectByNum(int num) throws SQLException {
 		ReservationDTO[] arr = null;
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_RESERVATION_SELECT_BY_NUM);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByNum()
+	
+	
+	// 특정 예약번호의 글 만 SELECT
+	public ReservationDTO[] selectByResNum(int num) throws SQLException {
+		ReservationDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_SELECT_BY_RESNUM);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
@@ -173,4 +190,25 @@ public class ReservationDAO {
 		return cnt;
 	}
 
+	
+	// 특정 num 글 수정 (제목, 내용) 수정삭제는 cus_num을 받아와야함 어떻게 받아올까요?
+	public int update(int num, String res_startdate, String res_lastdate, String res_message, String res_sinfo) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_UPDATE);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, res_startdate);
+			pstmt.setString(3, res_lastdate);
+			pstmt.setString(4, res_message);
+			pstmt.setString(5, res_sinfo);
+
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	} // end update()
+	
 }

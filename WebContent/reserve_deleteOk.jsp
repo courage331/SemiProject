@@ -11,7 +11,7 @@
 <% } else {%>
 	<script>
 		alert("취소 성공");
-		location.href = "myInfo.do";
+		opener.location.reload();
 		self.close();
 	</script>
 <% } %>
