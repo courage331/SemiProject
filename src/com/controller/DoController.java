@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.command.write.AccountDeleteCommand;
 import com.command.write.ChargeCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
@@ -253,12 +254,18 @@ public class DoController extends HttpServlet {
 				viewPage = "myinfo.jsp";
 				break;
 				
-			case "/myinfo_update.do":
+		  case "/myinfo_update.do":
 				command = new MyinfoUpdateCommand();
 				command.execute(request, response);
 				viewPage = "myinfo_update.jsp";
 				break;
 			
+		  case "/account_delete.do":
+			  command = new AccountDeleteCommand();
+			  command.execute(request, response);
+			  viewPage = "account_delete.jsp";
+			  break;
+			  
 		} // end switch
 
 		if (viewPage != null) {

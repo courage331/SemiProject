@@ -96,9 +96,9 @@ public class D {
 		//주혁 1103 내정보관리에서 데이터 읽어오기
 		//public static final String SQL_READ_SELECT_BY_NUM =
 		//		"SELECT * FROM customer WHERE CUS_NUM = ?";
-		//TODO 1104
+		//주혁 1104 내정보 수정
 		public static final String SQL_MYINFO_UPDATE =
-				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
+				" UPDATE (SELECT CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL FROM customer WHERE CUS_NUM = ?) SET CUS_PW = ?, CUS_NAME = ?, CUS_PHONE = ?, CUS_EMAIL = ?";
 		
 		// 정호 1103 반려견 정보 추가 인설트 
 		public static final String SQL_PET_INSERT =
@@ -109,5 +109,9 @@ public class D {
 		//정호 1103 반려건 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
+		//주혁 1104 회원탈퇴
+		public static final String SQL_ACCOUNT_DELETE_BY_NUM =
+				"DELETE FROM customer WHERE CUS_NUM = ?";
+
 		
 }
