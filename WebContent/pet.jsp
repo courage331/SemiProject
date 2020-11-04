@@ -55,14 +55,10 @@ Boolean chk = true;
 						if (chk) {
 						for (int i = 0; i < arr.length; i++) {
 					%>
-					<tr id="pet_list"  
-					onclick="window.open('pet_update.jsp?pet_name=<%=arr[i].getPet_name()%>
-					&pet_age=<%=arr[i].getPet_age()%>
-					&pet_weight=<%=arr[i].getPet_weight()%>',
-					'petinfo','width=500,height=800,left=650,location=no,status=no,scrollbars=no');">
-						<td id="akak"><%=arr[i].getPet_name()%></td>
-						<td id="akak"><%=arr[i].getPet_age()%></td>
-						<td id="akak"><%=arr[i].getPet_weight()%></td>
+					<tr id="pet_list" onclick="petchk('pet_update.do?pet_name=<%=arr[i].getPet_name()%>&pet_age=<%=arr[i].getPet_age()%>&pet_weight=<%=arr[i].getPet_age()%>')">
+						<td><%=arr[i].getPet_name()%></td>
+						<td><%=arr[i].getPet_age()%></td>
+						<td><%=arr[i].getPet_weight()%></td>
 					</tr>
 					<%
 						} // end for

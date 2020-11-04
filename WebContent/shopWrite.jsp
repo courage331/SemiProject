@@ -1,88 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!-- 1103영재 작성 -->
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- 1103영재 작성  + 이호인-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>글 작성</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="CSS/shopwrite.css">
+<script src="https://kit.fontawesome.com/b95da9d126.js"
+	crossorigin="anonymous"></script>
+<title>상품 추가</title>
+<script src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="JS/shopwrite.js"></script>
 </head>
 <script>
-function chkSubmit(){
-	frm = document.forms["frm"];
 	
-	var pNum = frm["pNum"].value.trim(); //상품 번호
-	var pName = frm["pName"].value.trim(); //상품이름
-	var pKind = frm["pKind"].value.trim(); //상품종류
-	var price = frm["price"].value.trim(); //상품가격
-	var pCnt = frm["pCnt"].value.trim(); //재고수량
-	
-	if(pName == ""){
-		alert("상품명은 반드시 입력해야 합니다");
-		frm["pName"].focus();
-		return false;
-	}
-	
-	if(pKind == ""){
-		alert("상품종류 반드시 작성해야 합니다");
-		frm["pKind"].focus();
-		return false;
-	}
-	
-	if(price == ""){
-		alert("가격은 반드시 작성해야 합니다");
-		frm["price"].focus();
-		return false;
-	}
-	
-	if(pCnt == ""){
-		alert("상품수량은 반드시 작성해야 합니다");
-		frm["pCnt"].focus();
-		return false;
-	}
-	
-	return true;	
-} // end chkSubmit()
 </script>
 <body>
-<h2>상품작성</h2>
-<form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()"
-	encType="Multipart/form-data">
-상품 번호:
-<input type="text" name="pNum"/><br>
-상품이름:
-<input type="text" name="pName"/><br>
-상품종류:
-<input type="text" name="pKind"/><br>
-상품가격:
-<input type="text" name="price"/><br>
-재고수량:
-<input type="text" name="pCnt"/><br>
-<br><br>
 
-<%-- 첨부파일 --%>
-<div style="background-color:beige; padding: 2px 10px; 
-	margin-bottom: 5px; border: 1px solid black;">
-	
-	<h4>첨부파일</h4>
-	<button type="button" id="btnAdd">추가</button>
-	<div id="files"></div>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-var i = 0;
-$("#btnAdd").click(function(){
-	$("#files").append("<div><input type='file' name='upfile" + i + "'><button type='button' onclick='$(this).parent().remove()'>삭제</button></div>");              
-	i++;
-})
-
-</script>
-
-
-<input type="submit" value="등록"/>
-</form>
-<br>
-<button type="button" onclick="location.href='shop.do'">돌아가기</button>
+	<jsp:include page="common/header.jsp"></jsp:include>
+<body>
+	<section class="conA">
+		<div class="container">
+			<br> <br>
+			<h1>상품 추가</h1>
+		</div>
+	</section>
+	<section class="conB">
+		<div class="container">
+			<form name="frm" action="shopWriteOk.do" method="post"
+				 encType="Multipart/form-data">
+				상품이름: <input type="text" name="pName" /><br>
+				상품종류: <input type="text" name="pKind" /><br>
+				상품가격: <input type="number" name="pPrice"/><br>
+				재고수량: <input type="number" name="pCnt"/><br>
+				<br>
+				사진첨부: (<img src="img/imgpush.png">)클릭!<br>
+			<textarea name="content" id="editor1"></textarea>
+			<script>
+			CKEDITOR.replace('editor1', {
+				allowedContent: true,    // HTML 태그 자동 삭제 방지 설정
+				width: '100%px',       //  최초 너비, 높이 지정 가능
+				height: '400px',
+				filebrowserUploadUrl: '${pageContext.request.contextPath}/fileUpload.do'
+			});
+			</script>	
+			<br>
+				<input type="submit" value="등록" />
+			</form>
+		</div>
+	</section>
+	<br>
+		<section class="btnA">
+		<div class="container">
+			<button type="button" onclick="history.back()">돌아가기</button>
+		</div>
+	</section>
+		<!-- 푸터 -->
+	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
 </html>
 

@@ -12,7 +12,7 @@ public class D {
 				"INSERT INTO review"
 				+ "(rev_num, rev_subject, rev_content, rev_star, rev_regdate, cus_num) "
 				+ "VALUES"
-				+ "(review_seq.nextval, ?, ?, ?, SYSDATE, ?)";
+				+ "(review_seq.nextval, ?, , ?, SYSDATE, ?)";
 		// 여기서 user_num도 '?'로 받아오는지 모르겠습니다.
 		
 		public static final String SQL_WRITE_SELECT = 
@@ -86,7 +86,7 @@ public class D {
 				"INSERT INTO PRODUCT"
 				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name) "
 				+ "VALUES"
-				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
+				+ "(product_seq.nextval, ?, ?, ?, ?)";
 		//상품 번호 순서 정렬
 		public static final String SQL_PRODUCT_SELECT = 
 				"SELECT * FROM product ORDER BY pro_num";
@@ -122,10 +122,19 @@ public class D {
 		//주혁 1104 회원탈퇴
 		public static final String SQL_ACCOUNT_DELETE_BY_NUM =
 				"DELETE FROM customer WHERE CUS_NUM = ?";
-
+		//주혁 1104 아이디찾기
+		public static final String SQL_FINDID_SELECT = 
+				"SELECT * FROM CUSTOMER WHERE CUS_NAME = ? AND CUS_EMAIL = ?";
+		
+		//주혁 1104 비밀번호찾기
+		public static final String SQL_FINDPW_SELECT = 
+				"SELECT * FROM CUSTOMER WHERE CUS_NAME = ? AND CUS_EMAIL = ? AND CUS_ID = ?";
 		
 		//정호 1104 뼈다귀 충전
 		public static final String SQL_CASH_UPDATE =
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY + ?";
+		
+		//정호 1104 반려견 정보 수정
+//		public static final String SQL_PET_UPDATE =
 		
 }

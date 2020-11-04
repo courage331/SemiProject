@@ -17,22 +17,18 @@ public class ShopWriteCommand implements Command {
 		int cnt = 0;
 		ProductDAO dao = new ProductDAO();
 		
-		int pNum = Integer.parseInt(request.getParameter("pNum"));
 		String pKind = request.getParameter("pKind");
-		int price = Integer.parseInt(request.getParameter("price"));
+		int pPrice = Integer.parseInt(request.getParameter("pPrice"));
 		int pCnt = Integer.parseInt(request.getParameter("pCnt"));
 		String pName = request.getParameter("pName");
-		
+		System.out.println("!!!!!!!!!!"+pKind+"," + pPrice + ", " + pCnt + "," + pName);
 			
 		// 유효성 체크 : null 이거나, 빈 문자열이면 
-		if(pKind.trim().length() != 0 && price != 0 && pCnt != 0 && pName.trim().length() > 0 ) {
 			try {
-				System.out.println("pro_num: ---" + pNum);
-				cnt = dao.insert(pNum, pKind, price, pCnt, pName);
+				cnt = dao.insert(pKind, pPrice, pCnt, pName);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
 		
 		request.setAttribute("result", cnt);
 		
