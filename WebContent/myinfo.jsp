@@ -70,7 +70,7 @@
 			</form>
 		</div>
 </section>	
-	<!-- 푸터 -->
+	<!-- 푸터// -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
 
