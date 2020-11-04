@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.lec.beans.CustomerDAO;
+import com.lec.beans.CustomerDTO;
 import com.lec.beans.PetDAO;
 import com.lec.beans.PetDTO;
 import com.lec.beans.ReviewDAO;
@@ -19,6 +21,7 @@ public class PetCommand implements Command {
 		PetDAO dao = new PetDAO(); // DAO
 		int cnt = 0;
 		HttpSession session = request.getSession(); 
+
 		
 		int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
 		String p_name = request.getParameter("p_name");
@@ -28,6 +31,8 @@ public class PetCommand implements Command {
 			try {
 				cnt = dao.insert(cus_num, p_name, p_age, p_weight);
 				System.out.println("짠");
+				
+				
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

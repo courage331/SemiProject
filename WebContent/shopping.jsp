@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="com.lec.beans.*"%>
 <!DOCTYPE html>
+<%
+	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="CSS/charge.css">
+<link rel="stylesheet" href="CSS/shopping.css">
 <title>뼈다귀 충전하기</title>
 
 </head>
@@ -15,8 +19,8 @@
 	<header>
 		<div class="container">
 			<i class="fas fa-dog"></i>
-			<h2>충전</h2>
-			<input type="button" value="X" onClick="self.close()">
+			<h2>결제화면</h2>
+			<!--  <input type="button" value="X" onClick="">-->
 		</div>
 	</header>
 
@@ -45,10 +49,8 @@
 				</div>
 			</div>
 			<div class="bone">
-				<form name="frm" action="chargeOk.do" method="post">
-					<i class="fas fa-bone"></i> <input type="text" name="bone_rs"
-						id="bone_rs" value="0" readonly>
-				</form>
+				<i class="fas fa-bone"></i>
+				<p id="bone_rs">0</p>
 			</div>
 		</div>
 	</section>
@@ -58,8 +60,9 @@
 		<div class="container">
 			<h2>충전수단</h2>
 			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao"> 카카오 페이 
-				<input type="radio" name="chk_cash" value="cash" checked="checked"> 무통장 입금
+				<input type="radio" name="chk_cash" value="kakao" checked="checked">
+				카카오 페이 <input type="radio" name="chk_cash" value="cash"> 무통장
+				입금
 			</div>
 		</div>
 	</section>
@@ -83,5 +86,5 @@
 	</footer>
 
 </body>
-<script type="text/javascript" src="JS/charge.js"></script>
+<script type="text/javascript" src="JS/shopping.js"></script>
 </html>

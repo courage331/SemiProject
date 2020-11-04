@@ -36,8 +36,15 @@ public class D {
 			+"(reservation_seq.nextval,?,?,?,?,1,?,?)"
 		;
 		
+		//예약 수정
+		public static final String SQL_RESERVATION_UPDATE =
+				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
+		
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =
 				"DELETE FROM reservation WHERE res_num = ?";
+		
+		public static final String SQL_PET_SEARCH_BY_NUM = 
+				"SELECT * FROM pet WHERE pet_num = ?";
 		
 		public static final String SQL_NAME_SEARCH =
 				"SELECT * FROM pet";
@@ -49,8 +56,11 @@ public class D {
 				"SELECT * FROM reservation ORDER BY res_num DESC";
 		
 		public static final String SQL_RESERVATION_SELECT_BY_NUM =
-				"SELECT * FROM reservation WHERE cus_num = ?";
+				"SELECT * FROM reservation WHERE cus_num = ? ORDER BY res_num DESC";
 
+		public static final String SQL_RESERVATION_SELECT_BY_RESNUM =
+				"SELECT * FROM reservation WHERE res_num = ?";
+		
 		public static final String SQL_PET_RESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 1 WHERE pet_num = ?";
 		
@@ -106,7 +116,7 @@ public class D {
 				+ "(pet_num, cus_num, pet_name, pet_age, pet_weight, pet_reserve)"
 				+ "VALUES"
 				+ "(PET_SEQ.nextval,?,?,?,?,0)";
-		//정호 1103 반려건 정보 조회
+		//정호 1103 반려견 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
 		//주혁 1104 회원탈퇴
@@ -119,5 +129,9 @@ public class D {
 		//주혁 1104 비밀번호찾기
 		public static final String SQL_FINDPW_SELECT = 
 				"SELECT * FROM CUSTOMER WHERE CUS_NAME = ? AND CUS_EMAIL = ? AND CUS_ID = ?";
+		
+		//정호 1104 뼈다귀 충전
+		public static final String SQL_CASH_UPDATE =
+				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY + ?";
 		
 }

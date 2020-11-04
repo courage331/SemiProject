@@ -27,7 +27,9 @@ import com.command.write.PetCommand;
 import com.command.write.PetListCommand;
 import com.command.write.ReserveCommand;
 import com.command.write.ReserveDeleteCommand;
+import com.command.write.ReserveModifyCommand;
 import com.command.write.ReserveSearchCommand;
+import com.command.write.ReserveUpdateCommand;
 import com.command.write.SelectCommand;
 import com.command.write.ShopCommand;
 import com.command.write.ShopDeleteCommand;
@@ -37,6 +39,7 @@ import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
 import com.command.write.WriteCommand;
+import com.command.write.modifyCommand;
 
 
 @WebServlet("*.do")
@@ -164,6 +167,24 @@ public class DoController extends HttpServlet {
 			viewPage = "reserve_deleteOk.jsp";
 			break;
 			
+		case "/reserve_update.do":
+			command = new ReserveUpdateCommand();
+			command.execute(request, response);
+			viewPage = "reserve_update.jsp";
+			break;
+			
+		case "/reserve_modify.do":
+			command = new ReserveModifyCommand();
+			command.execute(request, response);
+			viewPage = "reserve_modify.jsp";
+			break;
+			
+		case "/modifyOk.do":
+			command = new modifyCommand();  // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
+			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
+			break;
+			
 		//정호 1030 뼈다귀
 		case "/mypage.do":
 			command = new MypageCommand();  // 1. 커맨드(로직) 결정
@@ -185,9 +206,13 @@ public class DoController extends HttpServlet {
 			break;
 			
 		case "/charge.do":
+			viewPage = "charge.jsp";
+			break;
+			
+		case "/chargeOk.do":
 			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
-			viewPage = "charge.jsp"; // 2. 페이지(뷰) 결정
+			viewPage = "chargeOk.jsp"; // 2. 페이지(뷰) 결정
 			break;
 			
 		case "/login.do":

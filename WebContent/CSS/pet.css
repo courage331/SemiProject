@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+table {
+	width: 100%
+}
+
+table,th,td{
+	border : 1px solid var(--sub-text-color);
+	border-collapse : collapse;
+	margin : 10px;
+	padding : 10px;
+}
+
+/* 컨텐츠 A */
+.conA .container {
+	padding-top: 60px;
+}
+
+/* 컨텐츠 B */
+.conB .container {
+	padding-top: 60px;
+}
+
+/* 컨텐츠 C */
+.conC .container {
+	padding-top: 60px;
+}
