@@ -166,6 +166,24 @@ public class PetDAO {
 
 		return arr;
 	} // end selectByUid()
+	
+	public PetDTO[] selectByPetNum(int c_num) throws SQLException {
+		PetDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_SEARCH_BY_NUM);
+			pstmt.setInt(1, c_num);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByUid()
+	
+	
+	
 	//예약 상태로 만든다.
 	public int update2(int pet_num) throws SQLException {
 		int cnt = 0;

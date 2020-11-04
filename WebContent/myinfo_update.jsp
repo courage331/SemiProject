@@ -1,12 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<% // Controller 로부터 결과 데이터 받음
+	int cnt = (Integer)request.getAttribute("result");
+%>
 
-</body>
-</html>
+<% if(cnt == 0){
+	System.out.println("cnt: " + cnt); // 0
+%>
+	<script>
+		alert("수정 실패");
+		history.back();
+	</script>
+<% } else { 
+	System.out.println("cnt: " + cnt); // 0
+%> 
+	<script>
+		alert("수정 성공");
+		location.href = "myinfo.do";
+	</script>
+<% } %>

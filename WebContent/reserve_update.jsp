@@ -10,18 +10,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>예약 보기</title>
 </head>
+<%@ page import="com.lec.beans.*"%>
 <%
+	ReservationDTO [] rarr  = (ReservationDTO[])request.getAttribute("rlist");
 	String pet_name=request.getParameter("pet_name");
-	String startdate=request.getParameter("startdate");
-	String lastdate=request.getParameter("lastdate");
-	String res_info=request.getParameter("res_info");
-	String memo=request.getParameter("memo");
-	int res_num = Integer.parseInt(request.getParameter("res_num")); 
-	int pet_num = Integer.parseInt(request.getParameter("pet_num")); 
 	String state="";
+	String url= "reserve_modify.do";
 
-
-	switch(Integer.parseInt(request.getParameter("state"))){
+	switch(rarr[0].getRes_state()){
 	case 0:
 		state="예약 종료";
 		break;
@@ -33,6 +29,7 @@
 		break;
 	}
 %>
+
 <body>
 	<!-- 헤더 -->
 	<header>
@@ -55,27 +52,27 @@
 	</div>
 	<div>
 		<label>예약 날짜 :</label>
-		<label><%=startdate %> ~ <%=lastdate %></label>
+		<label><%=rarr[0].getRes_startdate() %> ~ <%=rarr[0].getRes_lastdate() %></label>
 	</div>
 	<div>
 		<label>예약 내용 :</label>
-		<label><%=res_info %></label>
+		<label><%=rarr[0].getRes_sinfo() %></label>
 	</div>
 	<div>
 		<label>건의 사항 :</label>
-		<label><%=memo %></label>
+		<label><%=rarr[0].getRes_message() %></label>
 	</div>
 
 	<div class="clearfix"></div>
 	<%
-		if(Integer.parseInt(request.getParameter("state"))==0){
+		if(rarr[0].getRes_state()==0){
 	%>		
-			<input type="button" class="navyBtn" value="리뷰남기기" onClick="window.open('review.do')">
+			<input type="button" class="navyBtn" value="리뷰남기기" onClick="goReview()">
 	<% 	
-		}else if(Integer.parseInt(request.getParameter("state"))==1){
+		}else if(rarr[0].getRes_state()==1){
 	%>	
-			<input type="button" class="navyBtn" value="예약변경" onClick="window.open('reservation.do')">
-			<input type="button" class="navyBtn" value="예약취소" onClick="chkDelete(<%=res_num%>,<%=pet_num %>)">
+			<input type="button" class="navyBtn" value="예약변경" onClick="goModify(<%=rarr[0].getRes_num()%>,<%=rarr[0].getPet_num()%>)"/>
+			<input type="button" class="navyBtn" value="예약취소" onClick="chkDelete(<%=rarr[0].getRes_num()%>,<%=rarr[0].getPet_num() %>)"/>
 	<% 
 	}else{
 	}
@@ -94,5 +91,4 @@
 	</footer>
 </body>
 <script type="text/javascript" src="JS/reserve_update.js"></script>
-
 </html>

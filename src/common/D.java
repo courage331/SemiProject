@@ -36,8 +36,15 @@ public class D {
 			+"(reservation_seq.nextval,?,?,?,?,1,?,?)"
 		;
 		
+		//예약 수정
+		public static final String SQL_RESERVATION_UPDATE =
+				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
+		
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =
 				"DELETE FROM reservation WHERE res_num = ?";
+		
+		public static final String SQL_PET_SEARCH_BY_NUM = 
+				"SELECT * FROM pet WHERE pet_num = ?";
 		
 		public static final String SQL_NAME_SEARCH =
 				"SELECT * FROM pet";
@@ -49,8 +56,11 @@ public class D {
 				"SELECT * FROM reservation ORDER BY res_num DESC";
 		
 		public static final String SQL_RESERVATION_SELECT_BY_NUM =
-				"SELECT * FROM reservation WHERE cus_num = ?";
+				"SELECT * FROM reservation WHERE cus_num = ? ORDER BY res_num DESC";
 
+		public static final String SQL_RESERVATION_SELECT_BY_RESNUM =
+				"SELECT * FROM reservation WHERE res_num = ?";
+		
 		public static final String SQL_PET_RESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 1 WHERE pet_num = ?";
 		
@@ -96,9 +106,9 @@ public class D {
 		//주혁 1103 내정보관리에서 데이터 읽어오기
 		//public static final String SQL_READ_SELECT_BY_NUM =
 		//		"SELECT * FROM customer WHERE CUS_NUM = ?";
-		//TODO 1104
+		//주혁 1104 내정보 수정
 		public static final String SQL_MYINFO_UPDATE =
-				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
+				" UPDATE (SELECT CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL FROM customer WHERE CUS_NUM = ?) SET CUS_PW = ?, CUS_NAME = ?, CUS_PHONE = ?, CUS_EMAIL = ?";
 		
 		// 정호 1103 반려견 정보 추가 인설트 
 		public static final String SQL_PET_INSERT =
@@ -109,5 +119,9 @@ public class D {
 		//정호 1103 반려건 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
+		//주혁 1104 회원탈퇴
+		public static final String SQL_ACCOUNT_DELETE_BY_NUM =
+				"DELETE FROM customer WHERE CUS_NUM = ?";
+
 		
 }
