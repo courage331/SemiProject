@@ -11,7 +11,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
@@ -25,12 +24,7 @@
 	<jsp:include page="common/header.jsp"></jsp:include>
 	<h1>쇼핑</h1>
 	<br>
-	<br>
-	
-	<!-- 컨텐츠B -->
-	<section class="conA">
-			
-		<div class="container">
+	<div class="bbbbb">
 	<%
 		if(session.getAttribute("c_num") != null){
 			int c_num = Integer.parseInt(((String)session.getAttribute("c_num")));
@@ -43,54 +37,36 @@
 			}
 		}
 	%>
-		</div>
-	</section>
-	<section class"=conD">
-	<div id="dddd">
-	<table>
+	</div>
+	<br>
+	
+	<!-- 컨텐츠B -->
+	<div class="conshop">
 
 <%
 	if(arr != null){
 		for(int i = 0; i < arr.length; i++){
 %>
-
-				<th><img src="img/<%=arr[i].getPro_name() %>.jpg"><br>
+				<div class="item<%=i%>"><img src="img/<%=arr[i].getPro_name() %>.jpg"><br>
 					종류 : <%=arr[i].getPro_kind() %><br>
 					가격 : <%=arr[i].getPro_price() %><br>
 					재고 : <%=arr[i].getPro_cnt() %><br>
-					 <button>구매하기</button></th>
+					 <button onclick="openC()">구매하기</button></div>
+					 <!-- 
+					 "window.open('shopBuy.jsp','장바구니','width=430,height=500,location=no,status=no,scrollbars=yes');
+					  -->
+				<form name = "shopBuy" id="shopBuy" method=post">
+				<input type='hidden' id='pKind' name="pKind" value='<%=arr[i].getPro_kind()%>'>
+				<input type='hidden' id='price' name="price" value='<%=arr[i].getPro_price()%>'>
+				</form>
 
 <%			
 		} // end for
 	} // end if
 %>
-	</table>
 
 	</div>
-	</section>
-	<section class"=conD">
-	<div id="dddd">
-	<table>
 
-<%
-	if(arr != null){
-		for(int i = 0; i < arr.length; i++){
-%>
-
-				<th><img src="img/<%=arr[i].getPro_name() %>.jpg"><br>
-					종류 : <%=arr[i].getPro_kind() %><br>
-					가격 : <%=arr[i].getPro_price() %><br>
-					재고 : <%=arr[i].getPro_cnt() %><br>
-					 <button>구매하기</button></th>
-
-<%			
-		} // end for
-	} // end if
-%>
-	</table>
-
-	</div>
-	</section>
 	
 	
 		
@@ -101,6 +77,7 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc2df8359ac0dd02633bb7bf5a6a5456"></script>
 <script type="text/javascript" src="JS/use.js"></script>
+<script type="text/javascript" src="JS/shop.js"></script>
 
 </html>
 

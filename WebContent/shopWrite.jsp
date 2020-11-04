@@ -11,7 +11,7 @@
 function chkSubmit(){
 	frm = document.forms["frm"];
 	
-	
+	var pNum = frm["pNum"].value.trim(); //상품 번호
 	var pName = frm["pName"].value.trim(); //상품이름
 	var pKind = frm["pKind"].value.trim(); //상품종류
 	var price = frm["price"].value.trim(); //상품가격
@@ -48,14 +48,16 @@ function chkSubmit(){
 <h2>상품작성</h2>
 <form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()"
 	encType="Multipart/form-data">
+상품 번호:
+<input type="text" name="pNum"/><br>
 상품이름:
 <input type="text" name="pName"/><br>
 상품종류:
 <input type="text" name="pKind"/><br>
 상품가격:
-<input type="number" name="price"/><br>
+<input type="text" name="price"/><br>
 재고수량:
-<input type="number" name="pCnt"/><br>
+<input type="text" name="pCnt"/><br>
 <br><br>
 
 <%-- 첨부파일 --%>
