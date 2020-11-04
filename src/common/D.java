@@ -122,7 +122,13 @@ public class D {
 		//주혁 1104 회원탈퇴
 		public static final String SQL_ACCOUNT_DELETE_BY_NUM =
 				"DELETE FROM customer WHERE CUS_NUM = ?";
-
+		//주혁 1104 아이디찾기
+		public static final String SQL_FINDID_SELECT = 
+				"SELECT * FROM CUSTOMER WHERE CUS_NAME = ? AND CUS_EMAIL = ?";
+		
+		//주혁 1104 비밀번호찾기
+		public static final String SQL_FINDPW_SELECT = 
+				"SELECT * FROM CUSTOMER WHERE CUS_NAME = ? AND CUS_EMAIL = ? AND CUS_ID = ?";
 		
 		//정호 1104 뼈다귀 충전
 		public static final String SQL_CASH_UPDATE =

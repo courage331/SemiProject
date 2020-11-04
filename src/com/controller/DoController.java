@@ -15,6 +15,8 @@ import com.command.write.ChargeCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
+import com.command.write.FindidCommand;
+import com.command.write.FindpwCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
@@ -296,6 +298,26 @@ public class DoController extends HttpServlet {
 			  command = new AccountDeleteCommand();
 			  command.execute(request, response);
 			  viewPage = "account_delete.jsp";
+			  break;
+			  
+		  case "/find_id.do":
+			  viewPage = "find_id.jsp";
+			  break;
+			  
+		  case "/findidOk.do":
+			  command = new FindidCommand();
+			  command.execute(request, response);
+			  viewPage = "findidOk.jsp";
+			  break;
+			  
+		  case "/find_pw.do":
+			  viewPage = "find_pw.jsp";
+			  break;
+			  
+		  case "/findpwOk.do":
+			  command = new FindpwCommand();
+			  command.execute(request, response);
+			  viewPage = "findpwOk.jsp";
 			  break;
 			  
 		} // end switch

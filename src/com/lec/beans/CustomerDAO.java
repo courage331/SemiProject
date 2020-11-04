@@ -252,4 +252,38 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 		return cnt;
 	}
 
+	// 주혁 1104 아이디찾기
+		public CustomerDTO[] find_id(String cus_name, String cus_email) throws SQLException {
+			CustomerDTO[] arr = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_FINDID_SELECT);
+				pstmt.setString(1, cus_name);
+				pstmt.setString(2, cus_email);
+				rs = pstmt.executeQuery();
+				System.out.println();
+				arr = createArray(rs);
+			} finally {
+				close();
+			} // end try
+
+			return arr;
+		} // end selectByUid()
+		// 주혁 1104 비밀번호찾기
+		public CustomerDTO[] find_pw(String cus_name, String cus_email, String cus_id) throws SQLException {
+			CustomerDTO[] arr = null;
+			try {
+				pstmt = conn.prepareStatement(D.SQL_FINDPW_SELECT);
+				pstmt.setString(1, cus_name);
+				pstmt.setString(2, cus_email);
+				pstmt.setString(3, cus_id);
+				rs = pstmt.executeQuery();
+				System.out.println();
+				arr = createArray(rs);
+			} finally {
+				close();
+			} // end try
+			
+			return arr;
+		} // end selectByUid()
+
 }
