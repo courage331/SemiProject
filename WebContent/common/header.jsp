@@ -30,7 +30,7 @@
 					</c:choose>
 					<li><a class="mainmenu" href="use.jsp"><div>이용안내</div></a></li>
 					<li><a class="mainmenu" href="shop.do"><div>쇼핑</div></a></li>
-					<li><a class="mainmenu" href="review.do"><div>후기</div></a></li>
+					<li><a class="mainmenu" href="review.do?page=1"><div>후기</div></a></li>
 					<c:choose>
 						<c:when test="${not empty sessionScope.userid }">
 							<li class="submenu"><a class="mainmenu" href="#"><div>내정보</div></a>

@@ -47,11 +47,14 @@ public class DoController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		actionDo(request, response);
+		System.out.println("doGet() 호출");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		actionDo(request, response);
+		System.out.println("doPost() 호출");
+		
 	}
 
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response)
