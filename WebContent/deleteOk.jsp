@@ -11,7 +11,7 @@
 <% } else {%>
 	<script>
 		alert("삭제 성공");
-		location.href = "review.do";
+		location.href = "review.do?page=1";
 	</script>
 <% } %>
 

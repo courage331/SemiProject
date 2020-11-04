@@ -79,7 +79,14 @@ public class D {
 				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
 		//상품 번호 순서 정렬
 		public static final String SQL_PRODUCT_SELECT = 
-				"SELECT * FROM product ORDER BY pro_num DESC";
+				"SELECT * FROM product ORDER BY pro_num";
+		
+		public static final String SQL_PRODUCT_SELECT_BY_NAME =
+				"SELECT * FROM product WHERE pro_name = ?";
+		
+		public static final String SQL_PRODUCT_SELECT_BY_NUM =
+				"SELECT * FROM product WHERE pro_num = ?";
+		
 		//상품 삭제
 		public static final String SQL_PRODUCT_DELETE_BY_NUM =
 				"DELETE FROM product WHERE pro_num = ?";

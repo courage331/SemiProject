@@ -198,5 +198,7 @@ public int update(String cus_pw, String cus_name, String cus_phone, String cus_e
 	} // end try
 	
 	return cnt;
-} // end update()
+
+} // end insert()
+
 }

@@ -3,16 +3,17 @@
 
 /* 기본 색상 */
 :root {
-	--main-color:#FEC034;
+	--main-color: #FEC034; 
 	--text-color: #555555;
 	--sub-text-color: #999999;
-	
 }
 
+table {
+	width: 80%;
+}
 
-table {width: 80%;}
 table, td {
-	border : 0.5px solid black;
+	border: 0.5px solid black;
 	border-collapse: collapse;
 	text-align: center;
 	margin-left: 10%;
@@ -20,8 +21,9 @@ table, td {
 	border-right-style: none;
 	padding: 10px;
 }
-th {
-	border : 0.5px solid black;
+
+th.tbwid_15 {
+	border: 0.5px solid black;
 	border-collapse: collapse;
 	text-align: center;
 	margin-left: 10%;
@@ -29,8 +31,20 @@ th {
 	border-right-style: none;
 	padding: 10px;
 	background-color: #FEC034;
+	width: 15%;
 }
 
+th.tbwid_35 {
+	border: 0.5px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	margin-left: 10%;
+	border-left-style: none;
+	border-right-style: none;
+	padding: 10px;
+	background-color: #FEC034;
+	width: 35%;
+}
 
 /* 이호인-----------------------*/
 a#akak {
@@ -64,7 +78,37 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 .btnA {
 	background-color: white;
 }
-.conA h1{
+
+div.pageBt {
+	text-align: center;
+}
+
+button.pageBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+button.pageBtn1 {
+	font-size: 25px;
+	padding: 10px;
+	background-color: #FEC034;
+	border: none;
+}
+
+button.nextBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+button.backBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+.conA h1 {
 	text-align: center;
 	font-size: 40px;
 }
@@ -75,24 +119,22 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 	margin-bottom: 80px;
 }
 
-.btnA button{
+.btnA button {
 	background-color: #FEC034;
 	width: 180px;
 	height: 50px;
 	font-size: 30px;
 	line-height: 50px;
 	text-align: center;
-	border:none;
+	border: none;
 	border-radius: 12px;
 	margin-left: 78%;
 }
-button:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-    );
-    cursor: pointer;
+
+button:hover {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
+		rgba(255, 255, 255, 0.4));
+	cursor: pointer;
 }
 
-
- /*style="font-size: 20px;  padding:10px 10px; float: right;"*/
+/*style="font-size: 20px;  padding:10px 10px; float: right;"*/

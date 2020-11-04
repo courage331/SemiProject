@@ -2,6 +2,8 @@ package com.lec.beans;
 
 public class CustomerDTO {
 
+
+
    private int cus_num;
    private String cus_name;
    private String cus_pw;
