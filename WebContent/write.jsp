@@ -15,7 +15,6 @@
 <script src="ckeditor/ckeditor.js"></script>
 
 </head>
-<body>
 	<!-- 호인 11/02 include -->
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>

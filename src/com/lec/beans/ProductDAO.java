@@ -46,26 +46,24 @@ public class ProductDAO {
 	public int insert(ProductDTO dto) throws SQLException {
 		int cnt = 0;
 
-		int pNum = dto.getPro_num();
 		String pKind = dto.getPro_kind();
-		int price = dto.getPro_price();
+		int pPrice = dto.getPro_price();
 		int pCnt = dto.getPro_cnt();
 		String pName = dto.getPro_name();
 
-		cnt = this.insert(pNum, pKind, price, pCnt, pName);
+		cnt = this.insert(pKind, pPrice, pCnt, pName);
 		return cnt;
 	}
 
 	// 상품 등록
-	public int insert(int pNum, String pKind, int price, int pCnt, String pName) throws SQLException {
+	public int insert(String pKind, int pPrice, int pCnt, String pName) throws SQLException {
 		int cnt = 0;
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PRODUCT_INSERT);
-			pstmt.setInt(1, pNum);
-			pstmt.setString(2, pKind);
-			pstmt.setInt(3, price);
-			pstmt.setInt(4, pCnt);
+			pstmt.setString(1, pKind);
+			pstmt.setInt(2, pPrice);
+			pstmt.setInt(3, pCnt);
 			pstmt.setString(4, pName);
 			cnt = pstmt.executeUpdate();
 		} finally {

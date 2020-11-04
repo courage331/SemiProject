@@ -47,9 +47,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 			<%
 				if (session.getAttribute("c_num") != null) {
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
-				if (c_num == 3) {
+				if (c_num == 1) {
 			%>
-			<button class="editBt" onclick="location.href = 'shopWrite.do'">글 작성</button>
+			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품 추가</button>
 			<%
 				} else {
 
