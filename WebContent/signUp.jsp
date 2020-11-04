@@ -29,24 +29,25 @@
 					<h3>회원가입</h3>
 				</div>
 				<div>
-					<label>ID :</label> <input type="text" name="c_id"
-						placeholder="아이디를 입력해 주세요." />
+					<label>아이디 :</label> 
+					<input type="text" name="c_id" placeholder="ID" />
+				<div class="check_font" id="id_check"></div>
 				</div>
 				<div>
-					<label>PW :</label> <input type="password" name="c_pw"
-						placeholder="비밀번호를 입력해 주세요." />
+					<label>비밀번호 :</label> <input type="password" name="c_pw"
+						placeholder="PW" />
 				</div>
 				<div>
 					<label>이름 :</label> <input type="text" name="c_name"
-						placeholder="이름를 입력해 주세요." />
+						placeholder="NAME" />
 				</div>
 				<div>
 					<label>전화번호 :</label> <input type="text" name="c_phone"
-						placeholder="전화번호를 입력해 주세요." />
+						placeholder="PHONE NUMBER" />
 				</div>
 				<div>
 					<label>이메일 :</label> <input type="text" name="c_email"
-						placeholder="이메일을 입력해 주세요." />
+						placeholder="E-MAIL" />
 				</div>
 				<div class="clearfix"></div>
 				<div class="content-footer">
