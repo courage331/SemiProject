@@ -5,10 +5,11 @@
 
 <%
 	// Controller 로부터 결과 데이터 받음
-CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
-ReservationDTO [] rarr  = (ReservationDTO[])request.getAttribute("rlist");
-PetDTO [] parr= (PetDTO[])request.getAttribute("plist");
+CustomerDTO[] arr = (CustomerDTO[]) request.getAttribute("list");
+ReservationDTO[] rarr = (ReservationDTO[]) request.getAttribute("rlist");
+PetDTO[] parr = (PetDTO[]) request.getAttribute("plist");
 Boolean chk = true;
+
 String [] state = {"예약 종료","예약 변경 가능", "투숙중"};
 String color = "#c0c0c0";
 %>
@@ -17,8 +18,10 @@ String color = "#c0c0c0";
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/mypage.css">
+
 <title>마이 페이지</title>
 </head>
 
@@ -29,14 +32,15 @@ String color = "#c0c0c0";
 	<section class="conA">
 		<div class="container">
 			<div class="announce">
-				<h3><%=arr[0].getCus_name() %>님의 정보</h3>
+				<h3><%=arr[0].getCus_name()%>님의 정보
+				</h3>
 			</div>
 			<table>
 			</table>
 		</div>
 	</section>
 	<!-- 컨텐츠B -->
-	
+
 	<section class="conB">
 		<div class="container">
 		<table>
@@ -82,6 +86,7 @@ String color = "#c0c0c0";
 	<!-- 컨텐츠C -->
 	<section class="conC">
 		<div class="container">
+
 			<table>
 				<tr>
 					<td><h3>뼈다귀현황</h3></td>
@@ -95,7 +100,7 @@ String color = "#c0c0c0";
 				</tr>
 				<tr>
 					<td>
-						<button onclick="window.open('charge.jsp','charge','width=500,height=615,left=650,location=no,status=no,scrollbars=no');">충전</button>
+						<button onclick="chargeopen()">충전</button>
 					</td>
 				</tr>
 			</table>
@@ -105,5 +110,6 @@ String color = "#c0c0c0";
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
+<script type="text/javascript" src="JS/charge.js"></script>
 <script type="text/javascript" src="JS/mypage.js"></script>
 </html>
