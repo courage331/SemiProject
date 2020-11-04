@@ -35,7 +35,7 @@
 	</div>
 	<div>
 		<label>PW :</label>
-		<input type="text" name="c_pw" placeholder="비밀번호를 입력해 주세요."/>
+		<input type="password" name="c_pw" placeholder="비밀번호를 입력해 주세요."/>
 	</div>
 	<div class="clearfix"></div>
 

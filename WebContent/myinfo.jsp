@@ -29,16 +29,16 @@
 					<h3>내 정보관리</h3>
 				</div>
 				<div>
-					<label>ID :</label> <input type="text" name="c_id"
-						placeholder=<%=c_id%> />
+					<label>ID : <%=c_id%></label>
 				</div>
 				<div>
-					<label>PW :</label> <input type="text" name="c_pw"
+					<label>PW :</label> <input type="password" name="c_pw"
 						placeholder="비밀번호 재설정" />
 				</div>
 				<div>
-					<label>PW 확인 :</label> <input type="text" name="c_pwchk"
+					<label>PW 확인 :</label> <input type="password" name="c_pwchk"
 						placeholder="비밀번호 확인" />
+					<input type="button" id="logbtn" class="hc vc" value="PW바꾸기" onClick="return chkPw()"/>
 				</div>
 				<div>
 					<label>이름 :</label> <input type="text" name="c_name"
@@ -53,7 +53,7 @@
 						placeholder=<%=c_email%> />
 				</div>
 				<input type="submit" id="logbtn" class="hc vc" value="수정하기"/>
-				<input type="button" class="navyBtn" value="회원탈퇴" onClick="location.href='account_delete.do'">
+				<input type="button" class="hc vc" value="회원탈퇴" onClick="location.href='account_delete.do'">
 			</form>
 		</div>
 	</section>

@@ -9,12 +9,8 @@ CustomerDTO[] arr = (CustomerDTO[])request.getAttribute("list");
 ReservationDTO [] rarr  = (ReservationDTO[])request.getAttribute("rlist");
 PetDTO [] parr= (PetDTO[])request.getAttribute("plist");
 Boolean chk = true;
-
-String [] state = new String[3];
-state[0]="예약 종료";
-state[1]="예약변경가능";
-state[2]="투숙중";
-
+String [] state = {"예약 종료","예약 변경 가능", "투숙중"};
+String color = "#c0c0c0";
 %>
 <!DOCTYPE html>
 <html>
@@ -25,8 +21,6 @@ state[2]="투숙중";
 <link rel="stylesheet" href="CSS/mypage.css">
 <title>마이 페이지</title>
 </head>
-<script>
-</script>
 
 <body>
 	<!-- 헤더 -->
@@ -60,12 +54,18 @@ state[2]="투숙중";
 		chk=false;
 	}
 
-%>		
+%>	
+
+	
 <%
 	if(chk){
 		for(int i = 0; i < rarr.length; i++){
 %>
-			<tr id="reserve_list" onclick="window.open('reserve_update.jsp?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&startdate=<%=rarr[i].getRes_startdate()%>&lastdate=<%=rarr[i].getRes_lastdate() %>&res_info=<%=rarr[i].getRes_sinfo() %>&memo=<%=rarr[i].getRes_message() %>&state=<%=rarr[i].getRes_state() %>&res_num=<%=rarr[i].getRes_num() %>&pet_num=<%=rarr[i].getPet_num() %>','info','width=500,height=800,left=650,location=no,status=no,scrollbars=no');">
+<%
+	if(rarr[i].getRes_state()==0){
+%>
+			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%} %>				
 				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
 				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
 				<td id="akak"><%= parr[rarr[i].getPet_num()-1].getPet_name() %></td>
@@ -106,4 +106,5 @@ state[2]="투숙중";
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
+<script type="text/javascript" src="JS/mypage.js"></script>
 </html>

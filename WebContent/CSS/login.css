@@ -26,7 +26,14 @@
 	font-weight: bold;
 }
 
-#contact-form input[type='text'], #contact-form input[type='email'] { 
+#contact-form input[type='text'], #contact-form input[type='password'], #contact-form input[type='email'] { 
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	height: 25px;
+	width: 65%;
+}
+
+#contact-form input[type='password'], #contact-form input[type='email'] { 
 	border:#ccc 1px solid;
 	border-radius: 5px;
 	height: 25px;
@@ -75,7 +82,8 @@
 
 
 #contact-form input[type='button']:hover {
-	text-decoration:underline
+	text-decoration:underline;
+	cursor: pointer;
 }
 
 #contact-form input[type='button']:active {
