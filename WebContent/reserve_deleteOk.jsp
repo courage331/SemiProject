@@ -11,6 +11,7 @@
 <% } else {%>
 	<script>
 		alert("취소 성공");
+		opener.location.reload();
 		self.close();
 	</script>
 <% } %>

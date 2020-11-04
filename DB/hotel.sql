@@ -171,8 +171,10 @@ INSERT INTO PET VALUES(1,'강아지1',5,10,0,1);
 INSERT INTO PET VALUES(2,'강아지2',6,12,0,1);
 INSERT INTO PET VALUES(3,'강아지3',5,10,0,2);
 INSERT INTO PET VALUES(4,'강아지4',6,12,0,2);
+INSERT INTO PET VALUES(5,'강아지5',6,12,0,1);
 
 /*예약 만들기*/
+INSERT INTO Reservation VALUES(1,'강아지1',5,10,0,1);
 INSERT INTO Reservation VALUES(1,'강아지1',5,10,0,1);
 
 /*테이블에 있는지 확인용*/
@@ -203,7 +205,7 @@ SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
 UPDATE pet SET pet_reserve = 0 WHERE pet_num = 1;
 
-UPDATE reservation SET res_state=0 WHERE res_num=142;
+UPDATE reservation SET res_state=2 WHERE res_num=142;
 
 SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
 

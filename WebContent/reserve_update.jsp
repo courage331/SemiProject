@@ -15,7 +15,6 @@
 	ReservationDTO [] rarr  = (ReservationDTO[])request.getAttribute("rlist");
 	String pet_name=request.getParameter("pet_name");
 	String state="";
-	//String url= "reserve_modify.do?pet_name="+pet_name+"&num="+rarr[0].getRes_num();
 	String url= "reserve_modify.do";
 
 	switch(rarr[0].getRes_state()){

@@ -14,6 +14,7 @@ state[0]="예약 종료";
 state[1]="예약변경가능";
 state[2]="투숙중";
 
+String [] color = {"#ff9e81","#e6e6fa","#96DBB4"};
 %>
 <!DOCTYPE html>
 <html>
@@ -64,7 +65,15 @@ state[2]="투숙중";
 	if(chk){
 		for(int i = 0; i < rarr.length; i++){
 %>
-			<tr id="reserve_list" onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%
+	if(rarr[i].getRes_state()==0){
+%>
+			<tr id="reserve_list" bgcolor=<%=color[0] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%}else if(rarr[i].getRes_state()==1){ %>				
+			<tr id="reserve_list" bgcolor=<%=color[1] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%} else{%>				
+			<tr id="reserve_list" bgcolor=<%=color[2] %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%} %>				
 				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
 				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
 				<td id="akak"><%= parr[rarr[i].getPet_num()-1].getPet_name() %></td>
