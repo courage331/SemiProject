@@ -12,7 +12,7 @@ public class D {
 				"INSERT INTO review"
 				+ "(rev_num, rev_subject, rev_content, rev_star, rev_regdate, cus_num) "
 				+ "VALUES"
-				+ "(review_seq.nextval, ?, ?, ?, SYSDATE, ?)";
+				+ "(review_seq.nextval, ?, , ?, SYSDATE, ?)";
 		// 여기서 user_num도 '?'로 받아오는지 모르겠습니다.
 		
 		public static final String SQL_WRITE_SELECT = 
