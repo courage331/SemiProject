@@ -68,13 +68,18 @@ String color = "#c0c0c0";
 	if(rarr[i].getRes_state()==0){
 %>
 			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
-<%} %>				
+<%}else{ %>
+			<tr id="reserve_list" onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+<%} %>
+				
 				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
 				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
 				<td id="akak"><%= parr[rarr[i].getPet_num()-1].getPet_name() %></td>
 				<td id="akak"><%= state[rarr[i].getRes_state()] %></td>
 			</tr>
 <%			
+
+
 		} // end for
 	}
 %>
