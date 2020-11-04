@@ -35,7 +35,6 @@ import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
 import com.command.write.WriteCommand;
 
-
 @WebServlet("*.do")
 public class DoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -54,7 +53,7 @@ public class DoController extends HttpServlet {
 			throws ServletException, IOException {
 		actionDo(request, response);
 		System.out.println("doPost() 호출");
-		
+
 	}
 
 	protected void actionDo(HttpServletRequest request, HttpServletResponse response)
@@ -77,7 +76,7 @@ public class DoController extends HttpServlet {
 		Command command = null; // 1. 어떠한 로직을 수행할지 결정
 		String viewPage = null; // 2. 어떠한 페이지를(뷰) 보여줄지 결정
 
-		//예시니깐 보구 하세요 -E : 옙
+		// 예시니깐 보구 하세요 -E : 옙
 
 //			switch(com) {  // Java7 부터 switch 에 String 가능
 //			case "/list.do":
@@ -86,57 +85,57 @@ public class DoController extends HttpServlet {
 //				viewPage = "list.jsp";   // 2. 페이지(뷰) 결정
 //				break;
 //			} // end switch
-		
+
 		// 1028 23:25 이호인 추가
-		switch(com) {  // Java7 부터 switch 에 String 가능
+		switch (com) { // Java7 부터 switch 에 String 가능
 		case "/review.do":
-			command = new ListCommand();  // 1. 커맨드(로직) 결정
+			command = new ListCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
-			viewPage = "review.jsp";   // 2. 페이지(뷰) 결정
+			viewPage = "review.jsp"; // 2. 페이지(뷰) 결정
 			break;
-		
+
 		case "/write.do":
 			viewPage = "write.jsp";
 			break;
-			
+
 		case "/writeOk.do":
 			command = new WriteCommand();
 			command.execute(request, response);
 			viewPage = "writeOk.jsp";
 			break;
-		
+
 		case "/view.do":
 			command = new ViewCommand();
 			command.execute(request, response);
 			viewPage = "view.jsp";
 			break;
-			
+
 		case "/update.do":
 			command = new SelectCommand();
 			command.execute(request, response);
 			viewPage = "update.jsp";
 			break;
-			
+
 		case "/updateOk.do":
 			command = new UpdateCommand();
 			command.execute(request, response);
 			viewPage = "updateOk.jsp";
 			break;
-		
+
 		case "/deleteOk.do":
 			command = new DeleteCommand();
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;
-			
+
 		case "/fileUpload.do":
 			command = new FileUploadCommand();
 			command.execute(request, response);
-			break;	
-		
-		//지민 1029 예약하기	
+			break;
+
+		// 지민 1029 예약하기
 		case "/reservation.do":
-			//이쪽에서 로그인 여부 체크하기...
+			// 이쪽에서 로그인 여부 체크하기...
 //			HttpSession session = request.getSession(); 
 //			command = new LoginCheckCommand();
 //			command.execute(request, response);
@@ -144,120 +143,120 @@ public class DoController extends HttpServlet {
 //				//로그인 안함
 //			}else {
 //			}
-				command = new ReserveSearchCommand();
-				command.execute(request, response);
-				viewPage = "reservation.jsp";   // 2. 페이지(뷰) 결정
-			break;	
-			
-		case "/reserveOk.do":
-			command = new ReserveCommand();  // 1. 커맨드(로직) 결정
-			command.execute(request, response); // 커맨드 실행
-			viewPage = "reserveOk.jsp";   // 2. 페이지(뷰) 결정
+			command = new ReserveSearchCommand();
+			command.execute(request, response);
+			viewPage = "reservation.jsp"; // 2. 페이지(뷰) 결정
 			break;
-			
+
+		case "/reserveOk.do":
+			command = new ReserveCommand(); // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
+			viewPage = "reserveOk.jsp"; // 2. 페이지(뷰) 결정
+			break;
+
 		case "/reserve_deleteOk.do":
 			command = new ReserveDeleteCommand();
 			command.execute(request, response);
 			viewPage = "reserve_deleteOk.jsp";
 			break;
-			
-		//정호 1030 뼈다귀
+
+		// 정호 1030 뼈다귀
 		case "/mypage.do":
-			command = new MypageCommand();  // 1. 커맨드(로직) 결정
+			command = new MypageCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
-			viewPage = "mypage.jsp";   // 2. 페이지(뷰) 결정
+			viewPage = "mypage.jsp"; // 2. 페이지(뷰) 결정
 			break;
 		// 정호 1103 펫
-			
+
 		case "/pet.do":
 			command = new PetListCommand();
 			command.execute(request, response);
 			viewPage = "pet.jsp";
 			break;
-			
+
 		case "/petOk.do":
 			command = new PetCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "petOk.jsp"; // 2. 페이지(뷰) 결정
 			break;
-			
+
 		case "/charge.do":
 			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "charge.jsp"; // 2. 페이지(뷰) 결정
 			break;
-			
+
 		case "/login.do":
 			viewPage = "login.jsp";
 			break;
-			
+
 		case "/loginOk.do":
 			command = new LoginCommand();
 			command.execute(request, response);
 			viewPage = "loginOk.jsp";
 			break;
-		
+
 		case "/signUp.do":
 			viewPage = "signUp.jsp";
 			break;
-			
+
 		case "/signupOk.do":
 			command = new SignupCommand();
 			command.execute(request, response);
 			viewPage = "signupOk.jsp";
 			break;
-			
-	//1103 김영재 현재 작성진행중
+
+		// 1103 김영재 현재 작성진행중
 		case "/shop.do":
 			command = new ShopCommand();
 			command.execute(request, response);
 			viewPage = "shop.jsp";
 			break;
-			
-		 case "/shopWrite.do":
-	         viewPage = "shopWrite.jsp";
-	         break;
-	         
-	      case "/shopWriteOk.do":
-	         command = new ShopWriteCommand();
-	         command.execute(request, response);
-	         viewPage = "shopWriteOk.jsp";
-	         break;
-	         //업데이트는 잠시 보류
+
+		case "/shopWrite.do":
+			viewPage = "shopWrite.jsp";
+			break;
+
+		case "/shopWriteOk.do":
+			command = new ShopWriteCommand();
+			command.execute(request, response);
+			viewPage = "shopWriteOk.jsp";
+			break;
+		// 업데이트는 잠시 보류
 //	      case "/shopUpdate.do":
 //	         command = new ShopSelectCommand();
 //	         command.execute(request, response);
 //	         viewPage = "shopUpdate.jsp";
 //	         break;
-	         
+
 //	      case "/shopUpdateOk.do":
 //	         command = new ShopUpdateCommand();
 //	         command.execute(request, response);
 //	         viewPage = "shopUpdateOk.jsp";
 //	         break;
-	      
-	      case "/shopDeleteOk.do":
-	         command = new ShopDeleteCommand();
-	         command.execute(request, response);
-	         viewPage = "shopDeleteOk.jsp";
-	         break;
-	         
-	      case "/shopFileUpload.do":
-	         command = new ShopFileUploadCommand();
-	         command.execute(request, response);
-	         break;  
-	      // 주혁 1103 내정보 업데이트  
-	      case "/myinfo.do":
+
+		case "/shopDeleteOk.do":
+			command = new ShopDeleteCommand();
+			command.execute(request, response);
+			viewPage = "shopDeleteOk.jsp";
+			break;
+
+		case "/shopFileUpload.do":
+			command = new ShopFileUploadCommand();
+			command.execute(request, response);
+			break;
+		// 주혁 1103 내정보 업데이트
+		case "/myinfo.do":
 //	    	  	command = new MyinfoCommand();
 //				command.execute(request, response);
-				viewPage = "myinfo.jsp";
-				break;
-				
-			case "/myinfo_update.do":
-				command = new MyinfoUpdateCommand();
-				command.execute(request, response);
-				viewPage = "myinfo_update.jsp";
-				break;
+			viewPage = "myinfo.jsp";
+			break;
+
+		case "/myinfo_update.do":
+			command = new MyinfoUpdateCommand();
+			command.execute(request, response);
+			viewPage = "myinfo_update.jsp";
+			break;
 			
 		} // end switch
 
