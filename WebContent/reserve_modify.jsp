@@ -1,27 +1,16 @@
-<!-- 예약페이지, 김지민 -->
+<!-- 예약-수정-페이지, 김지민 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%> 
 <%@ page import="com.lec.beans.*" %>
 
 
-
 <% // Controller 로부터 결과 데이터 받음
 	String c_num = (String)session.getAttribute("c_num");
-	
-	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
-%>
+	PetDTO[] parr = (PetDTO [])request.getAttribute("plist");
+	ReservationDTO [] rarr = (ReservationDTO [])request.getAttribute("rlist");
 
-<% if(arr==null || arr.length==0){ %>			
-	<script>	
-		alert("등록된 반려견이 없습니다. 반려견을 등록하고 와주세요");
-		history.back();  // 다시 로그인페이지로
-	</script>
-<%
-		return;
-	} 
 %>
-
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -34,9 +23,7 @@
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>예약 페이지</title>
-
-
+<title>예약수정 페이지</title>
 </head>
 <script>
 
@@ -114,23 +101,11 @@
 
 			<!-- 우측 -->        
         	<div class="menu2">
-        		<form name="rform" action="reserveOk.do?cus_num=<%=c_num %>" method="post" onsubmit="return chkDate()">
+        		<form name="rform" action="modifyOk.do?num=<%=rarr[0].getRes_num() %>" method="post" onsubmit="return chkDate()">
 					반려견 선택하기:<br>
 					<select name="select_pet"> 
-					<!-- select_pet에 value값이 담겨서 간다. -->
-						<%
-							for(int i=0; i<arr.length; i++){
-								if(arr[i].getPet_reserve()==1){
-						%>		
-								<option value="<%= arr[i].getPet_num() %>" disabled><%= arr[i].getPet_name() %></option>
-						<% 		
-								}else{
-						%>			
-								<option value="<%= arr[i].getPet_num() %>"><%= arr[i].getPet_name() %></option>
-						<% 		
-								}
-							}
-						%>
+					<!-- select_pet에 value값이 담겨서 간다. -->	
+							<option value="<%= rarr[0].getPet_num() %>" selected><%=parr[0].getPet_name() %></option>
 					</select>
 					<br><br><br>
 					희망서비스:<br>
@@ -146,13 +121,13 @@
 					</select> 
 					<br><br><br>
 					체크인:<br>
-					<input type="date" name="res_startdate" id="startdate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_startdate" id="startdate" value="<%=rarr[0].getRes_startdate() %>" min="" max="";><br><br><br>
 					체크아웃:<br>
-					<input type="date" name="res_lastdate" id="lastdate" value="" min="" max="";><br><br><br>
+					<input type="date" name="res_lastdate" id="lastdate" value="<%=rarr[0].getRes_lastdate() %>" min="" max="";><br><br><br>
 					기타(요청사항):<br>
-					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" cols="30" rows="10" ></textarea>
+					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" cols="30" rows="10" ><%=rarr[0].getRes_message() %></textarea>
 					<br><br>					
-					<input type="submit" value="예약하기"/>
+					<input type="submit" value="수정하기"/>
 				</form>
 				<br>
         	</div>
@@ -164,5 +139,5 @@
 </body>
 <!-- 정호 : 10/30 -->
 <script src="JS/index.js" type="text/javascript"></script>
-<script type="text/javascript" src="JS/reservation.js"></script>
+<script type="text/javascript" src="JS/reserve_modify.js"></script>
 </html>

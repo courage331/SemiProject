@@ -36,8 +36,15 @@ public class D {
 			+"(reservation_seq.nextval,?,?,?,?,1,?,?)"
 		;
 		
+		//예약 수정
+		public static final String SQL_RESERVATION_UPDATE =
+				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
+		
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =
 				"DELETE FROM reservation WHERE res_num = ?";
+		
+		public static final String SQL_PET_SEARCH_BY_NUM = 
+				"SELECT * FROM pet WHERE pet_num = ?";
 		
 		public static final String SQL_NAME_SEARCH =
 				"SELECT * FROM pet";
@@ -49,8 +56,11 @@ public class D {
 				"SELECT * FROM reservation ORDER BY res_num DESC";
 		
 		public static final String SQL_RESERVATION_SELECT_BY_NUM =
-				"SELECT * FROM reservation WHERE cus_num = ?";
+				"SELECT * FROM reservation WHERE cus_num = ? ORDER BY res_num DESC";
 
+		public static final String SQL_RESERVATION_SELECT_BY_RESNUM =
+				"SELECT * FROM reservation WHERE res_num = ?";
+		
 		public static final String SQL_PET_RESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 1 WHERE pet_num = ?";
 		
