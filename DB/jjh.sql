@@ -56,7 +56,8 @@ CREATE TABLE reservation
 	res_num number NOT NULL,
 	res_startdate date NOT NULL,
 	res_lastdate date NOT NULL,
-	message clob,
+	res_sinfo varchar2(30) NOT NULL,
+	res_message clob,
 	cus_num number NOT NULL,
 	pet_num number NOT NULL,
 	-- 미정...
