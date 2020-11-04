@@ -37,6 +37,21 @@ header h2 {
 	font-size: 40px;
 }
 
+.conA{
+width:100vw;
+height:76vw	
+}
+.content{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px white;
+}
+.ctext{
+	width:300px;
+}
+
 footer{
 	height: 64px;
 	background-color: var(--main-color);

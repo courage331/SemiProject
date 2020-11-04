@@ -1,18 +1,6 @@
 
-function openC(){
-		
-		var frm = document.forms['shopBuy']
-		
-		alert(frm['pKind'].value);
-		
-		window.open("shopBuy.jsp","장바니","width=570, height=350, resizable = no, scrollbars = no");
-		frm.target="shopBuy.jsp";
-		frm.action ="shopBuy.jsp";
-		frm.submit();
-		
-}
 /* 1102 js 파일 생성*/
-function shoppingOpen(nn,kind, cnt) {
+function shoppingOpen(nn,kind, price) {
 	
-   shopping = window.open("shopping.jsp?nn="+nn+"&kind=" +kind+"&cnt="+cnt, "팝업창", "width = 500, height = 615, left = 650, top = 10")
+   shopping = window.open("shopping.jsp?nn="+nn+"&kind=" +kind+"&price="+price, "팝업창", "width = 500, height = 615, left = 650, top = 10")
 }

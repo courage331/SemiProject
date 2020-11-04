@@ -41,6 +41,7 @@ import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
 import com.command.write.WriteCommand;
 import com.command.write.modifyCommand;
+import com.command.write.shoppingCommand;
 
 @WebServlet("*.do")
 public class DoController extends HttpServlet {
@@ -315,6 +316,17 @@ public class DoController extends HttpServlet {
 			command = new FindpwCommand();
 			command.execute(request, response);
 			viewPage = "findpwOk.jsp";
+			break;
+			
+		//1105 영재 구매jsp 
+		case "/shopping.do":
+			viewPage = "shopping.jsp";
+			break;
+		
+		case "/shoppingOk.do":
+			command = new shoppingCommand();
+			command.execute(request, response);
+			viewPage = "shoppingOk.jsp";
 			break;
 
 		} // end switch

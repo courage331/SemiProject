@@ -4,9 +4,10 @@
 <!DOCTYPE html>
 <%
 	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
-	String a = request.getParameter("nn");
-	String b = request.getParameter("kind");
-	String c = request.getParameter("cnt");
+	String c_num = (String)session.getAttribute("c_num");
+	String pName = request.getParameter("nn");
+	String pKind = request.getParameter("kind");
+	String price = request.getParameter("price");
 %>
 <html>
 <head>
@@ -16,7 +17,7 @@
 <link rel="stylesheet" href="CSS/shopping.css">
 <title>물품 구매</title>
 <script>
-	alert(<%=a%>);
+	alert(<%=pName%>);
 </script>
 
 </head>
@@ -30,14 +31,42 @@
 		</div>
 	</header>
 
+	<form name="frm" action="shoppingOk.do" method="post"><br>
+		<input type="hidden" name="pName" value="<%=pName%>"/><br>
+
+		<%
+		String name;
+		int a;
+		if(session.getAttribute("c_num") != null){
+			name = (String)session.getAttribute("c_num");
+			a = Integer.parseInt(name);
+		}else{
+			name = null;
+			a = 0;
+		}
+	%>
+	<!-- 
+	
+	 -->
+	<input type="hidden" name="c_num" value="<%= a %>"><br>
+	<br><br>
+	
+	
+	</a>
+
 	<!-- 컨텐츠 A  -->
 	<section class="conA">
-		<div class="container">
-			 	  <img src="img/<%=a%>.jpg"><br>
-			종류 : <%=b %> <br>
-			가격 : <%=c %><br>
+		<div class="content">
+			 	  <img src="img/<%=pName%>.jpg"><br>
 		</div>
+			 	  <div class="ctext"></div>
+			종류 : <%=pKind %> <br>
+			가격 : <%=price %><br>
 	</section>
+	결제 금액 : <%=price %>
+	<script>
+	alert(<%=a%>)
+	</script>
 
 
 	<!-- 컨텐츠 C  -->
@@ -46,15 +75,19 @@
 			
 		</div>
 	</section>
-
 	<!-- 푸터 -->
 	<footer>
 		<div class="container">
-			<button class="cashok">
+			<button class="cashok" onclick="submit1()">
 				<h2>구매하기</h2>
 			</button>
 		</div>
 	</footer>
+	<!-- 
+	
+	<input type="submit" value="등록하기"/>
+	 -->
+	</form>
 
 </body>
 <script type="text/javascript" src="JS/shopping.js"></script>
