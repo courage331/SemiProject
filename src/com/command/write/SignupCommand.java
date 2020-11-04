@@ -21,7 +21,7 @@ public class SignupCommand implements Command{
 		String c_email = request.getParameter("c_email");
 		
 		try {
-			cnt = dao.c_insert(c_id, c_pw, c_name, c_phone, c_email);
+			cnt = dao.c_insert(c_pw, c_name, c_phone, c_email, c_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
