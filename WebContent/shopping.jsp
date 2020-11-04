@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <%
 	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
+	String a = request.getParameter("num");
 %>
 <html>
 <head>
@@ -27,52 +28,14 @@
 	<!-- 컨텐츠 A  -->
 	<section class="conA">
 		<div class="container">
-			<div class="input_cash">
-				<div id="area">0원</div>
-				<div>
-					<button type="button" id="close_cash">X</button>
-				</div>
-			</div>
-			<hr>
-			<div class="select_cash">
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="1000">+1천원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="5000">+5천원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="10000">+1만원</button>
-				</div>
-				<div class="sel_box">
-					<button type="button" class="price_btn" value="1000000">+100만원</button>
-				</div>
-			</div>
-			<div class="bone">
-				<i class="fas fa-bone"></i>
-				<p id="bone_rs">0</p>
-			</div>
+			<%=a %>
 		</div>
 	</section>
 
-	<!-- 컨텐츠 B  -->
-	<section class="conB">
-		<div class="container">
-			<h2>충전수단</h2>
-			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao" checked="checked">
-				카카오 페이 <input type="radio" name="chk_cash" value="cash"> 무통장
-				입금
-			</div>
-		</div>
-	</section>
-
+	
 	<!-- 컨텐츠 C  -->
 	<section class="conC">
 		<div class="container">
-			<h2>충전 후 결제시 혜택</h2>
-			<p>- 충전 금액의 10% 적립
-			<p>- 소득공제 혜택 적용 (현금 영수증 발행)
 		</div>
 	</section>
 
