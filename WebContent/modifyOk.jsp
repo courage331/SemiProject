@@ -13,7 +13,7 @@
 <% } else {%>	
 	<script>
 		alert("예약 수정에 성공했습니다.");
-		location.href = "mypage.do";
+		location.href = "mypage.do?page=1";
 	</script>
 <% } %>
 
