@@ -40,9 +40,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	%>
 
 	<!-- 컨텐츠B -->
-	<section class="conA">
+	<section class="conF">
 
-		<div class="container">
+		<div class="containerF">
 			<%
 				if (session.getAttribute("c_num") != null) {
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
@@ -51,9 +51,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품 추가</button>
 			<%
 				} else {
-			}
+				}
 
-			}
+				}
 			%>
 		</div>
 	</section>
@@ -69,7 +69,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					for (int j = 0; j < 4; j++) { // for 2
 				%>
 				<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"><br>
-					종류 : <%=arr[cnt].getPro_kind()%><br> 가격 : <%=arr[cnt].getPro_price()%><br>
+					종류 : <%=arr[cnt].getPro_kind()%><br> 가격22 : <%=arr[cnt].getPro_price()%><br>
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
 					int aba = arr[cnt].getPro_price();
@@ -79,7 +79,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					<%
 					}else {
 					%>
-					<button onclick="shoppingOpen()">구매하기</button></th>
+					<button onclick="shoppingOpen(<%=arr[j].getPro_price()%>)">구매하기</button></th>
 					<%
 					}
 					%>
@@ -106,7 +106,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					for (int j = 0; j < 4; j++) { // for 4
 				%>
 				<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"><br>
-					종류 : <%=arr[cnt].getPro_kind()%><br> 가격 : <%=arr[cnt].getPro_price()%><br>
+					종류 : <%=arr[cnt].getPro_kind()%><br> 가격33 : <%=arr[cnt].getPro_price()%><br>
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 										<%
 					if(arr[cnt].getPro_cnt() == 0){

@@ -78,7 +78,6 @@ a#akak:active { /* 마우스가 눌린 상태 스타일 */
 .btnA {
 	background-color: white;
 }
-
 div.pageBt {
 	text-align: center;
 }
@@ -107,16 +106,16 @@ button.backBtn {
 	padding: 10px;
 	border: none;
 }
-
 .conA h1 {
 	text-align: center;
 	font-size: 40px;
 }
 
-.btnA .container {
-	padding-left: 200px;
-	padding-right: 200px;
+.btnA .containerF {
+	margin-left: 200px;
+	margin-right: 200px;
 	margin-bottom: 80px;
+	text-align: right;
 }
 
 .btnA button {
@@ -128,7 +127,6 @@ button.backBtn {
 	text-align: center;
 	border: none;
 	border-radius: 12px;
-	margin-left: 78%;
 }
 
 button:hover {
@@ -136,5 +134,4 @@ button:hover {
 		rgba(255, 255, 255, 0.4));
 	cursor: pointer;
 }
-
 /*style="font-size: 20px;  padding:10px 10px; float: right;"*/

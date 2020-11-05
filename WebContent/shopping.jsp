@@ -56,6 +56,8 @@
 
 	<!-- 컨텐츠 A  -->
 	<section class="conA">
+		<div class="container">
+			<%=a %>
 		<div class="content">
 			 	  <img src="img/<%=pName%>.jpg"><br>
 		</div>
@@ -68,11 +70,9 @@
 	alert(<%=a%>)
 	</script>
 
-
 	<!-- 컨텐츠 C  -->
 	<section class="conC">
 		<div class="container">
-			
 		</div>
 	</section>
 	<!-- 푸터 -->

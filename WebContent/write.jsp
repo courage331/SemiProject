@@ -6,7 +6,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/write.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
@@ -65,15 +64,15 @@
 	%>
 	<input type="hidden" name="c_num" value="<%= a %>"><br>
 	<br><br>
-	<input type="submit" value="등록하기"/>
+	<input type="submit" class="akk" value="등록하기"/>
+		<div class="containerG">
+			<button type="button" onclick="location.href='review.do?page=1'">목록으로</button>
+		</div>
 	</form>
 			</div>
 	</section>
 	<br>
 	<section class="btnA">
-		<div class="container">
-			<button type="button" onclick="location.href='review.do?page=1'">목록으로</button>
-		</div>
 	</section>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
