@@ -18,6 +18,7 @@ int pet_age = Integer.parseInt(request.getParameter("pet_age"));
 int pet_weight = Integer.parseInt(request.getParameter("pet_weight"));
 int pet_num = Integer.parseInt(request.getParameter("pet_num"));
 int pet_image = Integer.parseInt(request.getParameter("pet_image"));
+int pick = pet_image + 4;
 %>
 <body>
 
@@ -34,6 +35,7 @@ int pet_image = Integer.parseInt(request.getParameter("pet_image"));
 		<div class="container">
 			<h3><%=pet_name%>의 상세 정보
 			</h3>
+			<img src="img/K-00<%=pick%>.png">
 		</div>
 	</section>
 	<!-- 컨텐츠B -->
@@ -41,7 +43,7 @@ int pet_image = Integer.parseInt(request.getParameter("pet_image"));
 		<div class="container">
 
 			<form name="frm" id="contact-form"
-				action="pet_modify.do?pet_num=<%=pet_num %>" method="post">
+				action="pet_modify.do?pet_num=<%=pet_num%>" method="post">
 				<div id="content-header"></div>
 				<div>
 					<label>강아지 이름 :</label> <input type="text" name="pet_name"
@@ -56,12 +58,23 @@ int pet_image = Integer.parseInt(request.getParameter("pet_image"));
 						value=<%=pet_weight%> placeholder=<%=pet_weight%> />
 				</div>
 				<div>
-					<label>강아지 이미지 :</label> <input type="text" name="pet_image"
-						value=<%=pet_image%> placeholder=<%=pet_image%> />
+					<label>강아지 이미지 :</label>
+					<%
+						for (int i = 1; i < 5; i++) {
+						if (i != pet_image) {
+					%>
+					<input class="pet_image_list" type="radio" name="pet_image"
+						value="<%=i%>"> <img id="pet_img<%=i%>"
+						src="img/K-00<%=i%>.png">
+					<%
+						}
+					}
+					%>
 				</div>
-
-				<input type="submit" value="수정하기" /> <input type="button"
-					value="삭제" onClick="chkDelete(<%=pet_num%>)">
+				<div class="btn_list">
+				<input class="btn" type="submit" value="수정하기" /> 
+				<input class="btn" type="button" value="삭제" onClick="chkDelete(<%=pet_num%>)">
+				</div>
 			</form>
 		</div>
 	</section>
@@ -76,4 +89,7 @@ int pet_image = Integer.parseInt(request.getParameter("pet_image"));
 	</footer>
 </body>
 <script type="text/javascript" src="JS/pet_update.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="JS/pet.js"></script>
 </html>
