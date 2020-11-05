@@ -27,8 +27,7 @@ public class shoppingCommand implements Command {
 		//int cus_money = Integer.parseInt(request.getParameter("price"));
 		
 		//String pName = request.getParameter("pName");
-		//System.out.println("!!!!!!!!!!!!"+cus_num);
-		
+		System.out.println("!!!!!!!!!!!!"+cus_num);
 		
 		try {
 			//dcnt = cdao.delMoney(cus_num,cus_money);

@@ -306,9 +306,9 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 			try {
 				pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
+				pstmt.setInt(1, cus_num);
 				rs = pstmt.executeQuery();
 				arr = createArray(rs);
-				System.out.println(arr);
 			} finally {
 				close();
 			}
