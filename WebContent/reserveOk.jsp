@@ -13,7 +13,6 @@
 	</script>
 <% } else { %>
 	<script>
-		alert("예약 성공~!");
 		location.href = "mypage.do?page=1";
 	</script>
 <% } %>
