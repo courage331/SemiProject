@@ -95,7 +95,7 @@ String color = "#c0c0c0";
 	
 <%
 	if(chk){
-		for(int i = 0; i < rarr.length; i++){
+		for(int i = startP; i < rarr.length; i++){
 %>
 <%
 	if(rarr[i].getRes_state()==0){
