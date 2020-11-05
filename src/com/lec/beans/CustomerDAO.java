@@ -285,5 +285,5 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			
 			return arr;
 		} // end selectByUid()
-
+	
 }
