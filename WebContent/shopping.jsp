@@ -3,11 +3,15 @@
 	<%@ page import="com.lec.beans.*"%>
 <!DOCTYPE html>
 <%
-	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
-	String c_num = (String)session.getAttribute("c_num");
-	String pName = request.getParameter("nn");
-	String pKind = request.getParameter("kind");
-	String price = request.getParameter("price");
+		//ProductDTO [] arr = (ProductDTO[]) request.getAttribute("list");
+		CustomerDTO [] cdto = (CustomerDTO [])request.getAttribute("ulist"); 
+		//String c_num = (String)session.getAttribute("c_num");
+		int c_money = cdto[0].getCus_money();
+		//System.out.println(c_money+"ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+		String pName = request.getParameter("nn");
+		String pKind = request.getParameter("kind");
+		String price = request.getParameter("price");
+	
 %>
 <html>
 <head>
@@ -16,9 +20,7 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="CSS/shopping.css">
 <title>물품 구매</title>
-<script>
-	alert(<%=pName%>);
-</script>
+
 
 </head>
 <body>
@@ -32,7 +34,9 @@
 	</header>
 
 	<form name="frm" action="shoppingOk.do" method="post"><br>
-		<input type="hidden" name="pName" value="<%=pName%>"/><br>
+		<input type="hidden" name="pName" value="<%=pName%>"/>
+		<input type="hidden" name="price" value="<%=price%>"/>
+		<br>
 
 		<%
 		String name;
@@ -63,6 +67,10 @@
 			종류 : <%=pKind %> <br>
 			가격 : <%=price %><br>
 	</section>
+	<div>
+	보유 뼈다귀 : <%=c_money %>
+	</div>
+	
 	결제 금액 : <%=price %>
 	<script>
 	alert(<%=a%>)
@@ -78,15 +86,12 @@
 	<!-- 푸터 -->
 	<footer>
 		<div class="container">
-			<button class="cashok" onclick="submit1()">
+			<button class="cashok" onclick="submit1();">
 				<h2>구매하기</h2>
 			</button>
 		</div>
 	</footer>
-	<!-- 
-	
-	<input type="submit" value="등록하기"/>
-	 -->
+
 	</form>
 
 </body>
