@@ -49,8 +49,8 @@
 	<!-- 컨텐츠A -->
 	<section class="conA">
 		<div class="container">
-			<h4>어떤 서비스를 받아야 할 지 고민이신가요?</h4>
-			<h3>상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
+			<h4 id="start">어떤 서비스를 받아야 할 지 고민이신가요?</h4>
+			<h3 id="start">상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
 		</div>
 	</section>
 
@@ -141,7 +141,7 @@
 					    <option value="유치원" >유치원</option>
 					    <option value="그루밍" >그루밍</option>
 					    <option value="스페셜케어" >스페셜케어</option>
-					    <option value="호텔 ,데이케어" selected>호텔 &데이케어</option>
+					    <option value="호텔,데이케어" selected>호텔 &데이케어</option>
 					    <!-- 기본적으로 보여주고 싶은것은 selected를 넣어준다. -->
 					</select> 
 					<br><br><br>
@@ -152,7 +152,7 @@
 					기타(요청사항):<br>
 					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" cols="30" rows="10" ></textarea>
 					<br><br>					
-					<input type="submit" value="예약하기"/>
+					<input type="submit" class="s_button" value="예약하기"/>
 				</form>
 				<br>
         	</div>
