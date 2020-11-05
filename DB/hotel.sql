@@ -165,6 +165,7 @@ ALTER TABLE selldata
 INSERT INTO CUSTOMER VALUES(1,'1234','테스트','010-1234-5678','abcd@naver.com','test',100);
 INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
 INSERT INTO CUSTOMER VALUES(3,'1234','테스트','010-1234-5678','abcd@naver.com','test3',100);
+INSERT INTO CUSTOMER VALUES(4,'1234','테스트','010-1234-5678','abcd@naver.com','test4',100);
 
 /*가상의 테스트용 펫 생성*/
 INSERT INTO PET VALUES(1,'강아지1',5,10,0,1);
@@ -204,7 +205,7 @@ SELECT pet_name FROM pet;
 
 SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
-UPDATE pet SET pet_reserve = 0 WHERE pet_num = 1;
+UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
 
 UPDATE reservation SET res_state=2 WHERE res_num=142;
 

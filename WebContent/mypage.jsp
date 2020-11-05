@@ -47,7 +47,7 @@ String color = "#c0c0c0";
 		int totalCnt = 0;
 		int pg = 0;
 		int ak = 0; // 글 갯수 파악 
-		if (arr != null) {
+		if (rarr != null) {
 			for (ak = 0; ak < rarr.length; ak++) {
 				number++;
 			}
