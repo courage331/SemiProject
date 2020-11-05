@@ -58,3 +58,67 @@ table,th,td{
 th,td:hover{
 	cursor: pointer;
 }
+
+
+/* 이호인-----------------------*/
+.btnA {
+	background-color: white;
+}
+
+div.pageBt {
+	text-align: center;
+}
+
+button.pageBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+button.pageBtn1 {
+	font-size: 25px;
+	padding: 10px;
+	background-color: #FEC034;
+	border: none;
+}
+
+button.nextBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+button.backBtn {
+	font-size: 25px;
+	padding: 10px;
+	border: none;
+}
+
+.conA h1 {
+	text-align: center;
+	font-size: 40px;
+}
+
+.btnA .container {
+	padding-left: 200px;
+	padding-right: 200px;
+	margin-bottom: 80px;
+}
+
+.btnA button {
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	border: none;
+	border-radius: 12px;
+	margin-left: 78%;
+}
+
+button:hover {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
+		rgba(255, 255, 255, 0.4));
+	cursor: pointer;
+}
