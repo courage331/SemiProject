@@ -15,6 +15,7 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>LOGIN</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
 				</div>
 				<div>
 					<label>아이디 :</label> 
-					<input type="text" name="c_id" placeholder="ID" />
+					<input type="text" id="user_id" name="c_id" placeholder="ID" />
 				<div class="check_font" id="id_check"></div>
 				</div>
 				<div>

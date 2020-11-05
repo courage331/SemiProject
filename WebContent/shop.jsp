@@ -27,7 +27,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	<br>
 	<br>
 	<%
-	int totalCnt = 0;
+		int totalCnt = 0;
 	int cnt = 0;
 	if (arr != null) {
 		for (int i = 0; i < arr.length; i++) {
@@ -50,10 +50,11 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 			%>
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품 추가</button>
 			<%
-				} else{
-			%>		
-			<%} %>
-			<% } %>
+				} else {
+				}
+
+				}
+			%>
 		</div>
 	</section>
 	<%
