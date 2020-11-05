@@ -31,8 +31,6 @@
 <!-- 헤더 -->
 <jsp:include page="common/header.jsp"></jsp:include>
  
-<section class="conA">
-<div class="container">
 <body>
 	<section class="conA">
 		<div class="container">
