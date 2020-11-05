@@ -16,11 +16,12 @@ button.editBt{
 }
 
 table{
-	border : 1px solid black;
+	border : 1px solid white;
 	width: 80%;
 	text-align: center;
 	margin-left:10%;
 	margin-bottom:5%;
+	table-layout: void;
 }
 
 
@@ -31,14 +32,14 @@ img{
 }
 
 tr{
-	border : 1px solid black;
+	border : 1px solid white;
 	margin:0px;
 	padding:0px;
 	border-collapse: collapse;
 }
 
 td{
-	border : 1px solid black;
+	border : 1px solid white;
 	margin:0px;
 	padding:0px;
 	border-collapse: collapse;
@@ -48,4 +49,24 @@ h1 {
 	font-size: 40px;
 	text-align: center;
 	margin-top: 30px;
+}
+
+.conshop{
+	height: 100%;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	/*flex-flow : row wrap;*/
+	justify-content: flex-start;
+}
+
+.conshop div{
+	width: 460px;
+	height: 330px;	
+	text-align: center;
+}
+.bbbbb{
+	width: 70px;
+	height: 50px;
 }

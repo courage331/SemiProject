@@ -12,7 +12,6 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
@@ -52,8 +51,8 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품 추가</button>
 			<%
 				} else {
-
 			}
+
 			}
 			%>
 		</div>
@@ -73,6 +72,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					종류 : <%=arr[cnt].getPro_kind()%><br> 가격22 : <%=arr[cnt].getPro_price()%><br>
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
+					int aba = arr[cnt].getPro_price();
 					if(arr[cnt].getPro_cnt() == 0){
 					%>
 					<button disabled>재고소진</button></th>
@@ -113,9 +113,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					%>
 					<button disabled>재고소진</button></th>
 					<%
-					}else {
+					}else {	
 					%>
-					<button onclick="shoppingOpen(<%=arr[cnt].getPro_price()%>)">구매하기</button></th>
+					<button onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>)">구매하기</button></th>
 					<%
 					}
 					%>
@@ -137,14 +137,11 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	%>
 
 
-
-
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 
 </body>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bc2df8359ac0dd02633bb7bf5a6a5456"></script>
+
 <script type="text/javascript" src="JS/shop.js"></script>
 
 </html>

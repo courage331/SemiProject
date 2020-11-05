@@ -20,6 +20,7 @@
 	
 </script>
 <body>
+
 	<jsp:include page="common/header.jsp"></jsp:include>
 <body>
 	<section class="conA">

@@ -185,5 +185,19 @@ public class ProductDAO {
 
 		return cnt;
 	}
+	
+	public int deleteCnt(String pName) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_DEC_CNT);
+			pstmt.setString(1, pName);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	} // end update()
 
 }

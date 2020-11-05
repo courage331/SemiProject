@@ -137,4 +137,10 @@ public class D {
 		//정호 1104 반려견 정보 수정
 //		public static final String SQL_PET_UPDATE =
 		
+		//영재 1105 재고 수량 제거 일단 1개로
+		public static final String SQL_PRODUCT_DEC_CNT = 
+				"UPDATE PRODUCT SET pro_cnt = pro_cnt - 1 WHERE pro_name = ?";
+		
+		
+		
 }
