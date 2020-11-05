@@ -40,9 +40,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	%>
 
 	<!-- 컨텐츠B -->
-	<section class="conA">
+	<section class="conF">
 
-		<div class="container">
+		<div class="containerF">
 			<%
 				if (session.getAttribute("c_num") != null) {
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
@@ -51,9 +51,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품 추가</button>
 			<%
 				} else {
-			}
+				}
 
-			}
+				}
 			%>
 		</div>
 	</section>

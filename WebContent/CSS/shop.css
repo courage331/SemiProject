@@ -2,46 +2,57 @@
 
 /* 김영재 shop css 작성*/
 /* 기본 색상 */
-:root {
-	--main-color:#FEC034;
-	--text-color: #555555;
+:root { 
+	--main-color: #FEC034; 
+	--text-color: #555555; 
 	--sub-text-color: #999999;
-	
 }
 
-button.editBt{
-	font-size: 10px; 
-	padding: 10px 10px; 
-	float: right;
+div.containerF {
+	text-align: right;
+	margin-left: 200px;
+	margin-right: 200px;
 }
 
-table{
-	border : 1px solid white;
+button.editBt {
+	font-size: 20px;
+	padding: 10px 10px;
+	background-color: #FEC034;
+	border: none;
+}
+
+button.editBt:hover {
+	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
+		rgba(255, 255, 255, 0.4));
+	cursor: pointer;
+}
+
+table {
+	border: 1px solid white;
 	width: 80%;
 	text-align: center;
-	margin-left:10%;
-	margin-bottom:5%;
+	margin-left: 10%;
+	margin-bottom: 5%;
 	table-layout: void;
 }
 
-
-img{
+img {
 	width: 220px;
 	height: 220px;
 	margin: 0px;
 }
 
-tr{
-	border : 1px solid white;
-	margin:0px;
-	padding:0px;
+tr {
+	border: 1px solid white;
+	margin: 0px;
+	padding: 0px;
 	border-collapse: collapse;
 }
 
-td{
-	border : 1px solid white;
-	margin:0px;
-	padding:0px;
+td {
+	border: 1px solid white;
+	margin: 0px;
+	padding: 0px;
 	border-collapse: collapse;
 }
 
@@ -51,22 +62,21 @@ h1 {
 	margin-top: 30px;
 }
 
-.conshop{
+.conshop {
 	height: 100%;
-	
 	display: flex;
 	flex-direction: row;
-	flex-wrap:wrap;
-	/*flex-flow : row wrap;*/
+	flex-wrap: wrap;
 	justify-content: flex-start;
 }
 
-.conshop div{
+.conshop div {
 	width: 460px;
-	height: 330px;	
+	height: 330px;
 	text-align: center;
 }
-.bbbbb{
+
+.bbbbb {
 	width: 70px;
 	height: 50px;
 }
