@@ -120,6 +120,7 @@ header .container {
 footer {
 	background-color: var(--footer-color);
 	height: 150px;
+	width: 100%;
 }
 
 footer .container {

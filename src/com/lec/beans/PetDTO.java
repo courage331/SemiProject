@@ -6,20 +6,23 @@ public class PetDTO {
 	private int pet_age;
 	private int pet_weight;
 	private int pet_reserve;
+	private int pet_image;
 	private int cus_num;
+	
 	
 	public PetDTO() {
 		super();
 	}
 	
 	
-	public PetDTO(int pet_num, String pet_name, int pet_age, int pet_weight, int pet_reserve, int cus_num) {
+	public PetDTO(int pet_num, String pet_name, int pet_age, int pet_weight, int pet_reserve, int pet_image, int cus_num) {
 		super();
 		this.pet_num = pet_num;
 		this.pet_name = pet_name;
 		this.pet_age = pet_age;
 		this.pet_weight = pet_weight;
 		this.pet_reserve = pet_reserve;
+		this.pet_image = pet_image;
 		this.cus_num = cus_num;
 	}
 
@@ -27,7 +30,13 @@ public class PetDTO {
 		return pet_reserve;
 	}
 
+	public int getPet_image() {
+		return pet_image;
+	}
 
+	public void setPet_image(int pet_image) {
+		this.pet_image = pet_image;
+	}
 
 	public void setPet_reserve(int pet_reserve) {
 		this.pet_reserve = pet_reserve;

@@ -16,6 +16,12 @@ table,th,td{
 	padding-top: 60px;
 }
 
+.announce {
+	font-size: 30px;
+	text-align: center;
+	color: var(--text-color);
+}
+
 /* 컨텐츠 B */
 .conB .container {
 	padding-top: 60px;
