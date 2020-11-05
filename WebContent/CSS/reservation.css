@@ -25,6 +25,12 @@ table, th, td{
 	background-color: white;
 }
 
+#start{
+	margin-top : 20px;
+	text-align: center;
+	font-size:20px;
+}
+
 /*안내문과 폼*/
 .conB {
 	background-color: white;
@@ -71,7 +77,7 @@ table, th, td{
 
 #tel h3, #time h3, #friend h3, #announce h3{
     font-family:"seo";
-    font-size: 14px;
+    font-size: 20px;
     font-weight:600;
     color: #333;
     margin: 0 0 10px 80px;
@@ -80,7 +86,7 @@ table, th, td{
 
 #tel p, #time p, #friend p, #announce p{
     font-family:"seo";
-    font-size: 12px;
+    font-size: 16px;
     color: #333;
     margin : 0 0 0 80px;
 }

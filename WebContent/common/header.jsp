@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,7 @@
 						<c:when test="${not empty sessionScope.userid }">
 							<li class="submenu"><a class="mainmenu" href="#"><div>내정보</div></a>
 								<ul class="submenulist" style="display: none;">
-									<li><a href="mypage.do"><div>마이 페이지</div></a></li>
+									<li><a href="mypage.do?page=1"><div>마이 페이지</div></a></li>
 									<li><a href="myinfo.do"><div>내 정보관리</div></a></li>
 									<li><a href="pet.do"><div>애완견 정보관리</div></a></li>
 									<li><a href="logOut.jsp"><div>로그아웃</div></a></li>

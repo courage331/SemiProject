@@ -13,9 +13,11 @@
 
 <%
 	PetDTO[] arr = (PetDTO[]) request.getAttribute("list");
-	String pet_name = request.getParameter("pet_name");
-	int pet_age = Integer.parseInt(request.getParameter("pet_age"));
-	int pet_weight = Integer.parseInt(request.getParameter("pet_weight"));
+String pet_name = request.getParameter("pet_name");
+int pet_age = Integer.parseInt(request.getParameter("pet_age"));
+int pet_weight = Integer.parseInt(request.getParameter("pet_weight"));
+int pet_num = Integer.parseInt(request.getParameter("pet_num"));
+int pet_image = Integer.parseInt(request.getParameter("pet_image"));
 %>
 <body>
 
@@ -27,11 +29,43 @@
 			<input type="button" value="X" onClick="self.close();">
 		</div>
 	</header>
+	<!-- 컨텐츠A -->
+	<section class="conA">
+		<div class="container">
+			<h3><%=pet_name%>의 상세 정보
+			</h3>
+		</div>
+	</section>
+	<!-- 컨텐츠B -->
+	<section class="conB">
+		<div class="container">
 
+			<form name="frm" id="contact-form"
+				action="pet_modify.do?pet_num=<%=pet_num %>" method="post">
+				<div id="content-header"></div>
+				<div>
+					<label>강아지 이름 :</label> <input type="text" name="pet_name"
+						value=<%=pet_name%> placeholder=<%=pet_name%> />
+				</div>
+				<div>
+					<label>강아지 나이 :</label> <input type="text" name="pet_age"
+						value=<%=pet_age%> placeholder=<%=pet_age%> />
+				</div>
+				<div>
+					<label>강아지 무게 :</label> <input type="text" name="pet_weight"
+						value=<%=pet_weight%> placeholder=<%=pet_weight%> />
+				</div>
+				<div>
+					<label>강아지 이미지 :</label> <input type="text" name="pet_image"
+						value=<%=pet_image%> placeholder=<%=pet_image%> />
+				</div>
 
-	<%=pet_name %>
-	<%=pet_age %>
-	<%=pet_weight %>
+				<input type="submit" value="수정하기" /> <input type="button"
+					value="삭제" onClick="chkDelete(<%=pet_num%>)">
+			</form>
+		</div>
+	</section>
+
 	<!-- 푸터 -->
 	<footer>
 		<div class="container">
@@ -41,4 +75,5 @@
 		</div>
 	</footer>
 </body>
+<script type="text/javascript" src="JS/pet_update.js"></script>
 </html>

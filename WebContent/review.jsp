@@ -12,7 +12,6 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/review.css">
 <title>왈왈 호텔</title>
 <style>
@@ -33,7 +32,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 	</section>
 	<br>
 	<br>
-	<section class="conB">
+	<section class="conG">
 		<%
 			int pageNum = Integer.parseInt(request.getParameter("page").trim());
 		int number = 0; // 총 글 갯수
@@ -68,7 +67,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		System.out.println("PAGE: " + pageNum);
 		%>
 
-		<div class="container">
+		<div class="containerG">
 			<table>
 				<thead>
 					<tr>
@@ -157,7 +156,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		%>
 	</div>
 	<section class="btnA">
-		<div class="container">
+		<div class="containerF">
 			<%
 				if (session.getAttribute("c_num") != null) {
 			%>

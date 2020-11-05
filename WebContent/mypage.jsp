@@ -40,8 +40,41 @@ String color = "#c0c0c0";
 		</div>
 	</section>
 	<!-- 컨텐츠B -->
-
 	<section class="conB">
+	<%
+		int pageNum = Integer.parseInt(request.getParameter("page").trim());
+		int number = 0; // 총 글 갯수
+		int totalCnt = 0;
+		int pg = 0;
+		int ak = 0; // 글 갯수 파악 
+		if (rarr != null) {
+			for (ak = 0; ak < rarr.length; ak++) {
+				number++;
+			}
+		}
+		pg = number / 10 + 1;
+		if (pg >= 1) {
+			pg = number / 10 + 1;
+			if (number % 10 == 0) {
+				pg = number / 10;
+			}
+		} else if (pg < 1) {
+			pg = 1;
+		}
+		if (pageNum > pg) {
+			pageNum = pg;
+		} else if (pageNum < 1) {
+			pageNum = 1;
+		}
+		int startP = pageNum * 10 - 10;
+		if (number < 10) {
+
+		} else if (number >= 10) {
+			number -= pageNum * 10 - 10;
+		}
+		System.out.println("PAGE: " + pageNum);
+	%>
+	
 		<div class="container">
 		<table>
 		<thead>
@@ -62,7 +95,7 @@ String color = "#c0c0c0";
 	
 <%
 	if(chk){
-		for(int i = 0; i < rarr.length; i++){
+		for(int i = startP; i < rarr.length; i++){
 %>
 <%
 	if(rarr[i].getRes_state()==0){
@@ -85,8 +118,46 @@ String color = "#c0c0c0";
 %>
 		</tbody>
 		</table>
+		
+		<div class="pageBt">
+		<%
+		if(pageNum == 1){
+			
+		} else {
+		%>
+		<button class="backBtn"
+			onclick="location.href = 'mypage.do?page=<%=pageNum - 1%>'">&lt;</button>
+		<%
+		}
+			for (int i = 1; i <= pg; i++) {
+			if (pageNum == i) {
+		%>
+		<button class="pageBtn1"
+			onclick="location.href = 'rmypage.do?page=<%=i%>'"><%=i%></button>
+		<%
+			} else {
+		%>
+		<button class="pageBtn"
+			onclick="location.href = 'mypage.do?page=<%=i%>'"><%=i%></button>
+		<%
+			}
+		}
+		if (pageNum == pg) {
+		%>
+		<%
+			} else {
+		%>
+		<button class="nextBtn"
+			onclick="location.href = 'mypage.do?page=<%=pageNum + 1%>'">&gt;</button>
+		<%
+			}
+		%>
+	</div>
+		
 	</div>
 	</section>
+
+
 
 	<!-- 컨텐츠C -->
 	<section class="conC">

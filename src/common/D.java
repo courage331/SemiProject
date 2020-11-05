@@ -12,7 +12,7 @@ public class D {
 				"INSERT INTO review"
 				+ "(rev_num, rev_subject, rev_content, rev_star, rev_regdate, cus_num) "
 				+ "VALUES"
-				+ "(review_seq.nextval, ?, , ?, SYSDATE, ?)";
+				+ "(review_seq.nextval, ?, ?, ?, SYSDATE, ?)";
 		// 여기서 user_num도 '?'로 받아오는지 모르겠습니다.
 		
 		public static final String SQL_WRITE_SELECT = 
@@ -113,9 +113,9 @@ public class D {
 		// 정호 1103 반려견 정보 추가 인설트 
 		public static final String SQL_PET_INSERT =
 				"INSERT INTO pet"
-				+ "(pet_num, cus_num, pet_name, pet_age, pet_weight, pet_reserve)"
+				+ "(pet_num, cus_num, pet_name, pet_age, pet_weight, pet_reserve, pet_image)"
 				+ "VALUES"
-				+ "(PET_SEQ.nextval,?,?,?,?,0)";
+				+ "(PET_SEQ.nextval,?,?,?,?,0,?)";
 		//정호 1103 반려견 정보 조회
 		public static final String SQL_PET_SELECT = 
 				"SELECT * FROM PET WHERE CUS_NUM = ?";
@@ -134,16 +134,23 @@ public class D {
 		public static final String SQL_CASH_UPDATE =
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY + ?";
 		
-		//정호 1104 반려견 정보 수정
-//		public static final String SQL_PET_UPDATE =
+		//정호 1104 반려견 정보 삭제
+		public static final String SQL_PET_DELETE =
+				"DELETE FROM PET WHERE PET_NUM = ?";
+		
+		//정호 1105 반려견 정보 수정
+		public static final String SQL_PET_MODIFY =
+				"UPDATE (SELECT PET_NAME, PET_AGE, PET_WEIGHT, PET_IMAGE FROM PET WHERE PET_NUM = ?) "
+				+ "SET PET_NAME = ?, PET_AGE = ?, PET_WEIGHT = ?, PET_IMAGE = ?";
 		
 		//영재 1105 재고 수량 제거 일단 1개로
 		public static final String SQL_PRODUCT_DEC_CNT = 
 				"UPDATE PRODUCT SET pro_cnt = pro_cnt - 1 WHERE pro_name = ?";
+
 		//영재 1105 금액 차감 
 		public static final String SQL_CASH_DEL_UPDATE = 
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY - ?";
-		
+
 		public static final String SQL_FIND_CASH = 
 				"SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
 		

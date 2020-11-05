@@ -25,17 +25,33 @@ input[type="submit"]{
 	height: 50px;
 	font-size: 30px;
 	line-height: 50px;
-	text-align: center;
 	border:none;
 	border-radius: 12px;
-	margin-left: 85%;
-	margin-bottom:5px;
+	float:right;
 }
 input[type="submit"]:hover{
 	    background-image: linear-gradient(
         rgba(255, 255, 255, 0.4),
         rgba(255, 255, 255, 0.4)
     );
+}
+
+.containerH {
+	text-align: right;
+}
+
+.containerH button{
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	border:none;
+	border-radius: 12px;
+	margin-bottom: 80px;
+	margin-left: -5px;
+	margin-right: 10px;
 }
 .btnA button{
 	background-color: #FEC034;
@@ -46,7 +62,6 @@ input[type="submit"]:hover{
 	text-align: center;
 	border:none;
 	border-radius: 12px;
-	margin-left: 77.6%;
 	margin-bottom:5px;
 }
 button:hover{
@@ -65,7 +80,6 @@ button:hover{
 	text-align: center;
 	border:none;
 	border-radius: 12px;
-	margin-left: 77.6%;
 	margin-bottom:80px;
 }
 button:hover{

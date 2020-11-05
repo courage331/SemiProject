@@ -48,9 +48,10 @@ public class PetDAO {
 					int pet_age = rs.getInt("pet_age");
 					int pet_weight = rs.getInt("pet_weight");
 					int pet_reserve = rs.getInt("pet_reserve");
+					int pet_image = rs.getInt("pet_image");
 					int cus_num = rs.getInt("cus_num");
 					
-					PetDTO dto =  new PetDTO(pet_num, pet_name, pet_age,  pet_weight, pet_reserve, cus_num);
+					PetDTO dto =  new PetDTO(pet_num, pet_name, pet_age,  pet_weight, pet_reserve, pet_image, cus_num);
 					
 					list.add(dto);
 				} // end while
@@ -135,7 +136,7 @@ public class PetDAO {
 	} // end update()
 	
 	// 반려견 정보 추가
-	public int insert(int cus_num, String pet_name, int pet_age, int pet_weight) throws SQLException {
+	public int insert(int cus_num, String pet_name, int pet_age, int pet_weight, int pet_image) throws SQLException {
 		int cnt = 0;
 		
 		try {
@@ -144,6 +145,7 @@ public class PetDAO {
 			pstmt.setString(2, pet_name);
 			pstmt.setInt(3, pet_age);
 			pstmt.setInt(4, pet_weight);
+			pstmt.setInt(5, pet_image);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -166,6 +168,40 @@ public class PetDAO {
 
 		return arr;
 	} // end selectByUid()
+	
+	// 반려견 정보 삭제
+	public int deleteByPetNum(int pet_num) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_DELETE);
+			pstmt.setInt(1, pet_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	} // end deleteByPetNum()
+	
+	public int modify(int pet_num, String pet_name, int pet_age, int pet_weight, int pet_image) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_MODIFY);
+			pstmt.setInt(1, pet_num);
+			pstmt.setString(2, pet_name);
+			pstmt.setInt(3, pet_age);
+			pstmt.setInt(4, pet_weight);
+			pstmt.setInt(5, pet_image);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	} // end modify
+	
 	
 	public PetDTO[] selectByPetNum(int c_num) throws SQLException {
 		PetDTO[] arr = null;

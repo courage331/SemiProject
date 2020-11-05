@@ -29,8 +29,6 @@ Boolean chk = true;
 				<h3><%=carr[0].getCus_name()%>님의 반려견 정보
 				</h3>
 			</div>
-			<table>
-			</table>
 		</div>
 	</section>
 	<!-- 컨텐츠B -->
@@ -55,7 +53,7 @@ Boolean chk = true;
 						if (chk) {
 						for (int i = 0; i < arr.length; i++) {
 					%>
-					<tr id="pet_list" onclick="petchk('pet_update.do?pet_name=<%=arr[i].getPet_name()%>&pet_age=<%=arr[i].getPet_age()%>&pet_weight=<%=arr[i].getPet_age()%>')">
+					<tr id="pet_list" onclick="petchk('pet_update.do?pet_num=<%=arr[i].getPet_num()%>&pet_name=<%=arr[i].getPet_name()%>&pet_age=<%=arr[i].getPet_age()%>&pet_weight=<%=arr[i].getPet_age()%>&pet_image=<%=arr[i].getPet_image()%>')">
 						<td><%=arr[i].getPet_name()%></td>
 						<td><%=arr[i].getPet_age()%></td>
 						<td><%=arr[i].getPet_weight()%></td>
@@ -68,17 +66,21 @@ Boolean chk = true;
 			</table>
 		</div>
 	</section>
-	<hr>
-	<hr>
 	<!-- 컨텐츠C -->
 	<section class="conC">
 		<div class="container">
 			<h3>펫 정보 추가</h3>
 			<form name="frm" action="petOk.do" method="post"
 				onsubmit="return chkSubmit()">
-				강아지 이름<input type="text" name="p_name"><br> 강아지 나이<input
-					type="text" name="p_age"><br> 강아지 무게<input type="text"
-					name="p_weight"><br> <input type="submit" value="반려추" />
+				강아지 이름<input type="text" name="pet_name"><br> 강아지 나이<input
+					type="text" name="pet_age"><br> 강아지 무게<input type="text"
+					name="pet_weight"><br> 
+				<h3>강아지 사진</h3> 
+				<input type="radio" name="pet_image" value="1"><img src="img/K-001.png">	
+				<input type="radio" name="pet_image" value="2"><img src="img/K-002.png">	
+				<input type="radio" name="pet_image" value="3"><img src="img/K-003.png">	
+					
+				<input type="submit" value="반려추" />
 			</form>
 		</div>
 	</section>

@@ -10,7 +10,7 @@
 	PetDTO[] parr = (PetDTO [])request.getAttribute("plist");
 	ReservationDTO [] rarr = (ReservationDTO [])request.getAttribute("rlist");
 
-	String [] res_info ={"아카데미","독파크","메디컬센터","유치원","그루밍","스페셜케어","호텔 ,데이케어"};
+	String [] res_info ={"아카데미","독파크","메디컬센터","유치원","그루밍","스페셜케어","호텔,데이케어"};
 %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -37,8 +37,8 @@
 	<!-- 컨텐츠A -->
 	<section class="conA">
 		<div class="container">
-			<h4>어떤 서비스를 받아야 할 지 고민이신가요?</h4>
-			<h3>상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
+			<h4 id="start">어떤 서비스를 받아야 할 지 고민이신가요?</h4>
+			<h3 id="start">상담 신청해 주시면 영업일 기준 1~2일 이내로 전화 드립니다.</h3>
 		</div>
 	</section>
 
@@ -133,7 +133,7 @@
 					기타(요청사항):<br>
 					<textarea placeholder="효과적인 서비스를 위해 중성화 여부, 문제행동 등 자세한 사항을 적어주세요." name="res_message" cols="30" rows="10" ><%=rarr[0].getRes_message() %></textarea>
 					<br><br>					
-					<input type="submit" value="수정하기"/>
+					<input type="submit" class="s_button" value="수정하기"/>
 				</form>
 				<br>
         	</div>

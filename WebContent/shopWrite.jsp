@@ -31,8 +31,7 @@
 	</section>
 	<section class="conB">
 		<div class="container">
-			<form name="frm" action="shopWriteOk.do" method="post"
-				 encType="Multipart/form-data">
+			<form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()">
 				상품이름: <input type="text" name="pName" /><br>
 				상품종류: <input type="text" name="pKind" /><br>
 				상품가격: <input type="number" name="pPrice"/><br>

@@ -67,7 +67,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/update.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
@@ -114,22 +113,16 @@
 	<input type="hidden" name="c_num" value="<%= c_num%>">
 	<br><br>
 	<input type="submit" value="수정하기"/>
+		<div class="containerH">
+			<button onclick="history.back()">◀◀이전으로</button>
+			<button onclick="location.href='review.do?page=1'">목록보기</button>
+		</div>
 	</form>
 			</div>
 
 	</section>
 	
 	
-	<section class="btnA">
-		<div class="container">
-			<button onclick="history.back()">◀◀이전으로</button>
-		</div>
-	</section>
-	<section class="btnB">
-		<div>
-			<button onclick="location.href='review.do?page=1'">목록보기</button>
-		</div>
-	</section>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
