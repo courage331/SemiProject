@@ -317,24 +317,5 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 		} // end select()
 
-
-		
-		
-		public int delMoney(int cus_num, int cus_money) throws SQLException {
-			int cnt = 0;
-
-			try {
-				pstmt = conn.prepareStatement(D.SQL_CASH_DEL_UPDATE);
-				pstmt.setInt(1, cus_num);
-				pstmt.setInt(2, cus_money);
-				cnt = pstmt.executeUpdate();
-			} finally {
-				close();
-			} // end try
-
-			return cnt;
-
-		} // end insert()
-
 	
 }
