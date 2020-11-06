@@ -63,17 +63,18 @@ int pick = pet_image + 4;
 						for (int i = 1; i < 5; i++) {
 						if (i != pet_image) {
 					%>
-					<input class="pet_image_list" type="radio" name="pet_image"
-						value="<%=i%>"> <img id="pet_img<%=i%>"
+					<img class="pet_img" id="pet_img<%=i%>"
 						src="img/K-00<%=i%>.png">
+					<input class="pet_image_list" type="radio" name="pet_image"
+						value="<%=i%>"> 
 					<%
 						}
 					}
 					%>
 				</div>
 				<div class="btn_list">
-				<input class="btn" type="submit" value="수정하기" /> 
-				<input class="btn" type="button" value="삭제" onClick="chkDelete(<%=pet_num%>)">
+				<input class="chkbtn" type="submit" value="수정하기" /> 
+				<input class="chkbtn" type="button" value="삭제" onClick="chkDelete(<%=pet_num%>)">
 				</div>
 			</form>
 		</div>
