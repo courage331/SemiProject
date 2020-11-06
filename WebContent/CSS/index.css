@@ -11,7 +11,7 @@
 
 /* 컨텐츠 A */
 .conA .container {
-	padding-top: 60px;
+	padding-top: 200px;
 	text-align: center;
 }
 #main_pethotel {
@@ -30,6 +30,7 @@
 .guide {
 	padding-top: 60px;
 	display: flex;
+	margin-left: 40px;
 }
 
 #main_dog {
@@ -42,7 +43,7 @@
 
 .guide_main p {
 	color: var(--sub-text-color);
-	font-size: 14px;
+	font-size: 18px;
 	padding-top: 10px;
 }
 

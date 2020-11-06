@@ -30,13 +30,20 @@ input[type="number"]{
 	border-radius: 12px;
 	margin-left: 77.6%;
 	margin-bottom: 80px;
+	color: #fff;
 }
 button:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-    );
-    cursor: pointer;
+    background: #fa6e3e;
+	cursor: pointer;
+}
+
+input[type="text"]{
+    border : 2px solid black;
+    border-radius : 5px;
+}
+input[type="number"]{
+    border : 2px solid black;
+    border-radius : 5px;
 }
 
 input[type="submit"]{
@@ -49,11 +56,9 @@ input[type="submit"]{
 	border:none;
 	border-radius: 12px;
 	margin-left: 85%;
+	color: #fff;
 }
 input[type="submit"]:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-    );
-    cursor: pointer;
+    background: #fa6e3e;
+	cursor: pointer;
 }

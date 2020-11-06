@@ -10,6 +10,8 @@
 	String c_num = (String)session.getAttribute("c_num");
 	
 	PetDTO [] arr = (PetDTO [])request.getAttribute("list");
+	
+	Boolean chk = true;
 %>
 
 <% if(arr==null || arr.length==0){ %>			
@@ -21,6 +23,23 @@
 		return;
 	} 
 %>
+
+<!--  0이 예약 안된, 1이 예약중인 강아지, 한마리라도 예약중이면 false로 바꿔준다. -->
+<% 
+	for(int i=0; i<arr.length; i++){
+		if(arr[i].getPet_reserve()==0){
+			chk=false;
+		}
+	} 
+%>
+
+<%if(chk){ %>
+	<script>
+		alert("반려견이 모두 예약중입니다.");
+		history.back();
+	</script>
+<% return;}%>
+
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -116,13 +135,13 @@
         	<div class="menu2">
         		<form name="rform" action="reserveOk.do?cus_num=<%=c_num %>" method="post" onsubmit="return chkDate()">
 					반려견 선택하기:<br>
-					<select name="select_pet"> 
+					<select name="select_pet" > 
 					<!-- select_pet에 value값이 담겨서 간다. -->
 						<%
 							for(int i=0; i<arr.length; i++){
 								if(arr[i].getPet_reserve()==1){
 						%>		
-								<option value="<%= arr[i].getPet_num() %>" disabled><%= arr[i].getPet_name() %></option>
+								<option value="<%= arr[i].getPet_num() %>" disabled ><%= arr[i].getPet_name() %></option>
 						<% 		
 								}else{
 						%>			

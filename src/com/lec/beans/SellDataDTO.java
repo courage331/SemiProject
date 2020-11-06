@@ -13,8 +13,9 @@ public class SellDataDTO {
 		System.out.println("SellDataDTO() 객체 생성");
 	}
 	
-	public SellDataDTO(int pro_num, int sell_cnt, int sell_sum) {
+	public SellDataDTO(int cus_num, int pro_num, int sell_cnt, int sell_sum) {
 		super();
+		this.cus_num = cus_num;
 		this.pro_num = pro_num;
 //		this.sell_date = sell_date;
 		this.sell_cnt = sell_cnt;

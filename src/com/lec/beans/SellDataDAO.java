@@ -42,24 +42,26 @@ public class SellDataDAO {
 	public int insert(SellDataDTO dto) throws SQLException{
 		int cnt = 0; 
 		
-		
+			int cus_num = dto.getCus_num();
 			int pro_num = dto.getPro_num();
 			int sCnt = dto.getSell_cnt();
 			int sSum = dto.getSell_sum();
 			
-			cnt = this.insert(pro_num, sCnt,sSum);
+			cnt = this.insert(cus_num, pro_num, sCnt,sSum);
 		
 		return cnt;
 	}
 	
-	public int insert(int pro_num, int sCnt, int sSum) throws SQLException {
+	public int insert(int cus_num, int pro_num, int sCnt, int sSum) throws SQLException {
 			int cnt = 0;
 			
 			try {
 				pstmt = conn.prepareStatement(D.SQL_SELL_INSERT);
-				pstmt.setInt(1, pro_num);
-				pstmt.setInt(2, sCnt);
-				pstmt.setInt(3, sSum);
+				
+				pstmt.setInt(1, cus_num);
+				pstmt.setInt(2, pro_num);
+				pstmt.setInt(3, sCnt);
+				pstmt.setInt(4, sSum);
 				cnt = pstmt.executeUpdate();
 			} finally {
 				close();
@@ -76,6 +78,7 @@ public class SellDataDAO {
 			ArrayList<SellDataDTO> list = new ArrayList<SellDataDTO>();
 		
 			while(rs.next()) {
+				int cNum = rs.getInt("cus_num");
 				int pNum = rs.getInt("pro_num");
 				Date d = rs.getDate("rev_regdate");  // 년, 월, 일
 				Time t = rs.getTime("rev_regdate");  // 시, 분, 초
@@ -88,7 +91,7 @@ public class SellDataDAO {
 				int sSum = rs.getInt("sell_sum");
 				
 				
-				SellDataDTO dto = new SellDataDTO(pNum, sCnt, sSum);
+				SellDataDTO dto = new SellDataDTO(cNum, pNum, sCnt, sSum);
 				dto.setSellDate(sellDate);
 				
 				list.add(dto);

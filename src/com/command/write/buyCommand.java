@@ -43,12 +43,14 @@ public class buyCommand implements Command {
 		System.out.println(pro_num);
 
 		String pName = request.getParameter("pName");
-		System.out.println("!!!!!!!!!!!!" + cus_num);
 
+		System.out.println("!!!!!!!!!!!!"+cus_num);
+		
+		
 		try {
 			dcnt = cdao.delMoney(cus_num,cus_money);
 			cnt = dao.deleteCnt(pName);
-			ssdao = sdao.insert(pro_num, sCnt, sSum);
+			ssdao = sdao.insert(cus_num, pro_num, sCnt, sSum);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

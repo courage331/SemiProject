@@ -11,8 +11,6 @@
     	String c_name = arr[0].getCus_name();
     	String c_phone = arr[0].getCus_phone();
     	String c_email = arr[0].getCus_email();
-  //    CustomerDTO [] arr2 = (CustomerDTO [])request.getAttribute("data");
-  //  	String c_id = (String)session.getAttribute("userid");
     %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -64,7 +62,7 @@
 						value=<%=c_email%> placeholder=<%=c_email%> />
 				</div>
 				<input type="submit" id="logbtn" class="hc vc" value="수정하기"/>
-				<input type="button" class="hc vc" value="회원탈퇴" onClick="location.href='account_delete.do'">
+				<input type="button" class="hc vc" value="회원탈퇴" onClick="return test()">
 			</form>
 		</div>
 </section>	

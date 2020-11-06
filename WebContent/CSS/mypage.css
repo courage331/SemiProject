@@ -11,7 +11,7 @@
 
 /* 컨텐츠 A */
 .conA .container {
-	padding-top: 60px;
+	padding-top: 200px;
 }
 
 .announce {
@@ -43,6 +43,8 @@
 .conC i {
 	color: var(--main-color);	
 }
+
+
 table{width:100%}
 
 table,th,td{
@@ -50,12 +52,13 @@ table,th,td{
 	border-collapse : collapse;
 	margin : 10px;
 	padding : 10px;
+	text-align: center;
 }
 
 
 /*---------------------------예약 정보 css---------------------------*/
 
-th,td:hover{
+#akak:hover{
 	cursor: pointer;
 }
 
@@ -121,4 +124,16 @@ button:hover {
 	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
 		rgba(255, 255, 255, 0.4));
 	cursor: pointer;
+}
+
+#cashbtn {
+	color: #fff;
+	background-color: var(--main-color);
+	border: 0;
+	height: 40px;
+	width: 200px;
+}
+
+#cashbtn :hover {
+	background-color:#fa6e3e;
 }

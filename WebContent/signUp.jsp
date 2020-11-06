@@ -30,25 +30,33 @@
 					<h3>회원가입</h3>
 				</div>
 				<div>
-					<label>아이디 :</label> 
+					<label>ID :</label> 
 					<input type="text" id="user_id" name="c_id" placeholder="ID" />
 				<div class="check_font" id="id_check"></div>
 				</div>
 				<div>
-					<label>비밀번호 :</label> <input type="password" name="c_pw"
-						placeholder="PW" />
+					<label>PW :</label> 
+					<input type="password" id="user_pw" name="c_pw" placeholder="PW" />
+					<div class="check_font" id="pw_check">
 				</div>
 				<div>
-					<label>이름 :</label> <input type="text" name="c_name"
-						placeholder="NAME" />
+					<label>PW 확인:</label> 
+					<input type="password" id="user_pwchk" name="c_pw2" placeholder="Confirm PW" />
+					<div class="check_font" id="pw2_check">
 				</div>
 				<div>
-					<label>전화번호 :</label> <input type="text" name="c_phone"
-						placeholder="PHONE NUMBER" />
+					<label>이름 :</label> <input type="text" id="user_name" name="c_name" placeholder="NAME" />
+						<div class="check_font" id="name_check">
 				</div>
 				<div>
-					<label>이메일 :</label> <input type="text" name="c_email"
-						placeholder="E-MAIL" />
+					<label>전화번호 :</label> 
+					<input type="text" id="user_phone" name="c_phone" placeholder="PHONE NUMBER" />
+						<div class="check_font" id="phone_check">
+				</div>
+				<div>
+					<label>이메일 :</label> 
+					<input type="text" id="user_email" name="c_email" placeholder="E-MAIL" />
+						<div class="check_font" id="email_check">
 				</div>
 				<div class="clearfix"></div>
 				<div class="content-footer">

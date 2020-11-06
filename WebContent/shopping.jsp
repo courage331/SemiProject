@@ -12,7 +12,7 @@
 	int price = Integer.parseInt(request.getParameter("price"));
 	int c_money = crr[0].getCus_money();
 	int sCnt = 1; // 현재 1개만 구매 가능 상태이므로 1로 고정
-	int sSum = price * 1;
+	int sSum = price * sCnt;
 %>
 <html>
 <head>

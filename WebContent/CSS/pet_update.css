@@ -58,6 +58,12 @@ header input:hover {
 }
 
 /* 컨텐츠 B */
+
+.conB .container {
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
 #content-header h3 {
 	font-size: 24px;
 	font-weight: bold;
@@ -93,7 +99,7 @@ header input:hover {
 .btn_list {
 	text-align: center;
 }
-.btn {
+.chkbtn {
 	text-align:center;
 	border: 1px solid var(--main-color);
 	padding:10px;
@@ -103,11 +109,14 @@ header input:hover {
 	border-radius: 5px;
 }
 
-.btn :hover {
+.chkbtn :hover {
 	cursor: pointer;
-	color: var(--text-color);	
+	color: var(--text-color);
 }
 
+.pet_img {
+	width: 28%;
+}
 /* 푸터 */
 footer{
 	background-color: var(--main-color);
