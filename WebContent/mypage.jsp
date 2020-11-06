@@ -10,7 +10,7 @@ ReservationDTO[] rarr = (ReservationDTO[]) request.getAttribute("rlist");
 PetDTO[] parr = (PetDTO[]) request.getAttribute("plist");
 Boolean chk = true;
 
-String [] state = {"예약 종료","예약 변경 가능", "투숙중"};
+String[] state = { "예약 종료", "예약 변경 가능", "투숙중" };
 String color = "#c0c0c0";
 %>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ String color = "#c0c0c0";
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/mypage.css">
 
@@ -41,8 +41,8 @@ String color = "#c0c0c0";
 	</section>
 	<!-- 컨텐츠B -->
 	<section class="conB">
-	<%
-		int pageNum = Integer.parseInt(request.getParameter("page").trim());
+		<%
+			int pageNum = Integer.parseInt(request.getParameter("page").trim());
 		int number = 0; // 총 글 갯수
 		int totalCnt = 0;
 		int pg = 0;
@@ -73,102 +73,103 @@ String color = "#c0c0c0";
 			number -= pageNum * 10 - 10;
 		}
 		System.out.println("PAGE: " + pageNum);
-	%>
-	
+		%>
+
 		<div class="container">
-		<table>
-		<thead>
-			<tr>
-				<th>예약 날짜</th>
-				<th>예약 종료 날짜</th>
-				<th>강아지 이름</th>
-				<th>예약 상태</th>
-			</tr>
-		</thead>
-		<tbody>
-<%
-	if(rarr==null || rarr.length==0){
-		chk=false;
-	}
-%>	
-	
-<%
-	if(chk){
-		
-		String [] pet_name= new String[rarr.length];
-		if(chk){
-			for(int i=0; i<rarr.length;i++){
-				for(int j=0; j<parr.length;j++){
-					if(rarr[i].getPet_num()==parr[j].getPet_num()){
-						pet_name[i]=parr[j].getPet_name();
-						break;
-					}		
+			<table>
+				<thead>
+					<tr>
+						<th>예약 날짜</th>
+						<th>예약 종료 날짜</th>
+						<th>강아지 이름</th>
+						<th>예약 상태</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						if (rarr == null || rarr.length == 0) {
+						chk = false;
+					}
+					%>
+
+					<%
+						if (chk) {
+
+						String[] pet_name = new String[rarr.length];
+						if (chk) {
+							for (int i = 0; i < rarr.length; i++) {
+						for (int j = 0; j < parr.length; j++) {
+							if (rarr[i].getPet_num() == parr[j].getPet_num()) {
+								pet_name[i] = parr[j].getPet_name();
+								break;
+							}
+						}
+							}
+						}
+						for (int i = startP; i < rarr.length; i++) {
+					%>
+					<%
+						if (rarr[i].getRes_state() == 0) {
+					%>
+					<tr id="reserve_list" bgcolor=<%=color%>
+						onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num()%>')">
+						<%
+							} else {
+						%>
+					
+					<tr id="reserve_list"
+						onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num()%>')">
+						<%
+							}
+						%>
+
+						<td id="akak"><%=rarr[i].getRes_startdate()%></td>
+						<td id="akak"><%=rarr[i].getRes_lastdate()%></td>
+						<td id="akak"><%=pet_name[i]%></td>
+						<td id="akak"><%=state[rarr[i].getRes_state()]%></td>
+					</tr>
+					<%
+						} // end for
+					}
+					%>
+				</tbody>
+			</table>
+
+			<div class="pageBt">
+				<%
+					if (pageNum == 1) {
+
+				} else {
+				%>
+				<button class="backBtn"
+					onclick="location.href = 'mypage.do?page=<%=pageNum - 1%>'">&lt;</button>
+				<%
+					}
+				for (int i = 1; i <= pg; i++) {
+					if (pageNum == i) {
+				%>
+				<button class="pageBtn1"
+					onclick="location.href = 'rmypage.do?page=<%=i%>'"><%=i%></button>
+				<%
+					} else {
+				%>
+				<button class="pageBtn"
+					onclick="location.href = 'mypage.do?page=<%=i%>'"><%=i%></button>
+				<%
+					}
 				}
-			}
-		}
-		for(int i = startP; i < rarr.length; i++){
-%>
-<%
-	if(rarr[i].getRes_state()==0){
-%>
-			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num() %>')">
-<%}else{ %>
-			<tr id="reserve_list" onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num() %>')">
-<%} %>
-				
-				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
-				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
-				<td id="akak"><%= pet_name[i] %></td>
-				<td id="akak"><%= state[rarr[i].getRes_state()] %></td>
-			</tr>
-<%			
-
-
-		} // end for
-	}
-%>
-		</tbody>
-		</table>
-		
-		<div class="pageBt">
-		<%
-		if(pageNum == 1){
-			
-		} else {
-		%>
-		<button class="backBtn"
-			onclick="location.href = 'mypage.do?page=<%=pageNum - 1%>'">&lt;</button>
-		<%
-		}
-			for (int i = 1; i <= pg; i++) {
-			if (pageNum == i) {
-		%>
-		<button class="pageBtn1"
-			onclick="location.href = 'mypage.do?page=<%=i%>'"><%=i%></button>
-		<%
-			} else {
-		%>
-		<button class="pageBtn"
-			onclick="location.href = 'mypage.do?page=<%=i%>'"><%=i%></button>
-		<%
-			}
-		}
-		if (pageNum == pg) {
-		%>
-		<%
-			} else {
-		%>
-		<button class="nextBtn"
-			onclick="location.href = 'mypage.do?page=<%=pageNum + 1%>'">&gt;</button>
-		<%
-			}
-		%>
-	</div>
-		
-	</div>
+				if (pageNum == pg) {
+				%>
+				<%
+					} else {
+				%>
+				<button class="nextBtn"
+					onclick="location.href = 'mypage.do?page=<%=pageNum + 1%>'">&gt;</button>
+				<%
+					}
+				%>
+			</div>
 	</section>
-
-
 
 	<!-- 컨텐츠C -->
 	<section class="conC">
@@ -176,7 +177,7 @@ String color = "#c0c0c0";
 
 			<table>
 				<tr>
-					<td><h3>뼈다귀현황</h3></td>
+					<td><h3>뼈다귀 현황</h3></td>
 				</tr>
 				<tr>
 					<td>
@@ -186,9 +187,7 @@ String color = "#c0c0c0";
 					</td>
 				</tr>
 				<tr>
-					<td>
-						<button onclick="chargeopen()">충전</button>
-					</td>
+					<td><button id="cashbtn" onclick="chargeopen()">충전</button></td>
 				</tr>
 			</table>
 		</div>

@@ -4,7 +4,7 @@ var cash = sum/100+(sum/100*0.1);
 
 var price = document.getElementsByClassName("price_btn").length;
 var cashok = document.getElementsByClassName("cashok")[0];
-var close = document.getElementById("close_cash");
+var closecash = document.getElementById("close_cash");
 
 function chargeopen() {
 	myWindow = window.open("charge.jsp", "팝업창", "width = 500, height = 615, left = 650, top = 10")
@@ -23,7 +23,7 @@ for (i = 0; i < price; i++) {
 	}
 }
 
-close.onclick = function() {
+closecash.onclick = function() {
 	sum = 0;
 	var cash = sum/100+(sum/100*0.1);
 	document.getElementById("area").innerHTML = sum+"원";
@@ -41,3 +41,4 @@ cashok.onclick = function() {
   		frm.submit();  // 특정 form 을 submit
   	}
 }
+

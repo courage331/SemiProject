@@ -50,3 +50,12 @@ function chkSubmit(){	//공백안돼요
 	
 	return true;
 } // end chkSubmit()
+
+function test(){
+	var chk = confirm('Are you sure you want to delete this ?');
+	
+	if(chk)
+		location.href='account_delete.do'
+	
+	return true;
+}
