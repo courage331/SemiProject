@@ -19,8 +19,8 @@ public class buyCommand implements Command {
 		ProductDAO dao = new ProductDAO();
 		HttpSession session = request.getSession(); 
 		CustomerDAO cdao = new CustomerDAO();
-		System.out.println((String)(session.getAttribute("c_num")));
-		System.out.println(request.getParameter("price"));
+		System.out.println("씨넘!!!!!!!!!!!!!"+(String)(session.getAttribute("c_num")));
+		System.out.println("가격!!!!!!!!!!!!!!!!!"+request.getParameter("price"));
 		
 		int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
 		int cus_money = Integer.parseInt(request.getParameter("price"));

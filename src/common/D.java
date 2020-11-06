@@ -150,4 +150,7 @@ public class D {
 		public static final String SQL_CASH_DEL_UPDATE = 
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY - ?";
 		
+	      public static final String SQL_FIND_CASH = 
+	              "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
+		
 }

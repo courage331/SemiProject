@@ -287,37 +287,24 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 		} // end selectByUid()
 		
 		// 뼈다귀 찾기
-//		public int selectMoney(int cus_num) throws SQLException{
-//			int cnt = 0;
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_FIND_CASH);
-//				pstmt.setInt(1, cus_num);
-//				cnt = pstmt.executeUpdate();
-//			} finally {
-//				close();
-//			} // end try
-//
-//			return cnt;
-//
-//		} // end insert()
+	      public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
+	          CustomerDTO[] arr = null;
+
+	          try {
+	             pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
+	             pstmt.setInt(1, cus_num);
+	             rs = pstmt.executeQuery();
+	             arr = createArray(rs);
+	          } finally {
+	             close();
+	          }
+
+	          return arr;
+
+	       } // end F()
 		
-		public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
-			CustomerDTO[] arr = null;
-
-			try {
-				pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
-				pstmt.setInt(1, cus_num);
-				rs = pstmt.executeQuery();
-				arr = createArray(rs);
-			} finally {
-				close();
-			}
-
-			return arr;
-
-		} // end select()
 		
-		//1106 영재 금액 차감
+		//1106 영재금액 차감
 		public int delMoney(int cus_num, int cus_money) throws SQLException {
 			int cnt = 0;
 
