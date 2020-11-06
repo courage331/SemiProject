@@ -71,7 +71,7 @@ public class CustomerDAO {
 		list.toArray(arr); // 리스트 -> 배열 변환
 		return arr;
 	} // end createArray()
-
+	
 	public CustomerDTO[] selectByUid(int c_num) throws SQLException {
 		CustomerDTO[] arr = null;
 
@@ -306,7 +306,9 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 			return cnt;
 
-		} // end idchk
+		} // end F()
+
+
 	
 		// 뼈다귀 찾기
 	      public CustomerDTO[] selectMoney(int cus_num) throws SQLException {

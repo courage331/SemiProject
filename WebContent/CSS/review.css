@@ -120,6 +120,7 @@ button.backBtn {
 
 .btnA button {
 	background-color: #FEC034;
+	color: #fff;
 	width: 180px;
 	height: 50px;
 	font-size: 30px;
@@ -130,8 +131,7 @@ button.backBtn {
 }
 
 button:hover {
-	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
-		rgba(255, 255, 255, 0.4));
+    background: #fa6e3e;
 	cursor: pointer;
 }
 /*style="font-size: 20px;  padding:10px 10px; float: right;"*/

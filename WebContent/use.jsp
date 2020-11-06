@@ -95,7 +95,6 @@
 			</table>
 		</div>
 	</section>
-	<hr>
 	<!-- 컨텐츠C -->
 	<section class="conC">
 		<div class="container">

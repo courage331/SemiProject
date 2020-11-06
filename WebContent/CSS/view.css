@@ -16,6 +16,7 @@ button{
 	background-color: #FEC034;
 	width: 180px;
 	height: 50px;
+	color: #fff;
 	font-size: 30px;
 	line-height: 50px;
 	text-align: center;
@@ -23,11 +24,7 @@ button{
 	border-radius: 12px;
 }
 button:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-    );
-	transition: all 0.5s ease-in-out;
+    background: #fa6e3e;
 	cursor: pointer;
 }
 

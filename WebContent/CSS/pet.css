@@ -26,7 +26,7 @@ table,th,td{
 
 /* 컨텐츠 A */
 .conA .container {
-	padding-top: 60px;
+	padding-top: 200px;
 }
 
 .announce {
@@ -70,12 +70,11 @@ table,th,td{
 .conC .btn {
 	margin-top: 15px;
 	margin-bottom: 40px;
-	border-radius: 5px;
-	border: 1px solid var(--main-color);
-	padding:10px;
-	font-size: 30px;
+	color: #fff;
 	background-color: var(--main-color);
-	color: white;
+	border: 0;
+	height: 40px;
+	width: 200px;
 }
 
 .conC .btn:hover {

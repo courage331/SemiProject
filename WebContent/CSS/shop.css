@@ -21,6 +21,7 @@ button.editBt {
 	font-size: 30px;
 	line-height: 50px;
 	text-align: center;
+	color:white;
 	border:none;
 	border-radius: 12px;
 	margin-right: 80px;
@@ -28,8 +29,7 @@ button.editBt {
 }
 
 button.editBt:hover {
-	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
-		rgba(255, 255, 255, 0.4));
+    background: #fa6e3e;
 	cursor: pointer;
 }
 
@@ -94,12 +94,12 @@ h1 {
 #dddd button {
 	width: 200px;
 	background-color: #FEC034;
+	color:white;
 	border-radius: 10px;
 	border: none;
 }
 #dddd button:hover {
-	background-image: linear-gradient(rgba(255, 255, 255, 0.4),
-		rgba(255, 255, 255, 0.4));
+    background: #fa6e3e;
 	cursor: pointer;
 }
 
