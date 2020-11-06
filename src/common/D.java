@@ -150,7 +150,19 @@ public class D {
 		public static final String SQL_CASH_DEL_UPDATE = 
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY - ?";
 		
-	      public static final String SQL_FIND_CASH = 
-	              "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
-		
+	    public static final String SQL_FIND_CASH = 
+	            "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
+	    
+	    public static final String SQL_SELL_INSERT =
+	    		"INSERT INTO SELLDATA"
+	    				+ "(cus_num, pro_num, sell_date, sell_cnt, sell_sum)"
+	    				+ "VALUES"
+	    				+ "(SELLDATA_SEQ.nextval,?,SYSDATE,?,?)";
+	    
+//	    public static final String SQL_INC_CNT = 
+//	    		"UPDATE (SELECT SELL_CNT FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_CNT = CELL_CNT + 1";
+//	    
+//	    public static final String SQL_CNT_SUM = 
+//	    		"UPDATE (SELECT SELL_SUM FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_SUM = CELL_SUM + ?";
+	    		
 }
