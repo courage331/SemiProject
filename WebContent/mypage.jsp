@@ -144,7 +144,7 @@ String color = "#c0c0c0";
 			if (pageNum == i) {
 		%>
 		<button class="pageBtn1"
-			onclick="location.href = 'rmypage.do?page=<%=i%>'"><%=i%></button>
+			onclick="location.href = 'mypage.do?page=<%=i%>'"><%=i%></button>
 		<%
 			} else {
 		%>

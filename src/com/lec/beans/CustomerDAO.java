@@ -71,7 +71,7 @@ public class CustomerDAO {
 		list.toArray(arr); // 리스트 -> 배열 변환
 		return arr;
 	} // end createArray()
-
+	
 	public CustomerDTO[] selectByUid(int c_num) throws SQLException {
 		CustomerDTO[] arr = null;
 
@@ -315,7 +315,21 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 			return arr;
 
-		} // end select()
+		} // end F()
 
-	
+		public int delMoney(int cus_num, int cus_money) throws SQLException {
+			int cnt = 0;
+
+			try {
+				pstmt = conn.prepareStatement(D.SQL_CASH_DEL_UPDATE);
+				pstmt.setInt(1, cus_num);
+				pstmt.setInt(2, cus_money);
+				cnt = pstmt.executeUpdate();
+			} finally {
+				close();
+			} // end try
+
+			return cnt;
+
+		} // end insert()
 }

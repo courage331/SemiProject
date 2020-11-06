@@ -24,6 +24,10 @@ table, th, td{
 .conA {
 	background-color: white;
 }
+.conA container{
+	padding-top: 200px;;
+}
+
 
 #start{
 	margin-top : 20px;
@@ -41,6 +45,7 @@ table, th, td{
 	padding-bottom: 80px;
 	padding-left: 50px;
 	padding-right: 50px;
+	margin-left:300px;
 }
 
 
@@ -67,6 +72,7 @@ table, th, td{
 	float:left;
 	background-color:white;
 	margin : 3px;
+	margin-left:15px;
 }
 
 #tel, #time, #friend, #announce{
@@ -125,18 +131,22 @@ table, th, td{
 
 /*-------------------------------------------------------------------------------------- */
       textarea {
-        width: 80%;
+      	margin-top : 30px;
+        width: 60%;
         height: 30%;
       }
       
       input, select{
-      	width:80%;
-      	height: 30px;
+      	margin-top : 20px;
+      	width:60%;
+      	height: 40px;
+      	font-size:20px;
       }
       
       .s_button{
-        width: 80%;
-        height: 30px;
+      	margin-top : 1px;	
+        width: 60%;
+        height: 40px;
       	background-color:#FFC502;
       }
 
