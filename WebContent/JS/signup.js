@@ -1,5 +1,59 @@
 /*회원가입 창*/
 
+//비밀번호 확인
+var pw;
+var pwchk;
+$("#user_pw").blur(function() {
+	pw = $(this).val();
+});
+$("#user_pwchk").blur(function() {
+	pwchk = $(this).val();
+	console.log(pw);
+	console.log(pwchk);
+	if (pw==pwchk) {
+		$("#pw2_check").text('');
+	} else {
+		$('#pw2_check').text('비밀번호를 확인해주세요');
+		$('#pw2_check').css('color', 'red');
+	}
+});
+
+//이름에 특수문자 들어가지 않도록 설정
+$("#user_name").blur(function() {
+	var nameJ = /^[가-힣]{2,6}$/;
+	if (nameJ.test($(this).val())) {
+		console.log(nameJ.test($(this).val()));
+		$("#name_check").text('');
+	} else {
+		$('#name_check').text('이름을 확인해주세요');
+		$('#name_check').css('color', 'red');
+	}
+});
+
+
+// 휴대전화
+$('#user_phone').blur(function(){
+	var phoneJ = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+	if(phoneJ.test($(this).val())){
+		console.log(phoneJ.test($(this).val()));
+		$("#phone_check").text('');
+	} else {
+		$('#phone_check').text('휴대폰번호를 확인해주세요 :)');
+		$('#phone_check').css('color', 'red');
+	}
+});
+// 이메일
+$('#user_email').blur(function(){
+	var emailJ = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i; 
+	if(emailJ.test($(this).val())){
+		console.log(emailJ.test($(this).val()));
+		$("#email_check").text('');
+	} else {
+		$('#email_check').text('이메일을 확인해주세요 :)');
+		$('#email_check').css('color', 'red');
+	}
+});
+
 function chkSubmit(){	//공백안돼요
 	frm = document.forms["frm"];
 	
@@ -42,6 +96,8 @@ function chkSubmit(){	//공백안돼요
 	return true;
 } // end chkSubmit()
 
+
+
 $("#user_id").blur(function() {
 	// id = "id_reg" / name = "userId"
 	var user_id = $('#user_id').val();
@@ -59,6 +115,9 @@ $("#user_id").blur(function() {
 			$('#id_check').text("사용 가능한 아이디입니다 :) :)");
 			$('#id_check').css('color', 'blue');
 			
+		}
+		if(user_id == ""){
+			$('#id_check').text("");
 		}
 	}, 
 	error : function() {

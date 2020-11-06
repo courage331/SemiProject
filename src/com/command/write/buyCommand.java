@@ -30,7 +30,6 @@ public class buyCommand implements Command {
 		System.out.println("!!!!!!!!!!!!"+cus_num);
 		
 		
-		
 		try {
 			dcnt = cdao.delMoney(cus_num,cus_money);
 			cnt = dao.deleteCnt(pName);

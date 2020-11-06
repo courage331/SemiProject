@@ -286,7 +286,6 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			return arr;
 		} // end selectByUid()
 		
-<<<<<<< HEAD
 		public int idchk(String c_id) throws SQLException {
 			int cnt = 0;
 
@@ -309,7 +308,6 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 		} // end idchk
 	
-=======
 		// 뼈다귀 찾기
 	      public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
 	          CustomerDTO[] arr = null;
@@ -344,5 +342,4 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			return cnt;
 
 		} // end delMoney()
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 }
