@@ -90,24 +90,35 @@ String color = "#c0c0c0";
 	if(rarr==null || rarr.length==0){
 		chk=false;
 	}
-
 %>	
 	
 <%
 	if(chk){
+		
+		String [] pet_name= new String[rarr.length];
+		if(chk){
+			for(int i=0; i<rarr.length;i++){
+				for(int j=0; j<parr.length;j++){
+					if(rarr[i].getPet_num()==parr[j].getPet_num()){
+						pet_name[i]=parr[j].getPet_name();
+						break;
+					}		
+				}
+			}
+		}
 		for(int i = startP; i < rarr.length; i++){
 %>
 <%
 	if(rarr[i].getRes_state()==0){
 %>
-			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+			<tr id="reserve_list" bgcolor=<%=color %> onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num() %>')">
 <%}else{ %>
-			<tr id="reserve_list" onclick="chkReserve('reserve_update.do?pet_name=<%=parr[rarr[i].getPet_num()-1].getPet_name()%>&num=<%=rarr[i].getRes_num() %>')">
+			<tr id="reserve_list" onclick="chkReserve('reserve_update.do?pet_name=<%=pet_name[i]%>&num=<%=rarr[i].getRes_num() %>')">
 <%} %>
 				
 				<td id="akak"><%= rarr[i].getRes_startdate() %></td>
 				<td id="akak"><%= rarr[i].getRes_lastdate() %></td>
-				<td id="akak"><%= parr[rarr[i].getPet_num()-1].getPet_name() %></td>
+				<td id="akak"><%= pet_name[i] %></td>
 				<td id="akak"><%= state[rarr[i].getRes_state()] %></td>
 			</tr>
 <%			

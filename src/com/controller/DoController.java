@@ -42,6 +42,7 @@ import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
 import com.command.write.ViewCommand;
 import com.command.write.WriteCommand;
+import com.command.write.buyCommand;
 import com.command.write.modifyCommand;
 import com.command.write.shoppingCommand;
 
@@ -332,11 +333,13 @@ public class DoController extends HttpServlet {
 			
 		//1105 영재 구매jsp 
 		case "/shopping.do":
+			command = new shoppingCommand();
+			command.execute(request, response);
 			viewPage = "shopping.jsp";
 			break;
 		
 		case "/shoppingOk.do":
-			command = new shoppingCommand();
+			command = new buyCommand();
 			command.execute(request, response);
 			viewPage = "shoppingOk.jsp";
 			break;

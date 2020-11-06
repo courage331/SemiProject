@@ -193,8 +193,6 @@ INSERT INTO PET VALUES(4,'강아지4',6,12,0,2);
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
 SELECT * FROM RESERVATION;
-
-select * from CUSTOMER;
 select * from product;
 
 

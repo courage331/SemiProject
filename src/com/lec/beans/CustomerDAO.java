@@ -286,6 +286,7 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			return arr;
 		} // end selectByUid()
 		
+<<<<<<< HEAD
 		public int idchk(String c_id) throws SQLException {
 			int cnt = 0;
 
@@ -308,4 +309,40 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 
 		} // end idchk
 	
+=======
+		// 뼈다귀 찾기
+	      public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
+	          CustomerDTO[] arr = null;
+
+	          try {
+	             pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
+	             pstmt.setInt(1, cus_num);
+	             rs = pstmt.executeQuery();
+	             arr = createArray(rs);
+	          } finally {
+	             close();
+	          }
+
+	          return arr;
+
+	       } // end F()
+		
+		
+		//1106 영재금액 차감
+		public int delMoney(int cus_num, int cus_money) throws SQLException {
+			int cnt = 0;
+
+			try {
+				pstmt = conn.prepareStatement(D.SQL_CASH_DEL_UPDATE);
+				pstmt.setInt(1, cus_num);
+				pstmt.setInt(2, cus_money);
+				cnt = pstmt.executeUpdate();
+			} finally {
+				close();
+			} 
+
+			return cnt;
+
+		} // end delMoney()
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git
 }
