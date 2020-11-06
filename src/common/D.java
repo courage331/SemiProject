@@ -147,6 +147,7 @@ public class D {
 		public static final String SQL_PRODUCT_DEC_CNT = 
 				"UPDATE PRODUCT SET pro_cnt = pro_cnt - 1 WHERE pro_name = ?";
 
-		
+		public static final String SQL_CASH_DEL_UPDATE = 
+				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY - ?";
 		
 }
