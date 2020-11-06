@@ -169,11 +169,7 @@ String color = "#c0c0c0";
 					}
 				%>
 			</div>
-
-		</div>
 	</section>
-
-
 
 	<!-- 컨텐츠C -->
 	<section class="conC">

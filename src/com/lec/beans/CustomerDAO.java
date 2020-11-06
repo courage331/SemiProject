@@ -71,7 +71,7 @@ public class CustomerDAO {
 		list.toArray(arr); // 리스트 -> 배열 변환
 		return arr;
 	} // end createArray()
-
+	
 	public CustomerDTO[] selectByUid(int c_num) throws SQLException {
 		CustomerDTO[] arr = null;
 
@@ -286,38 +286,49 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			return arr;
 		} // end selectByUid()
 		
-		// 뼈다귀 찾기
-//		public int selectMoney(int cus_num) throws SQLException{
-//			int cnt = 0;
-//			try {
-//				pstmt = conn.prepareStatement(D.SQL_FIND_CASH);
-//				pstmt.setInt(1, cus_num);
-//				cnt = pstmt.executeUpdate();
-//			} finally {
-//				close();
-//			} // end try
-//
-//			return cnt;
-//
-//		} // end insert()
-		
-		public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
-			CustomerDTO[] arr = null;
+		public int idchk(String c_id) throws SQLException {
+			int cnt = 0;
 
 			try {
-				pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
-				pstmt.setInt(1, cus_num);
+				// 쿼리 수정
+				// count(*) 읽어와서  --> 리턴 0, 1
+				pstmt = conn.prepareStatement(D.SQL_IDCHK_SELECT);
+				pstmt.setString(1, c_id);
+				//cnt = pstmt.executeUpdate();
 				rs = pstmt.executeQuery();
-				arr = createArray(rs);
+				if(rs.next())
+					cnt = rs.getInt(1);
+				rs.close();
+				pstmt.close();
 			} finally {
 				close();
 			}
 
-			return arr;
+			return cnt;
 
-		} // end select()
+		} // end F()
+
+
+	
+		// 뼈다귀 찾기
+	      public CustomerDTO[] selectMoney(int cus_num) throws SQLException {
+	          CustomerDTO[] arr = null;
+
+	          try {
+	             pstmt = conn.prepareStatement(D.SQL_MYPAGE_SELECT);
+	             pstmt.setInt(1, cus_num);
+	             rs = pstmt.executeQuery();
+	             arr = createArray(rs);
+	          } finally {
+	             close();
+	          }
+
+	          return arr;
+
+	       } // end F()
 		
-		//1106 영재 금액 차감
+		
+		//1106 영재금액 차감
 		public int delMoney(int cus_num, int cus_money) throws SQLException {
 			int cnt = 0;
 

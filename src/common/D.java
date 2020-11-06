@@ -147,7 +147,14 @@ public class D {
 		public static final String SQL_PRODUCT_DEC_CNT = 
 				"UPDATE PRODUCT SET pro_cnt = pro_cnt - 1 WHERE pro_name = ?";
 
+		//영재 1105 금액 차감 
 		public static final String SQL_CASH_DEL_UPDATE = 
 				"UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = ?) SET CUS_MONEY = CUS_MONEY - ?";
+		//주혁 1106 아이디중복확인
+		public static final String SQL_IDCHK_SELECT = 
+				"SELECT count(*) FROM CUSTOMER WHERE CUS_ID = ?";
+		
+	      public static final String SQL_FIND_CASH = 
+	              "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
 		
 }

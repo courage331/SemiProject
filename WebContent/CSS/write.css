@@ -23,6 +23,7 @@ input[type="radio"]{
 	font-size: 30px;
 	line-height: 50px;
 	text-align: center;
+	color: #fff;
 	border:none;
 	border-radius: 12px;
 	margin-bottom: 80px;
@@ -33,11 +34,8 @@ div.containerG{
 	text-align: right;
 }
 button:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-    );
-    cursor: pointer;
+    background: #fa6e3e;
+	cursor: pointer;
 }
 
 input[type="submit"].akk{
@@ -49,11 +47,9 @@ input[type="submit"].akk{
 	border:none;
 	border-radius: 12px;
 	float:right;
+	color: #fff;
 }
 input[type="submit"]:hover{
-	    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-    );
-    cursor: pointer;
+    background: #fa6e3e;
+	cursor: pointer;
 }

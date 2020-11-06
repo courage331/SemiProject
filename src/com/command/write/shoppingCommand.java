@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.lec.beans.CustomerDAO;
+import com.lec.beans.CustomerDTO;
 import com.lec.beans.ProductDAO;
 
 public class shoppingCommand implements Command {
@@ -13,7 +15,11 @@ public class shoppingCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
+		
 		ProductDAO dao = new ProductDAO();
+		CustomerDAO cdao = new CustomerDAO();
+		CustomerDTO [] cdto = null;
+		
 		HttpSession session = request.getSession(); 
 
 		
@@ -24,11 +30,13 @@ public class shoppingCommand implements Command {
 		try {
 			cnt = dao.deleteCnt(pName);
 			System.out.println("pName: ---" + pName);
+			cdto = cdao.selectMoney(cus_num);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
 		request.setAttribute("result", cnt);
+		request.setAttribute("clist", cdto);
 	}
 
 }

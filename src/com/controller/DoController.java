@@ -333,6 +333,8 @@ public class DoController extends HttpServlet {
 			
 		//1105 영재 구매jsp 
 		case "/shopping.do":
+			command = new shoppingCommand();
+			command.execute(request, response);
 			viewPage = "shopping.jsp";
 			break;
 		

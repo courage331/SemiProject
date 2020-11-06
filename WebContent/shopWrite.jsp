@@ -27,14 +27,18 @@
 		<div class="container">
 			<br> <br>
 			<h1>상품 추가</h1>
+			<br> <br>
 		</div>
 	</section>
 	<section class="conB">
 		<div class="container">
 			<form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()">
 				상품이름: <input type="text" name="pName" /><br>
+				<br>
 				상품종류: <input type="text" name="pKind" /><br>
+				<br>
 				상품가격: <input type="number" name="pPrice"/><br>
+				<br>
 				재고수량: <input type="number" name="pCnt"/><br>
 				<br>
 				사진첨부: (<img src="img/imgpush.png">)클릭!<br>
