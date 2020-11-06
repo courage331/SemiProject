@@ -285,5 +285,27 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			
 			return arr;
 		} // end selectByUid()
+		
+		public int idchk(String c_id) throws SQLException {
+			int cnt = 0;
+
+			try {
+				// 쿼리 수정
+				// count(*) 읽어와서  --> 리턴 0, 1
+				pstmt = conn.prepareStatement(D.SQL_IDCHK_SELECT);
+				pstmt.setString(1, c_id);
+				//cnt = pstmt.executeUpdate();
+				rs = pstmt.executeQuery();
+				if(rs.next())
+					cnt = rs.getInt(1);
+				rs.close();
+				pstmt.close();
+			} finally {
+				close();
+			}
+
+			return cnt;
+
+		} // end idchk
 	
 }

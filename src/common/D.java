@@ -147,6 +147,9 @@ public class D {
 		public static final String SQL_PRODUCT_DEC_CNT = 
 				"UPDATE PRODUCT SET pro_cnt = pro_cnt - 1 WHERE pro_name = ?";
 
+		//주혁 1106 아이디중복확인
+		public static final String SQL_IDCHK_SELECT = 
+				"SELECT count(*) FROM CUSTOMER WHERE CUS_ID = ?";
 		
 		
 }
