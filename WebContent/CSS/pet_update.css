@@ -51,6 +51,12 @@ header input:hover {
 	cursor: pointer;
 }
 
+/* 컨텐츠 A */
+.conA .container {
+	margin-top : 20px;
+	text-align: center;
+}
+
 /* 컨텐츠 B */
 #content-header h3 {
 	font-size: 24px;
@@ -76,58 +82,31 @@ header input:hover {
 	font-weight: bold;
 }
 
-#contact-form input[type='text'], #contact-form input[type='email'] { 
+#contact-form input[type='text']{ 
+	margin-top: 10px;
 	border:#ccc 1px solid;
 	border-radius: 5px;
 	height: 25px;
 	width: 65%;
 }
 
-#contact-form input[type='submit'] { 
-	padding:12px18px;
-	color: #fff;
-	background: #FEC034;
-	border: 0;
-	border-radius: 0;
-	float: middle;
-	display: block;
-}
-
-#contact-form input[type='submit']:hover {
-	background: #fa6e3e;
-	cursor: pointer;
-}
-
-#contact-form .content-footer p { 
-	font-style:italic;
+.btn_list {
 	text-align: center;
-	color: #666;
-	font-size: 80%;
+}
+.btn {
+	text-align:center;
+	border: 1px solid var(--main-color);
+	padding:10px;
+	font-size: 14px;
+	background-color: var(--main-color);
+	color: white;
+	border-radius: 5px;
 }
 
-#contact-form input[type='button'] {
-	border : 4px solid #FFFFFF;
-	background :  #FFFFFF;
-	margin-left : 5px;
-	margin-top: 10px;
-	margin-bottom : 10px;	
+.btn :hover {
+	cursor: pointer;
+	color: var(--text-color);	
 }
-
-
-#contact-form input[type='button']:hover {
-	text-decoration:underline
-}
-
-#contact-form input[type='button']:active {
-	border : 1px solid #FFFFFF;
-	outline-color: #FFFFFF;
-}
-
-#contact-form input[type='button']:focus {
-	outline-color: #FFFFFF;
-	border : 1px solid #FFFFFF;
-}
-
 
 /* 푸터 */
 footer{

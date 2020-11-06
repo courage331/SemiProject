@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="com.lec.beans.*" %>
 
 <%  // Controller 로부터 결과 데이터 받음
 	int cnt = (Integer)request.getAttribute("result");
-	int dcnt = (Integer)request.getAttribute("list"); //뼈다귀 차감
-	
 
 %>
 
-<% if(cnt == 0 && dcnt == 0){ %>
+<% if(cnt == 0){ %>
 	<script>
 		alert("구매 실패");
 		history.back();  // 브라우저가 직전에 기억하는 이전 페이지로..

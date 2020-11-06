@@ -70,23 +70,25 @@ Boolean chk = true;
 	<section class="conC">
 		<div class="container">
 			<h3>펫 정보 추가</h3>
-			<form name="frm" action="petOk.do" method="post"
-				onsubmit="return chkSubmit()">
-				강아지 이름<input type="text" name="pet_name"><br> 강아지 나이<input
-					type="text" name="pet_age"><br> 강아지 무게<input type="text"
-					name="pet_weight"><br> 
-				<h3>강아지 사진</h3> 
-				<input type="radio" name="pet_image" value="1"><img src="img/K-001.png">	
-				<input type="radio" name="pet_image" value="2"><img src="img/K-002.png">	
-				<input type="radio" name="pet_image" value="3"><img src="img/K-003.png">	
-					
-				<input type="submit" value="반려추" />
+			<form name="frm" action="petOk.do" method="post" onsubmit="return chkSubmit()">
+				<p>강아지 이름 : <input class="text" type="text" name="pet_name"></p>
+				<p>강아지 나이 : <input class="text" type="text" name="pet_age"></p>
+				<p>강아지 무게 : <input class="text" type="text" name="pet_weight"></p>
+				<p>강아지 사진</p> 
+				<%for(int i = 1; i < 5; i++) { %>
+				<img id="pet_img<%=i %>" src="img/K-00<%=i%>.png">
+				<input class="pet_image_list" type="radio" name="pet_image" value="<%=i%>">
+				<% 
+				}
+				%>
+				<br>
+				<input class="btn" type="submit" value="반려견 추가" />
 			</form>
 		</div>
 	</section>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="JS/pet.js"></script>
 </html>

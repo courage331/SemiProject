@@ -41,3 +41,28 @@ function chkSubmit(){	//공백안돼요
 	
 	return true;
 } // end chkSubmit()
+
+$("#user_id").blur(function() {
+	// id = "id_reg" / name = "userId"
+	var user_id = $('#user_id').val();
+	$.ajax({
+		url : 'list.ajax?userId='+ user_id,
+		type : "GET",
+		success : function(data) {
+			console.log("1 = 중복o / 0 = 중복x : "+ data);							
+			
+			if (data != 0) {
+					// 1 : 아이디가 중복되는 문구
+					$("#id_check").text("사용중인 아이디입니다 :p");
+					$("#id_check").css("color", "red");
+				} else {
+					
+						$('#id_check').text("사용 가능한 아이디입니다 :) :)");
+						$('#id_check').css('color', 'blue');
+					
+				}
+			}, error : function() {
+					console.log("실패");
+			}
+		});
+	});
