@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <%
 	ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
+	CustomerDTO[] crr= (CustomerDTO[]) request.getAttribute("clist");
 	String c_num = (String)session.getAttribute("c_num");
 	String pName = request.getParameter("nn");
 	String pKind = request.getParameter("kind");
 	String price = request.getParameter("price");
+	int c_money = crr[0].getCus_money();
 %>
 <html>
 <head>
@@ -33,6 +35,7 @@
 
 	<form name="frm" action="shoppingOk.do" method="post"><br>
 		<input type="hidden" name="pName" value="<%=pName%>"/><br>
+		<input type="hidden" name="price" value="<%=price%>"/><br>
 
 		<%
 		String name;
@@ -66,6 +69,7 @@
 			가격 : <%=price %><br>
 	</section>
 	결제 금액 : <%=price %>
+	보유 금액 : <%=c_money %>
 	<script>
 	alert(<%=a%>)
 	</script>

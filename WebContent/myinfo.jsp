@@ -65,6 +65,7 @@
 				</div>
 				<input type="submit" id="logbtn" class="hc vc" value="수정하기"/>
 				<input type="button" class="hc vc" value="회원탈퇴" onClick="location.href='account_delete.do'">
+				<input type="button" class="hc vc" value="회원탈퇴test" onClick="confirm('Are you sure you want to delete this ?');">
 			</form>
 		</div>
 </section>	

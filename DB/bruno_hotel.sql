@@ -33,6 +33,10 @@ CREATE TABLE pet
 	pet_name varchar2(10) NOT NULL,
 	pet_age number NOT NULL,
 	pet_weight number,
+	-- 1이면 예약 불가 상태
+	-- 0이면 예약 가능 상태
+	pet_reserve number NOT NULL,
+	pet_image NUMBER NOT NULL,
 	PRIMARY KEY (pet_num)
 );
 
@@ -50,11 +54,21 @@ CREATE TABLE product
 
 CREATE TABLE reservation
 (
+	-- 예약번호
 	res_num number NOT NULL,
+	-- 예약 시작날짜
 	res_startdate date NOT NULL,
+	-- 예약 마지막날짜
 	res_lastdate date NOT NULL,
-	message clob,
+	--서비스 항목
+	res_sinfo varchar2(30) NOT NULL,
+	-- 건의사항
+	res_message clob,
+	-- 사용자 고유 번호
+	res_state number NOT NULL,
+	--예약 상태
 	cus_num number NOT NULL,
+	-- 애완견고유번호
 	pet_num number NOT NULL,
 	PRIMARY KEY (res_num)
 );
@@ -129,5 +143,13 @@ INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com
 
 DELETE FROM customer WHERE cus_num=2;
 
+CREATE SEQUENCE RESERVATION_SEQ;
+CREATE SEQUENCE REVIEW_SEQ;
+CREATE SEQUENCE PRODUCT_SEQ;
+CREATE SEQUENCE SELLDATA_SEQ;
 CREATE SEQUENCE CUSTOMER_SEQ;
+CREATE SEQUENCE PET_SEQ;
 DROP SEQUENCE customer_SEQ;
+
+
+SELECT count(*) FROM CUSTOMER WHERE CUS_ID = '1234';
