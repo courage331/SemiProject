@@ -77,12 +77,13 @@
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				 평점: <%= star %>점</div>
+			<div class="col-12"><br></div>
 			<div class="col-12">등록일: <%= regdate %></div>
 		</div>
 	</section>
 	<section class="conB">
 		<div class="container">
-			<div class="guide_anounce">
+			<div class="containerT">
 				<br> 내용:
 				<hr>
 				<div>
