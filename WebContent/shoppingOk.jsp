@@ -16,7 +16,9 @@
 <% } else { %>
 	<script>
 		alert("구매 성공~!");
+		opener.parent.window.location.reload(); //부모창 새로고침 해주는 것
 		window.close();
+		
 	</script>
 <% } %>
 

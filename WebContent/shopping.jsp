@@ -7,6 +7,7 @@
 	String c_num = (String) session.getAttribute("c_num");
 	String pName = request.getParameter("pName");
 	String pKind = request.getParameter("kind");
+	int pCnt = Integer.parseInt(request.getParameter("pCnt"));
 	
 	int pNum = Integer.parseInt(request.getParameter("pNum"));
 	int price = Integer.parseInt(request.getParameter("price"));

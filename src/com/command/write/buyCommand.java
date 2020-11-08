@@ -27,17 +27,15 @@ public class buyCommand implements Command {
 	    SellDataDAO sdao = new SellDataDAO();
 	    SellDataDTO [] sdto = null;
 
-		System.out.println("씨넘!!!!!!!!!!!!!" + (String) (session.getAttribute("c_num")));
-		System.out.println("가격!!!!!!!!!!!!!!!!!" + request.getParameter("price"));
+		System.out.println("buyCommand c_num" + (String) (session.getAttribute("c_num")));
+		System.out.println("buyCommand price" + request.getParameter("price"));
 
 		int cus_num = Integer.parseInt((String) (session.getAttribute("c_num")));
-		System.out.println(cus_num + "cus_num커넘의 씨엔티다!!!!!!!!!!!!!!!!!!!");
-		int cus_money = Integer.parseInt(request.getParameter("price"));
-		System.out.println(cus_money + "cus_money커넘의 돈!!!!!!!!!!!!!!!!!!!");
+		int price = Integer.parseInt(request.getParameter("price"));
+		System.out.println(price+"파라메터 받은 price");
 		int sCnt = Integer.parseInt((String) request.getParameter("sCnt"));
-		System.out.println(sCnt + "커넘의 씨엔티다!!!!!!!!!!!!!!!!!!!");
 		int sSum = Integer.parseInt((String) request.getParameter("sSum"));
-		System.out.println(sSum + "커넘의 합계다!!!!!!!!!!!!!!!!!!!");
+		System.out.println(sSum + "구매총금액");
 		
 		int pro_num = Integer.parseInt((String) request.getParameter("pNum"));
 		System.out.println(pro_num);
@@ -48,7 +46,7 @@ public class buyCommand implements Command {
 		
 		
 		try {
-			dcnt = cdao.delMoney(cus_num,cus_money);
+			dcnt = cdao.delMoney(cus_num,price);
 			cnt = dao.deleteCnt(pName);
 			ssdao = sdao.insert(cus_num, pro_num, sCnt, sSum);
 		} catch(SQLException e) {

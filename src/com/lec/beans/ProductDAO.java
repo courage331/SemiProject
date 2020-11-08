@@ -25,7 +25,7 @@ public class ProductDAO {
 		try {
 			Class.forName(D.DRIVER);
 			conn = DriverManager.getConnection(D.URL, D.USERID, D.USERPW);
-			System.out.println("WriteDAO 생성, 데이터베이스 연결. . ");
+			System.out.println("ProductDAO 생성, 데이터베이스 연결. . ");
 			// 연결확인
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -185,7 +185,7 @@ public class ProductDAO {
 
 		return cnt;
 	}
-	
+	// 수량 삭제
 	public int deleteCnt(String pName) throws SQLException {
 		int cnt = 0;
 
@@ -199,5 +199,8 @@ public class ProductDAO {
 
 		return cnt;
 	} // end update()
+	
+	
+	
 
 }

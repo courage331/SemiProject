@@ -32,6 +32,26 @@ button.editBt:hover {
     background: #fa6e3e;
 	cursor: pointer;
 }
+/*1108 관리 버튼 추가*/
+
+button.manageBt {
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	color:white;
+	border:none;
+	border-radius: 12px;
+	margin-right: 80px;
+	margin-bottom: 20px;
+}
+
+button.manageBt:hover {
+    background: #fa6e3e;
+	cursor: pointer;
+}
 
 table {
 	border: 1px solid white;

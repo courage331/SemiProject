@@ -5,8 +5,45 @@ function submit1(){
 			return false;
 			
 		}else{
-	var form = document.getElementsByClassName("frm");
-	form.action = "shoppingOk.jsp";
+	frm.action = "shoppingOk.jsp";
 	form.submit();
 		}
 }
+  function btn_click(c_money, price){                             
+    var c_money = request.getAttribute("c_money");
+	var price = request.getAttribute("price");  
+	if(c_money < price ){
+			alert("돈부족");                       
+        } else {   
+			var r = confirm("구매 하시겠습니까?");
+				if(r){
+				frm.action="shoppingOk.jsp"; 
+				}  else{
+					
+				}  
+               
+        }  
+            //...
+      }
+
+function btn_click(str){                             
+        if(str=="update"){
+			var r = confirm(session.getAttribute("c_num"));
+			
+				if(r){
+					frm.action="shopEditOk.do";    
+				}  else {
+					
+					history.back();
+				}                              
+        } else if(str=="delete"){   
+			var r = confirm("삭제하시겠습니까?");
+				if(r){
+				frm.action="shopDeleteOk.do"; 
+				} else {
+	
+				}  
+               
+        }  
+            //...
+      }

@@ -15,7 +15,6 @@ public class shoppingCommand implements Command {
 
    @Override
    public void execute(HttpServletRequest request, HttpServletResponse response) {
-      int cnt = 0;
       int sdto=0;
       
       ProductDAO dao = new ProductDAO();
@@ -26,7 +25,7 @@ public class shoppingCommand implements Command {
 //      SellDataDAO sdao = new SellDataDAO();
       
       HttpSession session = request.getSession(); 
-      String pName = request.getParameter("nn");
+      String pName = request.getParameter("pName");
       System.out.println(pName+"피네임이다!!!!!!!!!!!!!!!!");
       System.out.println();
       System.out.println();
@@ -37,11 +36,13 @@ public class shoppingCommand implements Command {
 //      int sSum = Integer.parseInt((String) request.getAttribute("sSum"));
 //      int pro_num = Integer.parseInt((String) request.getAttribute("pro_num"));
       int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
+      if(cus_num == 0) {
+    	  System.out.println("null입니다");
+      }
       System.out.println(cus_num+"!!!!!씨넘!!!!!!!!!!!!!");
       
       
       try {
-         cnt = dao.deleteCnt(pName);
          System.out.println("pName: ---!!!!!!!!!!!!" + pName);
          cdto = cdao.selectMoney(cus_num);
          pdto = pdao.selectBypName(pName);
@@ -51,7 +52,6 @@ public class shoppingCommand implements Command {
          e.printStackTrace();
       }
       
-      request.setAttribute("result", cnt);
       request.setAttribute("clist", cdto);
       request.setAttribute("plist", pdto);
 //      request.setAttribute("sell", sdto);

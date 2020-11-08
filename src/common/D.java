@@ -102,7 +102,9 @@ public class D {
 				"DELETE FROM product WHERE pro_num = ?";
 		// 가격, 재고수량 제품 이름 수정
 		public static final String SQL_PRODUCT_UPDATE =
-				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
+				" UPDATE PRODUCT SET pro_price = ?, pro_cnt = ? WHERE pro_num = ?";
+				//" UPDATE (SELECT pro_price, pro_cnt FROM PRODUCT WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?";
+				//" UPDATE (SELECT pro_price, pro_cnt FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?";
 		//주혁 1103 내정보관리에서 데이터 읽어오기
 		//public static final String SQL_READ_SELECT_BY_NUM =
 		//		"SELECT * FROM customer WHERE CUS_NUM = ?";

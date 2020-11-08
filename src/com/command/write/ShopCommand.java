@@ -13,6 +13,9 @@ public class ShopCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		ProductDAO dao = new ProductDAO(); // DAO
+			
+
+		
 		ProductDTO [] arr = null;
 		
 		try {
