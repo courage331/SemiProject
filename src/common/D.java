@@ -94,6 +94,9 @@ public class D {
 		public static final String SQL_PRODUCT_SELECT_BY_NAME =
 				"SELECT * FROM product WHERE pro_name = ?";
 		
+		public static final String SQL_PRODUCT_SELECT_BY_KIND =
+				"SELECT * FROM product WHERE pro_kind = ?";
+		
 		public static final String SQL_PRODUCT_SELECT_BY_NUM =
 				"SELECT * FROM product WHERE pro_num = ?";
 		

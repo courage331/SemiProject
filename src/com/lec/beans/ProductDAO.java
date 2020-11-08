@@ -199,6 +199,21 @@ public class ProductDAO {
 
 		return cnt;
 	} // end update()
+
+	public ProductDTO[] selectByKind(String pKind) throws SQLException {
+		ProductDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PRODUCT_SELECT_BY_KIND);
+			pstmt.setString(1, pKind);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByNum()
 	
 	
 	
