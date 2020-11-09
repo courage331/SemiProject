@@ -4,7 +4,6 @@
 <%  // Controller 로부터 결과 데이터 받음
 	int cnt = (Integer)request.getAttribute("result");
 	int dcnt = (Integer)request.getAttribute("list");
-
 	
 
 %>
@@ -17,7 +16,9 @@
 <% } else { %>
 	<script>
 		alert("구매 성공~!");
+		opener.parent.window.location.reload(); //부모창 새로고침 해주는 것
 		window.close();
+		
 	</script>
 <% } %>
 

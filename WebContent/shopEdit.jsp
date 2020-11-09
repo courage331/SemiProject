@@ -48,19 +48,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
 				if (c_num == 1) {
 			%>
-			<select onchange="location = this.value;">
- 				<option value="shop.do?kind=all">카테고리</option>
- 				<option value="shop.do?kind=all">전체보기</option>
- 				<option value="shop.do?kind=shampoo">샴푸</option>
- 				<option value="shop.do?kind=snack">간식</option>
- 				<option value="shop.do?kind=rice">사료</option>
- 				<option value="shop.do?kind=etc">기타</option>
-			</select>
-			</form>
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품
 				추가</button>
-			<button class="manageBt" onclick="location.href = 'shopEdit.do'">상품
-				관리</button>
+
 			<%
 				} else {
 			}
@@ -88,7 +78,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					if (arr[cnt].getPro_cnt() == 0) {%>
 					alert('재고소진')"
 								<%} else {%>
-					shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+					editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
 					<%}
 					}%>><br> 
 					종류 : <%=arr[cnt].getPro_kind()%><br>
@@ -101,12 +91,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				<%
 					} else {
 					if (session.getAttribute("c_num") == null) {
-				%>
-				<button onclick="location.href='login.do'">구매하기</button>
-				<%
 					} else {
 				%>
-				<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
+				<button	onclick="editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">수정하기</button>
 				<%
 					}
 				}
@@ -142,7 +129,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 							if (arr[cnt].getPro_cnt() == 0) {%>
 							alert('재고소진')"
 										<%} else {%>
-							shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+							editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
 							<%}
 							}%>><br> 
 							종류 : <%=arr[cnt].getPro_kind()%><br>
@@ -156,12 +143,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 						<%
 							} else {
 							if (session.getAttribute("c_num") == null) {
-						%>
-						<button onclick="location.href='login.do'">구매하기</button>
-						<%
 							} else {
 						%>
-						<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
+						<button	onclick="editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">수정하기</button>
 						<%
 							}
 						}

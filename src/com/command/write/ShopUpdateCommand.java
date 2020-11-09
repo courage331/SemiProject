@@ -6,22 +6,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.beans.ProductDAO;
+import com.lec.beans.ProductDTO;
 
-public class ShopDeleteCommand implements Command {
+public class ShopUpdateCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int cnt = 0;
 		ProductDAO dao = new ProductDAO();
+		ProductDTO [] arr = null;
 		
 		int pNum = Integer.parseInt(request.getParameter("pNum"));
-		System.out.println(pNum);
+		
 		try {
-			cnt = dao.deleteByNum(pNum);
+			arr = dao.readBypNum(pNum);  // 읽기 
+			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
-		request.setAttribute("result", cnt);
 	}
+
+
+	
+
 }

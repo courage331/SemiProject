@@ -37,6 +37,8 @@ import com.command.write.SelectCommand;
 import com.command.write.ShopCommand;
 import com.command.write.ShopDeleteCommand;
 import com.command.write.ShopFileUploadCommand;
+import com.command.write.ShopUpdateCommand;
+import com.command.write.ShopUpdateOkCommand;
 import com.command.write.ShopWriteCommand;
 import com.command.write.SignupCommand;
 import com.command.write.UpdateCommand;
@@ -255,45 +257,7 @@ public class DoController extends HttpServlet {
 			viewPage = "signupOk.jsp";
 			break;
 
-		// 1103 김영재 현재 작성진행중
-		case "/shop.do":
-			command = new ShopCommand();
-			command.execute(request, response);
-			viewPage = "shop.jsp";
-			break;
-
-		case "/shopWrite.do":
-			viewPage = "shopWrite.jsp";
-			break;
-
-		case "/shopWriteOk.do":
-			command = new ShopWriteCommand();
-			command.execute(request, response);
-			viewPage = "shopWriteOk.jsp";
-			break;
-		// 업데이트는 잠시 보류
-//	      case "/shopUpdate.do":
-//	         command = new ShopSelectCommand();
-//	         command.execute(request, response);
-//	         viewPage = "shopUpdate.jsp";
-//	         break;
-
-//	      case "/shopUpdateOk.do":
-//	         command = new ShopUpdateCommand();
-//	         command.execute(request, response);
-//	         viewPage = "shopUpdateOk.jsp";
-//	         break;
-
-		case "/shopDeleteOk.do":
-			command = new ShopDeleteCommand();
-			command.execute(request, response);
-			viewPage = "shopDeleteOk.jsp";
-			break;
-
-		case "/shopFileUpload.do":
-			command = new ShopFileUploadCommand();
-			command.execute(request, response);
-			break;
+	
 		// 주혁 1103 내정보 업데이트
 		case "/myinfo.do":
 			viewPage = "myinfo.jsp";
@@ -331,6 +295,34 @@ public class DoController extends HttpServlet {
 			viewPage = "findpwOk.jsp";
 			break;
 			
+			// 1103 김영재 현재 작성진행중
+		case "/shop.do":
+			command = new ShopCommand();
+			command.execute(request, response);
+			viewPage = "shop.jsp";
+			break;
+
+		case "/shopWrite.do":
+			viewPage = "shopWrite.jsp";
+			break;
+
+		case "/shopWriteOk.do":
+			command = new ShopWriteCommand();
+			command.execute(request, response);
+			viewPage = "shopWriteOk.jsp";
+			break;
+
+		case "/shopDeleteOk.do":
+			command = new ShopDeleteCommand();
+			command.execute(request, response);
+			viewPage = "shopDeleteOk.jsp";
+			break;
+
+		case "/shopFileUpload.do":
+			command = new ShopFileUploadCommand();
+			command.execute(request, response);
+			break;
+			
 		//1105 영재 구매jsp 
 		case "/shopping.do":
 			command = new shoppingCommand();
@@ -343,6 +335,26 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "shoppingOk.jsp";
 			break;
+			
+		case "/shopEdit.do":
+			command = new ShopCommand();
+			command.execute(request, response);
+			viewPage = "shopEdit.jsp";
+			break;
+			// 제품 수정하는 곳
+		case "/shoppingEdit.do":
+			command = new ShopUpdateCommand();
+			command.execute(request, response);
+			viewPage = "shoppingEdit.jsp";
+			break;
+			
+			
+			 //수정확인 
+		case "/shopEditOk.do":
+	         command = new ShopUpdateOkCommand();
+	         command.execute(request, response);
+	         viewPage = "shopEditOk.jsp";
+	         break;
 
 		} // end switch
 

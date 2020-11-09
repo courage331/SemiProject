@@ -94,6 +94,9 @@ public class D {
 		public static final String SQL_PRODUCT_SELECT_BY_NAME =
 				"SELECT * FROM product WHERE pro_name = ?";
 		
+		public static final String SQL_PRODUCT_SELECT_BY_KIND =
+				"SELECT * FROM product WHERE pro_kind = ?";
+		
 		public static final String SQL_PRODUCT_SELECT_BY_NUM =
 				"SELECT * FROM product WHERE pro_num = ?";
 		
@@ -102,7 +105,9 @@ public class D {
 				"DELETE FROM product WHERE pro_num = ?";
 		// 가격, 재고수량 제품 이름 수정
 		public static final String SQL_PRODUCT_UPDATE =
-				" UPDATE (SELECT pro_price, pro_cnt, pro_name FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?, pro_namme = ?";
+				" UPDATE PRODUCT SET pro_price = ?, pro_cnt = ? WHERE pro_num = ?";
+				//" UPDATE (SELECT pro_price, pro_cnt FROM PRODUCT WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?";
+				//" UPDATE (SELECT pro_price, pro_cnt FROM product WHERE pro_num = ?) SET pro_price = ?, pro_cnt = ?";
 		//주혁 1103 내정보관리에서 데이터 읽어오기
 		//public static final String SQL_READ_SELECT_BY_NUM =
 		//		"SELECT * FROM customer WHERE CUS_NUM = ?";
@@ -154,7 +159,20 @@ public class D {
 		public static final String SQL_IDCHK_SELECT = 
 				"SELECT count(*) FROM CUSTOMER WHERE CUS_ID = ?";
 		
-	      public static final String SQL_FIND_CASH = 
-	              "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
-		
+	    public static final String SQL_FIND_CASH = 
+	            "SELECT * FROM CUSTOMER WHERE CUS_NUM=?";
+	    
+	    public static final String SQL_SELL_INSERT =
+	    		"INSERT INTO SELLDATA"
+	    				+ "(cus_num, pro_num, sell_date, sell_cnt, sell_sum)"
+	    				+ "VALUES"
+	    				+ "(?,?,SYSDATE,?,?)";
+	    
+//	    public static final String SQL_INC_CNT = 
+//	    		"UPDATE (SELECT SELL_CNT FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_CNT = CELL_CNT + 1";
+//	    
+//	    public static final String SQL_CNT_SUM = 
+//	    		"UPDATE (SELECT SELL_SUM FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_SUM = CELL_SUM + ?";
+	    		
+
 }

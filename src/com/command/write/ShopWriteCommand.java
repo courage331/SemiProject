@@ -17,6 +17,7 @@ public class ShopWriteCommand implements Command {
 		int cnt = 0;
 		ProductDAO dao = new ProductDAO();
 		
+		System.out.println(request.getParameter("content"));
 		String pKind = request.getParameter("pKind");
 		int pPrice = Integer.parseInt(request.getParameter("pPrice"));
 		int pCnt = Integer.parseInt(request.getParameter("pCnt"));
