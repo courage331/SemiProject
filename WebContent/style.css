@@ -160,17 +160,33 @@ footer .container {
 
 @media ( max-width : 767px) {
 	/* 모바일 */
-	
-	
 	/* 헤더 */
+	header .container  {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
 	/* 헤더 로고 */
 	.headA {
 		text-decoration: none;
 		color: white;
-		text-align: center;
-		
+		font-size: 100px;
 	}
 	.head-btn {
 		display: block;
+		border: none;
+		color: white;
+		font-size: 60px;
+		background-color: var(--main-color);
 	}
+	
+}
+
+@media (min-width: 768px) {
+
+    /* 피시 */
+    /* 헤더 메뉴버튼  */
+    .head-btn {
+        display: none;
+    }
 }
