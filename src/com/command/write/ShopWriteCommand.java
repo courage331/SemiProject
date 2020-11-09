@@ -24,7 +24,6 @@ public class ShopWriteCommand implements Command {
 		String pName = request.getParameter("pName");
 		System.out.println("!!!!!!!!!!"+pKind+"," + pPrice + ", " + pCnt + "," + pName);
 			
-		// 유효성 체크 : null 이거나, 빈 문자열이면 
 			try {
 				cnt = dao.insert(pKind, pPrice, pCnt, pName);
 			} catch (SQLException e) {

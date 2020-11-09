@@ -26,9 +26,6 @@ public class shoppingCommand implements Command {
       
       HttpSession session = request.getSession(); 
       String pName = request.getParameter("pName");
-      System.out.println(pName+"피네임이다!!!!!!!!!!!!!!!!");
-      System.out.println();
-      System.out.println();
       
 
 //      int sCnt = Integer.parseInt((String) request.getAttribute("sCnt"));
@@ -39,11 +36,9 @@ public class shoppingCommand implements Command {
       if(cus_num == 0) {
     	  System.out.println("null입니다");
       }
-      System.out.println(cus_num+"!!!!!씨넘!!!!!!!!!!!!!");
       
       
       try {
-         System.out.println("pName: ---!!!!!!!!!!!!" + pName);
          cdto = cdao.selectMoney(cus_num);
          pdto = pdao.selectBypName(pName);
 //         sdto = sdao.insert(cus_num, pro_num, sCnt, sSum);

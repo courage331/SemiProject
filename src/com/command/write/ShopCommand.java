@@ -17,11 +17,9 @@ public class ShopCommand implements Command {
       //케이스 달기 parameter 타입 받아서 swich 만들기 //타입변수는 all
       
       String kind = "all";
-      System.out.println(kind+"kind다!!!!");
       
       if(request.getParameter("kind") != null) {
          kind=request.getParameter("kind");
-         System.out.println(kind+"if문이다");
       }
       
       switch (kind) {

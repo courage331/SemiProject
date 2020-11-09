@@ -17,7 +17,6 @@
    crossorigin="anonymous"></script>
 <link rel="stylesheet" href="CSS/shopping.css">
 <title>상품관리</title>
-
 </head>
 <body>
    <!-- 헤더 -->
@@ -28,33 +27,26 @@
          <!--  <input type="button" value="X" onClick="">-->
       </div>
    </header>
-
    <form name="frm" method="post"><br>
- 
-
    <!-- 컨텐츠 A  -->
    <section class="conA">
-      <div class="container">
       <div class="content">
-               <img src="img/<%=pName%>.jpg"><br>
+   	   <img src="img/<%=pName%>.jpg"><br>
       </div>
-               <div class="ctext"></div>
-      <input type="hidden" name="pName" value="<%=pName%>"/><br>
-      <input type="hidden" name="pNum" value="<%=pNum%>"/><br>
-      <input type="hidden" name="pKind" value="<%=pKind%>"/><br>
-      종류 : <%=pKind%><br>
-      가격 : <input type="text" name="price" value="<%=price%>"/><br>
-      수량 : <input type="text" name="pCnt" value="<%=pCnt%>"/><br>
-   </section>
+    	<input type="hidden" name="pName" value="<%=pName%>"/><br>
+      	<input type="hidden" name="pNum" value="<%=pNum%>"/><br>
+      	<input type="hidden" name="pKind" value="<%=pKind%>"/><br>
+      <div class="ctext">
+     	<span>종류 : <%=pKind%><br>
+      	가격 : <input type="text" name="price" value="<%=price%>"/><br>
+      	수량 : <input type="text" name="pCnt" value="<%=pCnt%>"/><br>
+      	</span>
+      </div>
    
-
-
+   </section>
    <!-- 컨텐츠 C  -->
-   <section class="conC">
       <div class="container">
       </div>
-      
-   </section>
    <!-- 푸터 -->
    <footer>
       <div class="container">

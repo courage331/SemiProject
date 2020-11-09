@@ -8,12 +8,18 @@
 	--sub-text-color: #999999;
 }
 
+
+
 div.containerF {
 	text-align: right;
+	margin-top : -40px;
 	margin-left: 200px;
 	margin-right: 200px;
 }
-
+div.list {
+	margin-bottom: 50px;
+	margin-left:300px;
+}
 button.editBt {
 	background-color: #FEC034;
 	width: 180px;
@@ -90,7 +96,7 @@ td {
 h1 {
 	font-size: 40px;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 150px;
 }
 
 .conshop {

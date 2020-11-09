@@ -11,10 +11,14 @@ ALTER TABLE SELLDATA DORP CONSTRAINT FK_SELLDATA;
 
 SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'PRODUCT'; -- 제약 명 확인하기
 SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'SELLDATA';
+SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'customer';
+SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'pet';
+SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'review';
 
-ALTER TABLE SELLDATA DROP CONSTRAINT SYS_C007404; -- 외래키 삭제
+
+ALTER TABLE SELLDATA DROP CONSTRAINT SYS_C007404; -- 제약조건 삭제
 ALTER TABLE SELLDATA DROP CONSTRAINT SYS_C007405;
-ALTER TABLE SELLDATA DROP CONSTRAINT SYS_C007406;
+ALTER TABLE PRODUCT DROP CONSTRAINT SYS_C007318;
 
 SELECT * FROM PRODUCT ;
 
@@ -55,9 +59,14 @@ CREATE TABLE pet
 	-- 사용자 고유 번호
 	pet_reserve number NOT NULL,
 	-- 애완견 예약 여부
+	pet_image NUMBER NOT NULL,
+	--애완견 이미지
 	cus_num number NOT NULL,
+	
+	
 	PRIMARY KEY (pet_num)
 );
+
 
 
 CREATE TABLE product
@@ -92,6 +101,7 @@ ALTER TABLE shopfile
 	ON DELETE CASCADE --참조하는 부모가 삭제시 같이 삭제 
 	;
 
+DELETE FROM CUSTOMER WHERE CUS_NUM =1;
 DELETE FROM PRODUCT WHERE PRO_KIND = '장난감';
 DELETE FROM PRODUCT WHERE PRO_KIND = '사료';
 DELETE FROM PRODUCT WHERE PRO_KIND = '간식';
@@ -122,6 +132,8 @@ UPDATE PRODUCT SET pro_price = 100, pro_cnt = 100 WHERE pro_num = 1;
  UPDATE (SELECT pro_price, pro_cnt FROM PRODUCT WHERE pro_num = 7) SET pro_price = 7, pro_cnt = 500;
  UPDATE (SELECT pro_price, pro_cnt FROM product WHERE pro_num = 7) SET pro_price = 10, pro_cnt = 3;
 DELETE FROM PRODUCT WHERE pro_num =1;
+DELETE FROM CUSTOMER WHERE CUS_NUM =3;
+
 (
 	-- 예약번호
 	res_num number NOT NULL,
@@ -175,6 +187,26 @@ CREATE TABLE selldata
 	sell_sum number
 );
 
+CREATE TABLE reservation
+(
+	-- 예약번호
+	res_num number NOT NULL,
+	-- 예약 시작날짜
+	res_startdate date NOT NULL,
+	-- 예약 마지막날짜
+	res_lastdate date NOT NULL,
+	--서비스 항목
+	res_sinfo varchar2(30) NOT NULL,
+	-- 건의사항
+	res_message clob,
+	-- 사용자 고유 번호
+	res_state number NOT NULL,
+	--예약 상태
+	cus_num number NOT NULL,
+	-- 애완견고유번호
+	pet_num number NOT NULL,
+	PRIMARY KEY (res_num)
+);
 
 
 /* Create Foreign Keys */

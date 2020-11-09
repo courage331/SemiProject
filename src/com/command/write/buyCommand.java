@@ -27,24 +27,21 @@ public class buyCommand implements Command {
 	    SellDataDAO sdao = new SellDataDAO();
 	    SellDataDTO [] sdto = null;
 
-		System.out.println("buyCommand c_num" + (String) (session.getAttribute("c_num")));
-		System.out.println("buyCommand price" + request.getParameter("price"));
+//		System.out.println("buyCommand c_num" + (String) (session.getAttribute("c_num")));
+//		System.out.println("buyCommand price" + request.getParameter("price"));
 
 		int cus_num = Integer.parseInt((String) (session.getAttribute("c_num")));
 		int price = Integer.parseInt(request.getParameter("price"));
-		System.out.println(price+"파라메터 받은 price");
+//		System.out.println(price+"파라메터 받은 price");
 		int sCnt = Integer.parseInt((String) request.getParameter("sCnt"));
 		int sSum = Integer.parseInt((String) request.getParameter("sSum"));
-		System.out.println(sSum + "구매총금액");
+//		System.out.println(sSum + "구매총금액");
 		
 		int pro_num = Integer.parseInt((String) request.getParameter("pNum"));
-		System.out.println(pro_num);
+//		System.out.println(pro_num);
 
 		String pName = request.getParameter("pName");
 
-		System.out.println("!!!!!!!!!!!!"+cus_num);
-		
-		
 		try {
 			dcnt = cdao.delMoney(cus_num,price);
 			cnt = dao.deleteCnt(pName);

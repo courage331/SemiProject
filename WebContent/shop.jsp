@@ -23,7 +23,9 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
+
 	<h1>쇼핑</h1>
+	
 	<br>
 	<br>
 	<%
@@ -39,24 +41,26 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	System.out.println("-------2: " + totalCnt % 4);
 	%>
 
+		<div class = "list">
+			<select onchange="location = this.value;">
+ 				<option value="shop.do?kind=all">카테고리</option>
+ 				<option value="shop.do?kind=all">전체보기</option>
+				<option value="shop.do?kind=shampoo">샴푸</option>
+ 				<option value="shop.do?kind=snack">간식</option>
+ 				<option value="shop.do?kind=rice">사료</option>
+ 				<option value="shop.do?kind=etc">기타</option>
+			</select>
+		</div>		
 	<!-- 컨텐츠B -->
 	<section class="conF">
-
+		
 		<div class="containerF">
 			<%
 				if (session.getAttribute("c_num") != null) {
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
 				if (c_num == 1) {
 			%>
-			<select onchange="location = this.value;">
- 				<option value="shop.do?kind=all">카테고리</option>
- 				<option value="shop.do?kind=all">전체보기</option>
- 				<option value="shop.do?kind=shampoo">샴푸</option>
- 				<option value="shop.do?kind=snack">간식</option>
- 				<option value="shop.do?kind=rice">사료</option>
- 				<option value="shop.do?kind=etc">기타</option>
-			</select>
-			</form>
+			
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품
 				추가</button>
 			<button class="manageBt" onclick="location.href = 'shopEdit.do'">상품
