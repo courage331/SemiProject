@@ -344,4 +344,26 @@ public int myinfo_update(int c_num, String cus_pw, String cus_name, String cus_p
 			return cnt;
 
 		} // end delMoney()
+		//1109 이주혁 이메일 확인 (이메일 인증)
+		public int emailchk(String c_email) throws SQLException {
+			int cnt = 0;
+
+			try {
+				// 쿼리 수정
+				// count(*) 읽어와서  --> 리턴 0, 1
+				pstmt = conn.prepareStatement(D.SQL_EMAILCHK_SELECT);
+				pstmt.setString(1, c_email);
+				//cnt = pstmt.executeUpdate();
+				rs = pstmt.executeQuery();
+				if(rs.next())
+					cnt = rs.getInt(1);
+				rs.close();
+				pstmt.close();
+			} finally {
+				close();
+			}
+
+			return cnt;
+
+		} // end F()
 }
