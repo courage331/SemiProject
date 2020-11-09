@@ -153,16 +153,14 @@ public class ProductDAO {
 	} // end readByNum()
 
 	// 특정 글 수정
-	public int update(int pNum, String pKind, int price, int pCnt, String pName) throws SQLException {
+	public int update(int pNum, int price, int pCnt) throws SQLException {
 		int cnt = 0;
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PRODUCT_UPDATE);
 			pstmt.setInt(1, pNum);
-			pstmt.setString(2, pKind);
-			pstmt.setInt(3, price);
-			pstmt.setInt(4, pCnt);
-			pstmt.setString(5, pName);
+			pstmt.setInt(2, price);
+			pstmt.setInt(3, pCnt);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
