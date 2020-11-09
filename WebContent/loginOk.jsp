@@ -9,7 +9,7 @@
 
 <% if(arr==null || arr.length==0){ %>			
 	<script>	
-		alert("가입된 아이디가 아닙니다.");
+		alert("가입된 회원이 아닙니다.");
 		history.back();  // 다시 로그인페이지로
 	</script>
 <%
