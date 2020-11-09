@@ -128,7 +128,11 @@ footer {
 	background-color: var(--footer-color);
 	height: 150px;
 	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
 }
+	
 
 footer .container {
 	padding-top: 20px;
@@ -154,3 +158,19 @@ footer .container {
 	color: white;
 }
 
+@media ( max-width : 767px) {
+	/* 모바일 */
+	
+	
+	/* 헤더 */
+	/* 헤더 로고 */
+	.headA {
+		text-decoration: none;
+		color: white;
+		text-align: center;
+		
+	}
+	.head-btn {
+		display: block;
+	}
+}
