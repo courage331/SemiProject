@@ -39,33 +39,39 @@ $('.pet_image_list').click(function() {
 	
 })
 
-function chkSubmit() {
+$('.btn').click(function() {
 	frm = document.forms["frm"];
 
-	var p_name = frm["p_name"].value.trim();
-	var p_age = frm["p_age"].value.trim();
-	var p_weight = frm["p_weight"].value.trim();
-
-	if (p_name == "") {
+	var pet_name = frm["pet_name"].value.trim();
+	var pet_age = frm["pet_age"].value.trim();
+	var pet_weight = frm["pet_weight"].value.trim();
+	var pet_image = $('.pet_image_list').is(":checked")
+	
+	if (pet_name == "") {
 		alert("강아지 이름을 입력해주세요");
-		frm["p_name"].focus();
+		frm["pet_name"].focus();
 		return false;
 	}
 
-	if (p_age == "") {
+	if (pet_age == "") {
 		alert("강아지 나이를 입력해주세요");
-		frm["p_age"].focus();
+		frm["pet_age"].focus();
 		return false;
 	}
 
-	if (p_weight == "") {
+	if (pet_weight == "") {
 		alert("강아지 무게를 입력해주세요");
-		frm["p_weight"].focus();
+		frm["pet_weight"].focus();
 		return false;
 	}
-
+	
+	if (!pet_image) {
+		alert("강아지 이미지를 클릭해주세요");
+		return false;
+	}
+	
 	return true;
-} // end chkSubmit()
+})
 
 function petchk(url) {
 	newPage = window

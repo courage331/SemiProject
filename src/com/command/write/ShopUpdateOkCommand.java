@@ -54,7 +54,7 @@ public class ShopUpdateOkCommand implements Command {
 		
 //		if(pNum != -1  && kind != null && price != -1 && pCnt != -1 && pName != null) {
 			try {
-				cnt = dao.update(pNum, pKind, price, pCnt, pName);
+				cnt = dao.update(pNum, price, pCnt);
 				System.out.println(cnt+"업데이트ok cnt");
 			} catch(SQLException e) {
 				e.printStackTrace();

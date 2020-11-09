@@ -31,14 +31,15 @@ closecash.onclick = function() {
 }
 
 cashok.onclick = function() {
-	var frm = document.forms['frm'];
 	
   	var a = confirm("충전 하시겠습니까?");
     
-  	if(a) {
-  		var cash = sum/100+(sum/100*0.1);
-  		alert(cash+" 뼈다귀 충전완료");
-  		frm.submit();  // 특정 form 을 submit
+  	if( sum == 0 ) {
+  		alert("충전 금액을 선택해주세요.")
+  	} else if(a) {	 
+  	  	var cash = sum/100+(sum/100*0.1);
+  	  	alert(cash+" 뼈다귀 충전완료");
   	}
+
 }
 

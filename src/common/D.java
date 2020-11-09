@@ -181,6 +181,9 @@ public class D {
 	    				+ "(cus_num, pro_num, sell_date, sell_cnt, sell_sum)"
 	    				+ "VALUES"
 	    				+ "(?,?,SYSDATE,?,?)";
+	  //주혁 1109 이메일찾기
+	  		public static final String SQL_EMAILCHK_SELECT = 
+	  				"SELECT count(*) FROM CUSTOMER WHERE CUS_EMAIL = ?";
 	    
 //	    public static final String SQL_INC_CNT = 
 //	    		"UPDATE (SELECT SELL_CNT FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_CNT = CELL_CNT + 1";
