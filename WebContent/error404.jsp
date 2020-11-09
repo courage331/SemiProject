@@ -20,6 +20,7 @@
 예외 메시지는 <%= exception.getMessage() %>
 <section class="conA">
 <div class="container">
+
 <form name="frm"  id="contact-form" action="loginOk.do" method="post" onsubmit="return chkSubmit()">
 	<div id="content-header">
 		<h3>페이지 에러...</h3>
