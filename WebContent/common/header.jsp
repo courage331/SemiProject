@@ -19,6 +19,7 @@
 	<header>
 		<div class="container">
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
+			<button class="head-btn" style="display: none"><i class="fas fa-bars"></i></button>
 			<nav class="headN">
 				<ul>
 					<c:choose>

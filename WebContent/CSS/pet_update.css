@@ -88,7 +88,7 @@ header input:hover {
 	font-weight: bold;
 }
 
-#contact-form input[type='text']{ 
+.form_input { 
 	margin-top: 10px;
 	border:#ccc 1px solid;
 	border-radius: 5px;
@@ -100,20 +100,16 @@ header input:hover {
 	text-align: center;
 }
 .chkbtn {
-	text-align:center;
-	border: 1px solid var(--main-color);
-	padding:10px;
-	font-size: 14px;
-	background-color: var(--main-color);
-	color: white;
-	border-radius: 5px;
+	border: 4px solid #FFFFFF;
+	background: #FFFFFF;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .chkbtn :hover {
-	cursor: pointer;
-	color: var(--text-color);
-}
-
+	text-decoration: underline;
+	cursor: pointer;}
 .pet_img {
 	width: 28%;
 }
