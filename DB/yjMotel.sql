@@ -116,7 +116,7 @@ SELECT * FROM RESERVATION;
 select * from product;
 SELECT * FROM SELLDATA;
 SELECT * FROM REVIEW;
-
+SELECT * FROM PRODUCT WHERE PRO_KIND ='rice';
 UPDATE (SELECT pro_price, pro_cnt FROM product WHERE pro_num = 1) SET pro_price = 200, pro_cnt = 200;
 UPDATE PRODUCT SET pro_price = 100, pro_cnt = 100 WHERE pro_num = 1;
  UPDATE (SELECT pro_price, pro_cnt FROM PRODUCT WHERE pro_num = 7) SET pro_price = 7, pro_cnt = 500;

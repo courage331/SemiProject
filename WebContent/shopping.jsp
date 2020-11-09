@@ -22,9 +22,6 @@
    crossorigin="anonymous"></script>
 <link rel="stylesheet" href="CSS/shopping.css">
 <title>물품 구매</title>
-<script>
-   alert(<%=pName%>);
-</script>
 
 </head>
 <body>
@@ -37,7 +34,7 @@
       </div>
    </header>
 
-   <form name="frm" action="shoppingOk.do" method="post"><br>
+   <form name="frm" method="post"><br>
       <input type="hidden" name="pName" value="<%=pName%>"/><br>
       <input type="hidden" name="price" value="<%=price%>"/><br>
       <input type="hidden" name="sCnt" value="<%=sCnt%>"/><br>
@@ -91,7 +88,7 @@
    <!-- 푸터 -->
    <footer>
       <div class="container">
-         <button class="cashok" onclick="submit1()">
+         <button type="submit" onclick="submit2(<%=c_money%>,<%=price%>)">
             <h2>구매하기</h2>
          </button>
       </div>

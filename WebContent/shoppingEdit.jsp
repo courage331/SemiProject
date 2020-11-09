@@ -61,7 +61,7 @@
          <button type="submit" value="update" onclick='btn_click("update");'">
             <h2>수정하기</h2>
          </button>
-         <button type="submit" value="update" onclick='btn_click("delete");'">
+         <button type="submit" value="delete" onclick='btn_click("delete");'">
          <h2>삭제하기</h2>
          </button>
       </div>

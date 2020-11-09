@@ -5,19 +5,25 @@ function submit1(){
 			return false;
 			
 		}else{
-	frm.action = "shoppingOk.jsp";
-	form.submit();
+	frm.action = "shoppingOk.do";
+	frm.submit();
 		}
 }
-  function btn_click(c_money, price){                             
-    var c_money = request.getAttribute("c_money");
-	var price = request.getAttribute("price");  
+  function submit2(c_money,price){                             
+ 	console.log(c_money);
+	console.log(price);
 	if(c_money < price ){
-			alert("돈부족");                       
+			var m = confirm("뼈다귀가 부족합니다 충전하시겠습니까?");
+			if(m){
+				frm.action="charge.jsp";
+			              
+			} else{
+				
+			}
         } else {   
 			var r = confirm("구매 하시겠습니까?");
 				if(r){
-				frm.action="shoppingOk.jsp"; 
+				frm.action="shoppingOk.do"; 
 				}  else{
 					
 				}  
