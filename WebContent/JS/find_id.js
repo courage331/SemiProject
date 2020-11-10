@@ -21,10 +21,18 @@ function chkSubmit(){	//공백안돼요
 var sessionData = "mineItRecord";
 var sessionNum = sessionStorage.getItem("certif"); 
 
+var temp;
+function give(aaa){
+	
+	temp=aaa;
+	alert(temp);
+}
+
+
 $("#checking").click(function(){
 	console.log("checking 제이쿼리 실행");
 	var certif_num = $('#certif_num').val();
-	console.log(certif_num+"|||"+sessionNum+"|||")
+	console.log(certif_num+"|||"+sessionNum+"|||"+temp)
 });
 
 $("#user_email").blur(function() {

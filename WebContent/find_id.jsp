@@ -42,7 +42,7 @@
 		<div class="check_font" id="email_check"> 
 			<button type="submit" id="chk_button" disabled="false">인증번호 전송 ▶</button>
 			<input type="text" id="certif_num" name="chk_num" placeholder="인증번호를 입력해 주세요"><br>
-			<input type="button" id="checking" class="hc vc" value="인증하기"/>
+			<input type="button" id="checking" class="hc vc" value="인증하기" onclick="give(<%=session.getAttribute("certif")%>)"/>
 		</div>
 	</div>
 	<div class="clearfix"></div>

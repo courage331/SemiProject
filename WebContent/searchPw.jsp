@@ -105,5 +105,6 @@ props.put("mail.smtp.socketFactory.fallback", "false");
 	session.setAttribute("certif", AuthenticationKey);
 %>
 <script>
+alert("<%=session.getAttribute("certif")%>");
 history.back();
 </script>
