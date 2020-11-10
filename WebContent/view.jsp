@@ -121,6 +121,7 @@
 	
 	<section>
 		<div id="emdfhr">
+		<div class="cmt">COMMENT</div>
 		<%if (arr3 != null){ %>
 			<form name="cmt" action="cmtOk.do" method="post" onsubmit="return chkSmt()">
 			작성자: <%= arr3[0].getCus_name() %>,<input type="hidden" name="id" value="<%=arr3[0].getCus_name()%>"/>
@@ -175,8 +176,14 @@
 				<%
 				cnt++;
 				} // end for
-				}
+				}else{
 				%>
+				<td></td>
+				<td></td>
+				<td>댓글이 없습니다.</td>
+				<td></td>
+				<td></td>
+				<% }%>
 			</table>
 		</div>
 	</section>
