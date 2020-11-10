@@ -89,11 +89,11 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					if (arr[cnt].getPro_cnt() == 0) {%>
 					alert('재고소진')"
 								<%} else {%>
-					shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+					shoppingOpen('<%=arr[cnt].getPro_num()%>')"
 					<%}
 					}%>><br> 
-					종류 : <%=arr[cnt].getPro_kind()%><br>
-					가격 : <%=arr[cnt].getPro_price()%><br> 
+					이름 : <%=arr[cnt].getPro_name()%><br>
+					가격 : <%=arr[cnt].getPro_price()%> <i class="fas fa-bone"></i><br>
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
 						if (arr[cnt].getPro_cnt() == 0) {
@@ -107,7 +107,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				<%
 					} else {
 				%>
-				<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
+				<button	onclick="shoppingOpen('<%=arr[cnt].getPro_num()%>')">구매하기</button>
 				<%
 					}
 				}
@@ -141,11 +141,11 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 							if (arr[cnt].getPro_cnt() == 0) {%>
 							alert('재고소진')"
 										<%} else {%>
-							shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+							shoppingOpen('<%=arr[cnt].getPro_num()%>')"
 							<%}
 							}%>><br> 
-							종류 : <%=arr[cnt].getPro_kind()%><br>
-							가격 : <%=arr[cnt].getPro_price()%><br> 
+							이름 : <%=arr[cnt].getPro_name()%><br>
+							가격 : <%=arr[cnt].getPro_price()%> <i class="fas fa-bone"></i><br>
 							재고 : <%=arr[cnt].getPro_cnt()%><br>
 							<%
 								if (arr[cnt].getPro_cnt() == 0) {
@@ -160,7 +160,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 						<%
 							} else {
 						%>
-						<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
+						<button	onclick="shoppingOpen('<%=arr[cnt].getPro_num()%>')">구매하기</button>
 						<%
 							}
 						}

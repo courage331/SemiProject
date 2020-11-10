@@ -9,6 +9,10 @@
 }
 
 
+i {
+	color: var(--main-color);
+	font-size: 15px;
+}
 
 div.containerF {
 	text-align: right;
@@ -32,6 +36,7 @@ div.containerF {
 	border-radius: 12px;
 	margin:0px;
 }
+
 
 #list_btn input:hover {
     background: #fa6e3e;

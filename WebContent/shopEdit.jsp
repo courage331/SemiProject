@@ -23,15 +23,13 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
-	<div class = "list">
-			<div class = "list">
+	<div id="list_btn">
 				<input type="button" value="전체" onclick="location='shop.do?kind=all'">
  				<input type="button" value="샴푸" onclick="location='shop.do?kind=shampoo'">
  				<input type="button" value="간식" onclick="location='shop.do?kind=snack'">
  				<input type="button" value="사료" onclick="location='shop.do?kind=rice'">
  				<input type="button" value="기타" onclick="location='shop.do?kind=etc'">
-		</div>
-		</div>
+		</div>	
 	<h1>쇼핑</h1>
 	<br>
 	<br>
@@ -75,7 +73,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 		if (totalCnt % 4 == 0) {
 			for (int i = 0; i < totalCnt / 4; i++) { // for 1
 	%>
-	<section class"=conD">
+	<section class"=conBody">
 		<div id="dddd">
 			<table>
 				<%
@@ -89,10 +87,10 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					if (arr[cnt].getPro_cnt() == 0) {%>
 					alert('재고소진')"
 								<%} else {%>
-					editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+					editOpen('<%=arr[cnt].getPro_num()%>')"
 					<%}
 					}%>><br> 
-					종류 : <%=arr[cnt].getPro_kind()%><br>
+					이름 : <%=arr[cnt].getPro_name()%><br>
 					가격 : <%=arr[cnt].getPro_price()%><br> 
 					재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
@@ -104,7 +102,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					if (session.getAttribute("c_num") == null) {
 					} else {
 				%>
-				<button	onclick="editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">수정하기</button>
+				<button	onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
 				<%
 					}
 				}
@@ -118,7 +116,6 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				%>
 			</table>
 		</div>
-	</section>
 	<%
 		if (cnt == totalCnt)
 		break;
@@ -126,7 +123,6 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	} else {
 		for (int i = 0; i < totalCnt / 4 + 1; i++) { // for 1
 			%>
-			<section class"=conD">
 				<div id="dddd">
 					<table>
 						<%
@@ -140,10 +136,10 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 							if (arr[cnt].getPro_cnt() == 0) {%>
 							alert('재고소진')"
 										<%} else {%>
-							editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+							editOpen('<%=arr[cnt].getPro_num()%>')"
 							<%}
 							}%>><br> 
-							종류 : <%=arr[cnt].getPro_kind()%><br>
+							이름 : <%=arr[cnt].getPro_name()%><br>
 							가격 : <%=arr[cnt].getPro_price()%><br> 
 							재고 : <%=arr[cnt].getPro_cnt()%><br>
 							<%
@@ -156,7 +152,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 							if (session.getAttribute("c_num") == null) {
 							} else {
 						%>
-						<button	onclick="editOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">수정하기</button>
+						<button	onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
 						<%
 							}
 						}
@@ -170,7 +166,6 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 						%>
 					</table>
 				</div>
-			</section>
 			<%
 				if (cnt == totalCnt)
 				break;
@@ -178,6 +173,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	} // end for 3
 	} // end if
 	%>
+	</section>
 
 
 	<!-- 푸터 -->

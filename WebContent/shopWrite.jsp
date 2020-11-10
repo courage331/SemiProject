@@ -35,7 +35,11 @@
 			<form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()">
 				상품이름: <input type="text" name="pName" /><br>
 				<br>
-				상품종류: <input type="text" name="pKind" /><br>
+				상품종류: 
+				<label><input type="radio" name="pKind" value="rice"/>사료</label>
+				<label><input type="radio" name="pKind" value="shampoo"/>샴푸</label>
+				<label><input type="radio" name="pKind" value="snack"/>간식</label>
+				<label><input type="radio" name="pKind" value="etc"/>기타</label><br>
 				<br>
 				상품가격: <input type="number" name="pPrice"/><br>
 				<br>
