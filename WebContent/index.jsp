@@ -9,11 +9,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/index.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <title>왈왈 호텔</title>
 </head>
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
+	<!-- 메인 배너 -->
+	<div class="slick-container">
+		<div class="item">slick test 1</div>
+		<div class="item">slick test 2</div>
+		<div class="item">slick test 3</div>
+		<div class="item">slick test 4</div>
+		<div class="item">slick test 5</div>
+	</div>
 	<!-- 컨텐츠A -->
 	<section class="conA">
 		<div class="container">
@@ -56,7 +66,11 @@
 	<jsp:include page="common/footer.jsp"></jsp:include>
 
 </body>
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="JS/index.js"></script>
 </html>
 
 
