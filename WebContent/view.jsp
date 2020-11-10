@@ -122,15 +122,26 @@
 	<section>
 		<div id="emdfhr">
 		<div class="cmt">COMMENT</div>
+		<hr>
+		<br>
 		<%if (arr3 != null){ %>
-			<form name="cmt" action="cmtOk.do" method="post" onsubmit="return chkSmt()">
-			작성자: <%= arr3[0].getCus_name() %>,<input type="hidden" name="id" value="<%=arr3[0].getCus_name()%>"/>
-			*내용: <textarea name="content"></textarea>
+			<form name="cmt" action="cmtOk.do" method="post" onsubmit="return chkSmt()" style="font-size:20px">
+			작성자: <%= arr3[0].getCus_name() %><br><input type="hidden" name="id" value="<%=arr3[0].getCus_name()%>"/>
+			*내용 : <textarea name="content" style="width:80%"></textarea>
 			<input type="hidden" name="r_num" value="<%= num %>"/>
 			<input type="hidden" name="c_num" value="<%= cus_num %>"/>
-			<input type="submit" value="등록하기"/>
+			<input type="submit" value="등록하기" style="	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	border:none;
+	border-radius: 12px;
+	float:right;
+	color: #fff;"/>
 			</form>
 		<% } %>
+		<br>
 		</div>
 	</section>
 		<section class="conG">
@@ -159,7 +170,8 @@
 						<td><%= arr2[i].getRegDate() %></td>
 						<td>
 						<%if(cus_num == arr2[i].getC_num()){ %>
-						<button style="width:100px; height:40px; font-size: 15px" onclick="" >수정하기</button>
+						<button style="width:100px; height:40px; font-size: 15px"
+						 onclick="datachk('cmtupdate.do?cmt_num=<%= arr2[i].getNum() %>&id=<%=arr2[i].getId() %>&content=<%= arr2[i].getContent() %>&num=<%= num %>')" >수정하기</button>
 						<%} else { %>
 						<button style="width:100px; height:40px; font-size: 15px" onclick="deleteChk()">수정하기</button>
 						<%} %>

@@ -41,6 +41,9 @@ public class D {
 		public static final String SQL_CMT_DELETE_BY_NUM =
 				"DELETE FROM cmt WHERE cmt_num = ?";
 		
+		public static final String SQL_CMT_UPDATE =
+				"UPDATE (SELECT cmt_content FROM cmt WHERE cmt_num = ?) SET cmt_content = ?";
+		
 		
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=

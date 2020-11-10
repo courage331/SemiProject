@@ -1,0 +1,143 @@
+/* charge css */
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 기본 색상 */
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+/* 헤더 */
+header {
+	background-color: var(--main-color);
+	height: 80px;
+}
+
+header .container {
+	padding: 10px;
+}
+
+header i {
+	float:left;
+	color: white;
+	font-size: 50px;
+	margin-left:10px;
+}
+
+header h2 {
+	float:left;
+	color: white;
+	margin-left: 80px;
+	font-size: 40px;
+}
+
+header input {
+	margin-top: 7px;
+	margin-left: 118px;
+	background-color:var(--main-color);
+	color: white;
+	border: none;
+	font-size: 40px;
+}
+
+header input:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+/* 컨텐츠 A */
+.conA .container {
+	margin-top : 20px;
+	text-align: center;
+}
+
+/* 컨텐츠 B */
+
+.conB .container {
+	margin-left: 20px;
+	margin-right: 20px;
+	
+}
+#content-header h3 {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 50px
+}
+
+#contact-form {
+	padding: 10px 15px 15px 15px;
+	border:4px solid #4ea0d8;
+	border-radius:10px;
+}
+
+#contact-form div {
+	margin-bottom: 20px;
+}
+
+#contact-form label {
+	display: inline-block;
+	width : 100%;
+	font-weight: bold;
+}
+
+.form_input { 
+	margin-top: 10px;
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	height: 25px;
+	width: 65%;
+}
+
+.btn_list {
+	text-align: center;
+}
+.chkbtn {
+	background: #FEC034;
+	color:#fff;
+	border-radius: 12px;
+	padding: 10px;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.chkbtn :hover {
+    background: #fa6e3e;
+	cursor: pointer;
+}
+.pet_img {
+	width: 28%;
+}
+/* 푸터 */
+footer{
+	background-color: var(--main-color);
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	padding: 15px 0;
+	text-align: center;
+}
+
+footer button {
+	width: 100%;
+	height: 60px;
+	background-color: var(--main-color);
+	border: none;
+	color: white;
+	font-size: 24px;
+}
+
+footer button:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+
+

@@ -12,3 +12,9 @@ function chkSmt() {
 
 	return true;
 } // end chkSubmit()
+
+function datachk(url){
+	newPage = window
+	.open(url, 'cmtupdate',
+			'width=500,height=500,left=650,location=no,status=no,scrollbars=no');
+}
