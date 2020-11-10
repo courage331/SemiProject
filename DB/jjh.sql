@@ -182,3 +182,21 @@ DROP SEQUENCE CUSTOMER_SEQ;
 
 
 INSERT INTO review VALUES (REVIEW_SEQ.nextval, '5글2글', '4이이이이', 3, '2020-10-18', 6);
+
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 0, 'e1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
+
+1
+SELECT * FROM CUSTOMER WHERE cus_id = '' AND cus_pw = 1234;

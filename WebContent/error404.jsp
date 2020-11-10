@@ -13,11 +13,6 @@
 <title>에러 안내</title>
 </head>
 <body>
-	<!-- 헤더 -->
-	<jsp:include page="common/header.jsp"></jsp:include>
-에러가 발생했습니다... <br/>
-예외 타입은 : <%= exception.getClass().getName() %> <br/>
-예외 메시지는 <%= exception.getMessage() %>
 <section class="conA">
 <div class="container">
 
@@ -38,8 +33,6 @@
 </section>	
 
 
-	<!-- 푸터 -->
-	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript" src="JS/errorPage.js"></script>
 </html>
