@@ -23,6 +23,15 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
+	<div class = "list">
+			<div class = "list">
+				<input type="button" value="전체" onclick="location='shop.do?kind=all'">
+ 				<input type="button" value="샴푸" onclick="location='shop.do?kind=shampoo'">
+ 				<input type="button" value="간식" onclick="location='shop.do?kind=snack'">
+ 				<input type="button" value="사료" onclick="location='shop.do?kind=rice'">
+ 				<input type="button" value="기타" onclick="location='shop.do?kind=etc'">
+		</div>
+		</div>
 	<h1>쇼핑</h1>
 	<br>
 	<br>
@@ -39,16 +48,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	System.out.println("-------2: " + totalCnt % 4);
 	%>
 	
-	<div class = "list">
-			<select onchange="location = this.value;">
- 				<option value="shopEdit.do?kind=all">카테고리</option>
- 				<option value="shopEdit.do?kind=all">전체보기</option>
-				<option value="shopEdit.do?kind=shampoo">샴푸</option>
- 				<option value="shopEdit.do?kind=snack">간식</option>
- 				<option value="shopEdit.do?kind=rice">사료</option>
- 				<option value="shopEdit.do?kind=etc">기타</option>
-			</select>
-		</div>	
+		
 
 	<!-- 컨텐츠B -->
 	<section class="conF">
