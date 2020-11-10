@@ -158,9 +158,11 @@ public class ProductDAO {
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PRODUCT_UPDATE);
-			pstmt.setInt(1, pNum);
-			pstmt.setInt(2, price);
-			pstmt.setInt(3, pCnt);
+
+			pstmt.setInt(1, price);
+			pstmt.setInt(2, pCnt);
+			pstmt.setInt(3, pNum);
+
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

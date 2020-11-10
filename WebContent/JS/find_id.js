@@ -17,7 +17,23 @@ function chkSubmit(){	//공백안돼요
 	
 	return chk;
 } // end chkSubmit()
+//var sessionNum =window.sessionStorage.getItem("certif");
+var sessionData = "mineItRecord";
+var sessionNum = sessionStorage.getItem("certif"); 
 
+var temp;
+function give(aaa){
+	
+	temp=aaa;
+	alert(temp);
+}
+
+
+$("#checking").click(function(){
+	console.log("checking 제이쿼리 실행");
+	var certif_num = $('#certif_num').val();
+	console.log(certif_num+"|||"+sessionNum+"|||"+temp)
+});
 
 $("#user_email").blur(function() {
 	// id = "id_reg" / name = "userId"

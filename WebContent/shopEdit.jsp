@@ -38,6 +38,17 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	System.out.println("-------1: " + totalCnt / 4);
 	System.out.println("-------2: " + totalCnt % 4);
 	%>
+	
+	<div class = "list">
+			<select onchange="location = this.value;">
+ 				<option value="shopEdit.do?kind=all">카테고리</option>
+ 				<option value="shopEdit.do?kind=all">전체보기</option>
+				<option value="shopEdit.do?kind=shampoo">샴푸</option>
+ 				<option value="shopEdit.do?kind=snack">간식</option>
+ 				<option value="shopEdit.do?kind=rice">사료</option>
+ 				<option value="shopEdit.do?kind=etc">기타</option>
+			</select>
+		</div>	
 
 	<!-- 컨텐츠B -->
 	<section class="conF">
