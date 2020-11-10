@@ -21,7 +21,6 @@ document.rform.res_startdate.min=rdate;
 document.rform.res_startdate.max=maxdate;
 
 
-
 $(function(){
 	$("#startdate").on("change keyup paste",function(){
 		if($("#startdate").val()>$("#lastdate").val()){

@@ -17,16 +17,6 @@ function chkSubmit(){	//공백안돼요
 	
 	return chk;
 } // end chkSubmit()
-//var sessionNum =window.sessionStorage.getItem("certif");
-var sessionData = "mineItRecord";
-var sessionNum = sessionStorage.getItem("certif"); 
-
-var temp;
-function give(aaa){
-	
-	temp=aaa;
-	alert(temp);
-}
 
 
 $("#checking").click(function(){
