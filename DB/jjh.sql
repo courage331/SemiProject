@@ -1,6 +1,7 @@
 
 /* Drop Tables */
 
+DROP TABLE cmt CASCADE CONSTRAINTS;
 DROP TABLE reservation CASCADE CONSTRAINTS;
 DROP TABLE pet CASCADE CONSTRAINTS;
 DROP TABLE review CASCADE CONSTRAINTS;
@@ -12,6 +13,18 @@ DROP TABLE product CASCADE CONSTRAINTS;
 
 
 /* Create Tables */
+
+CREATE TABLE cmt
+(
+	cmt_num number NOT NULL,
+	cmt_id varchar2(40) NOT NULL,
+	cmt_regdate date NOT NULL,
+	cmt_content clob NOT NULL,
+	rev_num number NOT NULL,
+	cus_num number NOT NULL,
+	PRIMARY KEY (cmt_num)
+);
+
 
 CREATE TABLE customer
 (
@@ -36,7 +49,6 @@ CREATE TABLE pet
 	-- 1이면 예약 불가 상태
 	-- 0이면 예약 가능 상태
 	pet_reserve number NOT NULL,
-	pet_image NUMBER NOT NULL,
 	PRIMARY KEY (pet_num)
 );
 
@@ -57,8 +69,7 @@ CREATE TABLE reservation
 	res_num number NOT NULL,
 	res_startdate date NOT NULL,
 	res_lastdate date NOT NULL,
-	res_sinfo varchar2(30) NOT NULL,
-	res_message clob,
+	message clob,
 	cus_num number NOT NULL,
 	pet_num number NOT NULL,
 	-- 미정...
@@ -91,6 +102,12 @@ CREATE TABLE selldata
 
 
 /* Create Foreign Keys */
+
+ALTER TABLE cmt
+	ADD FOREIGN KEY (cus_num)
+	REFERENCES customer (cus_num)
+;
+
 
 ALTER TABLE pet
 	ADD FOREIGN KEY (cus_num)
@@ -126,59 +143,53 @@ ALTER TABLE selldata
 	ADD FOREIGN KEY (pro_num)
 	REFERENCES product (pro_num)
 ;
-/* customer 테스트 쿼리문 */
-INSERT INTO customer VALUES (1, '1234', '장정호', '010-6481-5124', 'jjh5324@kakao.com', 'jjh', '999');
-INSERT INTO customer VALUES (2, '1234', '일호인', '010-6327-8629', 'hoin1@naver.com', 'hoin', '10');
-INSERT INTO customer VALUES (3, '1234', 'test', '010-6481-4444', '$4444@kakao.com', 'test', '999');
-/* pet 테스트 쿼리문 */
-INSERT INTO PET VALUES(1,1,'강아지1',5,10,0);
-INSERT INTO PET VALUES(2,1,'강아지2',6,12,1);
-INSERT INTO PET VALUES(3,2,'강아지1',5,10,1);
-INSERT INTO PET VALUES(4,3,'강아지1',5,10,1);
 
-INSERT INTO PRODUCT VALUES(1,'사료',10, 500, '사료1');
-INSERT INTO PRODUCT VALUES(2,'사료',10, 500, '사료2');
-INSERT INTO PRODUCT VALUES(3,'사료',10, 500, '사료3');
-INSERT INTO PRODUCT VALUES(4,'사료',10, 500, '사료4');
 
-INSERT INTO PET VALUES(PET_SEQ.nextval,1,'강아지3',6,10,0,1);
+ALTER TABLE cmt
+	ADD FOREIGN KEY (rev_num)
+	REFERENCES review (rev_num)
+;
 
-/* select 테스트 쿼리 */
-SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = 1;
-/*테이블에 있는지 확인용*/
-SELECT * FROM CUSTOMER;
-SELECT * FROM pet;
-SELECT * FROM RESERVATION;
-/*뼈다귀 충전*/
-UPDATE CUSTOMER SET CUS_MONEY = CUS_MONEY + 20 WHERE CUS_NUM = 1;
-UPDATE (SELECT CUS_MONEY FROM CUSTOMER WHERE CUS_NUM = 1) SET CUS_MONEY = CUS_MONEY + 1;
 
-/*반려견 정보수정*/
-UPDATE (SELECT PET_NAME, PET_AGE, PET_WEIGHT, PET_IMAGE FROM PET WHERE PET_NUM = 1) 
-SET PET_NAME = '강아지2', PET_AGE = 13, PET_WEIGHT = 15, PET_IMAGE = 2;
 
-UPDATE (SELECT PET_NAME, PET_AGE, PET_WEIGHT, PET_IMAGE FROM PET WHERE PET_NUM = 1) 
-SET PET_NAME = '강아지3', PET_AGE = 15, PET_WEIGHT = 15, PET_IMAGE = 2;
+/* Comments */
 
-DELETE FROM PET WHERE PET_NUM = 1;
+COMMENT ON COLUMN pet.pet_reserve IS '1이면 예약 불가 상태
+0이면 예약 가능 상태';
+COMMENT ON COLUMN reservation.res_state IS '미정...';
 
-SELECT * FROM PET WHERE CUS_NUM = 1;
 
-select * from user_tables
+CREATE SEQUENCE CMT_SEQ;
 
-CREATE SEQUENCE PET_SEQ;
-CREATE SEQUENCE RESERVATION_SEQ;
-CREATE SEQUENCE REVIEW_SEQ;
-CREATE SEQUENCE PRODUCT_SEQ;
-CREATE SEQUENCE SELLDATA_SEQ;
-CREATE SEQUENCE CUSTOMER_SEQ;
+SELECT * FROM cmt WHERE REV_NUM = 2 ORDER BY CMT_NUM;
+SELECT * FROM cmt WHERE rev_num = 44;
 
-DROP SEQUENCE PET_SEQ;
-DROP SEQUENCE RESERVATION_SEQ;
+DROP SEQUENCE CMT_SEQ;
 DROP SEQUENCE REVIEW_SEQ;
-DROP SEQUENCE PRODUCT_SEQ;
-DROP SEQUENCE SELLDATA_SEQ;
-DROP SEQUENCE CUSTOMER_SEQ;
 
+<<<<<<< HEAD
 
 INSERT INTO review VALUES (REVIEW_SEQ.nextval, '5글2글', '4이이이이', 3, '2020-10-18', 6);
+
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's2');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's3');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's4');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 0, 'e1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
+
+1
+SELECT * FROM CUSTOMER WHERE cus_id = '' AND cus_pw = 1234;
+=======
+INSERT INTO cmt
+(cmt_num, cmt_id, cmt_regdate, cmt_content, rev_num, cus_num)
+VALUES(cmt_seq.nextval, '일호인', SYSDATE, ?, ?, ?);
+>>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git

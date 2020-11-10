@@ -46,34 +46,41 @@ int pick = pet_image + 4;
 				action="pet_modify.do?pet_num=<%=pet_num%>" method="post">
 				<div id="content-header"></div>
 				<div>
-					<label>강아지 이름 :</label> <input type="text" name="pet_name"
+					<label>강아지 이름 :</label> <input class="form_input" type="text" name="pet_name"
 						value=<%=pet_name%> placeholder=<%=pet_name%> />
 				</div>
 				<div>
-					<label>강아지 나이 :</label> <input type="text" name="pet_age"
+					<label>강아지 나이 :</label> <input class="form_input" type="number" name="pet_age"
 						value=<%=pet_age%> placeholder=<%=pet_age%> />
 				</div>
 				<div>
-					<label>강아지 무게 :</label> <input type="text" name="pet_weight"
+					<label>강아지 무게 :</label> <input class="form_input" type="number" name="pet_weight"
 						value=<%=pet_weight%> placeholder=<%=pet_weight%> />
 				</div>
 				<div>
-					<label>강아지 이미지 :</label>
+					<label>강아지 이미지 :<% %></label>
 					<%
+						
 						for (int i = 1; i < 5; i++) {
+							
 						if (i != pet_image) {
 					%>
 					<img class="pet_img" id="pet_img<%=i%>"
 						src="img/K-00<%=i%>.png">
 					<input class="pet_image_list" type="radio" name="pet_image"
-						value="<%=i%>"> 
+						value="<%=i%>">
+					<%
+						} else {
+					%>
+					<input class="pet_image_list" type="radio" name="pet_image"
+						value="<%=pet_image%>" style="display: none" checked="checked">
 					<%
 						}
 					}
 					%>
 				</div>
 				<div class="btn_list">
-				<input class="chkbtn" type="submit" value="수정하기" /> 
+				<input class="chkbtn" id="okbtn" type="submit" value="수정하기" /> 
 				<input class="chkbtn" type="button" value="삭제" onClick="chkDelete(<%=pet_num%>)">
 				</div>
 			</form>

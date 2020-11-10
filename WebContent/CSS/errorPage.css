@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+header{
+	padding-bottom:-10px;
+}
+
+
+#content-header h3 {
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 30px
+}
+
+#contact-form {
+	padding: 10px 15px 15px 15px;
+	
+	border:4px solid #4ea0d8;
+	
+	border-radius:10px;
+	margin-bottom: 100px;
+}
+
+#contact-form div {
+	margin-bottom: 20px;
+}
+
+#contact-form label {
+	display: inline-block;
+	width : 85%;
+	font-weight: bold;
+}
+
+#contact-form input[type='text'], #contact-form input[type='password'], #contact-form input[type='email'] { 
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	height: 25px;
+	width: 65%;
+}
+
+#contact-form input[type='password'], #contact-form input[type='email'] { 
+	border:#ccc 1px solid;
+	border-radius: 5px;
+	height: 25px;
+	width: 65%;
+}
+
+#contact-form input[type='submit'] { 
+	padding:12px18px;
+	color: #fff;
+	background: #FEC034;
+	border: 0;
+	border-radius: 0;
+	float: middle;
+	display: block;
+}
+
+#contact-form input[type='submit']:hover {
+	background: #fa6e3e;
+	cursor: pointer;
+}
+
+#contact-form .content-footer p { 
+	font-style:italic;
+	text-align: center;
+	color: #666;
+	font-size: 80%;
+}
+
+.hc { 
+	width:200px; left:0; right:0; margin-left:auto; margin-right:auto; 
+} 
+
+.vc { 
+ 
+ height:40px; top: 0; bottom:0; margin-top:auto; margin-bottom:auto; 
+ 
+ } /* 세로 중앙 정렬 */
+
+#contact-form input[type='button'] {
+	border : 4px solid #FFFFFF;
+	background :  #FFFFFF;
+	margin-left : 5px;
+	margin-top: 10px;
+	margin-bottom : 10px;	
+}
+
+
+#contact-form input[type='button']:hover {
+	text-decoration:underline;
+	cursor: pointer;
+}
+
+#contact-form input[type='button']:active {
+	border : 1px solid #FFFFFF;
+	outline-color: #FFFFFF;
+}
+
+#contact-form input[type='button']:focus {
+	outline-color: #FFFFFF;
+	border : 1px solid #FFFFFF;
+}
+
+
+footer{
+	margin-top : 100px;
+}	

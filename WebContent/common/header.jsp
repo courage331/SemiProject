@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page errorPage="error.jsp" %>	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -19,6 +18,7 @@
 	<header>
 		<div class="container">
 			<a href="index.jsp" class="headA"><i class="fas fa-dog"></i></a>
+			<button class="head-btn"><i class="fas fa-bars"></i></button>
 			<nav class="headN">
 				<ul>
 					<c:choose>

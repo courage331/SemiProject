@@ -20,10 +20,10 @@
 	<script type="text/javascript" src="JS/write.js"></script>
 	<body>
 	<section class="conA">
-		<div class="container">
+		<div class="containerA">
 		<br>
 		<br>
-			<h1>글 작성</h1>
+			<h1>Writing</h1>
 		</div>
 	</section>
 	<section class="conB">

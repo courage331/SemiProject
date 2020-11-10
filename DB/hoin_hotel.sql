@@ -78,13 +78,14 @@ CREATE TABLE review
 	cus_num number NOT NULL, -- 사용자 고유 번호
 	PRIMARY KEY (rev_num) -- 기본키 
 );
-/*
+
 INSERT INTO review VALUES (1, '1글2글', '이이이이이', 3, '2020-10-5', 2);
 INSERT INTO review VALUES (2, '2글2글', '1이이이이', 3, '2020-10-15', 3);
 INSERT INTO review VALUES (3, '3글2글', '2이이이이', 3, '2020-10-16', 4);
 INSERT INTO review VALUES (4, '4글2글', '3이이이이', 3, '2020-10-17', 5);
 INSERT INTO review VALUES (5, '5글2글', '4이이이이', 3, '2020-10-18', 6);
-*/
+
+
 
 CREATE TABLE selldata
 (

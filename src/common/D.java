@@ -28,6 +28,20 @@ public class D {
 		public static final String SQL_WRITE_UPDATE =
 				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
 		
+		 // cmt insert 호인
+		public static final String SQL_CMT_INSERT = 
+				"INSERT INTO cmt"
+				+ "(cmt_num, cmt_id, cmt_regdate, cmt_content, rev_num, cus_num) "
+				+ "VALUES"
+				+ "(cmt_seq.nextval, ?, SYSDATE, ?, ?, ?)";
+		
+		public static final String SQL_CMT_SELECT_BY_NUM =
+				"SELECT * FROM cmt WHERE rev_num = ? ORDER BY CMT_NUM";
+		
+		public static final String SQL_CMT_DELETE_BY_NUM =
+				"DELETE FROM cmt WHERE cmt_num = ?";
+		
+		
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=
 				"INSERT INTO reservation"
@@ -167,6 +181,9 @@ public class D {
 	    				+ "(cus_num, pro_num, sell_date, sell_cnt, sell_sum)"
 	    				+ "VALUES"
 	    				+ "(?,?,SYSDATE,?,?)";
+	  //주혁 1109 이메일찾기
+	  		public static final String SQL_EMAILCHK_SELECT = 
+	  				"SELECT count(*) FROM CUSTOMER WHERE CUS_EMAIL = ?";
 	    
 //	    public static final String SQL_INC_CNT = 
 //	    		"UPDATE (SELECT SELL_CNT FROM SELLDATA WHERE PRO_NUM = ?) SET SELL_CNT = CELL_CNT + 1";

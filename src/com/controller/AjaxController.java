@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.write.IdchkCommand;
+import com.command.write.emailCommand;
 
 @WebServlet("*.ajax")
 public class AjaxController extends HttpServlet {
@@ -43,10 +44,10 @@ public class AjaxController extends HttpServlet {
 
 		switch(com) {
 		case "/list.ajax": // 글 목록 AJAX요청
-			//일단 글 목록 읽어오기
 			new IdchkCommand().execute(request, response);
-			//읽어온 데이터를 다음 커맨드에 넘겨줌.
-			//new IdchkAjaxCommand().execute(request, response);
+			break;
+		case "/emailchk.ajax": // 글 목록 AJAX요청
+			new emailCommand().execute(request, response);
 			break;
 		} // end switch
 		

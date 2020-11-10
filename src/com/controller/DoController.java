@@ -8,19 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.command.write.AccountDeleteCommand;
 import com.command.write.ChargeCommand;
+import com.command.write.CmtDeleteCommand;
+import com.command.write.CmtWriteCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
 import com.command.write.FindidCommand;
 import com.command.write.FindpwCommand;
 import com.command.write.ListCommand;
-import com.command.write.LoginCheckCommand;
 import com.command.write.LoginCommand;
-
 import com.command.write.MyinfoUpdateCommand;
 import com.command.write.MypageCommand;
 import com.command.write.PetCommand;
@@ -116,6 +115,12 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "writeOk.jsp";
 			break;
+			
+		case "/cmtOk.do":
+			command = new CmtWriteCommand();
+			command.execute(request, response);
+			viewPage = "cmtOk.jsp";
+			break;
 
 		case "/view.do":
 			command = new ViewCommand();
@@ -140,7 +145,7 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "deleteOk.jsp";
 			break;
-
+			
 		case "/fileUpload.do":
 			command = new FileUploadCommand();
 			command.execute(request, response);
@@ -355,6 +360,11 @@ public class DoController extends HttpServlet {
 	         command.execute(request, response);
 	         viewPage = "shopEditOk.jsp";
 	         break;
+	         
+		case "/cmtdeleteOk.do":
+			command = new CmtDeleteCommand();
+			command.execute(request, response);
+			viewPage = "cmtdeleteOk.jsp";
 
 		} // end switch
 

@@ -72,9 +72,9 @@ Boolean chk = true;
 			<h3>펫 정보 추가</h3>
 			<form name="frm" action="petOk.do" method="post" onsubmit="return chkSubmit()">
 				<p>강아지 이름 : <input class="text" type="text" name="pet_name"></p>
-				<p>강아지 나이 : <input class="text" type="text" name="pet_age"></p>
-				<p>강아지 무게 : <input class="text" type="text" name="pet_weight"></p>
-				<p>강아지 사진</p> 
+				<p>강아지 나이 : <input class="text" type="number" name="pet_age"></p>
+				<p>강아지 무게 : <input class="text" type="number" name="pet_weight"></p>
+				<p>강아지 이미지</p> 
 				<%for(int i = 1; i < 5; i++) { %>
 				<img id="pet_img<%=i %>" src="img/K-00<%=i%>.png">
 				<input class="pet_image_list" type="radio" name="pet_image" value="<%=i%>">

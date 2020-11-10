@@ -80,10 +80,10 @@
 	<jsp:include page="common/header.jsp"></jsp:include>
 	<script type="text/javascript" src="JS/update.js"></script>
 	<section class="conA">
-		<div class="container">
+		<div class="containerA">
 		<br>
 		<br>
-			<h1>리뷰 수정</h1>
+			<h1>Post correction<br>(글 수정)</h1>
 		</div>
 	</section>
 		<section class="conB">

@@ -26,7 +26,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 	<section class="conA">
 		<div class="container">
 			<h1>
-				<span style="color: #3f3f3f;">리뷰&amp후기</span>
+				<span style="color: #3f3f3f;">REVIEW</span>
 			</h1>
 		</div>
 	</section>
@@ -36,6 +36,8 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		<%
 			int pageNum = Integer.parseInt(request.getParameter("page").trim());
 		int number = 0; // 총 글 갯수
+		double totalStar = 0;
+		double tsSum = 0;
 		int totalCnt = 0;
 		int pg = 0;
 		int ak = 0; // 글 갯수 파악 
@@ -65,8 +67,32 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 			number -= pageNum * 10 - 10;
 		}
 		System.out.println("PAGE: " + pageNum);
+		if(arr != null){
+			for(int i = 0; i < arr.length; i++){
+				tsSum += arr[i].getStar();
+			}
+			totalStar = tsSum / number*100;
+			tsSum = (int)totalStar;
+			totalStar = (double)tsSum/100;
+			System.out.println("TOTALSTAR: " + totalStar);
+		}
 		%>
-
+		
+		<div class="containerZ"> 평균 별점: <%= totalStar %>
+		<%if(totalStar >= 0 && totalStar < 2.0){%>
+			★☆☆☆☆
+		<%}else if(totalStar >= 2.0 && totalStar < 3.0){%>
+			★★☆☆☆
+		<%}else if(totalStar >= 3.0 && totalStar < 4.0){%>
+			★★★☆☆
+		<%}else if(totalStar >= 4.0 && totalStar < 5.0){%>
+			★★★★☆ 
+		<%}else {%>
+			★★★★★
+		<%}%>
+		
+		</div>
+		<br>
 		<div class="containerG">
 			<table>
 				<thead>
