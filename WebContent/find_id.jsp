@@ -24,6 +24,7 @@
 <div class="container">
 <!--  아이디찾기용 form
 <form name="frm"  id="contact-form" action="findidOk.do" method="post" onsubmit="return chkSubmit()">
+인증되는 순간 attribute 바꿔서 위에껄로 
  -->
  <form name="frm"  id="contact-form"  action="searchPw.jsp" method="get">
 	<div id="content-header">
@@ -40,7 +41,7 @@
 		<div id="email_comment" style="display:none;"></div>
 		<div class="check_font" id="email_check"> 
 			<button type="submit" id="chk_button" disabled="false">인증번호 전송 ▶</button>
-			<input type="text" name="chk_num" placeholder="인증번호를 입력해 주세요"><br> 
+			<input type="text" id="certif_num" name="chk_num" placeholder="인증번호를 입력해 주세요"><br>
 			<input type="button" id="checking" class="hc vc" value="인증하기"/>
 		</div>
 	</div>

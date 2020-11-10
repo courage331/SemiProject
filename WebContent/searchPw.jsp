@@ -16,6 +16,29 @@ public class MyAuthentication extends Authenticator { //아이디 패스워드 �
 }
 %>
 
+<%
+StringBuffer temp = new StringBuffer();
+Random rnd = new Random();
+for (int i = 0; i < 10; i++) {
+	int rIndex = rnd.nextInt(3);
+	switch (rIndex) {
+	case 0:
+		// a-z
+		temp.append((char) ((int) (rnd.nextInt(26)) + 97));
+		break;
+	case 1:
+		// A-Z
+		temp.append((char) ((int) (rnd.nextInt(26)) + 65));
+		break;
+	case 2:
+		// 0-9
+		temp.append((rnd.nextInt(10)));
+		break;
+	}
+}
+String AuthenticationKey = temp.toString();
+System.out.println(AuthenticationKey);
+%>
 
 <%
  // SMTP 서버 주소
@@ -56,7 +79,7 @@ props.put("mail.smtp.socketFactory.fallback", "false");
   Message msg = new MimeMessage(sess);
   msg.setFrom(addr);         
   msg.setSubject(MimeUtility.encodeText("왈왈호텔의 회원인증 메일입니다.", "utf-8","B"));
-  msg.setContent("이메일 보낼 내용", "text/html;charset=utf-8");
+  msg.setContent(AuthenticationKey, "text/html;charset=utf-8");
   msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 
 
@@ -79,6 +102,7 @@ props.put("mail.smtp.socketFactory.fallback", "false");
 	out.println("<script>");
 	out.println("alert('메일이 전송되었습니다.');");
 	out.println("</script>");
+	session.setAttribute("certif", AuthenticationKey);
 %>
 <script>
 history.back();
