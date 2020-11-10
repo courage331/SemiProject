@@ -101,6 +101,7 @@
 			<div id="map"></div>
 		</div>
 	</section>
+	<p id="result"></p>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 

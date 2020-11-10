@@ -167,7 +167,6 @@ SELECT * FROM cmt WHERE rev_num = 44;
 DROP SEQUENCE CMT_SEQ;
 DROP SEQUENCE REVIEW_SEQ;
 
-<<<<<<< HEAD
 
 INSERT INTO review VALUES (REVIEW_SEQ.nextval, '5글2글', '4이이이이', 3, '2020-10-18', 6);
 
@@ -188,8 +187,7 @@ INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
 
 1
 SELECT * FROM CUSTOMER WHERE cus_id = '' AND cus_pw = 1234;
-=======
+SELECT * FROM CUSTOMER;
 INSERT INTO cmt
 (cmt_num, cmt_id, cmt_regdate, cmt_content, rev_num, cus_num)
 VALUES(cmt_seq.nextval, '일호인', SYSDATE, ?, ?, ?);
->>>>>>> branch 'master' of https://github.com/courage331/SemiProject.git

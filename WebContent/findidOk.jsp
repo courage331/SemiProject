@@ -20,6 +20,6 @@
 %>
 
 <script>
-alert("<%=c_id%>");
+alert("아이디는 <%=c_id%> 입니다.");
 location.href = "login.jsp";
 </script>

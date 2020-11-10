@@ -17,6 +17,7 @@
 header {
 	background-color: var(--main-color);
 	height: 100px;
+	z-index: 1;
 	position:fixed;
 	width: 100%;
 	top:0;
@@ -35,6 +36,7 @@ header .container {
 	color: white;
 	margin: 10px 10px 10px 200px;
 	font-size: 60px;
+	z-index: 1;
 }
 
 /* 헤더 네비게이션 */
@@ -128,9 +130,6 @@ footer {
 	background-color: var(--footer-color);
 	height: 150px;
 	width: 100%;
-	position: fixed;
-	bottom: 0;
-	z-index: 1;
 }
 	
 
