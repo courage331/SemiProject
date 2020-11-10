@@ -13,6 +13,7 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <title>Find PW</title>
 </head>
 <body>
@@ -21,9 +22,10 @@
  
 <section class="conA">
 <div class="container">
-<form name="frm"  id="contact-form" action="findpwOk.do" method="post" onsubmit="return chkSubmit()">
+<!-- <form name="frm"  id="contact-form" action="findpwOk.do" method="post" onsubmit="return chkSubmit()"> -->
+<form name="frm"  id="contact-form"  action="searchPw.jsp" method="get">
 	<div id="content-header">
-		<h3>아이디 찾기</h3>
+		<h3>비밀번호 찾기</h3>
 	</div>
 	<div>
 		<label>ID :</label>
@@ -31,15 +33,21 @@
 	</div>
 	<div>
 		<label>NAME :</label>
-		 <input type="text" name="c_name" placeholder="이름을 입력해 주세요."/>
+		 <input type="text" id="user_name" name="c_name" placeholder="이름을 입력해 주세요."/>
 	</div>
 	<div>
 		<label>EMAIL :</label>
-		<input type="text" name="c_email" placeholder="이메일을 입력해 주세요."/>
+		<input type="text" id="user_email" name="c_email" placeholder="이메일을 입력해 주세요."/>
+		<br><br>
+		<div id="email_comment" style="display:none;"></div>
+		<div class="check_font" id="email_check"> 
+			<button type="submit" id="chk_button" disabled="false">인증번호 전송 ▶</button>
+			<input type="text" id="certif_num" name="chk_num" placeholder="인증번호를 입력해 주세요"><br>
+			<div id="certif_comment"></div>
+		</div>
 	</div>
 	<div class="clearfix"></div>
-				<!-- 이메일 인증번호 넣을 input 만들어야함 -->
-	<input type="submit" id="logbtn" class="hc vc" value="비밀번호찾기"/>
+	<input type="submit" id="logbtn" class="hc vc" value="비밀번호찾기"  disabled="false"/>
 
 </form>
 </div>

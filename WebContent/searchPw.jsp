@@ -79,7 +79,7 @@ props.put("mail.smtp.socketFactory.fallback", "false");
   Message msg = new MimeMessage(sess);
   msg.setFrom(addr);         
   msg.setSubject(MimeUtility.encodeText("왈왈호텔의 회원인증 메일입니다.", "utf-8","B"));
-  msg.setContent(AuthenticationKey, "text/html;charset=utf-8");
+  msg.setContent("인증번호는『"+AuthenticationKey+"』입니다.", "text/html;charset=utf-8");
   msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
 
 
@@ -105,6 +105,5 @@ props.put("mail.smtp.socketFactory.fallback", "false");
 	session.setAttribute("certif", AuthenticationKey);
 %>
 <script>
-alert("<%=session.getAttribute("certif")%>");
 history.back();
 </script>
