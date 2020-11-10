@@ -8,9 +8,15 @@
 	--sub-text-color: #999999;
 }
 
+div.containerZ{
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
 table {
 	width: 80%;
 }
+
 
 table, td {
 	border: 0.5px solid black;
@@ -19,7 +25,7 @@ table, td {
 	margin-left: 10%;
 	border-left-style: none;
 	border-right-style: none;
-	padding: 10px;
+	padding: 20px;
 }
 
 th.tbwid_15 {
@@ -109,6 +115,7 @@ button.backBtn {
 .conA h1 {
 	text-align: center;
 	font-size: 40px;
+	margin-top: 100px;
 }
 
 .btnA .containerF {

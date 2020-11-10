@@ -3,12 +3,17 @@
 .conA h1{
 	text-align: center;
 	font-size: 40px;	
+	margin-top: 100px;
+	margin-bottom: 30px;
 }
 
 .conB{
 	font-size: 25px;
 }
 
+div.container{
+	margin-bottom: 150px;
+}
 input[type="text"]{
 	width: 360px;
 	height: 50px;
