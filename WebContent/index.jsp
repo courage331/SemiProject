@@ -22,72 +22,90 @@
 			<div class="item">
 				<img class="item_img" src="img/dog_2.gif">
 				<div class="item_text">
-					<h1>휴식이 만족</h1>
+					<h2>최고의 힐링 공간, 호텔&데이케어</h2>
+					<br>
+					<h3>반려견이 새로운 환경에도 쉽게 적응할 수 있도록 특성에 맞는 교육 서비스를 제공합니다.</h3>
 				</div>
 			</div>
 			<div class="item">
 				<img class="item_img" src="img/dog_4.gif">
 				<div class="item_text">
-					<h1>강아지도 만족하는 헤어서비스</h1>
+					<h2>예뻐지는 힐링라이프, 그루밍&스파</h2>
+					<br>
+					<h3>트라우마, 심리적 요인들을 고려하여 반려견 특성에 맞는 그루밍 기법으로 스트레스를 최소화합니다.</h3>
 				</div>
 			</div>
 			<div class="item">
 				<img class="item_img" src="img/dog_3.gif">
 				<div class="item_text">
-					<h1>전문가와의 훈련</h1>
+					<h2>즐거운 교육 공간, 유치원</h2>
+					<br>
+					<h3>국제공인자격증을 갖춘 전문가들이 교육과 케어 서비스를 제공하는 프리미엄 유치원 입니다.</h3>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- 컨텐츠A -->
+	<section class="conA">
+		<div class="container">
+			<div class="text">
+				<h2>BEST SPACE FOR MY DOG</h2>
+				<br> <br>
+				<h3>
+					모든 라이프 케어 서비스가 한 곳에 있는 <br>400평 규모의 프리미엄 펫케어 테마공간입니다.
+				</h3>
+			</div>
+		</div>
+	</section>
 	<!-- 컨텐츠B -->
 	<section class="conB">
-	    <div class="container">
-	        <!-- 개요 (이이콘 + 텍스트) -->
-	        <div class="text">
-	            <span class="fas fa-home icon"></span>
-	            <h2>예약하기란?</h2>
-	            <p>반려견과 보호자를 위한 안전하고 편리한 맞춤형 서비스와 엄선된 전문가들의 신뢰 높은 토탈케어 서비스를 제공합니다.</p>
-	            <c:choose>
+		<div class="container">
+			<!-- 개요 (이이콘 + 텍스트) -->
+			<div class="text">
+				<span class="fas fa-home icon"></span>
+				<h2>예약하기란?</h2>
+				<p>반려견과 보호자를 위한 안전하고 편리한 맞춤형 서비스와 엄선된 전문가들의 신뢰 높은 토탈케어 서비스를
+					제공합니다.</p>
+				<c:choose>
 					<c:when test="${not empty sessionScope.userid }">
-						<a href="reservation.do">MORE...<span class="fa fa-chevron-right"></span></a>
+						<a href="reservation.do">MORE...<span
+							class="fa fa-chevron-right"></span></a>
 					</c:when>
 					<c:when test="${empty sessionScope.userid }">
-						<a href="login.do">MORE...<span class="fa fa-chevron-right"></span></a>	
+						<a href="login.do">MORE...<span class="fa fa-chevron-right"></span></a>
 					</c:when>
 				</c:choose>
-	        </div>
-	
-	        <div class="text">
-	            <span class="fa fa-info-circle icon"></span>
-	            <h2>이용안내</h2>
-	            <p>이용안내를 읽고 언제라도 왈왈호텔 서비스를 이용 할 수 있습니다.</p>
-	            <a href="use.jsp">MORE...
-	            <span class="fa fa-chevron-right"></span>
-	            </a>
-	        </div>
-	
-	        
-	        <div class="text">
-	            <span class="fa fa-bone icon"></span>
-	            <h2>쇼핑하기</h2>
-	            <p>강아지에게 최상의 상품을 제공합니다.</p>
-	            <a href="shop.do">MORE...
-	                <span class="fa fa-chevron-right"></span>
-	            </a>    
-	        </div>
-	        
-	        <div class="text">
-	            <span class="fa fa-clipboard-list icon"></span>
-	            <h2>후기 게시판</h2>
-	            <p>다른 사람들과 왈왈호텔 이용후기를 공유해보세요.</p>
-	            <a href="review.do?page=1">MORE...
-	                <span class="fa fa-chevron-right"></span>
-	            </a>    
-	        </div>
+			</div>
 
-	    </div>
+			<div class="text">
+				<span class="fa fa-info-circle icon"></span>
+				<h2>이용안내</h2>
+				<p>이용안내를 읽고 언제라도 왈왈호텔 서비스를 이용 할 수 있습니다.</p>
+				<a href="use.jsp">MORE... <span class="fa fa-chevron-right"></span>
+				</a>
+			</div>
+
+
+			<div class="text">
+				<span class="fa fa-bone icon"></span>
+				<h2>쇼핑하기</h2>
+				<p>강아지에게 최상의 상품을 제공합니다.</p>
+				<a href="shop.do">MORE... <span class="fa fa-chevron-right"></span>
+				</a>
+			</div>
+
+			<div class="text">
+				<span class="fa fa-clipboard-list icon"></span>
+				<h2>후기 게시판</h2>
+				<p>다른 사람들과 왈왈호텔 이용후기를 공유해보세요.</p>
+				<a href="review.do?page=1">MORE... <span
+					class="fa fa-chevron-right"></span>
+				</a>
+			</div>
+
+		</div>
 	</section>
-	
+
 	<!-- 컨텐츠C -->
 	<section class="conC">
 		<div class="container">

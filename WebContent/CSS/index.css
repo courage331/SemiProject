@@ -8,6 +8,11 @@
 	--sub-text-color: #999999;
 	
 }
+
+/*이부분*/
+.container div {
+	z-index : 0;
+}
 /* 메인 배너 */
 .mainbanner {
 	margin-top: 100px;
@@ -29,7 +34,7 @@
 	bottom: 10%;
 	margin-left: 1%;
 	/* background-color: rgba(254,192,52,0.8); */
-	color: white;
+	color: var(--text-color);
 }
 
 .slick-arrow{
@@ -80,11 +85,22 @@
 
 /* 컨텐츠 A */
 .conA .container {
-	padding-top: 200px;
+	padding-top: 60px;
+}
+
+.conA .text h2 {
+	color: var(--text-color);
+	font-size: 40px;
 	text-align: center;
 }
-#main_pethotel {
-	width: 50%;
+
+.conA .text h3 {
+	color: var(--sub-text-color);
+	text-align: center;
+}
+
+.conAimglist {
+	display: flex;	
 }
 
 /* 컨텐츠 B */
@@ -180,7 +196,7 @@
     line-height: 2em; /* 높이, 글꼴 크기의 2배 */
 
     color: #fff;
-    color: var(--icon-color);
+    color: var(--main-color);
     background-color: #ddd;
     background-color: var(--icon-bk-color);
 
@@ -198,6 +214,7 @@
 }
 
 .conB .text{
+	color: var(--sub-text-color);
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -205,6 +222,7 @@
 }
 
 .conB h2{
+	color: var(--text-color);
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -220,7 +238,9 @@
     .conB .text {
         flex: 1;  /* 1 : 1 : 1 비율 설정*/
     }
-/*이부분*/
-.container div {
-	z-index : 0;
+
+
+/* 컨텐츠 C */
+.conC .container{
+    padding-bottom: 140px;
 }
