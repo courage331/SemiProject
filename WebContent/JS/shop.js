@@ -1,11 +1,11 @@
 /* 1102 js 파일 생성*/
-function shoppingOpen(pName,kind, price, pNum, pCnt) {
+function shoppingOpen(pNum) {
 	
-   shopping = window.open("shopping.do?pName="+pName+"&kind=" +kind+"&price="+price+"&pNum="+pNum+"&pCnt="+pCnt, "팝업창", "width = 500, height = 615, left = 650, top = 10")
+   shopping = window.open("shopping.do?pNum="+pNum, "팝업창", "width = 500, height = 615, left = 650, top = 10")
 }
 
-function editOpen(pName,kind, price, pNum, pCnt) {
+function editOpen(pNum) {
 	
-   shopping = window.open("shoppingEdit.do?pName="+pName+"&kind=" +kind+"&price="+price+"&pNum="+pNum+"&pCnt="+pCnt, "팝업창", "width = 500, height = 615, left = 650, top = 10")
+   shopping = window.open("shoppingEdit.do?pNum="+pNum, "팝업창", "width = 500, height = 615, left = 650, top = 10")
 }
 

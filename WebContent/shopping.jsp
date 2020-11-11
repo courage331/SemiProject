@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <%
 	CustomerDTO[] crr = (CustomerDTO[]) request.getAttribute("clist");
+	ProductDTO[] prr = (ProductDTO[])request.getAttribute("plist");
 	String c_num = (String) session.getAttribute("c_num");
-	String pName = request.getParameter("pName");
-	String pKind = request.getParameter("kind");
-	int pCnt = Integer.parseInt(request.getParameter("pCnt"));
-	
-	int pNum = Integer.parseInt(request.getParameter("pNum"));
-	int price = Integer.parseInt(request.getParameter("price"));
+	String pName = prr[0].getPro_name();
+	String pKind = prr[0].getPro_kind();
+	int pCnt = prr[0].getPro_cnt();
+	int pNum = prr[0].getPro_num();
+	int price = prr[0].getPro_price();
 	int c_money = crr[0].getCus_money();
 	int sCnt = 1; // 현재 1개만 구매 가능 상태이므로 1로 고정
 	int sSum = price * sCnt;
@@ -42,15 +42,29 @@
       </div>
    </header>
    <!-- 컨텐츠 A  -->
+   <div class="c_money">보유 뼈다귀 : <%=c_money %> <i class="fas fa-bone"></i></div>
    <section class="conA">
    <div class = "deco">
     	<div class="content">
       	<img src="img/<%=pName%>.jpg"><br>
       <div class="ctext">
-         종류     : <%=pKind %> <br>
-         가격     : <%=price %><br>
- 		 결제 금액 : <%=price %><br>
-   		 보유 금액 : <%=c_money %>
+      	 <%=pName %><br><br>
+         가격     : <%=price %> <i class="fas fa-bone"></i><br>
+         구매 수량 : <br>
+<!-- 수정중
+<div onload="init();">
+<form name="form" method="get">
+수량 : <input type=hidden name="sell_price" value="5500">
+<input type="text" name="amount" value="1" size="3" onchange="change();">
+<input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();"><br>
+
+금액 : <input type="text" name="sum" size="11" readonly>원
+</form>
+</div>
+ -->
+        
+         
+ 		 
    </div>
       </div>
       </div>
@@ -63,6 +77,8 @@
    		<input type="hidden" name="sSum" value="<%=sSum%>"/>
    		<input type="hidden" name="pNum" value="<%=pNum%>"/>
  	  	<input type="hidden" name="c_num" value="<%= a %>"><br>
+ 	  	<div class="sum">총 결제 금액 : <%=price %> <i class="fas fa-bone"></i></div>
+   
    <!-- 푸터 -->
    <footer>
       <div class="container">

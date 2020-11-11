@@ -37,14 +37,14 @@
     <script>
     $(function(){
         var IMP = window.IMP; // 생략가능
-        IMP.init('imp23418340'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+        IMP.init('imp02041808'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
         var msg;
         
         IMP.request_pay({
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : '뼈다귀 충전',
+            name : 'KH Books 도서 결제',
             amount : <%=totalPrice%>,
             buyer_email : '<%=email%>',
             buyer_name : '<%=name%>',

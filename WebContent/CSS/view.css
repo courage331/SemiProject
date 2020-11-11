@@ -15,7 +15,9 @@
 div#emdfhr{
 	margin-left: 200px;
 	margin-right: 200px;
+	font-size: 20px;
 }
+
 
 div.cmt{
 	font-size:30px;
@@ -93,3 +95,33 @@ button:hover{
 	padding-bottom: 160px;
 	margin-bottom: 130px;
 }
+
+div.cmt{
+	font-size: 20px;
+}
+#kakao-link-btn{
+	background-color: yellow;
+	color: black;
+}
+
+#kakao-link-btn:hover{
+	background: #fa6e3e;
+	cursor: pointer;
+	color: #fff;
+}
+
+/*input[type="submit"].akk{
+	background-color: #FEC034;
+	width: 180px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	border:none;
+	border-radius: 12px;
+	float:right;
+	color: #fff;
+}
+input[type="submit"].akk :hover{
+    background: #fa6e3e;
+	cursor: pointer;
+}*/

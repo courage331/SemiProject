@@ -18,7 +18,7 @@ public class ShopUpdateCommand implements Command {
 		int pNum = Integer.parseInt(request.getParameter("pNum"));
 		
 		try {
-			arr = dao.readBypNum(pNum);  // 읽기 
+			arr = dao.readBypNum(pNum); 
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();
