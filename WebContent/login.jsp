@@ -39,13 +39,15 @@
 				</div>
 				<div class="clearfix"></div>
 
-				<input type="submit" id="logbtn" class="hc vc" value="LOGIN" /> <input
-					type="button" class="navyBtn" value="회원가입"
-					onClick="location.href='signUp.jsp'"> <input type="button"
-					class="navyBtn" value="아이디 찾기"
-					onClick="location.href='find_id.jsp'"> <input type="button"
-					class="navyBtn" value="비밀번호 찾기"
-					onClick="location.href='find_pw.jsp'">
+				<input type="submit" id="logbtn" class="hc vc" value="LOGIN" />
+				<div id="form_bottom">
+					<input type="button" class="navyBtn" value="회원가입"
+						onClick="location.href='signUp.jsp'"> <input type="button"
+						class="navyBtn" value="아이디 찾기"
+						onClick="location.href='find_id.jsp'"> <input
+						type="button" class="navyBtn" value="비밀번호 찾기"
+						onClick="location.href='find_pw.jsp'">
+				</div>
 			</form>
 
 		</div>

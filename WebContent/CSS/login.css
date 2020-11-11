@@ -6,6 +6,16 @@
 	margin-bottom: 310px;
 	text-align: center;
 }
+
+#form_bottom {
+	padding-bottom: 40px;
+}
+
+#content-header {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
 #content-header h3 {
 	font-size: 24px;
 	font-weight: bold;

@@ -39,7 +39,7 @@
 				</div>
 				
 				<div>
-					<label>ID : </label><label><%=c_id%></label>
+					<label>ID : </label><input type="text" id="login_id" value="<%=c_id %>" readonly>
 				</div>
 				<div>
 					<label>PW :</label> <input type="password" name="c_pw"
