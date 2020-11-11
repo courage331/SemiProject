@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
 
-
+.conA .container{
+	margin-top: 200px;
+	margin-bottom: 310px;
+	text-align: center;
+}
 #content-header h3 {
 	font-size: 24px;
 	font-weight: bold;
