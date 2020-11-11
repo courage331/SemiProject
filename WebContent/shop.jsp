@@ -82,7 +82,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				<%
 					for (int j = 0; j < 4; j++) { // for 2
 				%>
-				<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"
+				<th><img src="img/<%=arr[cnt].getPro_content()%>.jpg"
 					onclick="
 					<%if (session.getAttribute("c_num") == null) {%>
 						location.href='login.do'"
@@ -144,6 +144,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					shoppingOpen('<%=arr[cnt].getPro_num()%>')"
 							<%}
 							}%>><br>
+							<%=arr[cnt].getPro_content() %><br>
 					이름 : <%=arr[cnt].getPro_name()%><br> 가격 : <%=arr[cnt].getPro_price()%>
 					<i class="fas fa-bone"></i><br> 재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%

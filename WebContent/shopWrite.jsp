@@ -46,7 +46,7 @@
 				재고수량: <input type="number" name="pCnt"/><br>
 				<br>
 				사진첨부: (<img src="img/imgpush.png">)클릭!<br>
-			<textarea name="content" id="editor1"></textarea>
+			<textarea name="pCtt" id="editor1"></textarea>
 			<script>
 			CKEDITOR.replace('editor1', {
 				allowedContent: true,    // HTML 태그 자동 삭제 방지 설정
