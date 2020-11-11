@@ -217,7 +217,7 @@
     .conB .text {
         flex: 1;  /* 1 : 1 : 1 비율 설정*/
     }
-
+/*이부분*/
 .container div {
 	z-index : 0;
 }
