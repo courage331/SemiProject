@@ -23,7 +23,7 @@ public class D {
 		
 		public static final String SQL_WRITE_DELETE_BY_NUM =
 				"DELETE FROM review WHERE rev_num = ?";
-
+		
 		// rev_star 별점도 변경 
 		public static final String SQL_WRITE_UPDATE =
 				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
@@ -40,6 +40,9 @@ public class D {
 		
 		public static final String SQL_CMT_DELETE_BY_NUM =
 				"DELETE FROM cmt WHERE cmt_num = ?";
+		
+		public static final String SQL_CMT_UPDATE =
+				"UPDATE (SELECT cmt_content FROM cmt WHERE cmt_num = ?) SET cmt_content = ?";
 		
 		
 		//지민 1029 reservation 관련(예약 성공시에 상입)

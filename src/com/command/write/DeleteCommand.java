@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lec.beans.CmtDAO;
 import com.lec.beans.ReviewDAO;
 
 public class DeleteCommand implements Command {
@@ -21,7 +22,6 @@ public class DeleteCommand implements Command {
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
 		request.setAttribute("result", cnt);
 	}
 

@@ -148,6 +148,7 @@ ALTER TABLE selldata
 ALTER TABLE cmt
 	ADD FOREIGN KEY (rev_num)
 	REFERENCES review (rev_num)
+	ON DELETE CASCADE
 ;
 
 
@@ -188,6 +189,11 @@ INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
 1
 SELECT * FROM CUSTOMER WHERE cus_id = '' AND cus_pw = 1234;
 SELECT * FROM CUSTOMER;
+SELECT * FROM cmt;
+SELECT * FROM REVIEW;
+
+SELECT * FROM cmt WHERE REV_NUM = 5;
+DELETE FROM cmt WHERE REV_NUM = 5;
 INSERT INTO cmt
 (cmt_num, cmt_id, cmt_regdate, cmt_content, rev_num, cus_num)
 VALUES(cmt_seq.nextval, '일호인', SYSDATE, ?, ?, ?);
