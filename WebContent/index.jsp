@@ -47,8 +47,63 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- 컨텐츠B -->
 	<section class="conB">
+	    <div class="container">
+	        <!-- 개요 (이이콘 + 텍스트) -->
+	        <div class="text">
+	            <span class="fas fa-home icon"></span>
+	            <h2>예약하기란?</h2>
+	            <p>반려견과 보호자를 위한 안전하고 편리한 맞춤형 서비스와 엄선된 전문가들의 신뢰 높은 토탈케어 서비스를 제공합니다.</p>
+	            <c:choose>
+					<c:when test="${not empty sessionScope.userid }">
+						<a href="reservation.do">MORE...<span class="fa fa-chevron-right"></span></a>
+					</c:when>
+					<c:when test="${empty sessionScope.userid }">
+						<a href="login.do">MORE...<span class="fa fa-chevron-right"></span></a>	
+					</c:when>
+				</c:choose>
+	        </div>
+	
+	        <div class="text">
+	            <span class="fa fa-info-circle icon"></span>
+	            <h2>이용안내</h2>
+	            <p>이용안내를 읽고 언제라도 왈왈호텔 서비스를 이용 할 수 있습니다.</p>
+	            <a href="use.jsp">MORE...
+	            <span class="fa fa-chevron-right"></span>
+	            </a>
+	        </div>
+	
+	        
+	        <div class="text">
+	            <span class="fa fa-bone icon"></span>
+	            <h2>쇼핑하기</h2>
+	            <p>강아지에게 최상의 상품을 제공합니다.</p>
+	            <a href="shop.do">MORE...
+	                <span class="fa fa-chevron-right"></span>
+	            </a>    
+	        </div>
+	        
+	        <div class="text">
+	            <span class="fa fa-clipboard-list icon"></span>
+	            <h2>후기 게시판</h2>
+	            <p>다른 사람들과 왈왈호텔 이용후기를 공유해보세요.</p>
+	            <a href="review.do?page=1">MORE...
+	                <span class="fa fa-chevron-right"></span>
+	            </a>    
+	        </div>
+
+	    </div>
+	</section>
+	
+	
+	
+	
+	
+	
+	<!-- 컨텐츠C -->
+	<section class="conC">
 		<div class="container">
 			<div class="guide_announce">
 				<h3>왈왈 호텔은 365일 연중 무휴로 운영됩니다.</h3>
@@ -77,7 +132,6 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>

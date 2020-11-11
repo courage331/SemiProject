@@ -139,3 +139,85 @@
 	padding-top: 50px;
 	width: 30%;
 }
+
+/*메인 페이지 꾸미기 한번 시도....*/
+
+.conB .text{
+    text-align:center;
+}
+
+.conB h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.conB p{
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:14px;
+    line-height: 1.8; 
+    /* 줄높이: font-size의 1.8라는 뜻이다. */
+    opacity: 0.8;
+}
+
+.conB a{
+    text-decoration: none;
+    color: #5D9ab2;
+    color: var(--main-color);
+}
+
+.conB a:hover{
+    text-decoration: underline;
+}
+
+.conB .icon {
+    font-size: 40px;
+    width: 2em;    /* 폭 글꼴 크기의 2배 */
+    line-height: 2em; /* 높이, 글꼴 크기의 2배 */
+
+    color: #fff;
+    color: var(--icon-color);
+    background-color: #ddd;
+    background-color: var(--icon-bk-color);
+
+    border-radius: 50%;  /* 둥글게 만들기 */
+    text-align: center;
+
+    display: inline-block;  /* 아래 margin 적용을 위해 */
+    margin-bottom: 20px;
+}
+
+
+.conB .container{
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.conB .text{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+}
+
+.conB h2{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+    .conB .container { /* 그래서, 부모를 flex 로 설정 */
+        display: flex;
+        max-width: 1000px; /*최대 폭 지정*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .conB .text {
+        flex: 1;  /* 1 : 1 : 1 비율 설정*/
+    }
+
+.container div {
+	z-index : 0;
+}
