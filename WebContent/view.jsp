@@ -128,7 +128,8 @@
 		<%if (arr3 != null){ %>
 			<form name="cmt" action="cmtOk.do" method="post" onsubmit="return chkSmt()" style="font-size:20px">
 			작성자: <%= arr3[0].getCus_name() %><br><input type="hidden" name="id" value="<%=arr3[0].getCus_name()%>"/>
-			*내용 : <textarea name="content" style="width:80%"></textarea>
+			<br>
+			*내용 : <textarea name="content" style="width:80%; font-size:20px"></textarea>
 			<input type="hidden" name="r_num" value="<%= num %>"/>
 			<input type="hidden" name="c_num" value="<%= cus_num %>"/>
 			<input type="submit" value="등록하기" style="	background-color: #FEC034;
@@ -216,8 +217,8 @@
       objectType: 'feed',
       content: {
         title: '애견 호텔',
-        description: '#애견호텔#이용후기#좋아해#test',
-        imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        description: '#애견호텔#이용후기#좋아해#왈왈호텔',
+        imageUrl: 'https://imagescdn.gettyimagesbank.com/500/201904/jv11352787.jpg',
         link: {
           mobileWebUrl: 'https://developers.kakao.com',
           webUrl: 'https://developers.kakao.com'
