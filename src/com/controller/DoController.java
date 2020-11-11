@@ -35,7 +35,6 @@ import com.command.write.ReserveUpdateCommand;
 import com.command.write.SelectCommand;
 import com.command.write.ShopCommand;
 import com.command.write.ShopDeleteCommand;
-import com.command.write.ShopFileUploadCommand;
 import com.command.write.ShopUpdateCommand;
 import com.command.write.ShopUpdateOkCommand;
 import com.command.write.ShopWriteCommand;
@@ -322,11 +321,6 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "shopDeleteOk.jsp";
 			break;
-
-		case "/shopFileUpload.do":
-			command = new ShopFileUploadCommand();
-			command.execute(request, response);
-			break;
 			
 		//1105 영재 구매jsp 
 		case "/shopping.do":
@@ -352,7 +346,6 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "shoppingEdit.jsp";
 			break;
-			
 			
 			 //수정확인 
 		case "/shopEditOk.do":

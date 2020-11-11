@@ -98,9 +98,9 @@ public class D {
 		//영재 1103 쇼핑몰 게시판 작성
 		public static final String SQL_PRODUCT_INSERT = 
 				"INSERT INTO PRODUCT"
-				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name) "
+				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name, pro_content) "
 				+ "VALUES"
-				+ "(product_seq.nextval, ?, ?, ?, ?)";
+				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
 		//상품 번호 순서 정렬
 		public static final String SQL_PRODUCT_SELECT = 
 				"SELECT * FROM product ORDER BY pro_num";

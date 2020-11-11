@@ -42,6 +42,7 @@
       </div>
    </header>
    <!-- 컨텐츠 A  -->
+   <div class="containerA">
    <div class="c_money">보유 뼈다귀 : <%=c_money %> <i class="fas fa-bone"></i></div>
    <section class="conA">
    <div class = "deco">
@@ -51,6 +52,7 @@
       	 <%=pName %><br><br>
          가격     : <%=price %> <i class="fas fa-bone"></i><br>
          구매 수량 : <br>
+
 <!-- 수정중
 <div onload="init();">
 <form name="form" method="get">
@@ -78,7 +80,7 @@
    		<input type="hidden" name="pNum" value="<%=pNum%>"/>
  	  	<input type="hidden" name="c_num" value="<%= a %>"><br>
  	  	<div class="sum">총 결제 금액 : <%=price %> <i class="fas fa-bone"></i></div>
-   
+    </div> 
    <!-- 푸터 -->
    <footer>
       <div class="container">

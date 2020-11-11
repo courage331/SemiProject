@@ -6,6 +6,7 @@ public class ProductDTO {
 	private int pro_price;
 	private int pro_cnt;
 	private String pro_name;
+	private String pro_content;
 	
 	public ProductDTO() {
 		super();
@@ -13,13 +14,14 @@ public class ProductDTO {
 	}
 	
 	
-	public ProductDTO(int pro_num, String pro_kind, int pro_price, int pro_cnt, String pro_name) {
+	public ProductDTO(int pro_num, String pro_kind, int pro_price, int pro_cnt, String pro_name, String pro_content) {
 		super();
 		this.pro_num = pro_num;
 		this.pro_kind = pro_kind;
 		this.pro_price = pro_price;
 		this.pro_cnt = pro_cnt;
 		this.pro_name = pro_name;
+		this.pro_content = pro_content;
 	}
 
 
@@ -55,10 +57,21 @@ public class ProductDTO {
 	public void setPro_name(String pro_name) {
 		this.pro_name = pro_name;
 	}
+	
+	public String getPro_content() {
+		return pro_content;
+	}
+
+
+	public void setPro_content(String pro_content) {
+		this.pro_content = pro_content;
+	}
+
+
 	@Override
 	public String toString() {
 		return "ProductDTO [pro_num=" + pro_num + ", pro_kind=" + pro_kind + ", pro_price=" + pro_price + ", pro_cnt="
-				+ pro_cnt + ", pro_name=" + pro_name + "]";
+				+ pro_cnt + ", pro_name=" + pro_name + ",pro_content=" + pro_content + " + ]";
 	}
 
 	
