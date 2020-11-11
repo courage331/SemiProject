@@ -20,6 +20,6 @@
 %>
 
 <script>
-alert("<%=c_pw%>");
+alert("비밀번호는 <%=c_pw%> 입니다.");
 location.href = "login.jsp";
 </script>

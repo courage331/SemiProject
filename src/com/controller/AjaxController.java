@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.command.write.CertifCommand;
 import com.command.write.IdchkCommand;
 import com.command.write.emailCommand;
 
@@ -48,6 +49,9 @@ public class AjaxController extends HttpServlet {
 			break;
 		case "/emailchk.ajax": // 글 목록 AJAX요청
 			new emailCommand().execute(request, response);
+			break;
+		case "/certif.ajax": // 글 목록 AJAX요청
+			new CertifCommand().execute(request, response);
 			break;
 		} // end switch
 		

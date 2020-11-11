@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!-- 메인 페이지  -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -42,11 +44,12 @@
 		<div class="check_font" id="email_check"> 
 			<button type="submit" id="chk_button" disabled="false">인증번호 전송 ▶</button>
 			<input type="text" id="certif_num" name="chk_num" placeholder="인증번호를 입력해 주세요"><br>
-			<input type="button" id="checking" class="hc vc" value="인증하기" onclick="give(<%=session.getAttribute("certif")%>)"/>
+			<input type="button" id="checking" class="hc vc" value="인증하기"/>
+			<div id="certif_comment"></div>
 		</div>
 	</div>
 	<div class="clearfix"></div>
-				<!-- 이메일 인증번호 넣을 input 만들어야함 -->
+				
 	<input type="submit" id="logbtn" class="hc vc" value="아이디찾기" disabled="false"/>
 
 </form>
