@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.command.write.AccountDeleteCommand;
 import com.command.write.ChargeCommand;
 import com.command.write.CmtDeleteCommand;
+import com.command.write.CmtUpdateCommand;
+import com.command.write.CmtUpdateOkCommand;
 import com.command.write.CmtWriteCommand;
 import com.command.write.Command;
 import com.command.write.DeleteCommand;
@@ -35,7 +37,6 @@ import com.command.write.ReserveUpdateCommand;
 import com.command.write.SelectCommand;
 import com.command.write.ShopCommand;
 import com.command.write.ShopDeleteCommand;
-import com.command.write.ShopFileUploadCommand;
 import com.command.write.ShopUpdateCommand;
 import com.command.write.ShopUpdateOkCommand;
 import com.command.write.ShopWriteCommand;
@@ -120,6 +121,19 @@ public class DoController extends HttpServlet {
 			command = new CmtWriteCommand();
 			command.execute(request, response);
 			viewPage = "cmtOk.jsp";
+			break;
+		
+			// 호인 : update하기
+		case "/cmtupdate.do":
+			command = new CmtUpdateCommand();
+			command.execute(request, response);
+			viewPage = "cmtupdate.jsp";
+			break;
+			
+		case "/cmtupdateOk.do":
+			command = new CmtUpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "cmtupdateOk.jsp";
 			break;
 
 		case "/view.do":
@@ -322,11 +336,6 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "shopDeleteOk.jsp";
 			break;
-
-		case "/shopFileUpload.do":
-			command = new ShopFileUploadCommand();
-			command.execute(request, response);
-			break;
 			
 		//1105 영재 구매jsp 
 		case "/shopping.do":
@@ -353,7 +362,6 @@ public class DoController extends HttpServlet {
 			viewPage = "shoppingEdit.jsp";
 			break;
 			
-			
 			 //수정확인 
 		case "/shopEditOk.do":
 	         command = new ShopUpdateOkCommand();
@@ -365,6 +373,7 @@ public class DoController extends HttpServlet {
 			command = new CmtDeleteCommand();
 			command.execute(request, response);
 			viewPage = "cmtdeleteOk.jsp";
+			break;
 
 		} // end switch
 

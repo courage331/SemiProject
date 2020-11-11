@@ -23,7 +23,7 @@ public class D {
 		
 		public static final String SQL_WRITE_DELETE_BY_NUM =
 				"DELETE FROM review WHERE rev_num = ?";
-
+		
 		// rev_star 별점도 변경 
 		public static final String SQL_WRITE_UPDATE =
 				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
@@ -41,6 +41,9 @@ public class D {
 		public static final String SQL_CMT_DELETE_BY_NUM =
 				"DELETE FROM cmt WHERE cmt_num = ?";
 		
+		public static final String SQL_CMT_UPDATE =
+				"UPDATE (SELECT cmt_content FROM cmt WHERE cmt_num = ?) SET cmt_content = ?";
+		
 		
 		//지민 1029 reservation 관련(예약 성공시에 상입)
 		public static final String SQL_RESERVATION_INSERT=
@@ -54,6 +57,24 @@ public class D {
 		public static final String SQL_RESERVATION_UPDATE =
 				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
 		
+		//예약 종료
+			public static final String SQL_RESERVATION_STATE=
+					"UPDATE reservation SET RES_STATE=0  WHERE cus_num=? AND res_lastdate < SYSDATE";
+		//투숙중 
+				public static final String SQL_RESERVATION_STATE2=
+					"UPDATE reservation SET RES_STATE=2  WHERE cus_num=? AND SYSDATE BETWEEN RES_STARTDATE AND RES_LASTDATE";
+		
+				public static final String SQL_PET_STATE=
+				"UPDATE pet \r\n" + 
+				"SET PET_RESERVE = 0\r\n" + 
+				"WHERE pet_num in\r\n" + 
+				"(\r\n" + 
+				"	SELECT p.pet_num\r\n" + 
+				"	FROM pet p JOIN RESERVATION r\r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM \r\n" + 
+				"	WHERE r.CUS_NUM = ? AND SYSDATE>r.RES_LASTDATE \r\n" + 
+				")";
+				
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =
 				"DELETE FROM reservation WHERE res_num = ?";
 		
@@ -81,6 +102,9 @@ public class D {
 		public static final String SQL_PET_UNRESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 0 WHERE pet_num = ?";
 		
+		public static final String SQL_PET_UNRESERVE_UPDATE2=
+				"UPDATE pet SET pet_reserve = 0 WHERE pet_num =(SELECT pet_num FROM reservation WHERE res_num=?)";
+		
 		public static final String SQL_PET_NUM_SEARCH =
 				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
 		//정호 1030 mypage 관련(뼈다귀)
@@ -98,9 +122,9 @@ public class D {
 		//영재 1103 쇼핑몰 게시판 작성
 		public static final String SQL_PRODUCT_INSERT = 
 				"INSERT INTO PRODUCT"
-				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name) "
+				+ "(pro_num, pro_kind, pro_price, pro_cnt, pro_name, pro_content) "
 				+ "VALUES"
-				+ "(product_seq.nextval, ?, ?, ?, ?)";
+				+ "(product_seq.nextval, ?, ?, ?, ?, ?)";
 		//상품 번호 순서 정렬
 		public static final String SQL_PRODUCT_SELECT = 
 				"SELECT * FROM product ORDER BY pro_num";

@@ -26,7 +26,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 	<section class="conA">
 		<div class="container">
 			<h1>
-				<span style="color: #3f3f3f;">REVIEW</span>
+				<span style="color: #3f3f3f;">이용 후기</span>
 			</h1>
 		</div>
 	</section>
@@ -182,7 +182,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		%>
 	</div>
 	<section class="btnA">
-		<div class="containerF">
+		<div class="containerF" style="margin-bottom: 370px">
 			<%
 				if (session.getAttribute("c_num") != null) {
 			%>
@@ -195,10 +195,6 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 				}
 			%>
 		</div>
-	</section>
-	<!-- 컨텐츠C -->
-	<section class="conC">
-		<div class="container"></div>
 	</section>
 	<!-- 푸터  -->
 	<jsp:include page="common/footer.jsp"></jsp:include>

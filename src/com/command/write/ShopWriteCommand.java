@@ -22,10 +22,11 @@ public class ShopWriteCommand implements Command {
 		int pPrice = Integer.parseInt(request.getParameter("pPrice"));
 		int pCnt = Integer.parseInt(request.getParameter("pCnt"));
 		String pName = request.getParameter("pName");
+		String pCtt = request.getParameter("pCtt");
 		System.out.println("!!!!!!!!!!"+pKind+"," + pPrice + ", " + pCnt + "," + pName);
 			
 			try {
-				cnt = dao.insert(pKind, pPrice, pCnt, pName);
+				cnt = dao.insert(pKind, pPrice, pCnt, pName,pCtt);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

@@ -33,6 +33,7 @@ public class MypageCommand implements Command {
 		int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
 		System.out.println(cus_num);
 		
+		
 		try {
 			arr = dao.selectByUid(cus_num);
 			request.setAttribute("list", arr);

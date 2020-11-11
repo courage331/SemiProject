@@ -142,12 +142,29 @@ public class ReservationDAO {
 	} // end select()
 
 	// 특정 사용자의 num의 글 만 SELECT
-	public ReservationDTO[] selectByNum(int num) throws SQLException {
+	public ReservationDTO[] selectByNum(int cus_num) throws SQLException {
 		ReservationDTO[] arr = null;
-
+		int cnt=0;
+		
 		try {
+			//투숙중으로
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_STATE);
+			pstmt.setInt(1, cus_num);
+			cnt = pstmt.executeUpdate();
+	
+			//강아지 상태 바꾸기 1->0으로
+			pstmt = conn.prepareStatement(D.SQL_PET_STATE);
+			pstmt.setInt(1, cus_num);
+			cnt = pstmt.executeUpdate();
+			
+			//예약 종료로
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_STATE2);
+			pstmt.setInt(1, cus_num);
+			cnt = pstmt.executeUpdate();
+			
+			//예약 리스트 뽑기
 			pstmt = conn.prepareStatement(D.SQL_RESERVATION_SELECT_BY_NUM);
-			pstmt.setInt(1, num);
+			pstmt.setInt(1, cus_num);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
@@ -210,5 +227,28 @@ public class ReservationDAO {
 		
 		return cnt;
 	} // end update()
+	
+	
+	public int stateupdate(int cus_num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_STATE);
+			pstmt.setInt(1, cus_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_RESERVATION_STATE2);
+			pstmt.setInt(1, cus_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		
+		return cnt;
+	}
 	
 }

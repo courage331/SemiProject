@@ -50,13 +50,14 @@ public class ProductDAO {
 		int pPrice = dto.getPro_price();
 		int pCnt = dto.getPro_cnt();
 		String pName = dto.getPro_name();
+		String pCtt = dto.getPro_content();
 
-		cnt = this.insert(pKind, pPrice, pCnt, pName);
+		cnt = this.insert(pKind, pPrice, pCnt, pName, pCtt);
 		return cnt;
 	}
 
 	// 상품 등록
-	public int insert(String pKind, int pPrice, int pCnt, String pName) throws SQLException {
+	public int insert(String pKind, int pPrice, int pCnt, String pName, String pCtt) throws SQLException {
 		int cnt = 0;
 
 		try {
@@ -65,6 +66,7 @@ public class ProductDAO {
 			pstmt.setInt(2, pPrice);
 			pstmt.setInt(3, pCnt);
 			pstmt.setString(4, pName);
+			pstmt.setString(5, pCtt);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -84,7 +86,8 @@ public class ProductDAO {
 			int price = rs.getInt("pro_price");
 			int pCnt = rs.getInt("pro_cnt");
 			String pName = rs.getString("pro_name");
-			ProductDTO dto = new ProductDTO(pNum, pKind, price, pCnt, pName);
+			String pCtt = rs.getString("pro_content");
+			ProductDTO dto = new ProductDTO(pNum, pKind, price, pCnt, pName, pCtt);
 			list.add(dto);
 		} // end while
 		int size = list.size();

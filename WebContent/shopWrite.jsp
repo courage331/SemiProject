@@ -35,14 +35,18 @@
 			<form name="frm" action="shopWriteOk.do" method="post" onsubmit="return chkSubmit()">
 				상품이름: <input type="text" name="pName" /><br>
 				<br>
-				상품종류: <input type="text" name="pKind" /><br>
+				상품종류: 
+				<label><input type="radio" name="pKind" value="rice"/>사료</label>
+				<label><input type="radio" name="pKind" value="shampoo"/>샴푸</label>
+				<label><input type="radio" name="pKind" value="snack"/>간식</label>
+				<label><input type="radio" name="pKind" value="etc"/>기타</label><br>
 				<br>
 				상품가격: <input type="number" name="pPrice"/><br>
 				<br>
 				재고수량: <input type="number" name="pCnt"/><br>
 				<br>
 				사진첨부: (<img src="img/imgpush.png">)클릭!<br>
-			<textarea name="content" id="editor1"></textarea>
+			<textarea name="pCtt" id="editor1"></textarea>
 			<script>
 			CKEDITOR.replace('editor1', {
 				allowedContent: true,    // HTML 태그 자동 삭제 방지 설정

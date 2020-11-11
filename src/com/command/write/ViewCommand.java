@@ -32,7 +32,8 @@ public class ViewCommand implements Command {
 //		System.out.println(cus_num);
 
 		int num = Integer.parseInt(request.getParameter("num"));
-
+		System.out.println("numL = " + num);
+ 
 		if (session.getAttribute("c_num") != null) {
 			try {
 				int cus_num = Integer.parseInt((String) (session.getAttribute("c_num")));

@@ -136,9 +136,24 @@ public class CmtDAO {
 		
 		return arr;
 	} // end selectByNum()
+	
+	
+	public int cmtupdate(int cmt_num, String content) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(D.SQL_CMT_UPDATE);
+			pstmt.setInt(1, cmt_num);
+			pstmt.setString(2, content);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+
+		return cnt;
+	} // end update
 
 	
-	// 특정 num 의 글 내용 읽기
 	
 	// 특정 num 글 삭제 얘도 마찬가지 
 	public int deleteByNum(int num) throws SQLException {
@@ -154,6 +169,7 @@ public class CmtDAO {
 		
 		return cnt;
 	}
+	
 	
 	
 	

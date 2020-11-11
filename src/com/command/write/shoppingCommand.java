@@ -15,23 +15,15 @@ public class shoppingCommand implements Command {
 
    @Override
    public void execute(HttpServletRequest request, HttpServletResponse response) {
-      int sdto=0;
       
-      ProductDAO dao = new ProductDAO();
       CustomerDAO cdao = new CustomerDAO();
       CustomerDTO [] cdto = null;
-      ProductDTO [] pdto = null;
       ProductDAO pdao = new ProductDAO();
-//      SellDataDAO sdao = new SellDataDAO();
+      ProductDTO [] pdto = null;
       
       HttpSession session = request.getSession(); 
-      String pName = request.getParameter("pName");
-      
+      int pNum = Integer.parseInt(request.getParameter("pNum"));
 
-//      int sCnt = Integer.parseInt((String) request.getAttribute("sCnt"));
-//      System.out.println(sCnt + "커넘의 씨엔티다!!!!!!!!!!!!!!!!!!!");
-//      int sSum = Integer.parseInt((String) request.getAttribute("sSum"));
-//      int pro_num = Integer.parseInt((String) request.getAttribute("pro_num"));
       int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
       if(cus_num == 0) {
     	  System.out.println("null입니다");
@@ -40,8 +32,7 @@ public class shoppingCommand implements Command {
       
       try {
          cdto = cdao.selectMoney(cus_num);
-         pdto = pdao.selectBypName(pName);
-//         sdto = sdao.insert(cus_num, pro_num, sCnt, sSum);
+         pdto = pdao.readBypNum(pNum);
          
       } catch(SQLException e) {
          e.printStackTrace();
@@ -49,7 +40,6 @@ public class shoppingCommand implements Command {
       
       request.setAttribute("clist", cdto);
       request.setAttribute("plist", pdto);
-//      request.setAttribute("sell", sdto);
    }
 
 }
