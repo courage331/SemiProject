@@ -8,6 +8,72 @@
 	--sub-text-color: #999999;
 	
 }
+/* 메인 배너 */
+.mainbanner {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	position: relative;
+}
+
+.item_img {
+	width: 100%;
+	max-height: 700px;
+	opacity: 0.5;
+	border: none;
+	outline: none;
+}
+
+.item_text {
+	position: absolute;
+	bottom: 10%;
+	margin-left: 3%;
+}
+
+.slick-arrow{
+    display: inline-block;
+    position: relative;
+    top: 220px;
+    z-index: 500;
+    color: #fff;
+    font-size: 20px;
+}
+
+.slick-prev, .slick-next {
+	font-size: 0;
+	position: absolute;
+	bottom: 20px;
+	color: #fff;;
+	border: 0;
+	background: none;
+	z-index: 1;
+	top: 20px;
+	cursor: pointer;
+	outline: none;
+}
+
+.slick-prev {
+    left: 20px;
+}
+ 
+.slick-prev:after {
+    content: "\f104";
+    font: 40px/1 'FontAwesome';
+}
+ 
+.slick-next {
+    right: 20px;
+    text-align: right;
+}
+ 
+.slick-next:after {
+     content: "\f105";
+     font: 40px/1 'FontAwesome';
+}
+ 
+.slick-prev:hover:after,
+.slick-next:hover:after {
+    color: #7e7e7e;
+}
 
 /* 컨텐츠 A */
 .conA .container {

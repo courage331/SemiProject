@@ -58,8 +58,9 @@
 		<div class="container">
 			<h2>충전수단</h2>
 			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao"> 카카오 페이 
-				<input type="radio" name="chk_cash" value="cash" checked="checked"> 무통장 입금
+				<input type="radio" name="chk_cash" value="kakao"> 카카오 페이 <input
+					type="radio" name="chk_cash" value="cash" checked="checked">
+				무통장 입금
 			</div>
 		</div>
 	</section>
@@ -79,9 +80,40 @@
 			<button class="cashok">
 				<h2>충전하기</h2>
 			</button>
+
+			<form action="kakao.jsp">
+
+				<p>
+					<span>name:</span> <input name="name">
+
+
+					<!-- 값 가져오기 -->
+				</p>
+				<p>
+					<span>이메일:</span> <input name="email">
+				</p>
+				<span>폰넘버:</span>
+				<p>
+					<input type="text" name="phone">
+				</p>
+				<span>주소:</span>
+				<p>
+					<input name="address">
+				</p>
+				<span>총가격:</span>
+				<p>
+					<input name="totalPrice">
+				</p>
+				<input type="submit" value="결제하기"> <input type="reset"
+					value="취소하기">
+			</form>
 		</div>
 	</footer>
 
 </body>
 <script type="text/javascript" src="JS/charge.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </html>

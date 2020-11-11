@@ -52,5 +52,5 @@
 	</header>
 </body>
 
-<script src="JS/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="JS/index.js"></script>
 </html>
