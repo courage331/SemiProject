@@ -6,15 +6,3 @@ $('.slick-container').slick({
   autoplaySpeed:3000, // 자동플레이 스피드
   slidesToShow: 1
 });
-
-var submenu = document.getElementsByClassName("submenu")[0];
-var submenulist = document.getElementsByClassName("submenulist")[0];
-submenu.onmouseover = function() {
-	//  alert("짠");
-	submenulist.style.display = '';
-}
-
-submenu.onmouseout = function() {
-	//  alert("짠");
-	submenulist.style.display = 'none';
-}
