@@ -81,13 +81,12 @@
 	</section>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
-
-</body>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="JS/index.js"></script>
+</body>
 </html>
 
 
