@@ -23,9 +23,16 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 <body>
 	<!-- 헤더 -->
 	<jsp:include page="common/header.jsp"></jsp:include>
-
+	<div id="list_btn">
+		<input type="button" value="전체" onclick="location='shop.do?kind=all'">
+		<input type="button" value="샴푸"
+			onclick="location='shop.do?kind=shampoo'"> <input
+			type="button" value="간식" onclick="location='shop.do?kind=snack'">
+		<input type="button" value="사료" onclick="location='shop.do?kind=rice'">
+		<input type="button" value="기타" onclick="location='shop.do?kind=etc'">
+	</div>
 	<h1>쇼핑</h1>
-	
+
 	<br>
 	<br>
 	<%
@@ -41,26 +48,17 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	System.out.println("-------2: " + totalCnt % 4);
 	%>
 
-		<div class = "list">
-			<select onchange="location = this.value;">
- 				<option value="shop.do?kind=all">카테고리</option>
- 				<option value="shop.do?kind=all">전체보기</option>
-				<option value="shop.do?kind=shampoo">샴푸</option>
- 				<option value="shop.do?kind=snack">간식</option>
- 				<option value="shop.do?kind=rice">사료</option>
- 				<option value="shop.do?kind=etc">기타</option>
-			</select>
-		</div>		
+
 	<!-- 컨텐츠B -->
 	<section class="conF">
-		
+
 		<div class="containerF">
 			<%
 				if (session.getAttribute("c_num") != null) {
 				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
 				if (c_num == 1) {
 			%>
-			
+
 			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품
 				추가</button>
 			<button class="manageBt" onclick="location.href = 'shopEdit.do'">상품
@@ -78,7 +76,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 		if (totalCnt % 4 == 0) {
 			for (int i = 0; i < totalCnt / 4; i++) { // for 1
 	%>
-	<section class"=conD">
+	<section class"=conBody">
 		<div id="dddd">
 			<table>
 				<%
@@ -92,12 +90,11 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 					if (arr[cnt].getPro_cnt() == 0) {%>
 					alert('재고소진')"
 								<%} else {%>
-					shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+					shoppingOpen('<%=arr[cnt].getPro_num()%>')"
 					<%}
-					}%>><br> 
-					종류 : <%=arr[cnt].getPro_kind()%><br>
-					가격 : <%=arr[cnt].getPro_price()%><br> 
-					재고 : <%=arr[cnt].getPro_cnt()%><br>
+					}%>><br>
+					이름 : <%=arr[cnt].getPro_name()%><br> 가격 : <%=arr[cnt].getPro_price()%>
+					<i class="fas fa-bone"></i><br> 재고 : <%=arr[cnt].getPro_cnt()%><br>
 					<%
 						if (arr[cnt].getPro_cnt() == 0) {
 					%>
@@ -110,7 +107,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				<%
 					} else {
 				%>
-				<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
+				<button onclick="shoppingOpen('<%=arr[cnt].getPro_num()%>')">구매하기</button>
 				<%
 					}
 				}
@@ -124,69 +121,66 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 				%>
 			</table>
 		</div>
-	</section>
-	<%
+		<%
 		if (cnt == totalCnt)
 		break;
 	} // end for 1
 	} else {
 		for (int i = 0; i < totalCnt / 4 + 1; i++) { // for 1
 			%>
-			<section class"=conD">
-				<div id="dddd">
-					<table>
-						<%
+		<div id="dddd">
+			<table>
+				<%
 							for (int j = 0; j < 4; j++) { // for 2
 						%>
-						<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"
-							onclick="
+				<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"
+					onclick="
 							<%if (session.getAttribute("c_num") == null) {%>
 								location.href='login.do'"
-							<%} else {
+					<%} else {
 							if (arr[cnt].getPro_cnt() == 0) {%>
-							alert('재고소진')"
+					alert('재고소진')"
 										<%} else {%>
-							shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)"
+					shoppingOpen('<%=arr[cnt].getPro_num()%>')"
 							<%}
-							}%>><br> 
-							종류 : <%=arr[cnt].getPro_kind()%><br>
-							가격 : <%=arr[cnt].getPro_price()%><br> 
-							재고 : <%=arr[cnt].getPro_cnt()%><br>
-							<%
+							}%>><br>
+					이름 : <%=arr[cnt].getPro_name()%><br> 가격 : <%=arr[cnt].getPro_price()%>
+					<i class="fas fa-bone"></i><br> 재고 : <%=arr[cnt].getPro_cnt()%><br>
+					<%
 								if (arr[cnt].getPro_cnt() == 0) {
 							%>
-							
-							<button disabled>재고소진</button></th>
-						<%
+
+					<button disabled>재고소진</button></th>
+				<%
 							} else {
 							if (session.getAttribute("c_num") == null) {
 						%>
-						<button onclick="location.href='login.do'">구매하기</button>
-						<%
+				<button onclick="location.href='login.do'">구매하기</button>
+				<%
 							} else {
 						%>
-						<button	onclick="shoppingOpen('<%=arr[cnt].getPro_name()%>','<%=arr[cnt].getPro_kind()%>',<%=arr[cnt].getPro_price()%>,<%=arr[cnt].getPro_num()%>,<%=arr[cnt].getPro_cnt()%>)">구매하기</button>
-						<%
+				<button onclick="shoppingOpen('<%=arr[cnt].getPro_num()%>')">구매하기</button>
+				<%
 							}
 						}
 						%>
-						</th>
-						<%
+				</th>
+				<%
 							cnt++;
 						if (cnt == totalCnt)
 							break;
 						} // end for 2
 						%>
-					</table>
-				</div>
-			</section>
-			<%
+			</table>
+		</div>
+		<%
 				if (cnt == totalCnt)
 				break;
 			} // end for 4
 	} // end for 3
 	} // end if
 	%>
+	</section>
 
 
 	<!-- 푸터 -->

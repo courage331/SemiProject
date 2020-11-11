@@ -9,6 +9,10 @@
 }
 
 
+div#dddd i{
+	color: var(--main-color);
+	font-size: 15px;
+}
 
 div.containerF {
 	text-align: right;
@@ -16,9 +20,27 @@ div.containerF {
 	margin-left: 200px;
 	margin-right: 200px;
 }
-div.list {
-	margin-bottom: 50px;
-	margin-left:200px;
+/*list_btn은 카테고리*/
+#list_btn {
+	margin-top: 130px;
+	margin-left:270px;
+}
+#list_btn input{
+	background-color: #FEC034;
+	width: 70px;
+	height: 20px;
+	font-size: 15px;
+	text-align: center;
+	color:white;
+	border:none;
+	border-radius: 12px;
+	margin:0px;
+}
+
+
+#list_btn input:hover {
+    background: #fa6e3e;
+	cursor: pointer;
 }
 button.editBt {
 	background-color: #FEC034;
@@ -96,7 +118,8 @@ td {
 h1 {
 	font-size: 40px;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 50px;
+	margin-bottom: 60px;
 }
 
 .conshop {
@@ -129,3 +152,6 @@ h1 {
 	cursor: pointer;
 }
 
+section.conBody{
+	margin-bottom: 10px;
+}

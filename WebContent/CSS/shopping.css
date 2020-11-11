@@ -14,6 +14,11 @@
 	
 }
 
+i.fas fa-bone {
+	color: var(--main-color);
+	font-size: 15px;
+}
+
 header {
 	background-color: var(--main-color);
 	height: 80px;
@@ -37,24 +42,35 @@ header h2 {
 	font-size: 40px;
 }
 
+div.c_money{
+text-align: right;	
+margin-top: 10px;
+margin-right: 20px;
+}
+
 .conA{
-width:100vw;
-height:76vw	
+width:100%;
+height:60vw	
+}
+.sum{
+	margin-bottom: 50px;
+	text-align: center;
 }
 
 .deco{
 	margin:20px;
 	margin-top : 60px;
-	border:4px solid #4ea0d8;
-	
+	border:4px solid  #FEC034;
 	border-radius:10px;
 }
+
 .content{
 	display: flex;
 	justify-content:flex-start;
 	align-items: center;
 	border: solid 1px white;
 }
+
 /*
 .ctext{
 	font-size: 15px;
