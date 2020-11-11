@@ -51,7 +51,7 @@ System.out.println(AuthenticationKey);
 
 
  //보내는 사람의 정보
- String fromName = "이주혁";
+ String fromName = "왈왈호텔";
  String fromEmail = "tkwkdkdlrk18@gmail.com";
  
  try {
