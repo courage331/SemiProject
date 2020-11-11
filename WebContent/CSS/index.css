@@ -149,13 +149,13 @@
 .conB h2{
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .conB p{
     margin-top:0;
     margin-bottom:20px;
-    font-size:14px;
+    font-size:20px;
     line-height: 1.8; 
     /* 줄높이: font-size의 1.8라는 뜻이다. */
     opacity: 0.8;
