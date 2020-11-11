@@ -14,6 +14,8 @@
 	border:4px solid #4ea0d8;
 	
 	border-radius:10px;
+	
+	margin-bottom: 200px;
 }
 
 #contact-form div {
@@ -98,5 +100,5 @@
 
 
 footer{
-	margin-top : 100px;
+	margin-top : 200px;
 }
