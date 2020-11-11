@@ -26,15 +26,15 @@
 				</div>
 			</div>
 			<div class="item">
-				<img class="item_img" src="img/dog_3.gif">
-				<div class="item_text">
-					<h1>전문가와의 훈련</h1>
-				</div>
-			</div>
-			<div class="item">
 				<img class="item_img" src="img/dog_4.gif">
 				<div class="item_text">
 					<h1>강아지도 만족하는 헤어서비스</h1>
+				</div>
+			</div>
+			<div class="item">
+				<img class="item_img" src="img/dog_3.gif">
+				<div class="item_text">
+					<h1>전문가와의 훈련</h1>
 				</div>
 			</div>
 		</div>
