@@ -13,7 +13,7 @@
 %>
 	<script>
 		alert("해당 정보가 삭제되거나 없습니다");
-		history.back();
+		location.href='review.do?page=1';
 	</script>
 <%
 		return;  //  ★더이상 JSP 프로세싱 하지 않고 종료
