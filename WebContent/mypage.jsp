@@ -11,13 +11,22 @@ Boolean chk = true;
 
 String[] state = { "예약 종료", "예약 변경 가능", "투숙중" };
 String color = "#c0c0c0";
+
+
+
+
+
+
 %>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="CSS/mypage.css">
 
@@ -121,9 +130,8 @@ String color = "#c0c0c0";
 						<%
 							}
 						%>
-
-						<td id="akak"><%=rarr[i].getRes_startdate()%></td>
-						<td id="akak"><%=rarr[i].getRes_lastdate()%></td>
+						<td id="akak" class="startdate"><%=rarr[i].getRes_startdate()%></td>
+						<td id="akak" class="lastdate"><%=rarr[i].getRes_lastdate()%></td>
 						<td id="akak"><%=pet_name[i]%></td>
 						<td id="akak"><%=state[rarr[i].getRes_state()]%></td>
 					</tr>
@@ -169,6 +177,9 @@ String color = "#c0c0c0";
 				%>
 			</div>
 	</section>
+	<script>
+			
+	</script>
 
 	<!-- 컨텐츠C -->
 	<section class="conC">

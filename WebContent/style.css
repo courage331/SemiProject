@@ -49,9 +49,6 @@ header .container {
 	list-style: none;
 }
 
-.container div {
-	z-index : 1;
-}
 
 /* 헤더 네비게이션 a */
 .mainmenu {
