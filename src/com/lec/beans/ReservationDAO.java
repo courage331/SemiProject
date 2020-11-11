@@ -145,14 +145,13 @@ public class ReservationDAO {
 	public ReservationDTO[] selectByNum(int cus_num) throws SQLException {
 		ReservationDTO[] arr = null;
 		int cnt=0;
-		int num=0;
 		
 		try {
 			//투숙중으로
 			pstmt = conn.prepareStatement(D.SQL_RESERVATION_STATE);
 			pstmt.setInt(1, cus_num);
 			cnt = pstmt.executeUpdate();
-			
+	
 			//강아지 상태 바꾸기 1->0으로
 			pstmt = conn.prepareStatement(D.SQL_PET_STATE);
 			pstmt.setInt(1, cus_num);
