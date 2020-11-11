@@ -116,6 +116,7 @@
 		<%} else {%> 
 		<button onclick="location.href='login.jsp'">새글작성</button>
 		<%} %>
+		<button id="kakao-link-btn">공유하기</button>
 		</div>
 	</section>
 	
@@ -200,10 +201,60 @@
 			</table>
 		</div>
 	</section>
+	<!--<a id="custom-login-btn" href="javascript:loginWithKakao()"> <img
+		src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+		width="222" />
+	</a>-->
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('a16644188086a65e9093016403fb705e');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: '애견 호텔',
+        description: '#애견호텔#이용후기#좋아해#test',
+        imageUrl: 'http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        link: {
+          mobileWebUrl: 'https://developers.kakao.com',
+          webUrl: 'https://developers.kakao.com'
+        }
+      },
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            mobileWebUrl: 'http://localhost:8080/SemiProject/view.do?num=<%= num%>',
+            webUrl: 'http://localhost:8080/SemiProject/view.do?num=<%= num%>'
+          }
+        },
+        {
+          title: '앱으로 보기',
+          link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com'
+          }
+        }
+      ]
+    });
+  //]]>
+</script>
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 
 </body>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+
+// SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+Kakao.init('a16644188086a65e9093016403fb705e');
+
+// SDK 초기화 여부를 판단합니다.
+console.log(Kakao.isInitialized());
+</script>
 <script type="text/javascript" src="JS/view.js"></script>
 	<script type="text/javascript" src="JS/cmt.js"></script>
 	

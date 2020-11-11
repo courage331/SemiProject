@@ -99,6 +99,10 @@ button:hover{
 div.cmt{
 	font-size: 20px;
 }
+#kakao-link-btn{
+	background-color: yellow;
+	color: black;
+}
 
 /*input[type="submit"].akk{
 	background-color: #FEC034;

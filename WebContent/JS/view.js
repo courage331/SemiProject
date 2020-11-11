@@ -23,6 +23,16 @@ function deleteChk() {
 function userChk() {
 	alert("권한이 없습니다.");
 }
+function loginWithKakao() {
+  Kakao.Auth.login({
+    success: function(authObj) {
+      alert(JSON.stringify(authObj))
+    },
+    fail: function(err) {
+      alert(JSON.stringify(err))
+    },
+  })
+}
 
 
 
