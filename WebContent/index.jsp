@@ -20,29 +20,21 @@
 	<div class="mainbanner">
 		<div class="slick-container">
 			<div class="item">
-				<img class="item_img" src="img/dog_1.gif">
-				<div class="item_text">
-					<h1>가족을 생각하는 마음으로 만들어졌습니다.</h1>
-					<h2>아이들과 같은 순수한 마음의 자세로 보호자가 반려동물과 더불어 함께 즐겁게 뛰어 놀고 편안하게 쉴 수
-						있는 확 트인 넓은 공간</h2>
-				</div>
-			</div>
-			<div class="item">
 				<img class="item_img" src="img/dog_2.gif">
 				<div class="item_text">
-					<h1>Hello</h1>
+					<h1>휴식이 만족</h1>
 				</div>
 			</div>
 			<div class="item">
 				<img class="item_img" src="img/dog_3.gif">
 				<div class="item_text">
-					<h1>Hello</h1>
+					<h1>전문가와의 훈련</h1>
 				</div>
 			</div>
 			<div class="item">
 				<img class="item_img" src="img/dog_4.gif">
 				<div class="item_text">
-					<h1>Hello</h1>
+					<h1>강아지도 만족하는 헤어서비스</h1>
 				</div>
 			</div>
 		</div>

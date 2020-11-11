@@ -85,6 +85,8 @@ CREATE TABLE product
 	pro_cnt number NOT NULL,
 	-- 상품이름
 	pro_name varchar2(20) NOT NULL,
+	--컨텐츠 내용
+	pro_content clob,
 	PRIMARY KEY (pro_num)
 );
 
