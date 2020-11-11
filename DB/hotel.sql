@@ -224,11 +224,42 @@ SELECT * FROM RESERVATION;
 DELETE FROM RESERVATION WHERE RES_NUM=102;
 
 /*pet의 상태 바꾸기*/
-UPDATE PET SET PET_RESERVE =0 WHERE PET_NUM=2;
+UPDATE PET SET PET_RESERVE =0 WHERE PET_NUM=3;
 
-UPDATE reservation SET RES_STATE=2  WHERE cus_num=1 AND RES_LASTDATE<SYSDATE ;
-UPDATE reservation SET RES_STATE=0  WHERE cus_num=1 AND SYSDATE BETWEEN RES_STARTDATE AND RES_LASTDATE;
 
+
+UPDATE pet 
+SET PET_RESERVE = 0
+WHERE pet_num in
+(
+	SELECT p.pet_num
+	FROM pet p JOIN RESERVATION r
+	ON p.CUS_NUM = r.CUS_NUM 
+	WHERE r.CUS_NUM = 1 AND SYSDATE>r.RES_LASTDATE 
+)
+;
+
+
+UPDATE pet 
+SET PET_RESERVE = 1
+WHERE pet_num in
+(
+	SELECT p.pet_num
+	FROM pet p JOIN RESERVATION r
+	ON p.CUS_NUM = r.CUS_NUM 
+	WHERE r.CUS_NUM = 1 AND SYSDATE BETWEEN r.RES_STARTDATE AND r.RES_LASTDATE
+)
+;
+
+
+
+(SELECT pet_num FROM reservation WHERE res_num=0);
+
+(SELECT pet_num FROM reservation WHERE res_state=0)
+
+UPDATE reservation SET RES_STATE=0  WHERE cus_num=2 AND RES_LASTDATE<SYSDATE ;
+UPDATE reservation SET RES_STATE=2  WHERE cus_num=2 AND SYSDATE BETWEEN RES_STARTDATE AND RES_LASTDATE;
+UPDATE reservation SET RES_STATE=2  WHERE res_num=2;
 
 select * from user_tables
 
@@ -252,15 +283,17 @@ DELETE PRODUCT WHERE pro_num=8;
 /*SQL문 테스트*/
 SELECT * FROM PET WHERE cus_num=1;
 
+SELECT * FROM pet;
 SELECT pet_name FROM pet;
 
 SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
-UPDATE pet SET pet_reserve = 1 WHERE pet_num = 1;
+UPDATE pet SET pet_reserve = 1 WHERE pet_num = 4;
 
 UPDATE reservation SET res_state=2 WHERE res_num=3;
 
 SELECT * FROM CUSTOMER WHERE cus_id = 'test' AND cus_pw = '1234';
+
 
 
 /* 임시 테이블 생성 */ 

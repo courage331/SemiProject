@@ -12,8 +12,3 @@ if(parseInt(date.getDate())<10){
 }else{
 	rdate+=date.getDate();
 }
-
-
-$(function(){
-	alert($('.startdate').text());
-});

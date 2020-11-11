@@ -121,7 +121,7 @@ public class PetDAO {
 		return pet_num;
 	}
 	
-	//예약 상태로 만든다.
+	//예약 상태로 만든다. 상태값 0->1
 	public int update(int pet_num) throws SQLException {
 		int cnt = 0;
 		
@@ -220,13 +220,27 @@ public class PetDAO {
 	
 	
 	
-	//예약 상태로 만든다.
+	//예약 가능 상태로 만든다. 1->0
 	public int update2(int pet_num) throws SQLException {
 		int cnt = 0;
 		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PET_UNRESERVE_UPDATE);
 			pstmt.setInt(1, pet_num);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		} // end try
+		return cnt;
+	} // end update()
+	
+	//예약 가능 상태로 만든다. 1->0 //예약 번호 가지고 바꾼다.
+	public int update3(int res_num) throws SQLException {
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_PET_UNRESERVE_UPDATE);
+			pstmt.setInt(1, res_num);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

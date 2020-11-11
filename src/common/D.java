@@ -57,6 +57,24 @@ public class D {
 		public static final String SQL_RESERVATION_UPDATE =
 				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
 		
+		//예약 종료
+			public static final String SQL_RESERVATION_STATE=
+					"UPDATE reservation SET RES_STATE=0  WHERE cus_num=? AND res_lastdate < SYSDATE";
+		//투숙중 
+				public static final String SQL_RESERVATION_STATE2=
+					"UPDATE reservation SET RES_STATE=2  WHERE cus_num=? AND SYSDATE BETWEEN RES_STARTDATE AND RES_LASTDATE";
+		
+				public static final String SQL_PET_STATE=
+				"UPDATE pet \r\n" + 
+				"SET PET_RESERVE = 0\r\n" + 
+				"WHERE pet_num in\r\n" + 
+				"(\r\n" + 
+				"	SELECT p.pet_num\r\n" + 
+				"	FROM pet p JOIN RESERVATION r\r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM \r\n" + 
+				"	WHERE r.CUS_NUM = ? AND SYSDATE>r.RES_LASTDATE \r\n" + 
+				")";
+				
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =
 				"DELETE FROM reservation WHERE res_num = ?";
 		
@@ -83,6 +101,9 @@ public class D {
 		
 		public static final String SQL_PET_UNRESERVE_UPDATE=
 				" UPDATE pet SET pet_reserve = 0 WHERE pet_num = ?";
+		
+		public static final String SQL_PET_UNRESERVE_UPDATE2=
+				"UPDATE pet SET pet_reserve = 0 WHERE pet_num =(SELECT pet_num FROM reservation WHERE res_num=?)";
 		
 		public static final String SQL_PET_NUM_SEARCH =
 				"SELECT pet_num FROM pet WHERE cus_num = ? AND pet_name=?";
