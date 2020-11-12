@@ -90,7 +90,7 @@ public class ReviewDAO {
 				String regDate = "";
 				if(d != null) {
 					regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
-							+ new SimpleDateFormat("hh:mm:ss").format(t);
+							+ new SimpleDateFormat("HH:mm:ss").format(t);
 				}
 				int c_num = rs.getInt("cus_num");
 				

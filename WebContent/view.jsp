@@ -11,7 +11,7 @@
 <%
 	if(arr == null || arr.length == 0){
 %>
-	<script>
+	<script>	
 		alert("해당 정보가 삭제되거나 없습니다");
 		location.href='review.do?page=1';
 	</script>

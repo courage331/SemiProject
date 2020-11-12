@@ -39,6 +39,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		double totalStar = 0;
 		double tsSum = 0;
 		int totalCnt = 0;
+		int akkk = 0;
 		int pg = 0;
 		int ak = 0; // 글 갯수 파악 
 		if (arr != null) {
@@ -46,6 +47,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 				number++;
 			}
 		}
+		akkk = number;
 		pg = number / 10 + 1;
 		if (pg >= 1) {
 			pg = number / 10 + 1;
@@ -71,7 +73,7 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 			for(int i = 0; i < arr.length; i++){
 				tsSum += arr[i].getStar();
 			}
-			totalStar = tsSum / number*100;
+			totalStar = tsSum / akkk*100;
 			tsSum = (int)totalStar;
 			totalStar = (double)tsSum/100;
 			System.out.println("TOTALSTAR: " + totalStar);
