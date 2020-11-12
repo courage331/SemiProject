@@ -83,3 +83,4 @@ function petopen() {
 	myWindow = window.open("pet_update.jsp", "팝업창",
 			"width = 500, height = 615, left = 650, top = 10")
 }
+

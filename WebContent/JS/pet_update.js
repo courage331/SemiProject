@@ -9,6 +9,10 @@ function chkDelete(pet_num) {
 	}
 }
 
+function byebye(){
+	 self.close();
+}
+
 $('#okbtn').click(function() {
 	frm = document.forms["frm"];
 
