@@ -6,6 +6,8 @@
 <%
 	// Controller 로부터 결과 데이터 받음
 ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
+String target = request.getParameter("target");
+String keyword = request.getParameter("keyword");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -94,6 +96,20 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 		<%}%>
 		
 		</div>
+		<div class="search">
+			<form method="get" action="review.do">
+				<input type="hidden" name="page" value="1">			
+				<div>
+					<select name="target">
+						<option value="" selected>전체</option>
+						<option value="subject">제목</option>
+						<option value="content">내용</option>
+					</select>
+					<input type="text" name="keyword" value="">
+					<button type="submit">검색</button>
+				</div>
+			</form>
+		</div>
 		<br>
 		<div class="containerG">
 			<table>
@@ -151,24 +167,40 @@ ReviewDTO[] arr = (ReviewDTO[]) request.getAttribute("list");
 	<br>
 	<div class="pageBt">
 		<%
-		if(pageNum == 1){
-			
+		if(pageNum == 1 || pageNum == 0){
+		%>
+		<%
 		} else {
 		%>
-		<button class="backBtn"
-			onclick="location.href = 'review.do?page=<%=pageNum - 1%>'">&lt;</button>
+			<%if(target != null || keyword != null){ %> 
+			<button class="backBtn"
+				onclick="location.href = 'review.do?page=<%=pageNum - 1%>&target=<%= target%>&keyword=<%=keyword%>'">&lt;</button>
+			<%} else{ %>
+			<button class="backBtn"
+				onclick="location.href = 'review.do?page=<%=pageNum - 1%>'">&lt;</button>
+			<%} %>
 		<%
 		}
 			for (int i = 1; i <= pg; i++) {
 			if (pageNum == i) {
 		%>
-		<button class="pageBtn1"
-			onclick="location.href = 'review.do?page=<%=i%>'"><%=i%></button>
+				<%if(target != null || keyword != null){ %> 
+				<button class="pageBtn1"
+					onclick="location.href = 'review.do?page=<%=i%>&target=<%= target%>&keyword=<%=keyword%>'"><%=i%></button>
+				<%} else{ %>
+				<button class="pageBtn1"
+					onclick="location.href = 'review.do?page=<%=i%>'"><%=i%></button>
+				<%} %>
 		<%
 			} else {
 		%>
-		<button class="pageBtn"
-			onclick="location.href = 'review.do?page=<%=i%>'"><%=i%></button>
+				<%if(target != null || keyword != null){ %> 
+				<button class="pageBtn"
+					onclick="location.href = 'review.do?page=<%=i%>&target=<%= target%>&keyword=<%=keyword%>'"><%=i%></button>
+				<%} else{ %>
+				<button class="pageBtn"
+					onclick="location.href = 'review.do?page=<%=i%>'"><%=i%></button>
+				<%} %>
 		<%
 			}
 		}
