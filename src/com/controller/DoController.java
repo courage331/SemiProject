@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.command.write.AccountDeleteCommand;
 import com.command.write.ChargeCommand;
+import com.command.write.ChargeOkCommand;
 import com.command.write.CmtDeleteCommand;
 import com.command.write.CmtUpdateCommand;
 import com.command.write.CmtUpdateOkCommand;
@@ -247,11 +248,13 @@ public class DoController extends HttpServlet {
 			break;	
 
 		case "/charge.do":
+			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
+			command.execute(request, response); // 커맨드 실행
 			viewPage = "charge.jsp";
 			break;
 
 		case "/chargeOk.do":
-			command = new ChargeCommand(); // 1. 커맨드(로직) 결정
+			command = new ChargeOkCommand(); // 1. 커맨드(로직) 결정
 			command.execute(request, response); // 커맨드 실행
 			viewPage = "chargeOk.jsp"; // 2. 페이지(뷰) 결정
 			break;

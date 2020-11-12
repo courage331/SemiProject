@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.lec.beans.*"%>
+
+<%
+	CustomerDTO[] arr = (CustomerDTO[]) request.getAttribute("list");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +53,8 @@
 				<form name="frm" action="chargeOk.do" method="post">
 					<i class="fas fa-bone"></i> <input type="text" name="bone_rs"
 						id="bone_rs" value="0" readonly>
+						<input type="hidden" name="buyer_email" value="<%=arr[0].getCus_email()%>">
+						<input type="hidden" name="buyer_name" value="<%=arr[0].getCus_name()%>">
 				</form>
 			</div>
 		</div>
@@ -58,8 +65,9 @@
 		<div class="container">
 			<h2>충전수단</h2>
 			<div class="select_radio">
-				<input type="radio" name="chk_cash" value="kakao" checked="checked"> 카카오 페이 
-				<input type="radio" name="chk_cash" value="cash" >무통장 입금
+				<input type="radio" name="chk_cash" value="kakao" checked="checked">
+				전자 결제 <input type="radio" name="chk_cash" value="cash">무통장
+				입금
 			</div>
 		</div>
 	</section>
@@ -83,9 +91,9 @@
 	</footer>
 
 </body>
-<script type="text/javascript" src="JS/charge.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="JS/charge.js"></script>
 </html>
