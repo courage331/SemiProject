@@ -180,7 +180,7 @@
 						</td>
 						<td>
 						<%if(cus_num == arr2[i].getC_num()){ %>
-						<button style="width:100px; height:40px; font-size: 15px" onclick="cmtchkDelete(<%= arr2[i].getNum()%>)" value="<%=arr2[i].getNum()%>">삭제하기</button>
+						<button style="width:100px; height:40px; font-size: 15px" onclick="cmtchkDelete(<%= arr2[i].getNum()%>,<%= num %>)" value="<%=arr2[i].getNum()%>">삭제하기</button>
 						<%} else { %>
 						<button style="width:100px; height:40px; font-size: 15px" onclick="deleteChk()">삭제하기</button>
 						<%} %>
