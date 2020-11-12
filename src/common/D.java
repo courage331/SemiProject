@@ -71,7 +71,7 @@ public class D {
 				"(\r\n" + 
 				"	SELECT p.pet_num\r\n" + 
 				"	FROM pet p JOIN RESERVATION r\r\n" + 
-				"	ON p.CUS_NUM = r.CUS_NUM \r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM \r\n" + 
 				"	WHERE r.CUS_NUM = ? AND SYSDATE>r.RES_LASTDATE \r\n" + 
 				")";
 				
