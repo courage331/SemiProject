@@ -1,0 +1,117 @@
+/* charge css */
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+:root {
+	--main-color:#FEC034;
+	--text-color: #555555;
+	--sub-text-color: #999999;
+	
+}
+
+div.containerA i {
+	color: var(--main-color);
+	font-size: 15px;
+}
+
+header {
+	background-color: var(--main-color);
+	height: 80px;
+}
+
+header .container {
+	padding: 10px;
+}
+
+header i {
+	float:left;
+	color: white;
+	font-size: 50px;
+	margin-left:10px;
+}
+
+header h2 {
+	float:left;
+	color: white;
+	margin-left: 110px;
+	font-size: 40px;
+}
+
+
+
+.conA{
+width:100%;
+height:80vw	
+}
+.sum{
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.deco{
+	margin:20px;
+	margin-top : 60px;
+	border:4px solid  #FEC034;
+	border-radius:10px;
+}
+
+.content{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	border: solid 1px white;
+}
+
+
+.ctext{
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px white;
+	margin-left: 15px;
+}
+
+
+.ctextEdit{
+	margin-top: -50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: solid 1px white;
+	margin-left: 15px;
+}
+
+
+
+footer button.ed_btn {
+	background-color: #FEC034;
+	margin: 10px;
+	width: 40%;
+	height: 50px;
+	font-size: 15px;
+	text-align: center;
+	color:white;
+	border:none;
+	border-radius: 12px;
+}footer button.del_btn {
+	background-color: #FEC034;
+	margin: 10px;
+	width: 40%;
+	height: 50px;
+	font-size: 15px;
+	text-align: center;
+	color:white;
+	border:none;
+	border-radius: 12px;
+}
+
+footer button:hover {
+	color: var(--text-color);
+	cursor: pointer;
+}

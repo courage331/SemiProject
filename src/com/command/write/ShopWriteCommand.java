@@ -24,6 +24,7 @@ public class ShopWriteCommand implements Command {
 		String pName = request.getParameter("pName");
 		String pCtt = request.getParameter("pCtt");
 		System.out.println("!!!!!!!!!!"+pKind+"," + pPrice + ", " + pCnt + "," + pName);
+		System.out.println(pCtt);
 			
 			try {
 				cnt = dao.insert(pKind, pPrice, pCnt, pName,pCtt);
