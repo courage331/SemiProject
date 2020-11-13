@@ -96,8 +96,8 @@ int pick = pet_image + 4;
 		</div>
 	</footer>
 </body>
-<script type="text/javascript" src="JS/pet_update.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="JS/pet_update.js"></script>
 <script type="text/javascript" src="JS/pet.js"></script>
 </html>

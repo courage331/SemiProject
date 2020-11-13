@@ -48,140 +48,139 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	
 		
 
-	<!-- 컨텐츠B -->
-	<section class="conF">
+   <!-- 컨텐츠B -->
+   <section class="conF">
 
-		<div class="containerF">
-			<%
-				if (session.getAttribute("c_num") != null) {
-				int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
-				if (c_num == 1) {
-			%>
-			<button class="editBt" onclick="location.href = 'shopWrite.do'">상품
-				추가</button>
+      <div class="containerF">
+         <%
+            if (session.getAttribute("c_num") != null) {
+            int c_num = Integer.parseInt(((String) session.getAttribute("c_num")));
+            if (c_num == 1) {
+         %>
 
-			<%
-				} else {
-			}
+         <button class="editBt" onclick="location.href = 'shopWrite.do'">상품
+            추가</button>
+         <button class="manageBt" onclick="location.href = 'shopEdit.do'">상품
+            관리</button>
+         <%
+            } else {
+         }
 
-			}
-			%>
-		</div>
-	</section>
-	<%
-		if (arr != null) {
-		if (totalCnt % 4 == 0) {
-			for (int i = 0; i < totalCnt / 4; i++) { // for 1
-	%>
-	<section class"=conBody">
-		<div id="dddd">
-			<table>
-				<%
-					for (int j = 0; j < 4; j++) { // for 2
-				%>
-				<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"
-					onclick="
-					<%if (session.getAttribute("c_num") == null) {%>
-						location.href='login.do'"
-					<%} else {
-					if (arr[cnt].getPro_cnt() == 0) {%>
-					alert('재고소진')"
-								<%} else {%>
-					editOpen('<%=arr[cnt].getPro_num()%>')"
-					<%}
-					}%>><br> 
-					이름 : <%=arr[cnt].getPro_name()%><br>
-					가격 : <%=arr[cnt].getPro_price()%><br> 
-					재고 : <%=arr[cnt].getPro_cnt()%><br>
-					<%
-						if (arr[cnt].getPro_cnt() == 0) {
-					%>
-					<button disabled>재고소진</button></th>
-				<%
-					} else {
-					if (session.getAttribute("c_num") == null) {
-					} else {
-				%>
-				<button	onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
-				<%
-					}
-				}
-				%>
-				</th>
-				<%
-					cnt++;
-				if (cnt == totalCnt)
-					break;
-				} // end for 2
-				%>
-			</table>
-		</div>
-	<%
-		if (cnt == totalCnt)
-		break;
-	} // end for 1
-	} else {
-		for (int i = 0; i < totalCnt / 4 + 1; i++) { // for 1
-			%>
-				<div id="dddd">
-					<table>
-						<%
-							for (int j = 0; j < 4; j++) { // for 2
-						%>
-						<th><img src="img/<%=arr[cnt].getPro_name()%>.jpg"
-							onclick="
-							<%if (session.getAttribute("c_num") == null) {%>
-								location.href='login.do'"
-							<%} else {
-							if (arr[cnt].getPro_cnt() == 0) {%>
-							alert('재고소진')"
-										<%} else {%>
-							editOpen('<%=arr[cnt].getPro_num()%>')"
-							<%}
-							}%>><br> 
-							이름 : <%=arr[cnt].getPro_name()%><br>
-							가격 : <%=arr[cnt].getPro_price()%><br> 
-							재고 : <%=arr[cnt].getPro_cnt()%><br>
-							<%
-								if (arr[cnt].getPro_cnt() == 0) {
-							%>
-							
-							<button disabled>재고소진</button></th>
-						<%
-							} else {
-							if (session.getAttribute("c_num") == null) {
-							} else {
-						%>
-						<button	onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
-						<%
-							}
-						}
-						%>
-						</th>
-						<%
-							cnt++;
-						if (cnt == totalCnt)
-							break;
-						} // end for 2
-						%>
-					</table>
-				</div>
-			<%
-				if (cnt == totalCnt)
-				break;
-			} // end for 4
-	} // end for 3
-	} // end if
-	%>
-	</section>
+         }
+         %>
+      </div>
+   </section>
+   <%
+   	 
+      if (arr != null) {
+      if (totalCnt % 4 == 0) {
+         for (int i = 0; i < totalCnt / 4; i++) { // for 1
+   %>
+   <section class"=conBody">
+      <div id="dddd">
+         <table>
+            <%
+               for (int j = 0; j < 4; j++) { // for 2
+            %>
+            <th>
+            	<%=arr[cnt].getPro_content() %><br>
+               이름 : <%=arr[cnt].getPro_name()%><br> 
+               가격 : <%=arr[cnt].getPro_price()%><i class="fas fa-bone"></i><br> 
+               재고 : <%=arr[cnt].getPro_cnt()%><br>
+               <input id="pCnt" class="<%=cnt %>" type="hidden" value="<%=arr[cnt].getPro_cnt()%>">
+               <input id="pNum" class="<%=cnt %>" type="hidden" value="<%=arr[cnt].getPro_num()%>">
+              
+               <%
+                  if (arr[cnt].getPro_cnt() == 0) {
+               %>
+               <button onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
+               
+              </th>
+            <%
+               } else {
+               if (session.getAttribute("c_num") == null) {
+            %>
+            <button onclick="location.href='login.do'">수정하기</button>
+            <%
+               } else {
+            %>
+            <button onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
+            <%
+               }
+            }
+            %>
+            </th>
+            <%
+               cnt++;
+            if (cnt == totalCnt)
+               break;
+            } // end for 2
+            %>
+         </table>
+      </div>
+      <%
+      if (cnt == totalCnt)
+      break;
+   } // end for 1
+   } else {
+      for (int i = 0; i < totalCnt / 4 + 1; i++) { // for 1
+         %>
+      <div id="dddd">
+         <table>
+            <%
+                     for (int j = 0; j < 4; j++) { // for 2
+                  %>
+            <th><%=arr[cnt].getPro_content() %><br>
+               이름 : <%=arr[cnt].getPro_name()%><br> 
+               가격 : <%=arr[cnt].getPro_price()%><i class="fas fa-bone"></i><br> 
+               재고 : <%=arr[cnt].getPro_cnt() %><br>
+               <input id="pCnt" type="hidden" value="<%=arr[cnt].getPro_cnt()%>">
+               <input id="pNum" type="hidden" value="<%=arr[cnt].getPro_num()%>">
+               <%
+                        if (arr[cnt].getPro_cnt() == 0) {
+                     %>
+					<button onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
+					</th>
+               
+            <%
+                     } else {
+                     if (session.getAttribute("c_num") == null) {
+                  %>
+            <button onclick="location.href='login.do'">수정하기</button>
+            <%
+                     } else {
+                  %>
+            <button onclick="editOpen('<%=arr[cnt].getPro_num()%>')">수정하기</button>
+            <%
+                     }
+                  }
+                  %>
+            </th>
+            <%
+                     cnt++;
+                  if (cnt == totalCnt)
+                     break;
+                  } // end for 2
+                  %>
+         </table>
+      </div>
+      <%
+            if (cnt == totalCnt)
+            break;
+         } // end for 4
+   } // end for 3
+   } // end if
+   %>
+   </section>
 
 
-	<!-- 푸터 -->
+   <!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 
 </body>
-
-<script type="text/javascript" src="JS/shop.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="JS/shoppingEdit.js"></script>
 
 </html>
 

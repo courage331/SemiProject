@@ -21,7 +21,6 @@
 	// 세션 name-value 지정
 	String sessionName = "userid";
 	String sessionValue = arr[0].getCus_id();
-	
 	String sessionNumName = "c_num";
 	String sessionNumValue = Integer.toString(arr[0].getCus_num());
 	//주혁 추가 (sessionId, arr) 1103/ 실패
@@ -39,4 +38,6 @@
 %>
 <script>
 location.href = "index.jsp";
+var sessionData = "mineItRecord";
+sessionStorage.setItem("mineSession", sessionData );
 </script>

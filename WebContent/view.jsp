@@ -11,7 +11,7 @@
 <%
 	if(arr == null || arr.length == 0){
 %>
-	<script>
+	<script>	
 		alert("해당 정보가 삭제되거나 없습니다");
 		location.href='review.do?page=1';
 	</script>
@@ -180,7 +180,7 @@
 						</td>
 						<td>
 						<%if(cus_num == arr2[i].getC_num()){ %>
-						<button style="width:100px; height:40px; font-size: 15px" onclick="cmtchkDelete(<%= arr2[i].getNum()%>)" value="<%=arr2[i].getNum()%>">삭제하기</button>
+						<button style="width:100px; height:40px; font-size: 15px" onclick="cmtchkDelete(<%= arr2[i].getNum()%>,<%= num %>)" value="<%=arr2[i].getNum()%>">삭제하기</button>
 						<%} else { %>
 						<button style="width:100px; height:40px; font-size: 15px" onclick="deleteChk()">삭제하기</button>
 						<%} %>

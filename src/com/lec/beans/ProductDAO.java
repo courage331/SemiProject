@@ -53,7 +53,7 @@ public class ProductDAO {
 		String pCtt = dto.getPro_content();
 
 		cnt = this.insert(pKind, pPrice, pCnt, pName, pCtt);
-		return cnt;
+		return cnt; 
 	}
 
 	// 상품 등록

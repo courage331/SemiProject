@@ -16,6 +16,8 @@ public class CmtDeleteCommand implements Command {
 		
 		int num = Integer.parseInt(request.getParameter("cmt_num"));
 		
+		int num2 = Integer.parseInt(request.getParameter("num"));
+		
 		try {
 			cnt = dao.deleteByNum(num);
 		} catch(SQLException e) {
@@ -23,6 +25,7 @@ public class CmtDeleteCommand implements Command {
 		}
 		
 		request.setAttribute("result", cnt);
+		request.setAttribute("result2", num2);
 	}
 
 }

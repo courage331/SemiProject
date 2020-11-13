@@ -90,7 +90,7 @@ public class ReviewDAO {
 				String regDate = "";
 				if(d != null) {
 					regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
-							+ new SimpleDateFormat("hh:mm:ss").format(t);
+							+ new SimpleDateFormat("HH:mm:ss").format(t);
 				}
 				int c_num = rs.getInt("cus_num");
 				
@@ -127,6 +127,38 @@ public class ReviewDAO {
 		return arr;
 		
 	} // end select()
+	
+	// 제목
+	public ReviewDTO [] searchBySubject(String subject) throws SQLException{
+		ReviewDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_SUBJECT);
+			pstmt.setString(1,"%"+subject+"%");
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		
+		return arr;
+	}
+	
+	// 내용 
+	public ReviewDTO [] searchByContent(String content) throws SQLException{
+		ReviewDTO [] arr = null;
+		
+		try {
+			pstmt = conn.prepareStatement(D.SQL_REVIEW_SELECT_CONTENT);
+			pstmt.setString(1,"%"+content+"%");
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		}
+		
+		return arr;
+	}
 	
 	// 특정 num 의 글 만 SELECT
 	public ReviewDTO [] selectByNum(int num) throws SQLException{
@@ -169,6 +201,7 @@ public class ReviewDAO {
 		
 		return arr;
 	} // end readByNum()
+	
 	
 	// 특정 num 글 수정 (제목, 내용) 수정삭제는 cus_num을 받아와야함 어떻게 받아올까요?
 	public int update(int num, int c_num, String subject, String content, int star) throws SQLException {

@@ -28,6 +28,14 @@ public class D {
 		public static final String SQL_WRITE_UPDATE =
 				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
 		
+		// 제목 검색 
+		public static final String SQL_REVIEW_SELECT_SUBJECT =
+				"SELECT * FROM review WHERE rev_subject LIKE ?";
+		
+		public static final String SQL_REVIEW_SELECT_CONTENT =
+				"SELECT * FROM review WHERE rev_content LIKE ?";
+		
+		
 		 // cmt insert 호인
 		public static final String SQL_CMT_INSERT = 
 				"INSERT INTO cmt"
@@ -58,21 +66,44 @@ public class D {
 				" UPDATE (SELECT res_startdate, res_lastdate, res_message, res_sinfo FROM reservation WHERE res_num = ?) SET res_startdate=?, res_lastdate=?,res_message=?,res_sinfo=?";
 		
 		//예약 종료
-			public static final String SQL_RESERVATION_STATE=
+		public static final String SQL_RESERVATION_STATE=
 					"UPDATE reservation SET RES_STATE=0  WHERE cus_num=? AND res_lastdate < SYSDATE";
 		//투숙중 
-				public static final String SQL_RESERVATION_STATE2=
+		public static final String SQL_RESERVATION_STATE2=
 					"UPDATE reservation SET RES_STATE=2  WHERE cus_num=? AND SYSDATE BETWEEN RES_STARTDATE AND RES_LASTDATE";
 		
-				public static final String SQL_PET_STATE=
+		public static final String SQL_PET_STATE=
 				"UPDATE pet \r\n" + 
 				"SET PET_RESERVE = 0\r\n" + 
 				"WHERE pet_num in\r\n" + 
 				"(\r\n" + 
 				"	SELECT p.pet_num\r\n" + 
 				"	FROM pet p JOIN RESERVATION r\r\n" + 
-				"	ON p.CUS_NUM = r.CUS_NUM \r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM \r\n" + 
 				"	WHERE r.CUS_NUM = ? AND SYSDATE>r.RES_LASTDATE \r\n" + 
+				")";
+				
+				
+		public static final String SQL_PET_STATE2=
+				"UPDATE pet \r\n" + 
+				"SET PET_RESERVE = 1\r\n" + 
+				"WHERE pet_num in\r\n" + 
+				"(\r\n" + 
+				"	SELECT p.pet_num\r\n" + 
+				"	FROM pet p JOIN RESERVATION r\r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM \r\n" + 
+				"	WHERE r.CUS_NUM = ? AND SYSDATE BETWEEN r.RES_STARTDATE AND r.RES_LASTDATE \r\n" + 
+				")";
+				
+		public static final String SQL_PET_STATE3=
+				"UPDATE pet \r\n" + 
+				"SET PET_RESERVE = 1\r\n" + 
+				"WHERE pet_num in\r\n" + 
+				"(\r\n" + 
+				"	SELECT p.pet_num\r\n" + 
+				"	FROM pet p JOIN RESERVATION r\r\n" + 
+				"	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM \r\n" + 
+				"	WHERE r.CUS_NUM = ? AND SYSDATE < r.RES_STARTDATE \r\n" + 
 				")";
 				
 		public static final String SQL_RESERVATION_DELETE_BY_NUM =

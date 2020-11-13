@@ -8,12 +8,12 @@ function chkDelete(num) {
 		location.href = 'deleteOk.do?num=' + num;
 	}
 }
-function cmtchkDelete(num) {
+function cmtchkDelete(num, num2) {
 	// 삭제 여부, 다시 확인하고 진행하기
 	var r = confirm("삭제하시겠습니까?");
 
 	if (r) {
-		location.href = 'cmtdeleteOk.do?cmt_num=' + num;
+		location.href = 'cmtdeleteOk.do?cmt_num=' + num + '&num=' + num2;
 	}
 }
 function deleteChk() {

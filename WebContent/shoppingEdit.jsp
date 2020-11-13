@@ -9,13 +9,14 @@
 	int price = arr[0].getPro_price();
 	int pCnt = arr[0].getPro_cnt();
 	String pName = arr[0].getPro_name();
+	String pCtt = arr[0].getPro_content();
 %>
 <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
    crossorigin="anonymous"></script>
-<link rel="stylesheet" href="CSS/shopping.css">
+<link rel="stylesheet" href="CSS/shoppingEdit.css">
 <title>상품관리</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
    <!-- 컨텐츠 A  -->
    <section class="conA">
       <div class="content">
-   	   <img src="img/<%=pName%>.jpg"><br>
+   	   <%=pCtt%><br>
       </div>
     	<input type="hidden" name="pName" value="<%=pName%>"/><br>
       	<input type="hidden" name="pNum" value="<%=pNum%>"/><br>
@@ -50,10 +51,10 @@
    <!-- 푸터 -->
    <footer>
       <div class="container">
-         <button type="submit" value="update" onclick='btn_click("update");'">
+         <button class="ed_btn" type="submit" value="update" onclick='btn_click("update");'">
             <h2>수정하기</h2>
          </button>
-         <button type="submit" value="delete" onclick='btn_click("delete");'">
+         <button class="del_btn" type="submit" value="delete" onclick='btn_click("delete");'">
          <h2>삭제하기</h2>
          </button>
       </div>
