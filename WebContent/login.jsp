@@ -15,6 +15,46 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script>
+	function checkLoginStatus(){
+		var loginBtn = document.querySelector('#loginBtn');
+		var nameTxt = document.querySelector('#name');
+    	if(gauth.isSignedIn.get()){
+    		console.log('logined');
+    		loginBtn.value = 'Logout';
+    		var profile = gauth.currentUser.get().getBasicProfile();
+    		console.log(profile.getName());
+    		console.log(profile.getId());
+    		console.log(profile.getEmail());
+    		nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong> ';
+    		//insert되어있으면
+    		//location.href = "googleloginOk.do?c_id="+profile.getId().substring(0,15)+"&c_pw=1234"
+    		//insert안되어있으면
+    		gauth.signOut();
+    		location.href = "googleloginOk.do?c_id="+profile.getId().substring(0,15)+"&c_pw=1234&c_name="+profile.getName()+"&c_phone=010-0000-0000&c_email="+profile.getEmail();
+    	} else {
+    		console.log('logouted');
+    		loginBtn.value = 'Login';
+    		nameTxt.innerHTML = '';
+    	}
+	}
+	function init() {
+		  console.log('init');
+		  gapi.load('auth2', function() {
+		    console.log('auth2');
+		    window.gauth = gapi.auth2.init({
+		    	client_id:'147019076427-3regscr3mak8nai0q7hm42n8237vv253.apps.googleusercontent.com'
+		    })
+		    gauth.then(function(){
+		    	console.log('googleAuth success');
+		    	checkLoginStatus();
+		    }, function(){
+		    	console.log('googleAuth fail');
+		    })
+		  });
+		}
+	</script>
 <title>LOGIN</title>
 </head>
 
@@ -49,6 +89,21 @@
 						type="button" class="navyBtn" value="비밀번호 찾기"
 						onClick="location.href='find_pw.jsp'">
 				</div>
+				<span id="name"></span><input type="button" id="loginBtn" value="checking..." onclick="
+					if(this.value == 'Login'){
+						gauth.signIn().then(function(){
+							console.log('gauth.signIn()');
+							checkLoginStatus();
+						});
+						//parmeter로 가지고 loginOk.do로 쏘자
+						
+					} else {
+						gauth.signOut().then(function(){
+							console.log('gauth.signOut()');
+							checkLoginStatus();
+						});
+					}
+				">
 			</form>
 
 		</div>
@@ -56,6 +111,7 @@
 	<!-- 푸터 -->
 	<jsp:include page="common/footer.jsp"></jsp:include>
 </body>
+	<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
 <script src="JS/index.js" type="text/javascript"></script>
 <script type="text/javascript" src="JS/login.js"></script>

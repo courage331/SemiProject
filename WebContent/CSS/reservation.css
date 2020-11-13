@@ -13,6 +13,7 @@ table, th, td{
 	border-collapse : collapse; /*border의 간격 붙이기*/
 	margin : 10px;
 	padding : 10px;
+	
 	/*두께, 선종류, 선색상을 table, th, td에 적용하겠다.
 	가장 바깥에 있는것은 table
 	내부에 있는 테두리는 td

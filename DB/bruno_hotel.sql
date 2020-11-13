@@ -134,14 +134,22 @@ ALTER TABLE selldata
 	REFERENCES product (pro_num)
 ;
 
+SELECT  * FROM pet;
+
 SELECT * FROM customer;
+
+SELECT  * FROM reservation;
+
+SELECT  * FROM review;
+
 
 INSERT  INTO customer (CUS_NUM, CUS_PW, CUS_NAME, CUS_PHONE, CUS_EMAIL, CUS_ID, CUS_MONEY)
 VALUES (1,'1234','bruno','010-2353-1836','tkwk@naver.com','test', 0);
 
 INSERT INTO CUSTOMER VALUES(2,'1234','테스트','010-1234-5678','abcd@naver.com','test2',100);
 
-DELETE FROM customer WHERE cus_num=2;
+DELETE FROM customer WHERE cus_num=62;
+
 
 CREATE SEQUENCE RESERVATION_SEQ;
 CREATE SEQUENCE REVIEW_SEQ;
