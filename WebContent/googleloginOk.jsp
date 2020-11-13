@@ -15,7 +15,7 @@
 	String c_emailE = URLEncoder.encode(c_email, "utf-8");
 	String c_phoneE = URLEncoder.encode(c_phone, "utf-8");
 	String cccc = java.net.URLEncoder.encode(c_name);
-	//URL url = new 
+	//URL url = new //
 %>
 
 <% if(arr==null || arr.length==0){ 
