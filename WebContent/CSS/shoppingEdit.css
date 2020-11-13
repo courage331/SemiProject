@@ -61,6 +61,7 @@ height:80vw
 }
 
 .content{
+	margin-top:20px;
 	display: flex;
 	justify-content:center;
 	align-items: center;
@@ -76,8 +77,9 @@ height:80vw
 	border: solid 1px white;
 	margin-left: 15px;
 }
-
-
+div editInput{
+	width: 10px;
+} 
 .ctextEdit{
 	margin-top: -50px;
 	display: flex;
@@ -92,6 +94,7 @@ height:80vw
 footer button.ed_btn {
 	background-color: #FEC034;
 	margin: 10px;
+	margin-left:40px;
 	width: 40%;
 	height: 50px;
 	font-size: 15px;

@@ -32,10 +32,11 @@ public class buyCommand implements Command {
 
 		int cus_num = Integer.parseInt((String) (session.getAttribute("c_num")));
 		int price = Integer.parseInt(request.getParameter("price"));
-//		System.out.println(price+"파라메터 받은 price");
-		int sCnt = Integer.parseInt((String) request.getParameter("sCnt"));
+		System.out.println(price+"파라메터 받은 price");
+		int counting = Integer.parseInt((String) request.getParameter("counting"));
+		System.out.println(counting);
 		int sSum = Integer.parseInt((String) request.getParameter("sSum"));
-//		System.out.println(sSum + "구매총금액");
+		System.out.println(sSum + "구매총금액");
 		
 		int pro_num = Integer.parseInt((String) request.getParameter("pNum"));
 //		System.out.println(pro_num);
@@ -44,8 +45,8 @@ public class buyCommand implements Command {
 
 		try {
 			dcnt = cdao.delMoney(cus_num,price);
-			cnt = dao.deleteCnt(pName);
-			ssdao = sdao.insert(cus_num, pro_num, sCnt, sSum);
+			cnt = dao.deleteCnt(counting, pName);
+			ssdao = sdao.insert(cus_num, pro_num, counting, sSum);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}

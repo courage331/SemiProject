@@ -25,7 +25,7 @@ public class shoppingCommand implements Command {
       int pNum = Integer.parseInt(request.getParameter("pNum"));
 
       int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
-      if(cus_num == 0) {
+      if(cus_num == 0 ) {
     	  System.out.println("null입니다");
       }
       

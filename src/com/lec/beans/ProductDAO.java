@@ -189,12 +189,13 @@ public class ProductDAO {
 		return cnt;
 	}
 	// 수량 삭제
-	public int deleteCnt(String pName) throws SQLException {
+	public int deleteCnt(int sCnt, String pName) throws SQLException {
 		int cnt = 0;
 
 		try {
 			pstmt = conn.prepareStatement(D.SQL_PRODUCT_DEC_CNT);
-			pstmt.setString(1, pName);
+			pstmt.setInt(1, sCnt);
+			pstmt.setString(2, pName);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();

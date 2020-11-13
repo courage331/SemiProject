@@ -85,48 +85,38 @@ CREATE TABLE product
 	-- 수량
 	pro_cnt number NOT NULL,
 	-- 상품이름
-	pro_name varchar2(20) NOT NULL,
+	pro_name varchar2(100) NOT NULL,
 	--컨텐츠 내용
 	pro_content clob,
 	PRIMARY KEY (pro_num)
 );
 
-CREATE TABLE SHOPFILE
-(
-	bf_fid NUMBER NOT NULL,
-	-- 파일 번호
-	bf_source varchar2(100) NOT NULL,
-	-- 파일소스
-	bf_file varchar2(100) NOT NULL,
-	-- 저장(변환)이름
-	pro_num NUMBER NOT NULL
-	PRIMARY KEY (bf_fid)
-);
-ALTER TABLE shopfile 
-	ADD FOREIGN KEY (pro_num)
-	REFERENCES PRODUCT (pro_num)
-	ON DELETE CASCADE --참조하는 부모가 삭제시 같이 삭제 
-	;
+SELECT *FROM product;
+
+SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'product';
+ALTER SEQUENCE product INCREMENT BY -100;
+
 
 DELETE FROM CUSTOMER WHERE CUS_NUM =1;
 DELETE FROM PRODUCT WHERE PRO_KIND = '장난감';
 DELETE FROM PRODUCT WHERE PRO_KIND = '사료';
 DELETE FROM PRODUCT WHERE PRO_KIND = '간식';
 DELETE FROM PRODUCT WHERE PRO_KIND = '샴푸';
-INSERT INTO PRODUCT VALUES(1,'rice',10, 500, 'r1','존맛탱');
-INSERT INTO PRODUCT VALUES(2,'rice',10, 500, 'r2','개사료');
-INSERT INTO PRODUCT VALUES(3,'rice',10, 500, 'r3','ㅇㅇㅇ');
-INSERT INTO PRODUCT VALUES(4,'rice',10, 500, 'r4','ㅇㅇㅁㅁ');
+SELECT *FROM PRODUCT ;
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 200, '존맛탱 유기농 사료','<p><img alt="" src="/SemiProject/chkupload/r1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 300, '둘이 먹다 둘다 죽은 사료','<p><img alt="" src="/SemiProject/chkupload/r2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 100, '계속 찾게 되는 그맛 ','<p><img alt="" src="/SemiProject/chkupload/r3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 300, '건강한 맛!','<p><img alt="" src="/SemiProject/chkupload/r4.jpg" style="width: 220px; height: 220px;" /></p>');
 
-INSERT INTO PRODUCT VALUES(5,'snack',5, 300, 'g1');
-INSERT INTO PRODUCT VALUES(6,'snack',5, 200, 'g2');
-INSERT INTO PRODUCT VALUES(7,'snack',10, 100, 'g3');
-INSERT INTO PRODUCT VALUES(8,'snack',5, 500, 'g4');
-INSERT INTO PRODUCT VALUES(9,'shampoo',13, 500, 's1');
-INSERT INTO PRODUCT VALUES(10,'shampoo',13, 500, 's2');
-INSERT INTO PRODUCT VALUES(11,'shampoo',13, 500, 's3');
-INSERT INTO PRODUCT VALUES(12,'shampoo',13, 500, 's4');
-INSERT INTO PRODUCT VALUES(13,'etc',20, 100, 'e1');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 300, '강철 이빨을 위한 개껌','<p><img alt="" src="/SemiProject/chkupload/g1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 200, '말캉말캉 껌','<p><img alt="" src="/SemiProject/chkupload/g2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',10, 100, '맛좋은 껌','<p><img alt="" src="/SemiProject/chkupload/g3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 500, '치석제거껌','<p><img alt="" src="/SemiProject/chkupload/g4.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '엘라스틴 샴푸','<p><img alt="" src="/SemiProject/chkupload/s1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '전지현 개가 썼다는 그 샴푸','<p><img alt="" src="/SemiProject/chkupload/s2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '샤넬 향수향 샴푸','<p><img alt="" src="/SemiProject/chkupload/s3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '모발모발 샴푸','<p><img alt="" src="/SemiProject/chkupload/s4.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'etc',20, 100, '그래 이거지 장난감','<p><img alt="" src="/SemiProject/chkupload/e1.jpg" style="width: 220px; height: 220px;" /></p>');
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
 SELECT * FROM RESERVATION;
@@ -160,6 +150,7 @@ DELETE FROM CUSTOMER WHERE CUS_NUM =3;
 	pet_num number NOT NULL,
 	PRIMARY KEY (res_num)
 );
+
 
 
 CREATE TABLE review
@@ -292,6 +283,13 @@ CREATE SEQUENCE SELLDATA_SEQ;
 CREATE SEQUENCE CUSTOMER_SEQ;
 CREATE SEQUENCE PET_SEQ;
 
+DROP SEQUENCE product_seq;
+
+SELECT PRODUCT_SEQ.NEXTVAL FROM DUAL; --시퀀스 다음 번호 조회
+
+ALTER SEQUENCE PRODUCT_SEQ INCREMENT BY 1; --시퀀스 1로 초기화
+SELECT *FROM product;
+DELETE FROM PRODUCT WHERE pro_num = 100;
 
 /* Comments */
 
