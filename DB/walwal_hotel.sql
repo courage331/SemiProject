@@ -1,3 +1,5 @@
+/*----------------------------------------------------------------------------------------------------------------------*/
+
 /* Drop Tables */
 
 DROP TABLE cmt CASCADE CONSTRAINTS;
@@ -56,14 +58,20 @@ CREATE TABLE pet
 
 CREATE TABLE product
 (
-	pro_num number NOT NULL,
-	pro_kind varchar2(20) NOT NULL,
-	pro_price number NOT NULL,
-	pro_cnt number NOT NULL,
-	pro_name varchar2(20) NOT NULL,
-	PRIMARY KEY (pro_num)
+   -- 상품고유번호
+   pro_num number NOT NULL,
+   -- 상품종류
+   pro_kind varchar2(20) NOT NULL,
+   -- 가격
+   pro_price number NOT NULL,
+   -- 수량
+   pro_cnt number NOT NULL,
+   -- 상품이름
+   pro_name varchar2(20) NOT NULL,
+   --컨텐츠 내용
+   pro_content clob,
+   PRIMARY KEY (pro_num)
 );
-
 
 
 CREATE TABLE reservation
@@ -109,7 +117,6 @@ CREATE TABLE selldata
 );
 
 /*create sequence*/
-
 CREATE SEQUENCE RESERVATION_SEQ;
 CREATE SEQUENCE CMT_SEQ;
 CREATE SEQUENCE REVIEW_SEQ;
@@ -118,12 +125,22 @@ CREATE SEQUENCE SELLDATA_SEQ;
 CREATE SEQUENCE CUSTOMER_SEQ;
 CREATE SEQUENCE PET_SEQ;
 
+/* drop sequence */
+DROP SEQUENCE RESERVATION_SEQ;
+DROP SEQUENCE CMT_SEQ;
+DROP SEQUENCE REVIEW_SEQ;
+DROP SEQUENCE PRODUCT_SEQ;
+DROP SEQUENCE SELLDATA_SEQ;
+DROP SEQUENCE CUSTOMER_SEQ;
+DROP SEQUENCE PET_SEQ;
+
 
 /* Create Foreign Keys */
 
 ALTER TABLE cmt
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
+	ADD FOREIGN KEY (rev_num)
+	REFERENCES review (rev_num)
+	ON DELETE CASCADE
 ;
 
 
@@ -162,51 +179,22 @@ ALTER TABLE selldata
 	REFERENCES product (pro_num)
 ;
 
-
-ALTER TABLE cmt
-	ADD FOREIGN KEY (rev_num)
-	REFERENCES review (rev_num)
-	ON DELETE CASCADE
-;
-
-
-
-/* Comments */
-
-COMMENT ON COLUMN pet.pet_reserve IS '1이면 예약 불가 상태
-0이면 예약 가능 상태';
-COMMENT ON COLUMN reservation.res_state IS '미정...';
-
-
-
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 0, 'e1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
-
 INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','관리자','010-1234-5678','walwal@naver.com','admin',99999);
-INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','사용자','010-1234-5678','walwal@naver.com','test',123);
+INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','사용자','010-5555-5555','abc@naver.com','test',123);
+INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','사용자1','010-5123-2255','abcf@naver.com','test1',123);
+INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','사용자2','010-5555-3355','abcd@naver.com','test2',123);
 
 INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지1',5,5,0,1);
 INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지2',6,4,0,1);
 INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지3',7,8,0,1);	
 
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-18', '2020-10-19','독파크',NULL,2,2,4);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-22', '2020-10-27','아카데미',NULL,2,2,5);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-23', '2020-10-30','유치원',NULL,2,2,4);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,2,2,6);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,1,2,6);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-10', '2020-12-20','그루밍',NULL,0,2,4);
+
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-18', '2020-10-19','독파크',NULL,2,2,3);
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-22', '2020-10-27','아카데미',NULL,2,2,1);
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-23', '2020-10-30','유치원',NULL,2,2,1);
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-23', '2020-10-30','유치원',NULL,2,2,2);
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,1,2,3);
+INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-10', '2020-12-20','그루밍',NULL,0,2,1);
 
 INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '잘 놀다 갑니다','놀기 좋아요','3',SYSDATE,2);
 INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '좋았어요!','놀기 좋아요',5,SYSDATE,2);

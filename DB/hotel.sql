@@ -224,38 +224,7 @@ SELECT * FROM RESERVATION;
 DELETE FROM RESERVATION WHERE RES_NUM=102;
 
 /*pet의 상태 바꾸기*/
-UPDATE PET SET PET_RESERVE =1 WHERE PET_NUM=3;
-
-SELECT pet_name, PET_NUM ,PET_RESERVE 
-FROM PET
-WHERE pet_num in
-(
-	SELECT p.pet_num
-	FROM pet p JOIN RESERVATION r
-	ON p.CUS_NUM = r.CUS_NUM 
-	WHERE r.CUS_NUM = 1 AND SYSDATE BETWEEN r.RES_STARTDATE AND r.RES_LASTDATE 
-)
-;
-
-SELECT DISTINCT pet_name, PET_NUM ,PET_RESERVE 
-FROM PET
-WHERE pet_num in
-(
-	SELECT DISTINCT p.pet_num
-	FROM pet p JOIN RESERVATION r
-	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM
-	WHERE r.CUS_NUM = 1 AND r.RES_LASTDATE<SYSDATE 
-)
-;
-
-SELECT * 
-	FROM pet p LEFT JOIN RESERVATION r
-	ON p.CUS_NUM = r.CUS_NUM AND p.PET_NUM =r.PET_NUM ;
-
-
-SELECT *
-FROM RESERVATION 
-WHERE RES_LASTDATE <SYSDATE;
+UPDATE PET SET PET_RESERVE =0 WHERE PET_NUM=3;
 
 
 
@@ -312,14 +281,14 @@ INSERT INTO PRODUCT VALUES(13,'etc',20, 100, 'e1');
 
 DELETE PRODUCT WHERE pro_num=8;
 /*SQL문 테스트*/
-SELECT * FROM PET WHERE cus_num=;
+SELECT * FROM PET WHERE cus_num=1;
 
 SELECT * FROM pet;
 SELECT pet_name FROM pet;
 
 SELECT pet_num FROM pet WHERE cus_num=1 AND pet_name='강아지2';
 
-UPDATE pet SET pet_reserve = 1 WHERE pet_num = 3;
+UPDATE pet SET pet_reserve = 1 WHERE pet_num = 4;
 
 UPDATE reservation SET res_state=2 WHERE res_num=3;
 
@@ -366,12 +335,9 @@ CREATE SEQUENCE RESERVATION_SEQ;
 DROP SEQUENCE RESERVATION_SEQ;
 
 CREATE SEQUENCE CMT_SEQ;
-DROP  SEQUENCE CMT_SEQ;
-
+CREATE SEQUENCE REVIEW_SEQ;
 CREATE SEQUENCE PRODUCT_SEQ;
-DROP  SEQUENCE PRODUCT_SEQ;
 CREATE SEQUENCE SELLDATA_SEQ;
-DROP  SEQUENCE SELLDATA_SEQ;
 
 CREATE SEQUENCE CUSTOMER_SEQ;
 DROP SEQUENCE CUSTOMER_SEQ;
@@ -427,233 +393,6 @@ COMMENT ON COLUMN selldata.pro_num IS '상품고유번호';
 COMMENT ON COLUMN selldata.sell_date IS '판매한날짜';
 COMMENT ON COLUMN selldata.sell_cnt IS '판매한수량';
 COMMENT ON COLUMN selldata.sell_sum IS '총구매금액';
-
-/*----------------------------------------------------------------------------------------------------------------------*/
-
-/* Drop Tables */
-
-DROP TABLE cmt CASCADE CONSTRAINTS;
-DROP TABLE reservation CASCADE CONSTRAINTS;
-DROP TABLE pet CASCADE CONSTRAINTS;
-DROP TABLE review CASCADE CONSTRAINTS;
-DROP TABLE selldata CASCADE CONSTRAINTS;
-DROP TABLE customer CASCADE CONSTRAINTS;
-DROP TABLE product CASCADE CONSTRAINTS;
-
-
-
-
-/* Create Tables */
-
-CREATE TABLE cmt
-(
-	cmt_num number NOT NULL,
-	cmt_id varchar2(40) NOT NULL,
-	cmt_regdate date NOT NULL,
-	cmt_content clob NOT NULL,
-	rev_num number NOT NULL,
-	cus_num number NOT NULL,
-	PRIMARY KEY (cmt_num)
-);
-
-
-
-CREATE TABLE customer
-(
-	cus_num number NOT NULL,
-	cus_pw varchar2(20) NOT NULL,
-	cus_name varchar2(10) NOT NULL,
-	cus_phone varchar2(20) NOT NULL,
-	cus_email varchar2(30) NOT NULL,
-	cus_id varchar2(20) NOT NULL,
-	cus_money number,
-	PRIMARY KEY (cus_num)
-);
-
-
-CREATE TABLE pet
-(
-	pet_num number NOT NULL,
-	cus_num number NOT NULL,
-	pet_name varchar2(10) NOT NULL,
-	pet_age number NOT NULL,
-	pet_weight number,
-	-- 1이면 예약 불가 상태
-	-- 0이면 예약 가능 상태
-	pet_reserve number NOT NULL,
-	pet_image NUMBER NOT NULL,
-	PRIMARY KEY (pet_num)
-);
-
-
-CREATE TABLE product
-(
-	pro_num number NOT NULL,
-	pro_kind varchar2(20) NOT NULL,
-	pro_price number NOT NULL,
-	pro_cnt number NOT NULL,
-	pro_name varchar2(20) NOT NULL,
-	PRIMARY KEY (pro_num)
-);
-
-
-
-CREATE TABLE reservation
-(
-	-- 예약번호
-	res_num number NOT NULL,
-	-- 예약 시작날짜
-	res_startdate date NOT NULL,
-	-- 예약 마지막날짜
-	res_lastdate date NOT NULL,
-	--서비스 항목
-	res_sinfo varchar2(30) NOT NULL,
-	-- 건의사항
-	res_message clob,
-	-- 사용자 고유 번호
-	res_state number NOT NULL,
-	--예약 상태
-	cus_num number NOT NULL,
-	-- 애완견고유번호
-	pet_num number NOT NULL,
-	PRIMARY KEY (res_num)
-);
-
-CREATE TABLE review
-(
-	rev_num number NOT NULL,
-	rev_subject varchar2(40) NOT NULL,
-	rev_content clob,
-	rev_star number,
-	rev_regdate date NOT NULL,
-	cus_num number NOT NULL,
-	PRIMARY KEY (rev_num)
-);
-
-
-CREATE TABLE selldata
-(
-	cus_num number NOT NULL,
-	pro_num number NOT NULL,
-	sell_date date NOT NULL,
-	sell_cnt number NOT NULL,
-	sell_sum number NOT NULL
-);
-
-/*create sequence*/
-
-CREATE SEQUENCE RESERVATION_SEQ;
-CREATE SEQUENCE CMT_SEQ;
-CREATE SEQUENCE REVIEW_SEQ;
-CREATE SEQUENCE PRODUCT_SEQ;
-CREATE SEQUENCE SELLDATA_SEQ;
-CREATE SEQUENCE CUSTOMER_SEQ;
-CREATE SEQUENCE PET_SEQ;
-
-
-/* Create Foreign Keys */
-
-ALTER TABLE cmt
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
-;
-
-
-ALTER TABLE pet
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
-;
-
-
-ALTER TABLE reservation
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
-;
-
-
-ALTER TABLE review
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
-;
-
-
-ALTER TABLE selldata
-	ADD FOREIGN KEY (cus_num)
-	REFERENCES customer (cus_num)
-;
-
-
-ALTER TABLE reservation
-	ADD FOREIGN KEY (pet_num)
-	REFERENCES pet (pet_num)
-;
-
-
-ALTER TABLE selldata
-	ADD FOREIGN KEY (pro_num)
-	REFERENCES product (pro_num)
-;
-
-
-ALTER TABLE cmt
-	ADD FOREIGN KEY (rev_num)
-	REFERENCES review (rev_num)
-	ON DELETE CASCADE
-;
-
-
-
-/* Comments */
-
-COMMENT ON COLUMN pet.pet_reserve IS '1이면 예약 불가 상태
-0이면 예약 가능 상태';
-COMMENT ON COLUMN reservation.res_state IS '미정...';
-
-
-
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'사료',10, 500, 'r4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'간식',10, 500, 'g4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's2');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's3');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'미용',10, 500, 's4');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 0, 'e1');
-INSERT INTO PRODUCT VALUES(product_seq.nextval,'장난감',10, 1, '가지');
-
-INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','관리자','010-1234-5678','walwal@naver.com','admin',99999);
-INSERT INTO CUSTOMER VALUES(CUSTOMER_SEQ.nextval,'1234','사용자','010-1234-5678','walwal@naver.com','test',123);
-
-INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지1',5,5,0,1);
-INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지2',6,4,0,1);
-INSERT INTO PET VALUES(pet_seq.nextval,2,'강아지3',7,8,0,1);	
-
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-18', '2020-10-19','독파크',NULL,2,2,4);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-22', '2020-10-27','아카데미',NULL,2,2,5);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-23', '2020-10-30','유치원',NULL,2,2,4);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,2,2,6);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,1,2,6);
-INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-10', '2020-12-20','그루밍',NULL,0,2,4);
-
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '잘 놀다 갑니다','놀기 좋아요','3',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '좋았어요!','놀기 좋아요',5,SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '강아지가 좋아하네요','놀기 좋아요',4,SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '별로에요....','놀기 좋아요','1',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '깔끔해요','놀기 좋아요','3',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '서비스가 친절해요','놀기 좋아요','4',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '다시 올게요','놀기 좋아요','5',SYSDATE,2);
-
-
-SELECT * FROM CUSTOMER;
-SELECT * FROM PET;
-SELECT * FROM REVIEW;
-SELECT * FROM PRODUCT;
-SELECT * FROM RESERVATION;
 
 
 
