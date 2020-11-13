@@ -137,6 +137,11 @@ button.backBtn {
 	border-radius: 12px;
 }
 
+div.search{
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
 button:hover {
     background: #fa6e3e;
 	cursor: pointer;

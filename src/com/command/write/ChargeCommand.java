@@ -15,19 +15,18 @@ public class ChargeCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
 		CustomerDAO dao = new CustomerDAO();
+		CustomerDTO[] arr = null;
 
 		HttpSession session = request.getSession();
-		int cus_num = Integer.parseInt((String)(session.getAttribute("c_num")));
-		int cus_money = Integer.parseInt(request.getParameter("bone_rs"));
+		int cus_num = Integer.parseInt((String) (session.getAttribute("c_num")));
 		
 		try {
-			cnt = dao.update(cus_num, cus_money);
-			System.out.println("짠");
+			arr = dao.selectByUid(cus_num);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
-	request.setAttribute("result", cnt);
+		request.setAttribute("list", arr);
 	}
 
 }

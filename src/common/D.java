@@ -28,6 +28,14 @@ public class D {
 		public static final String SQL_WRITE_UPDATE =
 				" UPDATE (SELECT rev_subject, rev_content, rev_star FROM review WHERE rev_num = ? AND cus_num = ?) SET rev_subject = ?, rev_content = ?, rev_star = ?";
 		
+		// 제목 검색 
+		public static final String SQL_REVIEW_SELECT_SUBJECT =
+				"SELECT * FROM review WHERE rev_subject LIKE ?";
+		
+		public static final String SQL_REVIEW_SELECT_CONTENT =
+				"SELECT * FROM review WHERE rev_content LIKE ?";
+		
+		
 		 // cmt insert 호인
 		public static final String SQL_CMT_INSERT = 
 				"INSERT INTO cmt"
