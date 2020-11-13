@@ -3,15 +3,30 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "com.lec.beans.*" %>
 <%@ page import = "java.util.*" %>
+<%@ page import = "java.net.*" %>
 <%  // Controller 로부터 결과 데이터 받음
 	CustomerDTO [] arr = (CustomerDTO [])request.getAttribute("list");
+	String c_id = (String)request.getParameter("c_id");
+	String c_pw = (String)request.getParameter("c_pw");
+	String c_name = (String)request.getParameter("c_name");
+	String c_email = (String)request.getParameter("c_email");
+	String c_phone = (String)request.getParameter("c_phone");
+	String c_nameE = URLEncoder.encode(c_name, "utf-8");
+	String c_emailE = URLEncoder.encode(c_email, "utf-8");
+	String c_phoneE = URLEncoder.encode(c_phone, "utf-8");
+	String cccc = java.net.URLEncoder.encode(c_name);
+	//URL url = new 
 %>
 
-<% if(arr==null || arr.length==0){ %>			
+<% if(arr==null || arr.length==0){ 
+	String url = "googleInsert.do?c_id="+c_id+"&c_pw="+c_pw+"&c_name="+c_nameE+"&c_phone="+c_phoneE+"&c_email="+c_emailE;
+%>			
+		
 	<script>	
-		//alert("가입된 회원이 아닙니다.");
-		history.back();  // 다시 로그인페이지로
+		alert(<%=cccc%>);
+		//location.href = <%=url%>;
 	</script>
+	
 <%
 		return;
 	} 

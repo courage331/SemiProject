@@ -20,6 +20,8 @@ import com.command.write.DeleteCommand;
 import com.command.write.FileUploadCommand;
 import com.command.write.FindidCommand;
 import com.command.write.FindpwCommand;
+import com.command.write.GoogleInsertCommand;
+import com.command.write.GoogleLoginCommand;
 import com.command.write.ListCommand;
 import com.command.write.LoginCommand;
 import com.command.write.MyinfoUpdateCommand;
@@ -374,6 +376,17 @@ public class DoController extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "cmtdeleteOk.jsp";
 			break;
+			
+		case "/googleloginOk.do":
+			command = new GoogleLoginCommand();
+			command.execute(request, response);
+			viewPage = "googleloginOk.jsp";
+			break;	
+		case "/googleInsert.do":
+			command = new GoogleInsertCommand();
+			command.execute(request, response);
+			viewPage = "googleInsert.jsp";
+			break;	
 
 		} // end switch
 
