@@ -9,6 +9,7 @@ function submit1() {
 		frm.action = "shoppingOk.do";
 		frm.submit();
 	}
+	
 }
 
 function submit2(c_money, price) {
