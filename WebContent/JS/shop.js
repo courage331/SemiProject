@@ -19,6 +19,7 @@ for (i = 0; i < img_list; i++) {
 		
 		console.log(num,"nnnnn")
 		
+		
 		console.log($(e.target), "111111")
 		console.log($(e.target).parent(),"2222222")
 		console.log($(e.target).parent().find('#pCnt'),"3333333")

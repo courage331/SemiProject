@@ -84,7 +84,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
             %>
             <th>
             	<%=arr[cnt].getPro_content() %><br>
-               이름 : <%=arr[cnt].getPro_name()%><br> 
+              	<%=arr[cnt].getPro_name()%><br><br>
                가격 : <%=arr[cnt].getPro_price()%><i class="fas fa-bone"></i><br> 
                재고 : <%=arr[cnt].getPro_cnt()%><br>
                <input id="pCnt" class="<%=cnt %>" type="hidden" value="<%=arr[cnt].getPro_cnt()%>">
@@ -131,7 +131,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
                      for (int j = 0; j < 4; j++) { // for 2
                   %>
             <th><%=arr[cnt].getPro_content() %><br>
-               이름 : <%=arr[cnt].getPro_name()%><br> 
+             	 <%=arr[cnt].getPro_name()%><br><br>
                가격 : <%=arr[cnt].getPro_price()%><i class="fas fa-bone"></i><br> 
                재고 : <%=arr[cnt].getPro_cnt() %><br>
                <input id="pCnt" type="hidden" value="<%=arr[cnt].getPro_cnt()%>">
