@@ -23,7 +23,7 @@ public class GoogleLoginCommand implements Command {
 //		String c_name = request.getParameter("c_name");
 //		String c_phone = request.getParameter("c_phone");
 //		String c_email = request.getParameter("c_email");
-//		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+c_name);
+//		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+c_name);/
 		
 		// 유효성 체크 : null 이거나, 빈 문자열이면 
 				if(c_id != null && c_id.trim().length() > 0 && c_pw != null && c_pw.trim().length() > 0) {
