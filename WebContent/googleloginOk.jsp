@@ -11,20 +11,17 @@
 	String c_name = (String)request.getParameter("c_name");
 	String c_email = (String)request.getParameter("c_email");
 	String c_phone = (String)request.getParameter("c_phone");
-	String c_nameE = URLEncoder.encode(c_name, "utf-8");
-	String c_emailE = URLEncoder.encode(c_email, "utf-8");
+	String c_nameE = new String(c_name.getBytes("UTF-8"),"UTF-8");
 	String c_phoneE = URLEncoder.encode(c_phone, "utf-8");
-	String cccc = java.net.URLEncoder.encode(c_name);
-	//URL url = new //
 %>
 
 <% if(arr==null || arr.length==0){ 
-	String url = "googleInsert.do?c_id="+c_id+"&c_pw="+c_pw+"&c_name="+c_nameE+"&c_phone="+c_phoneE+"&c_email="+c_emailE;
+	String url = "googleInsert.do?c_id="+c_id+"&c_pw="+c_pw+"&c_name="+c_name+"&c_phone="+c_phone+"&c_email="+c_email;
 %>			
 		
 	<script>	
-		alert(<%=cccc%>);
-		//location.href = <%=url%>;
+		//alert("<%=c_nameE%>");
+		location.href = "<%=url%>";
 	</script>
 	
 <%

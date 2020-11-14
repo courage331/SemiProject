@@ -3,6 +3,9 @@
 
 <%  // Controller 로부터 결과 데이터 받음
 	int cnt = (Integer)request.getAttribute("result");
+	String c_id = (String)request.getParameter("c_id");
+	String c_pw = (String)request.getParameter("c_pw");
+	String url = "loginOk.do?c_id="+c_id+"&c_pw="+c_pw;
 %>
 
 <% if(cnt == 0){ %>
@@ -12,8 +15,8 @@
 	</script>
 <% } else { %>
 	<script>
-		alert("구글 insert성공");
-		location.href = "loginOk.do";
+		alert("<%=c_id%>");
+		location.href = "<%=url%>";
 	</script>
 <% } %>
 
