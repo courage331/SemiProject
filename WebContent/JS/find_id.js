@@ -19,30 +19,6 @@ function chkSubmit(){	//공백안돼요
 } // end chkSubmit()
 
 
-$("#checking").click(function(){
-	console.log("checking 제이쿼리 실행");
-	var certif_num = $('#certif_num').val();
-	console.log(certif_num+"|||"+sessionNum+"|||"+temp)
-});
-
-//function chkSubmit(){	//공백안돼요
-//	frm = document.forms["frm"];
-//	
-//	var c_name = frm["c_name"].value.trim();
-//	var c_email = frm["c_email"].value.trim();
-//	var chk = true;
-//	
-//	if(c_name == ""){
-//		alert("이름을 입력해주세요");
-//		frm["c_name"].focus();
-//		return false;
-//	}
-//	
-//	return chk;
-//} // end chkSubmit()
-
-
-
 $("#user_email").blur(function() {
 	// id = "id_reg" / name = "userId"
 	var user_email = $('#user_email').val();
