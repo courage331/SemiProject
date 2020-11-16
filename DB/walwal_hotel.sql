@@ -67,7 +67,7 @@ CREATE TABLE product
    -- 수량
    pro_cnt number NOT NULL,
    -- 상품이름
-   pro_name varchar2(20) NOT NULL,
+   pro_name varchar2(100) NOT NULL,
    --컨텐츠 내용
    pro_content clob,
    PRIMARY KEY (pro_num)
@@ -196,14 +196,41 @@ INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-10-23', '2020-10-
 INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-20', '2020-12-23','그루밍',NULL,1,2,3);
 INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.nextval, '2020-11-10', '2020-12-20','그루밍',NULL,0,2,1);
 
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '잘 놀다 갑니다','놀기 좋아요','3',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '좋았어요!','놀기 좋아요',5,SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '강아지가 좋아하네요','놀기 좋아요',4,SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '별로에요....','놀기 좋아요','1',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '깔끔해요','놀기 좋아요','3',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '서비스가 친절해요','놀기 좋아요','4',SYSDATE,2);
-INSERT INTO REVIEW VALUES (REVIEW_SEQ.nextval, '다시 올게요','놀기 좋아요','5',SYSDATE,2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '왔다갑니다', '또 왔다 갑니다', 3, '2020-11-16', 1);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '안뇽하세용', '여기에 입양시키고 싶어지네요', 3, '2020-11-16', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '대박대박대박', '완전 너무 좋음 ㅜㅠ', 3, '2020-11-15', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '또 맡기고 싶어용', 'ㅎ_ㅇ', 3, '2020-11-15', 1);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '강아지가 활발해졌어요!', 'ㅋㅋㅋㅋㅋㅋㅋㅋ굿임당', 3, '2020-11-14', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '또 오고싶은 이곳', '하이효이라이훙', 3, '2020-11-18', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '시간나면 또 맡길게용', '가나다라마바사아자차카', 3, '2020-11-13', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '하하하하하', '하자차카타파하', 3, '2020-11-12', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '무슨 글을 쓰지', '무슨글 적지', 3, '2020-11-11', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '이런이런이런', '요런요런요런요런', 3, '2020-11-11', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '생각보다 별로네요', '연연', 4, '2020-10-11', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '기대이하', '철철철', 5, '2020-10-10', 1);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '완전 좋음', '99999999', 2, '2020-10-09', 1);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '1414', 'Systemㅎㅇ', 5, '2020-10-08', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '1415', '아릉하세연', 5, '2020-10-07', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '아릉하세연', '안뇽안녕', 5, '2020-10-06', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '키키키키키킼', '이이호호인인', 5, '2020-10-05', 2);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '큐큐큐큐큐큨', '김김지지민민', 3, '2020-10-05', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, '새로운글 new', '장장정정호호', 5, '2020-10-04', 3);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, 'he is korean', '이이주주혁혁', 5, '2020-10-03', 1);
+INSERT INTO review VALUES (REVIEW_SEQ.nextval, 'he is korean', '김김영영재재', 5, '2020-10-02', 1);
 
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 200, '존맛탱 유기농 사료','<p><img alt="" src="/SemiProject/chkupload/r1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 300, '둘이 먹다 둘다 죽은 사료','<p><img alt="" src="/SemiProject/chkupload/r2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 100, '계속 찾게 되는 그맛 ','<p><img alt="" src="/SemiProject/chkupload/r3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'rice',10, 300, '건강한 맛!','<p><img alt="" src="/SemiProject/chkupload/r4.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 300, '강철 이빨을 위한 개껌','<p><img alt="" src="/SemiProject/chkupload/g1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 200, '말캉말캉 껌','<p><img alt="" src="/SemiProject/chkupload/g2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',10, 100, '맛좋은 껌','<p><img alt="" src="/SemiProject/chkupload/g3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'snack',5, 500, '치석제거껌','<p><img alt="" src="/SemiProject/chkupload/g4.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '엘라스틴 샴푸','<p><img alt="" src="/SemiProject/chkupload/s1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '전지현 개가 썼다는 그 샴푸','<p><img alt="" src="/SemiProject/chkupload/s2.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '샤넬 향수향 샴푸','<p><img alt="" src="/SemiProject/chkupload/s3.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '모발모발 샴푸','<p><img alt="" src="/SemiProject/chkupload/s4.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'etc',20, 100, '그래 이거지 장난감','<p><img alt="" src="/SemiProject/chkupload/e1.jpg" style="width: 220px; height: 220px;" /></p>');
 
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
