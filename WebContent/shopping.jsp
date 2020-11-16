@@ -59,7 +59,7 @@
 						<br> 가격 :
 						<%=price%>
 						<i class="fas fa-bone"></i><br> 
-						구매 수량 : <input type="text" name="counting" id="counting" value="1" style="width:50px;"/>
+						구매 수량 : <input type="text" name="counting" id="counting" value="1" style="width:50px;" readonly/>
 						<button class="cnt" type="button" onclick="form_btn(1)">▲</button>
 						<button class="cnt" type="button" onclick="form_btn(-1)">▼</button>
 						<script>
