@@ -13,7 +13,6 @@
 	
 	Boolean chk = true;
 %>
-
 <% if(arr==null || arr.length==0){ %>			
 	<script>	
 		alert("등록된 반려견이 없습니다. 반려견을 등록하고 와주세요");
