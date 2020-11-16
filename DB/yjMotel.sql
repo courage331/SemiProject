@@ -117,6 +117,7 @@ INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '전지현 개
 INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '샤넬 향수향 샴푸','<p><img alt="" src="/SemiProject/chkupload/s3.jpg" style="width: 220px; height: 220px;" /></p>');
 INSERT INTO PRODUCT VALUES(product_seq.nextval,'shampoo',13, 500, '모발모발 샴푸','<p><img alt="" src="/SemiProject/chkupload/s4.jpg" style="width: 220px; height: 220px;" /></p>');
 INSERT INTO PRODUCT VALUES(product_seq.nextval,'etc',20, 100, '그래 이거지 장난감','<p><img alt="" src="/SemiProject/chkupload/e1.jpg" style="width: 220px; height: 220px;" /></p>');
+INSERT INTO PRODUCT VALUES(product_seq.nextval,'etc',20, 100, '가지놈','<p><img alt="" src="/SemiProject/chkupload/가지.jpg" style="width: 220px; height: 220px;" /></p>');
 SELECT * FROM CUSTOMER;
 SELECT * FROM PET;
 SELECT * FROM RESERVATION;

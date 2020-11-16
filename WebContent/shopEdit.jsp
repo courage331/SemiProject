@@ -16,7 +16,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/b95da9d126.js"
 	crossorigin="anonymous"></script>
-<title>쇼핑</title>
+<title>상품 관리</title>
 <link rel="stylesheet" href="CSS/shop.css">
 
 </head>
@@ -30,7 +30,7 @@ ProductDTO[] arr = (ProductDTO[]) request.getAttribute("list");
  				<input type="button" value="사료" onclick="location='shop.do?kind=rice'">
  				<input type="button" value="기타" onclick="location='shop.do?kind=etc'">
 		</div>	
-	<h1>쇼핑</h1>
+	<h1>상품 관리</h1>
 	<br>
 	<br>
 	<%
