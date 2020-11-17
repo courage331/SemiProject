@@ -14,3 +14,6 @@
   * DB : Oracle 11g Express Edition
   * API : kakao map, kakao pay
   
+* 역할
+  * 예약 페이지 담당
+  * IDE 
