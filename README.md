@@ -13,10 +13,10 @@
 * 개발 Tool: Eclipse, Apache Tomcat v9.0, CKediter, kakao
 
 * 기술스택
-  *언어 : Java, html, css, javascript
-  *IDE : Eclipse, Oracle Developer
-  *기술 : ajax, jstl/EL, jquery, jsp/servlet, jdbc
-  *Server : apache/tomcat ver.9.0
-  *DB : Oracle 11g Express Edition
-  *API : kakao map, kakao pay
+ *언어 : Java, html, css, javascript
+ *IDE : Eclipse, Oracle Developer
+ *기술 : ajax, jstl/EL, jquery, jsp/servlet, jdbc
+ *Server : apache/tomcat ver.9.0
+ *DB : Oracle 11g Express Edition
+ *API : kakao map, kakao pay
   
