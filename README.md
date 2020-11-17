@@ -1,14 +1,21 @@
 # 김지민 포트폴리오
 
-## 프로젝트
-### 애견호텔
-[애견호텔 바로가기](https://github.com/hoin523/SemiProject.git)
+## 프로젝트 명 : 왈왈호텔
+
+## 주제 : 애견호텔
+
 ## 개요
-* 회원제도를 통한 반려견 등록, 호텔 체크인, 상품 구매, 게시글 작성, 관리자는 상품과 게시글의 추가삭제를 관리할 수 있습니다.
+* 반려견이 편히 쉴 수 있는 호텔 서비스를 제공하는 웹 페이지 이며 MVC model2를 기반으로 각 페이지마다 CRUD를 적용하여 개발한 웹 프로젝트 입니다.
 ## 공헌한 내용
-* 참여도: 25%
-* 검색 결과 데이터 출력: JSON
-* 웹 화면 구성: HTML, CSS, JavaScript
-* 결과를 얻어오기 위한 서버 액션: JAVA, Servlet, JSP
-* DB액션 처리: JDBC
-* 개발 Tool: Eclipse, Apache Tomcat v9.0, CKediter, kakao
+* 참여도: 20%
+* 기술스택
+  * 언어 : Java, html, css, javascript
+  * IDE : Eclipse, Oracle Developer
+  * 기술 : ajax, json, jstl/EL, jquery, jsp/servlet, jdbc, slick, ckeditor
+  * Server : apache/tomcat ver.9.0
+  * DB : Oracle 11g Express Edition
+  * API : kakao map, kakao pay
+  
+* 역할
+  * 예약 페이지 담당
+  * IDE 
