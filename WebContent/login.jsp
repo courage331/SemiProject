@@ -89,7 +89,7 @@
 						type="button" class="navyBtn" value="비밀번호 찾기"
 						onClick="location.href='find_pw.jsp'">
 				</div>
-				<span id="name"></span><input type="button" id="loginBtn" value="checking..." onclick="
+				<!-- <span id="name"></span><input type="button" id="loginBtn" value="checking..." onclick="
 					if(this.value == 'Login'){
 						gauth.signIn().then(function(){
 							console.log('gauth.signIn()');
@@ -103,7 +103,7 @@
 							checkLoginStatus();
 						});
 					}
-				">
+				">  -->
 			</form>
 
 		</div>
