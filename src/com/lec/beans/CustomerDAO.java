@@ -104,6 +104,7 @@ public class CustomerDAO {
 
 		return cnt;
 	} // end selectByUid()
+	
 // 주혁 1102 로그인시 회원인지 아닌지 확인하기위한 조회
 	public CustomerDTO[] find_accountinfo(String cus_id, String cus_pw) throws SQLException {
 		CustomerDTO[] arr = null;
