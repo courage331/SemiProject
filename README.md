@@ -1,6 +1,6 @@
 # JSP 프로젝트
 
-## [포트폴리오 링크](https://github.com/courage331/SemiProject/blob/master/%EA%B9%80%EC%A7%80%EB%AF%BC_JSP%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%99%88%EC%99%88%ED%98%B8%ED%85%94.pdf)
+## [최종보고서 링크](https://github.com/courage331/SemiProject/blob/master/%EA%B9%80%EC%A7%80%EB%AF%BC_JSP%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8_%EC%99%88%EC%99%88%ED%98%B8%ED%85%94.pdf)
 
 * 프로젝트 명 : 왈왈호텔(애견호텔)
 
@@ -33,4 +33,5 @@
   
 * 역할
   * 예약 페이지 담당
+  * 마이 페이지
   
